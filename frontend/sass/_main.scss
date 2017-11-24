@@ -5,13 +5,17 @@ $brand-success: #84ce3c !default;
 $brand-warning: #ffec39 !default;
 $brand-danger: #fc483f !default;
 $brand-info: #000072 !default;
+$color-primary:#135281 !default;
+$color-primary-highlight:#295d83 !default;
+$color-secondary:#f9ba4c !default;
 @import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
 
 /* Bootstrap Variables Goes Here */
 
 @import "other/font-fix";
 body {
-    padding-top: 70px;
+    padding-top: 0px;
+    font-family: sans-serif;
 }
 
 img.loading {
@@ -48,7 +52,7 @@ a,
 footer {
     font-size: 12px;
     background-color: #eee;
-    padding: 10px 0;
+    padding: 10px 0; // display: inline-block;
     p {
         margin: 0;
     }
@@ -118,4 +122,396 @@ header {
 
 .nav-up {
     transform: translateY(-100%);
+}
+
+// navbar design
+.cus-nav {
+    background-color: $color-primary;
+    color: $color-secondary;
+    height: 600px;
+    .navbar-nav>li {
+        float: unset;
+    }
+    .col-md-3,
+    .col-sm-3,
+    .col-md-9,
+    .col-sm-9,
+    .navbar-collapse {
+        padding: 0px;
+    }
+    .navbar-nav>li>a {
+        color: $color-secondary;
+        background: #295d83;
+        margin: 15px 0px;
+        text-align: center;
+        font-size: 25px;
+        font-weight: 100;
+    }
+    .logo-img {
+        width: 95%;
+        margin: 0 auto;
+        margin-top: 35px;
+        margin-bottom: 40px;
+    }
+    .left-nav-img {
+        img {
+            height: 598px;
+            width: 100%;
+            object-fit: cover;
+        }
+        img:nth-child(2) {
+            position: absolute;
+            top: 0;
+            object-fit: fill;
+        }
+    }
+    .navbar-nav>.active>a,
+    .navbar-nav>.active>a:hover,
+    .navbar-nav>.active>a:focus {
+        color: $color-secondary;
+        background-color: white;
+    }
+    .navbar-nav>li>a:hover,
+    .navbar-nav>li>a:focus {
+        color: $color-secondary;
+        background-color: white;
+    }
+    .social_nav {
+        text-align: center;
+        img {
+            width: 35px;
+            margin: 15px;
+        }
+    }
+}
+
+.bg-second {
+    background: $color-secondary;
+    color: $color-primary;
+}
+
+.bg-first {
+    background: $color-primary;
+}
+
+// some common class
+.border-line {
+    border-bottom: 2px solid $color-secondary;
+}
+
+p {
+    font-size: 17px;
+}
+
+.border-bottom {
+    border-bottom: 2px solid $color-primary-highlight;
+}
+
+.border-right {
+    border-right: 2px solid $color-primary-highlight;
+}
+
+.on_hover {
+    display: none;
+}
+
+.cursor_pointer {
+    cursor: pointer;
+}
+
+.padding-0 {
+    padding: 0px
+}
+
+.cust-btn {
+    background: $color-primary;
+    color: $color-secondary;
+    outline: none;
+    border: none;
+    padding: 8px 25px;
+    text-transform: uppercase;
+    font-weight: 100;
+    margin: 10px 0px;
+    &:hover {
+        background: $color-secondary;
+        color: $color-primary;
+    }
+    &:focus {
+        background: $color-secondary;
+        color: $color-primary;
+    }
+}
+
+//home 
+.s1 {
+    padding: 35px 0px;
+    padding-bottom: 40px;
+    img {
+        float: right;
+        width: 55%;
+        margin-right: 40px;
+    }
+    p {
+        padding: 10px 0px;
+        padding-right: 20px;
+        word-break: break-all;
+    }
+}
+
+.s2 {
+    background: #f7f7f7;
+    img {
+        margin: 15px auto;
+        max-height: 70px;
+    }
+    .block {
+        padding: 10px;
+        &:hover {
+            background: $color-primary;
+            color: white;
+            .cust-btn {
+                background: $color-secondary;
+                color: $color-primary;
+            }
+            .on_hover {
+                display: block;
+            }
+            .no_hover {
+                display: none;
+            }
+        }
+    }
+    .txt {
+        margin: 0px 20px;
+    }
+}
+
+.s3 {
+    background: $color-secondary;
+    margin: 20px 0px;
+    .block1 {
+        border-right: 8px solid white;
+        padding: 15px;
+    }
+    .h3 {
+        margin: 0px;
+    }
+    .marquee-animation {
+        overflow: hidden;
+        /* margin-top: 14px; */
+        padding: 15px 0px;
+        height: 45px;
+        div {
+            width: auto;
+            white-space: nowrap;
+            position: absolute;
+            animation: marq 50s linear infinite;
+            span {
+                padding-left: 20px;
+                i {
+                    color: white;
+                    padding-right: 30px;
+                }
+            }
+        }
+    }
+}
+
+.s4 {
+    margin: 20px 0px;
+    .block1 {
+        margin-left: 50px;
+        color: white;
+        font-weight: 100;
+        .title {
+            padding-top: 35px;
+            padding-left: 35px;
+            margin: 0px;
+            font-weight: 100;
+        }
+        .tabset {
+            padding: 20px 15px;
+            padding-bottom: 80px;
+            .tab {
+                padding: 15px;
+                margin: 20px;
+                background-color: $color-primary-highlight;
+                border-left: 5px solid white;
+                font-size: 20px;
+            }
+            .true {
+                border-left: 5px solid $color-secondary;
+            }
+        }
+    }
+    .block2 {
+        margin-top: 25PX;
+        .pic {
+            padding-bottom: 10px;
+        }
+        img {
+            width: 200px;
+            height: 100px;
+            object-fit: cover;
+        }
+    }
+}
+
+.s5 {
+    background: $color-primary;
+    color: white;
+    padding: 10px 0px;
+    .h3 {
+        font-weight: 100;
+        margin: 10px 0px;
+    }
+    p {
+        font-size: 15px;
+        word-break: break-all;
+    }
+    .icon {
+        width: 80px;
+        margin: 0 auto;
+    }
+    .newsletter {
+        border-right: 4px solid $color-secondary;
+        padding: 0px;
+    }
+    .quiz {
+        padding-left: 20px;
+    }
+    .right {
+        padding-bottom: 15px;
+    }
+    .left {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    .nextpage {
+        position: absolute;
+        right: 25px;
+        width: 5%;
+        bottom: 0;
+    }
+}
+
+.s6 {
+    background: #f7f7f7;
+    padding: 20px 0px;
+    .title {
+        color: #176eaf;
+        font-weight: 100;
+    }
+    .block1 {
+        border-right: 3px solid $color-primary;
+        .subscribe_field {
+            form {
+                position: relative;
+            }
+            position: relative;
+            padding: 25px 0px;
+            input[type=email] {
+                width: 95%;
+                height: 40px;
+                -webkit-text-fill-color: rgba(25, 1, 1, 0.24);
+                font-size: 18px;
+                &:focus {
+                    -webkit-text-fill-color: black;
+                }
+            }
+            .cust-btn {
+                position: absolute;
+                right: 6%;
+                top: 7px;
+                margin: 0px;
+                /* height: 31px; */
+                padding: 3px 25px;
+            }
+        }
+        .social {
+            img {
+                width: 50px;
+                margin: 0px 15px;
+            }
+        }
+        .contact {
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+    }
+    .block2 {
+        .nomination_form {
+            padding: 25px 0px;
+            .field {
+                padding: 10px 0px;
+                span {
+                    padding-left: 15px;
+                    font-size: 16px;
+                }
+                input {
+                    float: right;
+                    width: 65%;
+                }
+            }
+            .cust-btn {
+                margin-top: 30px;
+            }
+        }
+    }
+}
+
+@keyframes marq {
+    0% {
+        left: 100%;
+    }
+    100% {
+        left: -300%;
+    }
+}
+
+//footer
+.footer {
+    a {
+        color: inherit;
+        text-decoration: none;
+        &:hover,
+        &:focus {
+            color: inherit;
+            text-decoration: none;
+        }
+    }
+    a:hover,
+    a:focus {
+        color: inherit;
+        text-decoration: none;
+    }
+    padding: 0px;
+    .footer-nav {
+        text-align: center;
+    }
+    ul {
+        list-style: none;
+        padding: 0px;
+        margin: 0px;
+        li {
+            display: inline-block;
+            padding: 15px 0px;
+            font-size: 16px;
+            &:after {
+                content: "|";
+                padding: 0px 5px;
+            }
+            &:last-child:after {
+                content: none;
+                padding: 0px 5px;
+            }
+        }
+    }
+    .footer-img {
+        img {
+            margin: 0 auto;
+            padding: 20px;
+            width: 120px;
+        }
+    }
 }

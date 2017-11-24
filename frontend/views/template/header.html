@@ -1,6 +1,6 @@
-<header hide-on-scroll>
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
+<header>
+    <nav class="navbar navbar-default cus-nav">
+        <div class="container_fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-collapse" aria-expanded="false">
                 <span class="sr-only">Toggle navigation</span>
@@ -8,11 +8,18 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-                <a class="navbar-brand" ui-sref="home"><img src="/img/logo.png" alt="logo" width="20"> </a>
+                <!-- <a class="navbar-brand" ui-sref="home"><img src="/img/logo.png" alt="logo" width="20"> </a> -->
             </div>
-            <div class="collapse navbar-collapse" id="nav-collapse">
-                <div ng-include="template.menu" class="template menu"></div>
+            <div class="col-md-3 col-sm-3">
+                <div class="collapse navbar-collapse" id="nav-collapse">
+                    <div ng-include="template.menu" class="template menu"></div>
+                </div>
             </div>
-        </div>
+            <div class="col-md-9 col-sm-9">
+                <div class="left-nav-img">
+                    <img class="img-responsive" src="img/headerimg.png">
+                    <img class="img-responsive" src="img/headerimg1.png">
+                </div>
+            </div>
     </nav>
 </header>

@@ -1,4 +1,6 @@
 <ul class="nav navbar-nav">
+  <li class="hidden-xs"><img class="img-responsive logo-img" src="img/logo.png" alt="logo" />
+  </li>
   <li ng-repeat="menu in navigation" ui-sref-active="active">
     <a ui-sref="{{menu.anchor}}" ng-if="menu.anchor">{{menu.name}}</a>
     <a href="{{menu.link}}" ng-if="menu.link">{{menu.name}}</a>
@@ -9,4 +11,11 @@
       </li>
     </ul>
   </li>
+  <li>
+    <div class="social_nav">
+      <a class="#" target="_blank"> <img src="img/social/facebook.png"></a>
+      <a class="#" target="_blank"><img src="img/social/twitter.png"></a>
+      <a class="#" target="_blank"> <img src="img/social/instagram.png"></a>
+
+    </div>
 </ul>

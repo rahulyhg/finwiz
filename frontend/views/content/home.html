@@ -1,32 +1,206 @@
-<div class="container">
-    <a class="btn btn-default" ng-click="buttonClick()">Demo Button</a>
-    <flex-slider flex-slide="s in mySlides" prev-text="" next-text="">
-        <li>
-            <img ng-src="{{s}}" class="img-full">
-        </li>
-    </flex-slider>
-    <swiper autoplay="5000" effect="slide" slides-per-view="1" loop="true">
-        <slides>
-            <slide ng-repeat="s in mySlides">
-                <img ng-src="{{s}}" class="img-full" noloading="true">
-            </slide>
-        </slides>
-        <prev></prev>
-        <next></next>
-        <pagination></pagination>
-    </swiper>
-    <div class="row">
-        <div class="col-md-2" ng-repeat="s in mySlides">
-            <a ng-href="{{s}}" data-fancybox="group" rel="gallary" fancybox>
-                <img ng-src="{{s}}" class="img-full">
-            </a>
+<section id="about" class="about s1">
+    <div class="container-fluid">
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <img class="about_pic" src="img/about-pic.png">
+
         </div>
-        <div class="col-md-2">
-            <a class="various" data-fancybox="group" rel="gallary" href="http://www.youtube.com/embed/L9szn1QQfas?autoplay=1" fancybox><img ng-src="http://img.youtube.com/vi/L9szn1QQfas/maxresdefault.jpg" class="img-full"></a>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="h3 "><span class="border-line">ABOUT</span> US</div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec turpis quis odio interdum commodo. Vestibulum
+                non sem nec orci vestibulum ullamcorper. Maecenas quam ipsum, accumsan non massa at, sodales ornare nisl.
+                Nam aliquam eu mauris quis malesuada. Phasellus luctus mollis vestibulum. Donec pretium rutrum orci, vitae
+                eleifend lectus semper et. Sed venenatis vulputate erat nec luctus. Proin sit amet congue lacus, ut congue
+                turpis. In laoreet vestibulum odio in congue. Vestibulum vitae elementum tortor. </p>
+            <div class="text-center">
+                <div class="btn btn-primary cust-btn">Know More</div>
+            </div>
         </div>
-        <div class="col-md-2">
-            <a class="various" data-fancybox="group" rel="gallary" href="https://vimeo.com/191947042" class="img-full"></a>
+</section>
+
+<section class="s2">
+    <div class="container">
+        <div class="row border-bottom">
+            <div class="col-md-6 col-sm-6 articles block border-right text-center">
+                <div class="title h3">ARTICLES</div>
+                <div class="tit_img">
+                    <img class="img-responsive no_hover" src="img/icon/article.png">
+                    <img class="img-responsive on_hover" src="img/icon/article_yellow.png">
+                </div>
+                <div class="txt">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec turpis quis odio interdum commodo.
+                    </p>
+                </div>
+                <div class="btn btn-primary cust-btn">KNOW MORE</div>
+            </div>
+            <div class="col-md-6 col-sm-6 quick_bites block text-center">
+                <div class="title h3">QUICK BITES</div>
+                <div class="tit_img">
+                    <img class="img-responsive no_hover" src="img/icon/quick-bites.png">
+                    <img class="img-responsive on_hover" src="img/icon/quick-bites-yellow.png">
+                </div>
+                <div class="txt">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec turpis quis odio interdum commodo.
+                    </p>
+                </div>
+                <div class="btn btn-primary cust-btn">KNOW MORE</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-sm-6 testimonials block border-right text-center">
+                <div class="title h3">TESTIMONIALS</div>
+                <div class="tit_img">
+                    <img class="img-responsive no_hover" src="img/icon/testimonials.png">
+                    <img class="img-responsive on_hover" src="img/icon/testimonials_yellow.png">
+                </div>
+                <div class="txt">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec turpis quis odio interdum commodo.
+                    </p>
+                </div>
+                <div class="btn btn-primary cust-btn">KNOW MORE</div>
+            </div>
+            <div class="col-md-6 col-sm-6 vlogs block  block-border1 text-center">
+                <div class="title h3">VLOGS</div>
+                <div class="tit_img">
+                    <img class="img-responsive no_hover" src="img/icon/vlogs.png">
+                    <img class="img-responsive on_hover" src="img/icon/vlogs_yellow.png">
+                </div>
+                <div class="txt">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec turpis quis odio interdum commodo.
+                    </p>
+                </div>
+                <div class="btn btn-primary cust-btn">KNOW MORE</div>
+            </div>
         </div>
     </div>
+</section>
 
-</div>
+<section class=" s3 fun_facts bg-second">
+    <div class="container-fluid">
+
+        <div class="col-md-2 col-sm-2 block1">
+            <div class="h3">FUN FACTS</div>
+        </div>
+        <div class="col-md-10 col-sm-10 block2 marquee-animation">
+            <div class="pull-left">
+                <span><i class="fa fa-circle" aria-hidden="true"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec turpis quis odio interdum commodo. Vestibulum
+                non sem nec orci vestibulum</span>
+                <span><i class="fa fa-circle" aria-hidden="true"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec turpis quis odio interdum commodo. Vestibulum
+                non sem nec orci vestibulum</span>
+                <span><i class="fa fa-circle" aria-hidden="true"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec turpis quis odio interdum commodo. Vestibulum
+                non sem nec orci vestibulum</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class=" s4 gallery" ng-init="tab='episodes'">
+    <div class="container-fluid">
+        <div class="col-md-6 col-sm-6">
+            <div class="bg-first block1">
+                <div class="h3 title "> GALLERY</div>
+                <div class="tabset">
+                    <div class="cursor_pointer tab {{tab=='episodes'}}" ng-click="tab='episodes'">EPISODES</div>
+                    <div class="cursor_pointer tab {{tab=='photos'}}" ng-click="tab='photos'">PHOTOS</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-6">
+            <div class="block2">
+                <div class="episodes" ng-show="tab=='episodes'">
+                    <div class="col-md-4 col-sm-4 pic" ng-repeat="x in episode">
+                        <a fancybox data-fancybox="episode" href="{{x.url}}" rel="episode">
+                            <img src="{{x.img}}" class="img-responsive">
+                        </a>
+                    </div>
+                    <div class="col-md-12 text-center">
+                        <div class="btn btn-primary cust-btn">VIEW MORE</div>
+                    </div>
+
+                </div>
+                <div class="photos" ng-show="tab=='photos'">
+                    <div class="col-md-4 col-sm-4 pic" ng-repeat="x in photo">
+                        <a fancybox href="{{x}}" data-fancybox="group" rel="photo"><img src="{{x}}" class="img-responsive"></a>
+                    </div>
+                    <div class="col-md-12 text-center">
+                        <div class="btn btn-primary cust-btn">VIEW MORE</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="s5 news_quiz">
+    <div class="container-fluid">
+        <div class="col-md-6 col-sm-6 padding-0 newsletter  ">
+            <div class="h3">NEWSLETTER</div>
+            <div class="col-md-2 col-sm-2 padding-0 right"><img class="img-responsive icon" src="img/icon/news.png"></div>
+            <div class="col-md-10 col-sm-10 padding-0 left">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec turpis quis odio interdum commodo. Vestibulum
+                    non sem nec orci vestibulum</p>
+            </div>
+            <div class="pull-right"><a href=""><img src="img/icon/nextpage.png" class="img-responsive nextpage "></a></div>
+        </div>
+        <div class="col-md-6 col-sm-6 padding-0 quiz">
+            <div class="h3">QUIZ</div>
+            <div class="col-md-2 col-sm-2 padding-0 right"><img class="img-responsive icon" src="img/icon/quiz.png"></div>
+            <div class="col-md-10 col-sm-10 padding-0 left">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec turpis quis odio interdum commodo. Vestibulum
+                    non sem nec orci vestibulum</p>
+            </div>
+            <div class="pull-right"><a href=""><img src="img/icon/nextpage.png" class="img-responsive nextpage"></a></div>
+        </div>
+    </div>
+</section>
+
+<section class="s6 subscribe_nominate">
+    <div class="container-fluid">
+        <div class="col-md-6 block1">
+            <div class="h3 title"><span class="border-line">SUBSCRIBE</span> FOR UPDATES</div>
+            <div class="subscribe_field">
+                <form name="subscribe">
+                    <input class="input_field" type="email" placeholder="Enter Your Email ID">
+                    <button class="btn btn-primary cust-btn">SUBSCRIBE</button>
+                </form>
+            </div>
+            <div class="social text-center">
+                <a href="#" target="_blank">  
+                    <img src="img/icon/facebook.png">
+                </a>
+                <a href="#" target="_blank">
+                    <img src="img/icon/twitter.png">
+                </a>
+                <a href="#" target="_blank">
+                    <img src="img/icon/instagram.png">
+                </a>
+            </div>
+            <div class="contact text-center">
+                <div class="h4">CONTACT</div>
+                <div> NSE - Corporate Office</div>
+                <div> National Stock Exchange of India Ltd.,Exchange Plaza,</div>
+                <div> C-1, Block G, Bandra Kurla Complex,</div>
+                <div>Bandra (E) Mumbai – 400 051 </div>
+                <div>Tel No: (022) 26598100 - 8114 </div>
+                <div>Fax No: (022) 26598120</div>
+                <div>Visit us – <a href="www.nseindia.com">www.nseindia.com</a></div>
+
+            </div>
+
+        </div>
+        <div class="col-md-6 block2">
+            <div class=" h3 title"><span class="border-line">NOMINATE</span> YOUR COMPANY</div>
+            <div class="nomination_form">
+                <form name="nomination">
+                    <div class="field"> <span>Name of Company</span> <input type="text"></div>
+                    <div class="field"> <span>Contact Person</span><input type="text"></div>
+                    <div class="field"> <span>Designation</span><input type="text"></div>
+                    <div class="field"> <span>Contact No</span><input type="number"></div>
+                    <div class="field"> <span>Email ID</span><input type="email"></div>
+                    <div class="pull-right"> <button class="btn btn-primary cust-btn">SUBMIT</button></div>
+                </form>
+            </div>
+
+
+        </div>
+    </div>
+</section>
