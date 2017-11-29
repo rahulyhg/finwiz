@@ -2,7 +2,9 @@
   <li class="hidden-xs"><img class="img-responsive logo-img" src="img/logo.png" alt="logo" />
   </li>
   <li ng-repeat="menu in navigation" ui-sref-active="active">
-    <a ui-sref="{{menu.anchor}}" ng-if="menu.anchor">{{menu.name}}</a>
+    <a ui-sref="{{menu.anchor}}" ng-click="goToAnchor(menu.anchor,menu.id)" ng-if="menu.anchor">{{menu.name}}</a>
+    <!-- <a ui-sref="{{menu.anchor}}" ng-if="menu.anchor">{{menu.name}}</a> -->
+
     <a href="{{menu.link}}" ng-if="menu.link">{{menu.name}}</a>
     <ul class="dropdown-menu" ng-if="menu.subnav!='';">
       <li ng-repeat="submenu in menu.subnav" ui-sref-active="active">

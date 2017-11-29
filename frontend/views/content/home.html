@@ -74,13 +74,13 @@
     </div>
 </section>
 
-<section class=" s3 fun_facts bg-second">
+<section id="" class=" s3 fun_facts bg-second">
     <div class="container-fluid">
 
-        <div class="col-md-2 col-sm-2 block1">
+        <div class="col-md-2 col-sm-3 block1">
             <div class="h3">FUN FACTS</div>
         </div>
-        <div class="col-md-10 col-sm-10 block2 marquee-animation">
+        <div class="col-md-10 col-sm-9 block2 marquee-animation">
             <div class="pull-left">
                 <span><i class="fa fa-circle" aria-hidden="true"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec turpis quis odio interdum commodo. Vestibulum
                 non sem nec orci vestibulum</span>
@@ -95,7 +95,7 @@
 
 <section class=" s4 gallery" ng-init="tab='episodes'">
     <div class="container-fluid">
-        <div class="col-md-6 col-sm-6">
+        <div class="col-md-6 col-sm-6 col-xs-12">
             <div class="bg-first block1">
                 <div class="h3 title "> GALLERY</div>
                 <div class="tabset">
@@ -104,10 +104,10 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6 col-sm-6">
+        <div class="col-md-6 col-sm-6 col-xs-12">
             <div class="block2">
                 <div class="episodes" ng-show="tab=='episodes'">
-                    <div class="col-md-4 col-sm-4 pic" ng-repeat="x in episode">
+                    <div class="col-md-4 col-sm-4 col-xs-6 pic" ng-repeat="x in episode">
                         <a fancybox data-fancybox="episode" href="{{x.url}}" rel="episode">
                             <img src="{{x.img}}" class="img-responsive">
                         </a>
@@ -118,7 +118,7 @@
 
                 </div>
                 <div class="photos" ng-show="tab=='photos'">
-                    <div class="col-md-4 col-sm-4 pic" ng-repeat="x in photo">
+                    <div class="col-md-4 col-sm-4 col-xs-6 pic" ng-repeat="x in photo">
                         <a fancybox href="{{x}}" data-fancybox="group" rel="photo"><img src="{{x}}" class="img-responsive"></a>
                     </div>
                     <div class="col-md-12 text-center">
@@ -153,9 +153,9 @@
     </div>
 </section>
 
-<section class="s6 subscribe_nominate">
+<section id="s6" class="s6 subscribe_nominate">
     <div class="container-fluid">
-        <div class="col-md-6 block1">
+        <div class="col-md-6 col-sm-6 block1">
             <div class="h3 title"><span class="border-line">SUBSCRIBE</span> FOR UPDATES</div>
             <div class="subscribe_field">
                 <form name="subscribe">
@@ -187,7 +187,7 @@
             </div>
 
         </div>
-        <div class="col-md-6 block2">
+        <div class="col-md-6 col-sm-6 block2">
             <div class=" h3 title"><span class="border-line">NOMINATE</span> YOUR COMPANY</div>
             <div class="nomination_form">
                 <form name="nomination">

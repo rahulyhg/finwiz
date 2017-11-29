@@ -1,3 +1,47 @@
  @media (max-width: $screen-xs-max) {
      // Mobile
+     .navbar-brand {
+         display: block;
+         img {
+             width: 130px;
+         }
+     }
+     .border-right {
+         border: none;
+     }
+     .border-bottom {
+         border: none;
+     }
+     .s3 .block1 {
+         border-right: none;
+         text-align: center;
+     }
+     .s4 .block1 {
+         margin: 0px;
+     }
+     .s5 .newsletter {
+         border-right: 0px;
+         text-align: center;
+     }
+     .s5 .quiz {
+         text-align: center;
+         padding-top: 20px;
+     }
+     .s6 .block1 {
+         border-right: 0px;
+         padding: 0px;
+     }
+     .s6 .block2 {
+         padding: 0px;
+         padding-top: 25px;
+     }
+     .s6 .title {
+         font-size: 15px;
+     }
+     .s6 .block1 .subscribe_field input[type=email] {
+         font-size: 12px;
+     }
+     .s6 .block2 .nomination_form .field input {
+         width: 40%;
+     }
  }

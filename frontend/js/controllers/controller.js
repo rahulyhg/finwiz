@@ -1,4 +1,4 @@
-myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
+myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationService, $timeout, $location, $document, $state) {
         $scope.template = TemplateService.getHTML("content/home.html");
         TemplateService.title = "Home"; //This is the Title of the Website
         $scope.navigation = NavigationService.getNavigation();
@@ -42,7 +42,25 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
         ]
 
     })
+    .controller('HeaderCtrl', function ($scope, TemplateService, NavigationService, $timeout, $location, $state, toastr, $http) {
+        // $scope.template = TemplateService.getHTML("content/grid.html");
+        // TemplateService.title = "Grid"; // This is the Title of the Website
+        $scope.navigation = NavigationService.getNavigation();
+        $scope.goToAnchor = function (anchor, id) {
+            console.log("inside anchor")
+            $state.go(anchor)
+            // $location.hash(anchor);
+            if (id) {
+                $timeout(function () {
+                    // $anchorScroll();
+                    $('html,body').animate({
+                        scrollTop: $('#' + id).offset().top
+                    }, "slow");
+                }, 500);
+            }
+        };
 
+    })
     .controller('FormCtrl', function ($scope, TemplateService, NavigationService, $timeout, toastr, $http) {
         $scope.template = TemplateService.getHTML("content/form.html");
         TemplateService.title = "Form"; //This is the Title of the Website
@@ -69,67 +87,74 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
         $scope.navigation = NavigationService.getNavigation();
 
     })
-    .controller('footerCtrl', function ($scope, $uibModal, TemplateService, NavigationService, $timeout, toastr, $http) {
+    .controller('footerCtrl', function ($scope, $uibModal, TemplateService, NavigationService, $timeout, $location, $state, toastr, $http) {
         // $scope.template = TemplateService.getHTML("content/grid.html");
         // TemplateService.title = "footer"; // This is the Title of the Website
         // $scope.navigation = NavigationService.getNavigation();
-        $scope.opendisclaimer = function (size) {
+        $scope.opendisclaimer = function () {
             var modalInstance = $uibModal.open({
                 animation: true,
                 ariaLabelledBy: 'modal-title',
                 ariaDescribedBy: 'modal-body',
                 templateUrl: 'views/model/disclaimer.html',
-
-                size: size,
-                // resolve: {
-                //     items: function () {
-                //         return $ctrl.items;
-                //     }
-                // }
+                size: 'lg',
             });
-            console.log(modalInstance);
+
         }
-        $scope.footerNav = [{
-                name: 'About',
-                anchor: 'about',
-            },
-            {
-                name: 'Articles',
-                anchor: 'articles',
-            },
-            {
-                name: 'Quick Bites',
-                anchor: 'quickbites',
-            }, {
-                name: 'Testimonials',
-                anchor: 'testimonials',
-            }, {
-                name: 'VLogs',
-                anchor: 'vlogs',
-            }, {
-                name: 'Gallery',
-                anchor: 'gallery',
-            },
-            {
-                name: 'Calculator',
-                anchor: 'calculator',
-            }, {
-                name: 'Quiz',
-                anchor: 'quiz',
-            }, {
-                name: 'Nominate your Company',
-                anchor: 'nominate_your_company',
-            }, {
-                name: 'Site Map',
-                anchor: 'site_map',
-            }, {
-                name: "Disclaimer",
-                anchor: "disclaimer",
-            }, {
-                name: 'Terms',
-                anchor: 'terms',
+        $scope.goToAnchor = function (anchor, id) {
+            console.log("inside footer anchor")
+            $state.go(anchor)
+            // $location.hash(anchor);
+            if (id) {
+                $timeout(function () {
+                    // $anchorScroll();
+                    $('html,body').animate({
+                        scrollTop: $('#' + id).offset().top
+                    }, "slow");
+                }, 500);
             }
-        ]
+        };
+        // $scope.footerNav = [{
+        //         name: 'About',
+        //         anchor: 'about',
+        //     },
+        //     {
+        //         name: 'Articles',
+        //         anchor: 'articles',
+        //     },
+        //     {
+        //         name: 'Quick Bites',
+        //         anchor: 'quickbites',
+        //     }, {
+        //         name: 'Testimonials',
+        //         anchor: 'testimonials',
+        //     }, {
+        //         name: 'VLogs',
+        //         anchor: 'vlogs',
+        //     }, {
+        //         name: 'Gallery',
+        //         anchor: 'gallery',
+        //     },
+        //     {
+        //         name: 'Calculator',
+        //         anchor: 'calculator',
+        //     }, {
+        //         name: 'Quiz',
+        //         anchor: 'quiz',
+        //     }, {
+        //         name: 'Nominate your Company',
+        //         anchor: 'nominate_your_company',
+        //     }, {
+        //         name: 'Site Map',
+        //         anchor: 'site_map',
+        //     }, {
+        //         name: "Disclaimer",
+        //         anchor: "disclaimer",
+        //     }, {
+        //         name: 'Terms',
+        //         anchor: 'terms',
+        //     }
+        // ]
 
     })
 

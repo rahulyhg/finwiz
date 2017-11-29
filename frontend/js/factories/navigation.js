@@ -3,6 +3,8 @@ myApp.factory('NavigationService', function () {
             name: "ABOUT",
             classis: "active",
             anchor: "home",
+            scroll: true,
+            id: "about",
             subnav: []
         }, {
             name: "ARTICLES",

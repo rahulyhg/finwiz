@@ -124,6 +124,10 @@ header {
     transform: translateY(-100%);
 }
 
+.navbar-brand {
+    display: none;
+}
+
 // navbar design
 .cus-nav {
     background-color: $color-primary;
@@ -159,7 +163,7 @@ header {
             width: 100%;
             object-fit: cover;
         }
-        img:nth-child(2) {
+        .img2 {
             position: absolute;
             top: 0;
             object-fit: fill;
@@ -513,5 +517,31 @@ p {
             padding: 20px;
             width: 120px;
         }
+    }
+}
+
+//model 
+.disclaimer_model {
+    background: $color-primary;
+    color: $color-secondary;
+    padding: 60px;
+    .heading {
+        padding: 20px;
+        padding-left: 0px;
+        margin: 0px;
+        text-transform: uppercase;
+    }
+    .content {
+        font-size: 15px;
+        word-spacing: 5px;
+    }
+    .close_model {
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 40px;
+        padding: 10px;
+        padding-top: 0px;
+        color: $color-secondary;
     }
 }

@@ -2,20 +2,50 @@
     <div class="container-fluid ">
         <div class="row">
             <div class="footer-nav bg-second">
-                <ul>
+                <!-- <ul>
                     <li ng-repeat="x in footerNav">
                         <a ng-if="x.model" ng-click="">{{x.model}} </a>
                         <a href="#" ng-if="!x.model"> {{x.name}}</a>
                     </li>
-                </ul>
-                <!-- <ul>
-                    <li>
-                        <a href="#" ng-if="!x.model">  About</a>
-                    </li>
-                    <li>
-                        <a href="#" ng-if="!x.model">  Articles </a>
-                    </li>
                 </ul> -->
+                <ul>
+                    <li>
+                        <a ng-click="goToAnchor('home','about')">  About</a>
+                    </li>
+                    <li>
+                        <a href="#">  Articles </a>
+                    </li>
+                    <li>
+                        <a href="#">  Quick Bites </a>
+                    </li>
+                    <li>
+                        <a href="#">  Testimonials </a>
+                    </li>
+                    <li>
+                        <a href="#">  VLogs </a>
+                    </li>
+                    <li>
+                        <a href="#">  Gallery</a>
+                    </li>
+                    <li>
+                        <a href="#">  Calculator </a>
+                    </li>
+                    <li>
+                        <a href="#">  Quiz </a>
+                    </li>
+                    <li>
+                        <a href="#">  Nominate your Company </a>
+                    </li>
+                    <li>
+                        <a href="#">Site Map</a>
+                    </li>
+                    <li>
+                        <a href="#" ng-click="opendisclaimer()"> Disclaimer</a>
+                    </li>
+                    <li>
+                        <a href="#"> Terms </a>
+                    </li>
+                </ul>
             </div>
             <div class="text-center bg-first">
                 <div class="footer-img"><img src="img/footer.png" class="img-responsive"></div>
@@ -38,7 +68,7 @@
                 </div> -->
             </div>
 
-            <!-- <button type="button" class="btn btn-default" ng-click="opendisclaimer('g')">Large modal</button> -->
+
         </div>
     </div>
 </footer>
