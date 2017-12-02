@@ -1,5 +1,28 @@
-<div class="">
+<div class="newsletter">
+    <div class="container-fluid">
+        <div class="head">
+            <div class="tit"><span>NEWSLETTER</span></div>
+            <img src="img/newsletter.png" class="img-responsive">
+        </div>
 
-    dfhiusjfndsj
 
+        <div class="cnt">
+
+
+            <div class="tab_set">
+                <div class="tab cursor_pointer" ng-repeat="x in tabs" ng-click="selectNewsLetter(x)">
+                    {{x.name}}
+                </div>
+            </div>
+
+            <div class="selected_newsletter">
+                <div class="block " ng-repeat="x in selectedNewsLetter.content">
+                    <div class="heading">{{x.heading}}
+                    </div>
+                    <div class="col-md-8 col-sm-8 ">{{x.txt}}</div>
+                    <div class="col-md-4 col-sm-4"><img class="img-responsive" src="{{x.img}}"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

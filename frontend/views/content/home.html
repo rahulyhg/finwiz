@@ -39,7 +39,7 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec turpis quis odio interdum commodo.
                     </p>
                 </div>
-                <div class="btn btn-primary cust-btn">KNOW MORE</div>
+                <div class="btn btn-primary cust-btn" ui-sref="article">KNOW MORE</div>
             </div>
             <div class="col-md-6 col-sm-6 quick_bites block text-center">
                 <div class="title h3">QUICK BITES</div>
@@ -105,7 +105,7 @@
     </div>
 </section>
 
-<section class=" s4 gallery" ng-init="tab='episodes'">
+<section id="gallery" class=" s4 gallery" ng-init="tab='episodes'">
     <div class="container-fluid">
         <div class="col-md-6 col-sm-6 col-xs-12">
             <div class="bg-first block1">
@@ -160,7 +160,7 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec turpis quis odio interdum commodo. Vestibulum
                     non sem nec orci vestibulum</p>
             </div>
-            <div class="pull-right"><a href=""><img src="img/icon/nextpage.png" class="img-responsive nextpage"></a></div>
+            <div class="pull-right"><a href="" ng-click="openQuizModel()"><img src="img/icon/nextpage.png" class="img-responsive nextpage"></a></div>
         </div>
     </div>
 </section>

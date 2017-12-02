@@ -389,7 +389,7 @@ p {
             width: auto;
             white-space: nowrap;
             position: absolute;
-            animation: marq 55s linear infinite;
+            animation: marq 80s linear infinite;
             span {
                 padding-left: 20px;
                 i {
@@ -647,6 +647,52 @@ p {
     }
 }
 
+.quizlogin_model {
+    padding: 35px 0px;
+    font-weight: 100;
+    padding-bottom: 0;
+    .close_model {
+        font-size: 25px;
+    }
+    .head {
+        margin-top: 5px;
+        margin-bottom: 0px;
+        .tit {
+            margin-left: 10px;
+            padding-left: 20px;
+            margin-right: 10px;
+        }
+    }
+    .login_form {
+        padding: 11px 40px;
+        width: 90%;
+        margin: 0 auto;
+        .t1 {
+            font-size: 1.5em;
+            text-align: center;
+            margin-bottom: 35px;
+        }
+        .field {
+            margin: 25px 0px;
+            span {
+                font-size: 20px;
+                font-weight: normal;
+            }
+            input {
+                float: right;
+                width: 70%;
+                background: #84A4BA;
+                padding: 0px;
+                border: 0;
+                height: 22px;
+            }
+        }
+        .cust-btn {
+            text-align: center;
+        }
+    }
+}
+
 //article
 .article {
     .cnt {
@@ -688,6 +734,9 @@ p {
                 height: 90px;
                 overflow: hidden;
                 transition: all 1s;
+                img {
+                    width: 80%;
+                }
                 .txt {
                     text-align: justify;
                     overflow: hidden;
@@ -711,4 +760,22 @@ p {
 
 .artical_float_bottom {
     top: 0
+}
+
+//newsletter
+.newsletter {
+    .cnt {
+        margin-right: 25px;
+        .tab_set {
+            text-align: right;
+            .tab {
+                /* float: right; */
+                display: inline-block;
+                padding: 5px 15px;
+                background: $color-primary;
+                margin: 0px 5px;
+                color: white;
+            }
+        }
+    }
 }

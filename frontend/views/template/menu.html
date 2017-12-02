@@ -1,7 +1,7 @@
 <ul class="nav navbar-nav">
   <li class="hidden-xs"><img class="img-responsive logo-img" src="img/logo.png" alt="logo" />
   </li>
-  <li ng-repeat="menu in navigation" ui-sref-active="active">
+  <li ng-repeat="menu in navigation">
     <a ui-sref="{{menu.anchor}}" ng-click="goToAnchor(menu.anchor,menu.id)" ng-if="menu.anchor">{{menu.name}}</a>
     <!-- <a ui-sref="{{menu.anchor}}" ng-if="menu.anchor">{{menu.name}}</a> -->
 

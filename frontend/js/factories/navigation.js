@@ -33,7 +33,9 @@ myApp.factory('NavigationService', function () {
         {
             name: "GALLERY",
             classis: "active",
-            anchor: "grid",
+            anchor: "home",
+            scroll: true,
+            id: "gallery",
             subnav: []
         }
     ];
