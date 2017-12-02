@@ -1,0 +1,109 @@
+//scss for Gallery 
+.tit-gallery {
+    padding-right: 10px;
+}
+
+.max-height-gallery {
+    height: auto;
+}
+
+.min-height-gallery {
+    height: 350px;
+    overflow: hidden;
+}
+
+.gallery-pic-bottom {
+    margin-bottom: 20px;
+}
+
+.season-common {
+    a {
+        display: block;
+    }
+}
+
+.season-common {
+    position: relative;
+    border-top: none !important;
+    padding: 35px 30px 30px;
+    border: 4px solid #135381;
+    margin-bottom: 60px;
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 10%;
+        border-bottom: 4px solid #135381;
+    }
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 80%;
+        border-bottom: 4px solid #135381;
+    }
+}
+
+.season-text {
+    position: absolute;
+    top: -18px;
+    right: 112px;
+    .season-name {
+        font-size: 22px;
+        letter-spacing: 2px;
+        padding: 5px;
+        background: #105382;
+        color: #f9ba4d;
+        border: none;
+    }
+}
+
+.head-gallery {
+    margin-bottom: 100px;
+}
+
+.max-height-season {
+    height: auto;
+}
+
+.min-height-season {
+    height: 290px;
+    overflow: hidden;
+}
+
+.search-episode .input-group {
+    width: 100%;
+      margin-bottom: 50px;
+}
+
+.search-episode .form-control {
+    color: #f9ba4d;
+    border: 2px solid #105382;
+    padding: 16px;
+    border-right: none;
+    // background: rgba(0, 0, 0, .59);
+      background: transparent
+      }
+
+.search-episode .btn-search {
+    border: 2px solid #105382;
+    padding: 16px;
+    border-left: none;
+    background:  transparent;
+    background-image: url(../img/search-icon-mobile.png);
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.episodes {
+    position: relative;
+}
+.video-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include transform(translate(-50%,
+    -50%));
+}

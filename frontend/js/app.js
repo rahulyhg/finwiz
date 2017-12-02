@@ -44,6 +44,16 @@ myApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $locat
             url: "/article",
             templateUrl: tempateURL,
             controller: 'ArticleCtrl'
+        })
+          .state('gallery', {
+            url: "/gallery",
+            templateUrl: tempateURL,
+            controller: 'GalleryCtrl'
+        })
+          .state('episode', {
+            url: "/episode",
+            templateUrl: tempateURL,
+            controller: 'EpisodeCtrl'
         });
     $urlRouterProvider.otherwise("/");
     $locationProvider.html5Mode(isproduction);
