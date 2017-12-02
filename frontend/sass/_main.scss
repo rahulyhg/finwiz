@@ -18,6 +18,10 @@ body {
     font-family: sans-serif;
 }
 
+.content {
+    margin-top: 70px;
+}
+
 img.loading {
     text-align: center;
     opacity: 1;
@@ -124,12 +128,11 @@ header {
     transform: translateY(-100%);
 }
 
-.navbar-brand {
-    display: none;
-}
-
 // navbar design
-.cus-nav {
+.homepage-nav {
+    .navbar-brand {
+        display: none;
+    }
     background-color: $color-primary;
     color: $color-secondary;
     height: 600px;
@@ -189,6 +192,40 @@ header {
     }
 }
 
+.cust-nav {
+    background-color: $color-primary;
+    color: $color-secondary;
+    .navbar-brand {
+        padding: 10px;
+        img {
+            width: 140px;
+        }
+    }
+    .navbar-nav {
+        float: right;
+        li>a {
+            color: $color-secondary;
+        }
+    }
+    .navbar-nav>.active>a,
+    .navbar-nav>.active>a:hover,
+    .navbar-nav>.active>a:focus {
+        color: $color-secondary !important;
+        background: white;
+    }
+    .navbar-nav>li>a:hover,
+    .navbar-nav>li>a:focus {
+        color: $color-secondary;
+        background-color: white;
+    }
+    .social_nav {
+        img {
+            width: 30px;
+            margin: 8px;
+        }
+    }
+}
+
 .bg-second {
     background: $color-secondary;
     color: $color-primary;
@@ -199,6 +236,10 @@ header {
 }
 
 // some common class
+.padding_0 {
+    padding: 0px;
+}
+
 .border-line {
     border-bottom: 2px solid $color-secondary;
 }
@@ -227,6 +268,36 @@ p {
     padding: 0px
 }
 
+.head {
+    position: relative;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    .tit {
+        padding-left: 121px;
+        padding-top: 2px;
+        margin-left: 50px;
+        margin-right: 25px;
+        font-size: 25px;
+        font-weight: 100;
+        height: 38px;
+        background: rgba(16, 82, 130, 1);
+        background: -moz-linear-gradient(left, rgba(16, 82, 130, 1) 0%, rgba(16, 82, 130, 1) 49%, rgba(244, 183, 78, 1) 100%);
+        background: -webkit-gradient(left top, right top, color-stop(0%, rgba(16, 82, 130, 1)), color-stop(49%, rgba(16, 82, 130, 1)), color-stop(100%, rgba(244, 183, 78, 1)));
+        background: -webkit-linear-gradient(left, rgba(16, 82, 130, 1) 0%, rgba(16, 82, 130, 1) 49%, rgba(244, 183, 78, 1) 100%);
+        background: -o-linear-gradient(left, rgba(16, 82, 130, 1) 0%, rgba(16, 82, 130, 1) 49%, rgba(244, 183, 78, 1) 100%);
+        background: -ms-linear-gradient(left, rgba(16, 82, 130, 1) 0%, rgba(16, 82, 130, 1) 49%, rgba(244, 183, 78, 1) 100%);
+        background: linear-gradient(to right, rgba(16, 82, 130, 1) 0%, rgba(16, 82, 130, 1) 49%, rgba(244, 183, 78, 1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#105282', endColorstr='#f4b74e', GradientType=1);
+        color: white;
+    }
+    img {
+        position: absolute;
+        top: -45px;
+        width: 130px;
+        margin-left: 12px;
+    }
+}
+
 .cust-btn {
     background: $color-primary;
     color: $color-secondary;
@@ -250,6 +321,7 @@ p {
 .s1 {
     padding: 35px 0px;
     padding-bottom: 40px;
+    margin-top: -70px;
     img {
         float: right;
         width: 55%;
@@ -259,6 +331,14 @@ p {
         padding: 10px 0px;
         padding-right: 20px;
         word-break: break-all;
+        text-align: justify;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 10;
+        -webkit-box-orient: vertical;
+        padding-bottom: 0;
+        font-size: 15px;
     }
 }
 
@@ -309,7 +389,7 @@ p {
             width: auto;
             white-space: nowrap;
             position: absolute;
-            animation: marq 50s linear infinite;
+            animation: marq 55s linear infinite;
             span {
                 padding-left: 20px;
                 i {
@@ -469,7 +549,7 @@ p {
         left: 100%;
     }
     100% {
-        left: -300%;
+        left: -500%;
     }
 }
 
@@ -521,19 +601,26 @@ p {
 }
 
 //model 
-.disclaimer_model {
-    background: $color-primary;
-    color: $color-secondary;
+.model {
+    background: #f7f7f7;
+    color: $color-primary;
     padding: 60px;
+    hr {
+        width: 30%;
+        border-top: 2px solid $color-secondary;
+        margin: 5px auto;
+    }
     .heading {
         padding: 20px;
         padding-left: 0px;
         margin: 0px;
+        text-align: center;
         text-transform: uppercase;
     }
-    .content {
+    .model_content {
         font-size: 15px;
         word-spacing: 5px;
+        text-align: justify;
     }
     .close_model {
         position: absolute;
@@ -542,6 +629,86 @@ p {
         font-size: 40px;
         padding: 10px;
         padding-top: 0px;
-        color: $color-secondary;
+        color: $color-primary;
     }
+}
+
+.disclaimer_model {
+    .model_content {
+        font-size: 10px;
+    }
+}
+
+.aboutus_model {
+    .model_content {
+        p {
+            font-size: 15px;
+        }
+    }
+}
+
+//article
+.article {
+    .cnt {
+        padding-top: 10px;
+    }
+    .heading {
+        font-size: 18px;
+        padding: 5px 0px;
+        text-transform: uppercase;
+    }
+    .inside_content {
+        background: #f9f9f9;
+        padding: 10px;
+        padding-right: 20px;
+        img {
+            padding: 0px 15px 0px 0px;
+            width: 40%;
+        }
+        p {
+            text-align: justify;
+        }
+    }
+    .article_list {
+        .up-arrow,
+        .down-arrow {
+            font-size: 40px;
+            text-align: center;
+            color: $color-secondary;
+        }
+        ul {
+            list-style: none;
+            border-left: 2px solid $color-secondary;
+            padding-left: 15px;
+            height: 350px;
+            overflow: hidden;
+            li {
+                padding: 10px 0px;
+                border-bottom: 2px solid $color-secondary;
+                height: 90px;
+                overflow: hidden;
+                transition: all 1s;
+                .txt {
+                    text-align: justify;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                    padding: 0 10px;
+                    font-size: 18px;
+                    text-transform: capitalize;
+                }
+            }
+        }
+    }
+}
+
+.artical_float {
+    position: fixed;
+    top: 60px;
+}
+
+.artical_float_bottom {
+    top: 0
 }

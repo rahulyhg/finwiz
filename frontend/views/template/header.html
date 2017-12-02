@@ -1,5 +1,7 @@
-<header ng-controller="HeaderCtrl">
-    <nav class="navbar navbar-default cus-nav">
+<header ng-controller="NavbarCtrl">
+
+    <!-- nav for home page -->
+    <nav class="navbar navbar-default homepage-nav" ng-if="homepage">
         <div class="container_fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-collapse" aria-expanded="false">
@@ -41,5 +43,44 @@
                     </swiper>
                 </div>
             </div>
+    </nav>
+
+    <!-- nav for other inside page -->
+    <nav class="navbar navbar-default navbar-fixed-top cust-nav" ng-if="!homepage">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+                <a class="navbar-brand" ui-sref="home"><img src="/img/logo.png" alt="logo" width="20"> </a>
+            </div>
+            <div class="collapse navbar-collapse" id="nav-collapse">
+                <ul class="nav navbar-nav">
+                    <li ng-repeat="menu in navigation" ui-sref-active="active">
+                        <a ui-sref="{{menu.anchor}}" ng-click="goToAnchor(menu.anchor,menu.id)" ng-if="menu.anchor">{{menu.name}}</a>
+                        <!-- <a ui-sref="{{menu.anchor}}" ng-if="menu.anchor">{{menu.name}}</a> -->
+                        <a href="{{menu.link}}" ng-if="menu.link">{{menu.name}}</a>
+                        <ul class="dropdown-menu" ng-if="menu.subnav!='';">
+                            <li ng-repeat="submenu in menu.subnav" ui-sref-active="active">
+                                <a ui-serf="{{submenu.anchor}}" ng-if="submenu.anchor">{{submenu.name}}</a>
+                                <a herf="{{submenu.link}}" ng-if="submenu.link">{{submenu.name}}</a>
+                            </li>
+                            <li>
+                        </ul>
+                        </li>
+                        <li>
+                            <div class="social_nav">
+                                <a href="#" target="_blank"> <img src="img/social/facebook.png"></a>
+                                <a href="#" target="_blank"><img src="img/social/twitter.png"></a>
+                                <a href="#" target="_blank"> <img src="img/social/instagram.png"></a>
+
+                            </div>
+                        </li>
+                </ul>
+            </div>
+        </div>
     </nav>
 </header>

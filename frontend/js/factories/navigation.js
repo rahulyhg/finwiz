@@ -9,7 +9,7 @@ myApp.factory('NavigationService', function () {
         }, {
             name: "ARTICLES",
             classis: "active",
-            anchor: "form",
+            anchor: "article",
             subnav: []
         },
         {

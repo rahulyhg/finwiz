@@ -37,6 +37,31 @@ myApp.directive('img', function ($compile, $parse) {
             }
         };
     })
+    .directive('articleList', function () {
+        return {
+            restrict: 'EA',
+            replace: false,
+            link: function (scope, element, attr) {
+                var $element = $(element)
+
+                $(window).scroll(
+                    function (event) {
+                        var top = $(this).scrollTop();
+                        console.log(top)
+                        if (top > 135) {
+                            $element.addClass('artical_float');
+                        } else {
+                            $element.removeClass('artical_float');
+                        }
+                        // if ((top + $('.article_list').height() + 60) > $('footer').offset().top) {
+                        //     console.log("in the bottom")
+                        // }
+                    }
+                )
+            }
+        };
+
+    })
 
 
     .directive('fancybox', function ($document) {

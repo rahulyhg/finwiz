@@ -6,13 +6,22 @@
         </div>
         <div class="col-md-6 col-sm-6 col-xs-12">
             <div class="h3 "><span class="border-line">ABOUT</span> US</div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec turpis quis odio interdum commodo. Vestibulum
-                non sem nec orci vestibulum ullamcorper. Maecenas quam ipsum, accumsan non massa at, sodales ornare nisl.
-                Nam aliquam eu mauris quis malesuada. Phasellus luctus mollis vestibulum. Donec pretium rutrum orci, vitae
-                eleifend lectus semper et. Sed venenatis vulputate erat nec luctus. Proin sit amet congue lacus, ut congue
-                turpis. In laoreet vestibulum odio in congue. Vestibulum vitae elementum tortor. </p>
+            <p>ABOUT NSE FINWIZ Conceptualised by the National Stock Exchange (NSE) in association with CNBC-TV18, 'NSE Fin
+                Wiz' is part of the NSE LIFE. The purpose of NSE LIFE is to improve levels if financial literacy and education
+                to enable, empower and enrich young Indians. 'NSE Fin Wiz' in its fourth season, is a 20-episode series that
+                will be aired on CNBC-TV18 In our continued endeavour to educate investors and help them make informed investments,
+                'NSE Fin Wiz' is an Investor Education show that will travel pan-India to various corporates across sectors
+                in an initiative to educate the younger generation of first-time working professionals in those corporates
+                and inform them about the merits of investing and other issues pertaining to trading and savings. This will
+                be held through various ground events like seminars and panel discussions in different cities, keeping in
+                mind the curiosity of the newbie investor and to satiate his / her appetite to double their money by taking
+                very informed and mature investing decisions. Through 'NSE Fin Wiz', the aim is to provide awareness to the
+                young professionals in Companies to make the right investing decisions with advice from credible financial
+                specialists who will teach them about the current market conditions and how best to approach the field of
+                investing. Our endeavour is to provide forums for direct interaction with retail investors, industry experts,
+                academicians, practitioners and representatives of regulatory bodies for investment education and advice.</p>
             <div class="text-center">
-                <div class="btn btn-primary cust-btn">Know More</div>
+                <div class="btn btn-primary cust-btn" ng-click="openAbtModel()">Know More</div>
             </div>
         </div>
 </section>
@@ -82,12 +91,15 @@
         </div>
         <div class="col-md-10 col-sm-9 block2 marquee-animation">
             <div class="pull-left">
-                <span><i class="fa fa-circle" aria-hidden="true"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec turpis quis odio interdum commodo. Vestibulum
+                <!-- <span ><i class="fa fa-circle" aria-hidden="true"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec turpis quis odio interdum commodo. Vestibulum
                 non sem nec orci vestibulum</span>
                 <span><i class="fa fa-circle" aria-hidden="true"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec turpis quis odio interdum commodo. Vestibulum
                 non sem nec orci vestibulum</span>
                 <span><i class="fa fa-circle" aria-hidden="true"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec turpis quis odio interdum commodo. Vestibulum
-                non sem nec orci vestibulum</span>
+                non sem nec orci vestibulum</span> -->
+                <span ng-repeat="x in funfact">
+                    <i class="fa fa-circle" aria-hidden="true"></i>{{x}}
+                </span>
             </div>
         </div>
     </div>
@@ -139,7 +151,7 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec turpis quis odio interdum commodo. Vestibulum
                     non sem nec orci vestibulum</p>
             </div>
-            <div class="pull-right"><a href=""><img src="img/icon/nextpage.png" class="img-responsive nextpage "></a></div>
+            <div class="pull-right"><a ui-sref="newsletter"><img src="img/icon/nextpage.png" class="img-responsive nextpage "></a></div>
         </div>
         <div class="col-md-6 col-sm-6 padding-0 quiz">
             <div class="h3">QUIZ</div>

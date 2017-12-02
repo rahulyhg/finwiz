@@ -1,9 +1,16 @@
  @media (max-width: $screen-xs-max) {
      // Mobile
-     .navbar-brand {
+     .homepage-nav .navbar-brand {
          display: block;
          img {
              width: 130px;
+         }
+     }
+     .cust-nav {
+         .navbar-nav {
+             text-align: center;
+             margin: 0 auto;
+             float: none;
          }
      }
      .border-right {
