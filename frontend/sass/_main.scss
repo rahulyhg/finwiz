@@ -8,6 +8,7 @@ $brand-info: #000072 !default;
 $color-primary:#135281 !default;
 $color-primary-highlight:#295d83 !default;
 $color-secondary:#f9ba4c !default;
+$color-third:#F8F8F8 !default;
 @import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
 
 /* Bootstrap Variables Goes Here */
@@ -771,10 +772,62 @@ p {
             .tab {
                 /* float: right; */
                 display: inline-block;
-                padding: 5px 15px;
+                padding: 5px 25px;
                 background: $color-primary;
                 margin: 0px 5px;
                 color: white;
+            }
+            .true {
+                background: $color-secondary;
+                color: $color-primary;
+            }
+        }
+        .newsletter_block {
+            padding: 50px;
+            .block {
+                height: 200px;
+                background: $color-third;
+                position: relative;
+                margin: 20px 0px;
+                .heading {
+                    span {
+                        background: $color-primary;
+                        width: 25%;
+                        display: inline-block;
+                        padding: 4px 10px;
+                        color: white;
+                        text-transform: capitalize;
+                        font-weight: 100;
+                    }
+                }
+                .txt {
+                    margin: 10px 25px;
+                    text-align: justify;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 6;
+                    -webkit-box-orient: vertical;
+                }
+                img {
+                    height: 200px;
+                    object-fit: cover;
+                }
+                .read_more {
+                    text-align: right;
+                    color: $color-secondary;
+                    text-transform: capitalize;
+                    padding: 0px 10px;
+                    font-size: 1.1em;
+                }
+                .hr {
+                    height: 3px;
+                    background: $color-secondary;
+                    position: absolute;
+                    width: 100%;
+                    margin: 0px auto;
+                    top: -10px;
+                }
             }
         }
     }
