@@ -50,9 +50,8 @@ module.exports = [
   'frontend/js/controllers/newsletter.js',
   'frontend/js/controllers/gallery.js',
   'frontend/js/controllers/episode.js',
-   'frontend/js/controllers/article.js',
+  'frontend/js/controllers/article.js',
+  'frontend/js/controllers/testimonial.js',
   'frontend/js/controllers/header-controller.js',
   'frontend/js/controllers/language-controller.js',
-  'frontend/js/controllers/newsletter.js',
-  'frontend/js/controllers/article.js',
 ];
