@@ -75,7 +75,7 @@
 
 .search-episode .input-group {
     width: 100%;
-      margin-bottom: 50px;
+    margin-bottom: 50px;
 }
 
 .search-episode .form-control {
@@ -84,26 +84,72 @@
     padding: 16px;
     border-right: none;
     // background: rgba(0, 0, 0, .59);
-      background: transparent
-      }
+    background: transparent
+}
 
 .search-episode .btn-search {
     border: 2px solid #105382;
     padding: 16px;
     border-left: none;
-    background:  transparent;
+    background: transparent;
     background-image: url(../img/search-icon-mobile.png);
     background-position: center top;
     background-repeat: no-repeat;
     background-size: cover;
 }
+
 .episodes {
     position: relative;
 }
+
 .video-icon {
     position: absolute;
     top: 50%;
     left: 50%;
-    @include transform(translate(-50%,
-    -50%));
+    @include transform(translate(-50%, -50%));
+}
+
+.content {
+    margin-top: 50px;
+}
+
+.gallery-inside-bg {
+    background: #f3f3f2;
+    padding-top: 30px;
+}
+
+.test-common {
+    border: 2px solid #105382;
+    border-radius: 30px;
+    padding: 0 5px;
+    background: #cccccc;
+    margin: 0px 30px 15px 30px;
+}
+
+.test-inner {
+    background: white;
+    border-radius: 30px;
+    padding: 50px 30px;
+    text-align: justify;
+    p {
+        font-size: 18px;
+        position: relative;
+        span {
+            position: absolute;
+            top: -20px;
+            left: -20px;
+        }
+    }
+}
+
+.test-name {
+    margin-right: 50px;
+    h4 {
+        font-size: 22px;
+        color: #105382;
+    }
+}
+
+.head-test {
+    margin-bottom: 80px;
 }
