@@ -39,12 +39,16 @@ myApp.controller('NewsLetterCtrl', function ($scope, TemplateService, Navigation
             }]
         }
     ];
+    $scope.show_seemore = function (index) {
+        var classSelect = ".txtheight" + index;
+        return ($(classSelect).height() > 115)
 
+    }
 
     $scope.selectedNewsLetter = $scope.tabs[0];
     $scope.selectNewsLetter = function (x) {
         $scope.selectedNewsLetter = x;
-        console.log($scope.selectedNewsLetter);
+        // console.log($scope.selectedNewsLetter);
     }
 
 

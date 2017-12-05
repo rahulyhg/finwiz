@@ -47,7 +47,7 @@ myApp.directive('img', function ($compile, $parse) {
                 $(window).scroll(
                     function (event) {
                         var top = $(this).scrollTop();
-                        console.log(top)
+                        // console.log(top)
                         if (top > 135) {
                             $element.addClass('artical_float');
                         } else {
