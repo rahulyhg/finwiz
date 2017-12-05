@@ -2,7 +2,7 @@
       <div class="container-fluid">
         <div class="head">
             <div class="tit tit-gallery"><span>GALLERY</span> <span class="pull-right">EPISODE</span></div>
-            <img src="img/article.png" class="img-responsive doneLoading">
+            <img src="img/gallery.png" class="img-responsive doneLoading">
         </div>
     </div>
     <div class="container">
@@ -18,6 +18,36 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+             <div class="season-common">
+                <div ng-class="{'max-height-season' : more4 == true , 'min-height-season':more4 == false}" class="seasonOpacity">
+                    <div class="season-text">
+                       <div class="season-name">Season 4</div>
+                    </div>
+                    <div class="row ">
+                        <!--<pre>{{season2}}</pre>-->
+                        <div class="col-md-12" ng-show="season4.length == 0">
+                            <h4> No Data found</h4>
+                        </div>
+                        <div class="col-md-2 col-sm-6 col-xs-6 episode-bottom" ng-repeat="itemSeason in season4 | filter: searchName">
+                            <div class="episodes">
+
+                                <img ng-src="http://img.youtube.com/vi/{{itemSeason.imageUrl}}/hqdefault.jpg" class="img-responsive img-full">
+                                <div class="video-icon">
+                                    <a class="fancybox.iframe" ng-href="https://www.youtube.com/embed/{{itemSeason.videoUrl}}?autoplay=1" fancybox>
+                                        <img src="img/youtube-small.png" class="img-responsive">
+                                    </a>
+                                </div>
+                                <p class="text-center">{{itemSeason.episodeno}}</p>
+                                <p class="text-center hidden">{{itemSeason.searchName}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pull-right gallery-btn">
+                    <button ng-click="viewMore4()" ng-if="view4">View More</button>
+                    <button ng-click="viewLess4()" ng-if="!view4">View Less</button>
                 </div>
             </div>
             <div class="season-common">
@@ -80,7 +110,7 @@
                     <button ng-click="viewLess2()" ng-if="!view2">View Less</button>
                 </div>
             </div>
-            <div class="season-common">
+            <!--<div class="season-common">
                 <div ng-class="{'max-height-season' : more1 == true , 'min-height-season':more1 == false}" class="seasonOpacity">
                     <div class="season-text">
                        <div class="season-name">Season 1</div>
@@ -106,7 +136,7 @@
                     <button ng-click="viewMore1()" ng-if="view1">View More</button>
                     <button ng-click="viewLess1()" ng-if="!view1">View Less</button>
                 </div>
-            </div>
+            </div>-->
         </div>
     </div>
 </div>

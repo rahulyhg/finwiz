@@ -2,66 +2,65 @@
     <div class="container-fluid">
         <div class="head head-gallery">
             <div class="tit tit-gallery"><span>GALLERY</span> <span class="pull-right">PHOTOS</span></div>
-            <img src="img/article.png" class="img-responsive doneLoading">
+            <img src="img/gallery.png" class="img-responsive doneLoading">
         </div>
     </div>
-        <div class="container">
+    <div class="container">
         <div class="gallery-inside">
-          <div class="season-common">
+            <div class="season-common">
                 <div ng-class="{'max-height-gallery' : more3 == true , 'min-height-gallery':more3 == false}">
                     <div class="season-text">
                         <div class="season-name">Season 3</div>
                     </div>
                     <div class="row ">
-                            <div class="col-md-2 col-sm-6 col-xs-6 gallery-pic-bottom img-height" ng-repeat="img in season3 track by $index ">
-                                <a fancybox href="{{img.img1}}">
+                        <div class="col-md-2 col-sm-6 col-xs-6 gallery-pic-bottom img-height" ng-repeat="img in season3 track by $index ">
+                            <a fancybox href="{{img.img1}}">
                                 <img ng-src="{{img.img2}}" class="img-responsive ">
                             </a>
-                            </div>
                         </div>
                     </div>
-                    <div class="pull-right gallery-btn">
-                        <button ng-click="viewMore3()" ng-if="view3">View More</button>
-                        <button ng-click="viewLess3()" ng-if="!view3">View Less</button>
-                    </div>
                 </div>
-              <div class="season-common">
+                <div class="pull-right gallery-btn">
+                    <button ng-click="viewMore3()" ng-if="view3">View More</button>
+                    <button ng-click="viewLess3()" ng-if="!view3">View Less</button>
+                </div>
+            </div>
+            <div class="season-common">
                 <div ng-class="{'max-height-gallery' : more2 == true , 'min-height-gallery':more2 == false}">
                     <div class="season-text">
                         <div class="season-name">Season 2</div>
                     </div>
                     <div class="row ">
-                            <div class="col-md-2 col-sm-6 col-xs-6 gallery-pic-bottom img-height" ng-repeat="img in season2 track by $index">
-                                <a fancybox href="{{img.img1}}">
+                        <div class="col-md-2 col-sm-6 col-xs-6 gallery-pic-bottom img-height" ng-repeat="img in season2 track by $index">
+                            <a fancybox href="{{img.img1}}">
                                 <img ng-src="{{img.img2}}" class="img-responsive ">
                             </a>
-                            </div>
                         </div>
-                    </div>
-                    <div class="pull-right gallery-btn">
-                        <button ng-click="viewMore2()" ng-if="view2">View More</button>
-                        <button ng-click="viewLess2()" ng-if="!view2">View Less</button>
                     </div>
                 </div>
-                <div class="season-common">
-                    <div ng-class="{'max-height-gallery' : more1 == true , 'min-height-gallery':more1 == false}">
-                        <div class="season-text">
-                            <div class="season-name">Season 1</div>
-                        </div>
-                        <div class="row ">
-                            <div class="col-md-2 col-sm-6 col-xs-6 gallery-pic-bottom img-height" ng-repeat="img in season1 track by $index ">
-                                <a fancybox href="{{img.img1}}">
+                <div class="pull-right gallery-btn">
+                    <button ng-click="viewMore2()" ng-if="view2">View More</button>
+                    <button ng-click="viewLess2()" ng-if="!view2">View Less</button>
+                </div>
+            </div>
+            <div class="season-common">
+                <div ng-class="{'max-height-gallery' : more1 == true , 'min-height-gallery':more1 == false}">
+                    <div class="season-text">
+                        <div class="season-name">Season 1</div>
+                    </div>
+                    <div class="row ">
+                        <div class="col-md-2 col-sm-6 col-xs-6 gallery-pic-bottom img-height" ng-repeat="img in season1 track by $index ">
+                            <a fancybox href="{{img.img1}}">
                                 <img ng-src="{{img.img2}}" class="img-responsive ">
                             </a>
-                            </div>
                         </div>
                     </div>
-                    <div class="pull-right gallery-btn">
-                        <button ng-click="viewMore1()" ng-if="view1">View More</button>
-                        <button ng-click="viewLess1()" ng-if="!view1">View Less</button>
-                    </div>
                 </div>
-
+                <div class="pull-right gallery-btn">
+                    <button ng-click="viewMore1()" ng-if="view1">View More</button>
+                    <button ng-click="viewLess1()" ng-if="!view1">View Less</button>
+                </div>
             </div>
         </div>
     </div>
+</div>

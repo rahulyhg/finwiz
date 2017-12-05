@@ -138,10 +138,17 @@
             position: absolute;
             top: -20px;
             left: -20px;
+                width: 18px;
         }
     }
 }
 
+.test-bottom {
+    margin-bottom: 60px;
+    height: 735px;
+    overflow-y: scroll;
+    
+}
 .test-name {
     margin-right: 50px;
     h4 {
@@ -152,4 +159,8 @@
 
 .head-test {
     margin-bottom: 80px;
+}
+.test-title{
+font-style: italic;
+font-weight: 600;
 }

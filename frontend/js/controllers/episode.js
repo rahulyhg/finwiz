@@ -2,6 +2,148 @@
      $scope.template = TemplateService.getHTML("content/episode.html");
      TemplateService.title = "Episode"; // This is the Title of the Website
      $scope.navigation = NavigationService.getNavigation();
+             //for season4
+     $scope.season4 = [{
+             imageUrl: "b_2A1pmTbCo",
+             videoUrl: "b_2A1pmTbCo",
+             episodeno: "Episode 1",
+             searchName: "NSE Fin Wiz, Manipal Hospital, Bangalore Part 1",
+         }, {
+             imageUrl: "DtUQ5-BGrz4",
+             videoUrl: "DtUQ5-BGrz4",
+             episodeno: "Episode 2",
+             searchName: "NSE Fin Wiz, Manipal Hospital, Bangalore Part 2",
+         }, {
+             imageUrl: "91w-vLVlEHI",
+             videoUrl: "91w-vLVlEHI",
+             episodeno: "Episode 3",
+             searchName: "NSE Fin Wiz, Manipal Hospital, Bangalore Part 3",
+         }, {
+             imageUrl: "H_PhMcIPMbs",
+             videoUrl: "H_PhMcIPMbs",
+             episodeno: "Episode 4",
+             searchName: "NSE FIN WIZ TAJ PALACE, DELHI SEG 3",
+         }, {
+             imageUrl: "xztM1KWZSKg",
+             videoUrl: "xztM1KWZSKg",
+             episodeno: "Episode 5",
+             searchName: "NSE FIN WIZ TAJ PALACE, DELHI SEG 2",
+         }, {
+             imageUrl: "nIBOmbvoFlw",
+             videoUrl: "nIBOmbvoFlw",
+             episodeno: "Episode 6",
+             searchName: "NSE FIN WIZ TAJ PALACE, DELHI",
+         }, {
+             imageUrl: "FpzIpbZS3AY",
+             videoUrl: "FpzIpbZS3AY",
+             episodeno: "Episode 7",
+             searchName: "NSE FIN WIZ CYIENT HYDERABAD SEG 3",
+         }, {
+             imageUrl: "WhgPuYjKZDU",
+             videoUrl: "WhgPuYjKZDU",
+             episodeno: "Episode 8",
+             searchName: "NSE FIN WIZ CYIENT HYDERABAD SEG 2",
+         }, {
+             imageUrl: "pCILT5lKQOY",
+             videoUrl: "pCILT5lKQOY",
+             episodeno: "Episode 9",
+             searchName: "NSE FIN WIZ CYIENT HYDERABAD SEG 1",
+         }, {
+             imageUrl: "mlfHKDfC-p4",
+             videoUrl: "mlfHKDfC-p4",
+             episodeno: "Episode 10",
+             searchName: "NSE FIN WIZ SHOBHA, BANGALORE SEG 2",
+         }, {
+             imageUrl: "tqT2sZYj7PU",
+             videoUrl: "tqT2sZYj7PU",
+             episodeno: "Episode 11",
+             searchName: "NSE FIN WIZ SHOBHA, BANGALORE SEG 1",
+         }, {
+             imageUrl: "QGUj5HHvEA8",
+             videoUrl: "QGUj5HHvEA8",
+             episodeno: "Episode 12",
+             searchName: "NSE FIN WIZ GLAXO SEG 2",
+         }, {
+             imageUrl: "O5MbuEWgDmo",
+             videoUrl: "O5MbuEWgDmo",
+             episodeno: "Episode 13",
+             searchName: "NSE FIN WIZ GLAXO SEG 3",
+         }, {
+             imageUrl: "IHN9zICuk0I",
+             videoUrl: "IHN9zICuk0I",
+             episodeno: "Episode 14",
+             searchName: "Budget",
+         }, {
+             imageUrl: "CZ-hAHp42-8",
+             videoUrl: "CZ-hAHp42-8",
+             episodeno: "Episode 15",
+             searchName: "Budget",
+         }, {
+             imageUrl: "FEFEJ_HJq2o",
+             videoUrl: "FEFEJ_HJq2o",
+             episodeno: "Episode 16",
+             searchName: "Budget",
+         }, {
+             imageUrl: "B034I1zal0w",
+             videoUrl: "B034I1zal0w",
+             episodeno: "Episode 17",
+             searchName: "Tax",
+         }, {
+             imageUrl: "buTCKyeM-zg",
+             videoUrl: "buTCKyeM-zg",
+             episodeno: "Episode 18",
+             searchName: "Equity",
+         }, {
+             imageUrl: "jf39ex_CbFU",
+             videoUrl: "jf39ex_CbFU",
+             episodeno: "Episode 19",
+             searchName: "Invest Options and tax Savings",
+         }, {
+             imageUrl: "PAx-hX27hOQ",
+             videoUrl: "PAx-hX27hOQ",
+             episodeno: "Episode 20",
+             searchName: "Equity & Mutual Funds",
+         }, {
+             imageUrl: "sFf-tYRRRxo",
+             videoUrl: "sFf-tYRRRxo",
+             episodeno: "Episode 21",
+             searchName: "Insurances",
+         }, {
+             imageUrl: "UbQEWdETJmc",
+             videoUrl: "UbQEWdETJmc",
+             episodeno: "Episode 22",
+             searchName: "Life Insurance",
+         }, {
+             imageUrl: "h8NFKbhhCPc",
+             videoUrl: "h8NFKbhhCPc",
+             episodeno: "Episode 23",
+             searchName: "Insurance",
+         }, {
+             imageUrl: "-0hiPpadda8",
+             videoUrl: "-0hiPpadda8",
+             episodeno: "Episode 24",
+             searchName: "Personal Finance",
+         }, {
+             imageUrl: "MYo4T_2TckQ",
+             videoUrl: "MYo4T_2TckQ",
+             episodeno: "Episode 25",
+             searchName: "Grand Finale",
+         }
+
+     ];
+
+     $scope.more4 = false;
+     $scope.view4 = true;
+
+     $scope.viewMore4 = function () {
+         $scope.more4 = true;
+         $scope.view4 = false;
+     }
+     $scope.viewLess4 = function () {
+             $scope.more4 = false;
+             $scope.view4 = true;
+         }
+         //end of season4
      //for season3
      $scope.season3 = [{
              imageUrl: "CW8pc1UPkwc",
