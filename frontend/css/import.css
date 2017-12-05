@@ -10818,7 +10818,7 @@ p {
 
 .video-icon {
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%); }
@@ -10860,7 +10860,12 @@ p {
   margin-right: 50px; }
   .test-name h4 {
     font-size: 22px;
-    color: #105382; }
+    color: #105382;
+    margin-bottom: 0px; }
+  .test-name h5 {
+    font-size: 20px;
+    color: #105382;
+    margin-top: 0px; }
 
 .head-test {
   margin-bottom: 80px; }
@@ -10868,6 +10873,16 @@ p {
 .test-title {
   font-style: italic;
   font-weight: 600; }
+
+.view-btn {
+  position: absolute;
+  right: 14%;
+  bottom: -22px;
+  font-size: 22px;
+  background: #105382;
+  color: #f9ba4d;
+  border-radius: 50%;
+  border: none; }
 
 @media (max-width: 991px) {
   .s1 img {

@@ -104,7 +104,7 @@
 
 .video-icon {
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     @include transform(translate(-50%, -50%));
 }
@@ -154,6 +154,12 @@
     h4 {
         font-size: 22px;
         color: #105382;
+        margin-bottom: 0px;
+    }
+    h5{
+         font-size: 20px;
+        color: #105382;
+        margin-top: 0px;
     }
 }
 
@@ -163,4 +169,14 @@
 .test-title{
 font-style: italic;
 font-weight: 600;
+}
+.view-btn{
+    position: absolute;
+    right: 14%;
+    bottom: -22px;
+    font-size: 22px;
+    background: #105382;
+    color: #f9ba4d;
+    border-radius: 50%;
+    border: none;
 }
