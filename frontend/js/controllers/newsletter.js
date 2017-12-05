@@ -8,12 +8,12 @@ myApp.controller('NewsLetterCtrl', function ($scope, TemplateService, Navigation
             content: [{
                     heading: "heading 1",
                     img: "img/article1.png",
-                    txt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pellentesque ex id ligula porttitor,sed fringilla mauris pharetra. Vestibulum venenatis neque eu cursus dapibus. Nam hendrerit enim eget augue commodo, sit amet molestie urna venenatis  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pellentesque ex id ligula porttitor,sed fringilla mauris pharetra. Vestibulum venenatis neque eu cursus dapibus. Nam hendrerit enim eget augue commodo, sit amet molestie urna venenatis  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pellentesque ex id ligula porttitor,sed fringilla mauris pharetra. Vestibulum venenatis neque eu cursus dapibus. Nam hendrerit enim eget augue commodo, sit amet molestie urna venenatis  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pellentesque ex id ligula porttitor,sed fringilla mauris pharetra. Vestibulum venenatis neque eu cursus dapibus. Nam hendrerit enim eget augue commodo, sit amet molestie urna venenatis"
+                    txt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pellentesque ex id ligula porttitor,sed fringilla mauris pharetra. Vestibulum venenatis neque eu cursus dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pellentesque ex id ligula porttitor,sed fringilla mauris pharetra. Vestibulum venenatis neque eu cursus dapibus. Nam hendrerit enim eget augue commodo, sit amet molestie urna venenatisLorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pellentesque ex id ligula porttitor,sed fringilla mauris pharetra. Vestibulum venenatis neque eu cursus dapibus. Nam hendrerit enim eget augue commodo, sit amet molestie urna venenatisLorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pellentesque ex id ligula porttitor,sed fringilla mauris pharetra. Vestibulum venenatis neque eu cursus dapibus. Nam hendrerit enim eget augue commodo, sit amet molestie urna venenatisLorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pellentesque ex id ligula porttitor,sed fringilla mauris pharetra. Vestibulum venenatis neque eu cursus dapibus. Nam hendrerit enim eget augue commodo, sit amet molestie urna venenatisLorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pellentesque ex id ligula porttitor,sed fringilla mauris pharetra. Vestibulum venenatis neque eu cursus dapLorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pellentesque ex id ligula porttitor,sed fringilla mauris pharetra. Vestibulum venenatis neque eu cursus dapibus. Nam hendrerit enim eget augue commodo, sit amet molestie urna venenatisLorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pellentesque ex id ligula porttitor,sed fringilla mauris pharetra. Vestibulum venenatis neque eu cursus dapibus. Nam hendrerit enim eget augue commodo, sit amet molestie urna venenatisLorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pellentesque ex id ligula porttitor,sed fringilla mauris pharetra. Vestibulum venenatis neque eu cursus dapibus. Nam hendrerit enim eget augue commodo, sit amet molestie urna venenatisLorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pellentesque ex id ligula porttitor,sed fringilla mauris pharetra. Vestibulum venenatis neque eu cursus dapibus. Nam hendrerit enim eget augue commodo, sit amet molestie urna venenatisLorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pellentesque ex id ligula porttitor,sed fringilla mauris pharetra. Vestibulum venenatis neque eu cursus dapibus. Nam hendrerit enim eget augue commodo, sit amet molestie urna venenatisibus. Nam hendrerit enim eget augue commodo, sit amet molestie urna venenatisNam hendrerit enim eget augue commodo, sit amet molestie urna venenatis  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pellentesque ex id ligula porttitor,sed fringilla mauris pharetra. Vestibulum venenatis neque eu cursus dapibus. Nam hendrerit enim eget augue commodo, sit amet molestie urna venenatis  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pellentesque ex id ligula porttitor,sed fringilla mauris pharetra. Vestibulum venenatis neque eu cursus dapibus. Nam hendrerit enim eget augue commodo, sit amet molestie urna venenatis  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pellentesque ex id ligula porttitor,sed fringilla mauris pharetra. Vestibulum venenatis neque eu cursus dapibus. Nam hendrerit enim eget augue commodo, sit amet molestie urna venenatis end"
                 },
                 {
                     heading: "heading 2",
                     img: "img/article1.png",
-                    txt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pellentesque ex id ligula porttitor,sed fringilla mauris pharetra. Vestibulum venenatis neque eu cursus dapibus. Nam hendrerit enim eget augue commodo, sit amet molestie urna venenatis"
+                    txt: "Lorem Lorem ipsum Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pellentesque ex id ligula porttitor,sed fringilla mauris pharetra. Vestibulum venenatis neque eu cursus dapibus. Nam hendrerit enim eget augue commodo, sit amet molestie urna venenatisLorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pellentesque ex id ligula porttitor,sed fringilla mauris pharetra. Vestibulum venenatis neque eu cursus dapibus. Nam hendrerit enim eget augue commodo, sit amet molestie urna venenatisLorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pellentesque ex id ligula porttitor,sed fringilla mauris pharetra. Vestibulum venenatis neque eu cursus dapibus. Nam hendrerit enim eget augue commodo, sit amet molestie urna venenatisLorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pellentesque ex id ligula porttitor,sed fringilla mauris pharetra. Vestibulum venenatis neque eu cursus dapibus. Nam hendrerit enim eget augue commodo, sit amet molestie urna venenatisLorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pellentesque ex id ligula porttitor,sed fringilla mauris pharetra. Vestibulum venenatis neque eu cursus dapibus. Nam hendrerit enim eget augue commodo, sit amet molestie urna venenatisLorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pellentesque ex id ligula porttitor,sed fringilla mauris pharetra. Vestibulum venenatis neque eu cursus dapibus. Nam hendrerit enim eget augue commodo, sit amet molestie urna venenatis dolor sit amet, consectetur adipiscing elit. Proin pellentesque ex id ligula porttitor,sed fringilla mauris pharetra. Vestibulum venenatis neque eu cursus dapibus. Nam hendrerit enim eget augue commodo, sit amet molestie urna venenatis ipsum dolor sit amet, consectetur adipiscing elit. Proin pellentesque ex id ligula porttitor,sed fringilla mauris pharetra. Vestibulum venenatis neque eu cursus dapibus. Nam hendrerit enim eget augue commodo, sit amet molestie urna venenatis"
                 },
                 {
                     heading: "heading 3",
@@ -40,8 +40,27 @@ myApp.controller('NewsLetterCtrl', function ($scope, TemplateService, Navigation
         }
     ];
     $scope.show_seemore = function (index) {
+
+        
         var classSelect = ".txtheight" + index;
-        return ($(classSelect).height() > 115)
+        // solution 1 (checking text height with max height it can contain )
+        // return ($(classSelect).height() > 115)
+
+        //solution 2 ( checking  height after changing attribute)
+        console.log(classSelect);
+        var clone=$(classSelect).clone();
+        var beforeheight=$(classSelect).height();
+
+
+        console.log("before height",beforeheight)
+       $(classSelect).css('-webkit-line-clamp',"unset");
+
+       
+       var afterheight=$(classSelect).height();
+       console.log("after height",afterheight);
+       $(classSelect).replaceWith(clone);
+
+       return beforeheight<afterheight;
 
     }
 
