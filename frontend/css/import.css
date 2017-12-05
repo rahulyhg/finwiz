@@ -10638,7 +10638,8 @@ p {
       .newsletter .cnt .newsletter_block .block img {
         height: 200px;
         -o-object-fit: cover;
-           object-fit: cover; }
+           object-fit: cover;
+        float: right; }
       .newsletter .cnt .newsletter_block .block .read_more {
         text-align: right;
         color: #f9ba4c;

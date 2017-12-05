@@ -130,6 +130,16 @@ myApp.controller('HomeCtrl', function ($scope, $uibModal, TemplateService, Navig
             });
 
         }
+        $scope.openterms = function () {
+            var modalInstance = $uibModal.open({
+                animation: true,
+                ariaLabelledBy: 'modal-title',
+                ariaDescribedBy: 'modal-body',
+                templateUrl: 'views/model/terms.html',
+                size: 'lg',
+            });
+
+        }
 
 
         $scope.goToAnchor = function (anchor, id) {
