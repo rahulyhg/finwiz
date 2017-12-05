@@ -35,7 +35,25 @@ img {
     transition: all 300ms ease;
 }
 
-img.doneLoading {
+img.doneLoading {#style-1::-webkit-scrollbar-track
+    {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+        border-radius: 10px;
+        background-color: #F5F5F5;
+    }
+    
+    #style-1::-webkit-scrollbar
+    {
+        width: 12px;
+        background-color: #F5F5F5;
+    }
+    
+    #style-1::-webkit-scrollbar-thumb
+    {
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+        background-color: #555;
+    }
     opacity: 1;
 }
 
@@ -831,5 +849,46 @@ p {
                 }
             }
         }
+    }
+}
+
+
+//custom scroll
+
+.custom_scroll{
+    position: absolute;
+    background:$color-secondary;
+    height: 753px;
+    .scroll_thumb{
+        background: $color-primary;
+        border-radius:100%;
+        position: relative;
+        top:0;
+    }
+}
+
+
+.style-1::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px $color-secondary;
+	border-radius: 10px;
+	background-color: $color-secondary;
+}
+
+.style-1::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+.style-1::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px $color-primary;
+    background-color: $color-primary;
+    &:after{
+        content:"a";
+        height:20px;
+        background: red;
     }
 }

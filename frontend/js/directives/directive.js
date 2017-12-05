@@ -37,6 +37,24 @@ myApp.directive('img', function ($compile, $parse) {
             }
         };
     })
+    .directive('customScroll', function ($document) {
+        return {
+            restrict: 'EA',
+            replace: false,
+            link: function (scope, element, attr) {
+                var $element = $(element);
+                var lastScrollTop = 0;
+                $($element).scroll(function (event) {
+                   console.log("this is custom scroll",$(this).scrollTop())
+                   console.log($(this).height())
+                   var scroll_thumb=($(this).scrollTop()/1000*$(this).height())
+                   $('.scroll_thumb').css("top",scroll_thumb)
+
+
+                });
+            }
+        };
+    })
     .directive('articleList', function () {
         return {
             restrict: 'EA',

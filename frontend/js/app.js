@@ -11,7 +11,9 @@ var myApp = angular.module('myApp', [
     'ui.swiper',
     'angularPromiseButtons',
     'toastr',
+    'ngScrollbars',
 ]);
+
 
 // Define all the routes below
 myApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider) {
@@ -45,8 +47,8 @@ myApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $locat
             templateUrl: tempateURL,
             controller: 'ArticleCtrl'
         })
-          .state('gallery', {
-            url: "/gallery",
+          .state('photo', {
+            url: "/photo",
             templateUrl: tempateURL,
             controller: 'GalleryCtrl'
         })

@@ -47,17 +47,17 @@ myApp.controller('NewsLetterCtrl', function ($scope, TemplateService, Navigation
         // return ($(classSelect).height() > 115)
 
         //solution 2 ( checking  height after changing attribute)
-        console.log(classSelect);
+        // console.log(classSelect);
         var clone=$(classSelect).clone();
         var beforeheight=$(classSelect).height();
 
 
-        console.log("before height",beforeheight)
+        // console.log("before height",beforeheight)
        $(classSelect).css('-webkit-line-clamp',"unset");
 
-       
+
        var afterheight=$(classSelect).height();
-       console.log("after height",afterheight);
+    //    console.log("after height",afterheight);
        $(classSelect).replaceWith(clone);
 
        return beforeheight<afterheight;
