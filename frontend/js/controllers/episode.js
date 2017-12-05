@@ -2,135 +2,173 @@
      $scope.template = TemplateService.getHTML("content/episode.html");
      TemplateService.title = "Episode"; // This is the Title of the Website
      $scope.navigation = NavigationService.getNavigation();
-             //for season4
+     //for season4
      $scope.season4 = [{
-             imageUrl: "b_2A1pmTbCo",
-             videoUrl: "b_2A1pmTbCo",
-             episodeno: "Episode 1",
-             searchName: "NSE Fin Wiz, Manipal Hospital, Bangalore Part 1",
-         }, {
-             imageUrl: "DtUQ5-BGrz4",
-             videoUrl: "DtUQ5-BGrz4",
-             episodeno: "Episode 2",
-             searchName: "NSE Fin Wiz, Manipal Hospital, Bangalore Part 2",
-         }, {
-             imageUrl: "91w-vLVlEHI",
-             videoUrl: "91w-vLVlEHI",
-             episodeno: "Episode 3",
-             searchName: "NSE Fin Wiz, Manipal Hospital, Bangalore Part 3",
-         }, {
-             imageUrl: "H_PhMcIPMbs",
-             videoUrl: "H_PhMcIPMbs",
-             episodeno: "Episode 4",
-             searchName: "NSE FIN WIZ TAJ PALACE, DELHI SEG 3",
-         }, {
-             imageUrl: "xztM1KWZSKg",
-             videoUrl: "xztM1KWZSKg",
-             episodeno: "Episode 5",
-             searchName: "NSE FIN WIZ TAJ PALACE, DELHI SEG 2",
-         }, {
-             imageUrl: "nIBOmbvoFlw",
-             videoUrl: "nIBOmbvoFlw",
-             episodeno: "Episode 6",
-             searchName: "NSE FIN WIZ TAJ PALACE, DELHI",
-         }, {
-             imageUrl: "FpzIpbZS3AY",
-             videoUrl: "FpzIpbZS3AY",
-             episodeno: "Episode 7",
-             searchName: "NSE FIN WIZ CYIENT HYDERABAD SEG 3",
-         }, {
-             imageUrl: "WhgPuYjKZDU",
-             videoUrl: "WhgPuYjKZDU",
-             episodeno: "Episode 8",
-             searchName: "NSE FIN WIZ CYIENT HYDERABAD SEG 2",
-         }, {
-             imageUrl: "pCILT5lKQOY",
-             videoUrl: "pCILT5lKQOY",
-             episodeno: "Episode 9",
-             searchName: "NSE FIN WIZ CYIENT HYDERABAD SEG 1",
-         }, {
-             imageUrl: "mlfHKDfC-p4",
-             videoUrl: "mlfHKDfC-p4",
-             episodeno: "Episode 10",
-             searchName: "NSE FIN WIZ SHOBHA, BANGALORE SEG 2",
-         }, {
-             imageUrl: "tqT2sZYj7PU",
-             videoUrl: "tqT2sZYj7PU",
-             episodeno: "Episode 11",
-             searchName: "NSE FIN WIZ SHOBHA, BANGALORE SEG 1",
-         }, {
-             imageUrl: "QGUj5HHvEA8",
-             videoUrl: "QGUj5HHvEA8",
-             episodeno: "Episode 12",
-             searchName: "NSE FIN WIZ GLAXO SEG 2",
-         }, {
-             imageUrl: "O5MbuEWgDmo",
-             videoUrl: "O5MbuEWgDmo",
-             episodeno: "Episode 13",
-             searchName: "NSE FIN WIZ GLAXO SEG 3",
-         }, {
-             imageUrl: "IHN9zICuk0I",
-             videoUrl: "IHN9zICuk0I",
-             episodeno: "Episode 14",
-             searchName: "Budget",
-         }, {
-             imageUrl: "CZ-hAHp42-8",
-             videoUrl: "CZ-hAHp42-8",
-             episodeno: "Episode 15",
-             searchName: "Budget",
-         }, {
-             imageUrl: "FEFEJ_HJq2o",
-             videoUrl: "FEFEJ_HJq2o",
-             episodeno: "Episode 16",
-             searchName: "Budget",
-         }, {
-             imageUrl: "B034I1zal0w",
-             videoUrl: "B034I1zal0w",
-             episodeno: "Episode 17",
-             searchName: "Tax",
-         }, {
-             imageUrl: "buTCKyeM-zg",
-             videoUrl: "buTCKyeM-zg",
-             episodeno: "Episode 18",
-             searchName: "Equity",
-         }, {
-             imageUrl: "jf39ex_CbFU",
-             videoUrl: "jf39ex_CbFU",
-             episodeno: "Episode 19",
-             searchName: "Invest Options and tax Savings",
-         }, {
-             imageUrl: "PAx-hX27hOQ",
-             videoUrl: "PAx-hX27hOQ",
-             episodeno: "Episode 20",
-             searchName: "Equity & Mutual Funds",
-         }, {
-             imageUrl: "sFf-tYRRRxo",
-             videoUrl: "sFf-tYRRRxo",
-             episodeno: "Episode 21",
-             searchName: "Insurances",
-         }, {
-             imageUrl: "UbQEWdETJmc",
-             videoUrl: "UbQEWdETJmc",
-             episodeno: "Episode 22",
-             searchName: "Life Insurance",
-         }, {
-             imageUrl: "h8NFKbhhCPc",
-             videoUrl: "h8NFKbhhCPc",
-             episodeno: "Episode 23",
-             searchName: "Insurance",
-         }, {
-             imageUrl: "-0hiPpadda8",
-             videoUrl: "-0hiPpadda8",
-             episodeno: "Episode 24",
-             searchName: "Personal Finance",
-         }, {
-             imageUrl: "MYo4T_2TckQ",
-             videoUrl: "MYo4T_2TckQ",
-             episodeno: "Episode 25",
-             searchName: "Grand Finale",
-         }
-
-     ];
+         imageUrl: "dGpLPgK44yU",
+         videoUrl: "dGpLPgK44yU",
+         episodeno: "Episode1",
+         searchName: "NSE Fin Wiz Season 4 – EP- 1- The Curtain Raiser",
+     }, {
+         imageUrl: "3dnOodW1Vu8",
+         videoUrl: "3dnOodW1Vu8",
+         episodeno: "Episode2",
+         searchName: "NSE FinWiz at Infosys - Expert Tip",
+     }, {
+         imageUrl: "fv1ti9QMfhU",
+         videoUrl: "fv1ti9QMfhU",
+         episodeno: "Episode 3",
+         searchName: "NSE FinWiz at Tech Mahindra - Expert Tip",
+     }, {
+         imageUrl: "CHtZ_zE4KTE",
+         videoUrl: "CHtZ_zE4KTE",
+         episodeno: "Episode 4",
+         searchName: "NSE FinWiz at Ambuja Cement - Expert Tip",
+     }, {
+         imageUrl: "vpfQ3ahqgh0",
+         videoUrl: "vpfQ3ahqgh0",
+         episodeno: "Episode 5",
+         searchName: "NSE FinWiz at KPIT - Expert Tip",
+     }, {
+         imageUrl: "-ulbWgeQ_7o",
+         videoUrl: "-ulbWgeQ_7o",
+         episodeno: "Episode 6",
+         searchName: "NSE FinWiz at Syntel - Expert Tip",
+     }, {
+         imageUrl: "72KKuEtSB2c",
+         videoUrl: "72KKuEtSB2c",
+         episodeno: "Episode 7",
+         searchName: "NSE FinWiz at Ultratech - Expert Tip",
+     }, {
+         imageUrl: "XL5idEP3ESg",
+         videoUrl: "XL5idEP3ESg",
+         episodeno: "Episode 8",
+         searchName: "NSE FinWiz at Exide - Expert Tip",
+     }, {
+         imageUrl: "6vwTDWOSh6Y",
+         videoUrl: "6vwTDWOSh6Y",
+         episodeno: "Episode 9",
+         searchName: "NSE FinWiz at Ashok Leyland - Expert Tip",
+     }, {
+         imageUrl: "Af8BZySHEeY",
+         videoUrl: "Af8BZySHEeY",
+         episodeno: "Episode 10",
+         searchName: "NSE FinWiz at BASF - Expert Tip",
+     }, {
+         imageUrl: "K1_o58h40pE",
+         videoUrl: "K1_o58h40pE",
+         episodeno: "Episode 11",
+         searchName: "NSE FinWiz at ACC - Expert Tip",
+     }, {
+         imageUrl: "yXYG8xfLZMw",
+         videoUrl: "yXYG8xfLZMw",
+         episodeno: "Episode 12",
+         searchName: "NSE FinWiz at Mphasis - Expert Tip",
+     }, {
+         imageUrl: "zCvPGkCCTsA",
+         videoUrl: "zCvPGkCCTsA",
+         episodeno: "Episode 13",
+         searchName: "NSE FinWiz at Vedanta - Expert Tip",
+     }, {
+         imageUrl: "Nx5n4P8-lQw",
+         videoUrl: "Nx5n4P8-lQw",
+         episodeno: "Episode 14",
+         searchName: "NSE FinWiz at Thyrocare - Expert Tip",
+     }, {
+         imageUrl: "wCkUBjUvGgQ",
+         videoUrl: "wCkUBjUvGgQ",
+         episodeno: "Episode 15",
+         searchName: "NSE FinWiz at Nalco - Expert Tip",
+     }, {
+         imageUrl: "7TM2VNRTi2Q",
+         videoUrl: "7TM2VNRTi2Q",
+         episodeno: "Episode 16",
+         searchName: "NSE FinWiz at Apollo Tyres - Expert Tip",
+     }, {
+         imageUrl: "02QNQa96gdw",
+         videoUrl: "02QNQa96gdw",
+         episodeno: "Episode 17",
+         searchName: "NSE FinWiz at Jet Airways - Expert Tip",
+     }, {
+         imageUrl: "A4cMfpWUk7Q",
+         videoUrl: "A4cMfpWUk7Q",
+         episodeno: "Episode 18",
+         searchName: "NSE FinWiz at Capgemini - Expert Tip",
+     }, {
+         imageUrl: "RnewTYJeoq0",
+         videoUrl: "RnewTYJeoq0",
+         episodeno: "Episode 19",
+         searchName: "NSE FinWiz at Mondelez - Expert Tip",
+     }, {
+         imageUrl: "-f1FZDLcRLA",
+         videoUrl: "-f1FZDLcRLA",
+         episodeno: "Episode 20",
+         searchName: "NSE FinWiz at Dr Reddy's - Expert Tip",
+     }, {
+         imageUrl: "pSy3sdFzHuM",
+         videoUrl: "pSy3sdFzHuM",
+         episodeno: "Episode 21",
+         searchName: "NSE FinWiz at Havells - Expert Tip",
+     }, {
+         imageUrl: "ztCXPHFLN-g",
+         videoUrl: "ztCXPHFLN-g",
+         episodeno: "Episode 22",
+         searchName: "FINWIZ Case Studies - Capgemini",
+     }, {
+         imageUrl: "QTFarSX3C9U",
+         videoUrl: "QTFarSX3C9U",
+         episodeno: "Episode 23",
+         searchName: "FINWIZ Case Studies - Dr Reddy's",
+     }, {
+         imageUrl: "keI9IzEanNE",
+         videoUrl: "keI9IzEanNE",
+         episodeno: "Episode 24",
+         searchName: "FINWIZ Case Studies - BASF",
+     }, {
+         imageUrl: "rE4P6j-RNS4",
+         videoUrl: "rE4P6j-RNS4",
+         episodeno: "Episode 25",
+         searchName: "FINWIZ Case Studies - Ashok Leyland",
+     }, {
+         imageUrl: "ZH10HvX0rm0",
+         videoUrl: "ZH10HvX0rm0",
+         episodeno: "Episode 26",
+         searchName: "FINWIZ Case Studies - Mondelez",
+     }, {
+         imageUrl: "EoLy3yNUNI0",
+         videoUrl: "EoLy3yNUNI0",
+         episodeno: "Episode 27",
+         searchName: "FINWIZ Case Study - Jet Airways",
+     }, {
+         imageUrl: "yoaWYxEMehA",
+         videoUrl: "yoaWYxEMehA",
+         episodeno: "Episode 28",
+         searchName: "FINWIZ Case Study - Exide",
+     }, {
+         imageUrl: "QAV9dC8l764",
+         videoUrl: "QAV9dC8l764",
+         episodeno: "Episode 29",
+         searchName: "FINWIZ Case Studies - Thyrocare",
+     }, {
+         imageUrl: "PsG6I8LqmbY",
+         videoUrl: "PsG6I8LqmbY",
+         episodeno: "Episode 30",
+         searchName: "FINWIZ Case Studies - NALCO",
+     }, {
+         imageUrl: "_tWfiKDrcaM",
+         videoUrl: "_tWfiKDrcaM",
+         episodeno: "Episode 31",
+         searchName: "FINWIZ Case Studies - MPHASIS",
+     }, {
+         imageUrl: "ui0LdqWThQ0",
+         videoUrl: "ui0LdqWThQ0",
+         episodeno: "Episode 32",
+         searchName: "FINWIZ Case Studies - Vedanta",
+     }, {
+         imageUrl: "QMfv7YkuPwM",
+         videoUrl: "QMfv7YkuPwM",
+         episodeno: "Episode 33",
+         searchName: "NSE FinWiz at Pepsico India - Expert Tip",
+     }];
 
      $scope.more4 = false;
      $scope.view4 = true;
@@ -144,92 +182,122 @@
              $scope.view4 = true;
          }
          //end of season4
-     //for season3
+         //for season3
      $scope.season3 = [{
-             imageUrl: "CW8pc1UPkwc",
-             videoUrl: "CW8pc1UPkwc",
-             episodeno: "Prelaunch Episode",
-             searchName: "Prelaunch",
+             imageUrl: "97KSfy9OYZw",
+             videoUrl: "97KSfy9OYZw",
+             episodeno: "Episode1",
+             searchName: "Lessons On Personal Investments By Financial Gurus",
          }, {
-             imageUrl: "ihHHDFjK0ic",
-             videoUrl: "ihHHDFjK0ic",
-             episodeno: "Launch Event Episode",
-             searchName: "Launch",
+             imageUrl: "n2aLGK8rtIs",
+             videoUrl: "n2aLGK8rtIs",
+             episodeno: "Episode2",
+             searchName: "Unconventional Methods Of Debt Investments",
          }, {
-             imageUrl: "X7ZkEQMhlek",
-             videoUrl: "X7ZkEQMhlek",
-             episodeno: "Episode 1",
-             searchName: "Banking",
-         }, {
-             imageUrl: "HC7x-i_XI2k",
-             videoUrl: "HC7x-i_XI2k",
-             episodeno: "Episode 2",
-             searchName: "Banking",
-         }, {
-             imageUrl: "wlQiBbevewo",
-             videoUrl: "wlQiBbevewo",
+             imageUrl: "yr-Y4wgMMBk",
+             videoUrl: "yr-Y4wgMMBk",
              episodeno: "Episode 3",
-             searchName: "Banking",
+             searchName: "NSE FINWIZ Season 3- Behind The Scenes",
          }, {
-             imageUrl: "6dfpIRcyEVM",
-             videoUrl: "6dfpIRcyEVM",
+             imageUrl: "NlDQpJ-WjT8",
+             videoUrl: "NlDQpJ-WjT8",
              episodeno: "Episode 4",
-             searchName: "Banking ,Insurance",
+             searchName: "Secrets To Get The Perfect Insurance Plan",
          }, {
-             imageUrl: "K5npGoW5ZSI",
-             videoUrl: "K5npGoW5ZSI",
+             imageUrl: "MgFMn8_dOtg",
+             videoUrl: "MgFMn8_dOtg",
              episodeno: "Episode 5",
-             searchName: "Insurance",
+             searchName: "How To Invest For A Hassle Free Retirement",
          }, {
-             imageUrl: "SHqB-3ZxJsM",
-             videoUrl: "SHqB-3ZxJsM",
+             imageUrl: "wRRtoPXD8KQ",
+             videoUrl: "wRRtoPXD8KQ",
              episodeno: "Episode 6",
-             searchName: "Health Insurance",
+             searchName: "Equity Investments- The Key To Wealth Creation",
          }, {
-             imageUrl: "F1zxABRFV8g",
-             videoUrl: "F1zxABRFV8g",
+             imageUrl: "iHmwYYHTddw",
+             videoUrl: "iHmwYYHTddw",
              episodeno: "Episode 7",
-             searchName: "Mutual Funds",
+             searchName: "How To Plan Your Personal Finance Efficiently",
          }, {
-             imageUrl: "jet7j7_haUw",
-             videoUrl: "jet7j7_haUw",
+             imageUrl: "TWXx3tN3s-g",
+             videoUrl: "TWXx3tN3s-g",
              episodeno: "Episode 8",
-             searchName: "Mutual Funds",
+             searchName: "Tax Planning- Dos & Don'ts",
          }, {
-             imageUrl: "wLOaavEolYI",
-             videoUrl: "wLOaavEolYI",
+             imageUrl: "rzGPZWMVs2g",
+             videoUrl: "rzGPZWMVs2g",
              episodeno: "Episode 9",
-             searchName: "Mutual Funds,Equity, Personal Finance",
+             searchName: "Mutual Funds- The Key To Wealth Creation",
          }, {
-             imageUrl: "JQFSqwbOoA0",
-             videoUrl: "JQFSqwbOoA0",
+             imageUrl: "BIdq9ZMCK2I",
+             videoUrl: "BIdq9ZMCK2I",
              episodeno: "Episode 10",
-             searchName: "Portfolio",
+             searchName: "The Dos & Don'ts Of Credit Cards & Loans.",
          }, {
-             imageUrl: "u8rLSglEgKk",
-             videoUrl: "u8rLSglEgKk",
+             imageUrl: "5vk0hJRHx-w",
+             videoUrl: "5vk0hJRHx-w",
              episodeno: "Episode 11",
-             searchName: "Balanced Fund,Balance Fund",
+             searchName: "How much should you invest in Gold? Experts speak.",
          }, {
-             imageUrl: "oLkD_3uIxws",
-             videoUrl: "oLkD_3uIxws",
+             imageUrl: "ucRcFjDVSAA",
+             videoUrl: "ucRcFjDVSAA",
              episodeno: "Episode 12",
-             searchName: "Financial Planning",
+             searchName: "Choose The Right Medical Insurance",
          }, {
-             imageUrl: "98klaFbH1xU",
-             videoUrl: "98klaFbH1xU",
+             imageUrl: "JtzFCZKiKR8",
+             videoUrl: "JtzFCZKiKR8",
              episodeno: "Episode 13",
-             searchName: "Mutual Funds",
+             searchName: "How should one Invest In Equities",
          }, {
-             imageUrl: "25mhwSZya2M",
-             videoUrl: "25mhwSZya2M",
+             imageUrl: "k1_nWbrmAxs",
+             videoUrl: "k1_nWbrmAxs",
              episodeno: "Episode 14",
-             searchName: "Mutual Funds",
+             searchName: "Most Important Financial Goal- Retirement",
          }, {
-             imageUrl: "mNl5_09c81k",
-             videoUrl: "mNl5_09c81k",
+             imageUrl: "nyaMiwcnsyM",
+             videoUrl: "nyaMiwcnsyM",
              episodeno: "Episode 15",
-             searchName: "Mutual Funds",
+             searchName: "The contemporary way of investing in Gold",
+         }, {
+             imageUrl: "jTqIGtmQ0io",
+             videoUrl: "jTqIGtmQ0io",
+             episodeno: "Episode 16",
+             searchName: "How To Keep Your Insurance Plan Separate From Your Investments",
+         }, {
+             imageUrl: "7WFRvNRCHPc",
+             videoUrl: "7WFRvNRCHPc",
+             episodeno: "Episode 17",
+             searchName: "All about loans and credit cards",
+         }, {
+             imageUrl: "FoAzajxtggk",
+             videoUrl: "FoAzajxtggk",
+             episodeno: "Episode 18",
+             searchName: "How To Invest In Mutual Funds?",
+         }, {
+             imageUrl: "Xhs4MiDQ4ik",
+             videoUrl: "Xhs4MiDQ4ik",
+             episodeno: "Episode 19",
+             searchName: "Basic Fundamentals Of Personal Finance",
+         }, {
+             imageUrl: "8yjt2SUawb0",
+             videoUrl: "8yjt2SUawb0",
+             episodeno: "Episode 20",
+             searchName: "Real Estate & other Personal Financial Instruments.",
+         }, {
+             imageUrl: "mYWtcH2OSOE",
+             videoUrl: "mYWtcH2OSOE",
+             episodeno: "Episode 21",
+             searchName: "NSE Finwiz Season 3",
+         }, {
+             imageUrl: "yufRPvyElE0",
+             videoUrl: "yufRPvyElE0",
+             episodeno: "Episode 22",
+             searchName: "Expert Advice On Real Estate Investments",
+         }, {
+             imageUrl: "SGlFuUEjjtU",
+             videoUrl: "SGlFuUEjjtU",
+             episodeno: "Episode 23",
+             searchName: "How To Enjoy Tax Benefits",
          }
 
      ];
@@ -248,133 +316,186 @@
          //end of season3
          //for season2
      $scope.season2 = [{
-             imageUrl: "6e1SJEJJyBw",
-             videoUrl: "6e1SJEJJyBw",
-             episodeno: "Episode 1",
-             searchName: "Launch",
-         }, {
-             imageUrl: "Rl0pNdNDpfo",
-             videoUrl: "Rl0pNdNDpfo",
-             episodeno: "Episode 2",
-             searchName: "Demonitization",
-         }, {
-             imageUrl: "9fPdYPvYhL4",
-             videoUrl: "9fPdYPvYhL4",
-             episodeno: "Episode 3",
-             searchName: "Digital Banking",
-         }, {
-             imageUrl: "WApywMO9Wl0",
-             videoUrl: "WApywMO9Wl0",
-             episodeno: "Episode 4",
-             searchName: "E-Wallet & Cashless Banking",
-         }, {
-             imageUrl: "OrX0r5K8ma4",
-             videoUrl: "OrX0r5K8ma4",
-             episodeno: "Episode 5",
-             searchName: "Safety & Security of Account & Cards",
-         }, {
-             imageUrl: "HYsU0cSTRDY",
-             videoUrl: "HYsU0cSTRDY",
-             episodeno: "Episode 6",
-             searchName: "Types Of Mutual funds",
-         }, {
-             imageUrl: "yTCQc0cI8sg",
-             videoUrl: "yTCQc0cI8sg",
-             episodeno: "Episode 7",
-             searchName: "Budget",
-         }, {
-             imageUrl: "4ToAgejb1bo",
-             videoUrl: "4ToAgejb1bo",
-             episodeno: "Episode 8",
-             searchName: "Personal Finances & Savings",
-         }, {
-             imageUrl: "Eu1lLdio33s",
-             videoUrl: "Eu1lLdio33s",
-             episodeno: "Episode 9",
-             searchName: "",
-         }, {
-             imageUrl: "zUITRJTKDok",
-             videoUrl: "zUITRJTKDok",
-             episodeno: "Episode 10",
-             searchName: "Budget",
-         }, {
-             imageUrl: "y5X8BYujJ3s",
-             videoUrl: "y5X8BYujJ3s",
-             episodeno: "Episode 11",
-             searchName: "Financial Planning",
-         }, {
-             imageUrl: "BoIy7MPxSBU",
-             videoUrl: "BoIy7MPxSBU",
-             episodeno: "Episode 12",
-             searchName: "Mutual Funds & Debt Funds",
-         }, {
-             imageUrl: "Q-iBDeA4Hz0",
-             videoUrl: "Q-iBDeA4Hz0",
-             episodeno: "Episode 13",
-             searchName: "Financial Planning & Investment in Gold",
-         }, {
-             imageUrl: "H4pnL0Lmlzc",
-             videoUrl: "H4pnL0Lmlzc",
-             episodeno: "Episode 14",
-             searchName: "Budget",
-         }, {
-             imageUrl: "CZ-hAHp42-8",
-             videoUrl: "CZ-hAHp42-8",
-             episodeno: "Episode 15",
-             searchName: "Budget",
-         }, {
-             imageUrl: "FEFEJ_HJq2o",
-             videoUrl: "FEFEJ_HJq2o",
-             episodeno: "Episode 16",
-             searchName: "Budget",
-         }, {
-             imageUrl: "B034I1zal0w",
-             videoUrl: "B034I1zal0w",
-             episodeno: "Episode 17",
-             searchName: "Tax",
-         }, {
-             imageUrl: "buTCKyeM-zg",
-             videoUrl: "buTCKyeM-zg",
-             episodeno: "Episode 18",
-             searchName: "Equity",
-         }, {
-             imageUrl: "jf39ex_CbFU",
-             videoUrl: "jf39ex_CbFU",
-             episodeno: "Episode 19",
-             searchName: "Invest Options and tax Savings",
-         }, {
-             imageUrl: "PAx-hX27hOQ",
-             videoUrl: "PAx-hX27hOQ",
-             episodeno: "Episode 20",
-             searchName: "Equity & Mutual Funds",
-         }, {
-             imageUrl: "sFf-tYRRRxo",
-             videoUrl: "sFf-tYRRRxo",
-             episodeno: "Episode 21",
-             searchName: "Insurances",
-         }, {
-             imageUrl: "UbQEWdETJmc",
-             videoUrl: "UbQEWdETJmc",
-             episodeno: "Episode 22",
-             searchName: "Life Insurance",
-         }, {
-             imageUrl: "h8NFKbhhCPc",
-             videoUrl: "h8NFKbhhCPc",
-             episodeno: "Episode 23",
-             searchName: "Insurance",
-         }, {
-             imageUrl: "-0hiPpadda8",
-             videoUrl: "-0hiPpadda8",
-             episodeno: "Episode 24",
-             searchName: "Personal Finance",
-         }, {
-             imageUrl: "MYo4T_2TckQ",
-             videoUrl: "MYo4T_2TckQ",
-             episodeno: "Episode 25",
-             searchName: "Grand Finale",
-         }
-
-     ];
+         imageUrl: "b_2A1pmTbCo",
+         videoUrl: "b_2A1pmTbCo",
+         episodeno: "Episode 1",
+         searchName: "NSE Fin Wiz, Manipal Hospital, Bangalore Part 1",
+     }, {
+         imageUrl: "DtUQ5-BGrz4",
+         videoUrl: "DtUQ5-BGrz4",
+         episodeno: "Episode 2",
+         searchName: "NSE Fin Wiz, Manipal Hospital, Bangalore Part 2",
+     }, {
+         imageUrl: "91w-vLVlEHI",
+         videoUrl: "91w-vLVlEHI",
+         episodeno: "Episode 3",
+         searchName: "NSE Fin Wiz, Manipal Hospital, Bangalore Part 3",
+     }, {
+         imageUrl: "H_PhMcIPMbs",
+         videoUrl: "H_PhMcIPMbs",
+         episodeno: "Episode 4",
+         searchName: "NSE FIN WIZ TAJ PALACE, DELHI SEG 3",
+     }, {
+         imageUrl: "xztM1KWZSKg",
+         videoUrl: "xztM1KWZSKg",
+         episodeno: "Episode 5",
+         searchName: "NSE FIN WIZ TAJ PALACE, DELHI SEG 2",
+     }, {
+         imageUrl: "nIBOmbvoFlw",
+         videoUrl: "nIBOmbvoFlw",
+         episodeno: "Episode 6",
+         searchName: "NSE FIN WIZ TAJ PALACE, DELHI",
+     }, {
+         imageUrl: "FpzIpbZS3AY",
+         videoUrl: "FpzIpbZS3AY",
+         episodeno: "Episode 7",
+         searchName: "NSE FIN WIZ CYIENT HYDERABAD SEG 3",
+     }, {
+         imageUrl: "WhgPuYjKZDU",
+         videoUrl: "WhgPuYjKZDU",
+         episodeno: "Episode 8",
+         searchName: "NSE FIN WIZ CYIENT HYDERABAD SEG 2",
+     }, {
+         imageUrl: "pCILT5lKQOY",
+         videoUrl: "pCILT5lKQOY",
+         episodeno: "Episode 9",
+         searchName: "NSE FIN WIZ CYIENT HYDERABAD SEG 1",
+     }, {
+         imageUrl: "mlfHKDfC-p4",
+         videoUrl: "mlfHKDfC-p4",
+         episodeno: "Episode 10",
+         searchName: "NSE FIN WIZ SHOBHA, BANGALORE SEG 2",
+     }, {
+         imageUrl: "tqT2sZYj7PU",
+         videoUrl: "tqT2sZYj7PU",
+         episodeno: "Episode 11",
+         searchName: "NSE FIN WIZ SHOBHA, BANGALORE SEG 1",
+     }, {
+         imageUrl: "QGUj5HHvEA8",
+         videoUrl: "QGUj5HHvEA8",
+         episodeno: "Episode 12",
+         searchName: "NSE FIN WIZ GLAXO SEG 2",
+     }, {
+         imageUrl: "O5MbuEWgDmo",
+         videoUrl: "O5MbuEWgDmo",
+         episodeno: "Episode 13",
+         searchName: "NSE FIN WIZ GLAXO SEG 1",
+     }, {
+         imageUrl: "IHN9zICuk0I",
+         videoUrl: "IHN9zICuk0I",
+         episodeno: "Episode 14",
+         searchName: "NSE FIN WIZ GLAXO SEG 3",
+     }, {
+         imageUrl: "TKkjL6vSzDw",
+         videoUrl: "TKkjL6vSzDw",
+         episodeno: "Episode 15",
+         searchName: "NSE Fin Wiz Mindtree, Bangalore Part 2",
+     }, {
+         imageUrl: "0vGR1F_te0o",
+         videoUrl: "0vGR1F_te0o",
+         episodeno: "Episode 16",
+         searchName: "NSE Fin Wiz Mindtree, Bangalore Part 1",
+     }, {
+         imageUrl: "g_EpTir-4No",
+         videoUrl: "g_EpTir-4No",
+         episodeno: "Episode 17",
+         searchName: "NSE Fin Wiz Mindtree, Bangalore Part 3",
+     }, {
+         imageUrl: "38j9e9kRxgU",
+         videoUrl: "38j9e9kRxgU",
+         episodeno: "Episode 18",
+         searchName: "NSE FIN WIZ FORTIS, GURGAON SEG 1",
+     }, {
+         imageUrl: "eMrhDAUxobQ",
+         videoUrl: "eMrhDAUxobQ",
+         episodeno: "Episode 19",
+         searchName: "NSE FIN WIZ FORTIS, GURGAON SEG 2",
+     }, {
+         imageUrl: "-ZFZU_sRTEI",
+         videoUrl: "-ZFZU_sRTEI",
+         episodeno: "Episode 20",
+         searchName: "NSE FIN WIZ FORTIS, GURGAON SEG 3",
+     }, {
+         imageUrl: "5yX5eqN_rPE",
+         videoUrl: "5yX5eqN_rPE",
+         episodeno: "Episode 21",
+         searchName: "NSE FIN WIZ JUBILANT, NOIDA SEG 1",
+     }, {
+         imageUrl: "HRuGmb-1f30",
+         videoUrl: "HRuGmb-1f30",
+         episodeno: "Episode 22",
+         searchName: "NSE FIN WIZ JUBILANT, NOIDA SEG 3",
+     }, {
+         imageUrl: "0aHgItBRHlE",
+         videoUrl: "0aHgItBRHlE",
+         episodeno: "Episode 23",
+         searchName: "NSE FIN WIZ JUBILANT, NOIDA SEG 2",
+     }, {
+         imageUrl: "x91d-fdXIco",
+         videoUrl: "x91d-fdXIco",
+         episodeno: "Episode 24",
+         searchName: "NSE Fin Wiz - Raymond Mumbai Seg 3",
+     }, {
+         imageUrl: "hKMkF9SjA0I",
+         videoUrl: "hKMkF9SjA0I",
+         episodeno: "Episode 25",
+         searchName: "NSE Fin Wiz - Raymond Mumbai Seg 2",
+     }, {
+         imageUrl: "wrM7mekwSHI",
+         videoUrl: "wrM7mekwSHI",
+         episodeno: "Episode 26",
+         searchName: "NSE Fin Wiz - Raymond Mumbai Seg 1",
+     }, {
+         imageUrl: "d6TsC7c1xjw",
+         videoUrl: "d6TsC7c1xjw",
+         episodeno: "Episode 27",
+         searchName: "NSE Fin Wiz at Infosys, Pune seg 2",
+     }, {
+         imageUrl: "COnJlZUp6w0",
+         videoUrl: "COnJlZUp6w0",
+         episodeno: "Episode 28",
+         searchName: "NSE Fin Wiz at Infosys, Pune",
+     }, {
+         imageUrl: "9zp1d2OvwCg",
+         videoUrl: "9zp1d2OvwCg",
+         episodeno: "Episode 29",
+         searchName: "NSE Fin Wiz at Infosys, Pune seg 3",
+     }, {
+         imageUrl: "OhjxnQi4B80",
+         videoUrl: "OhjxnQi4B80",
+         episodeno: "Episode 30",
+         searchName: "NSE Fin Wiz At Persistent, Pune",
+     }, {
+         imageUrl: "c7lFD_nq_Q0",
+         videoUrl: "c7lFD_nq_Q0",
+         episodeno: "Episode 31",
+         searchName: "NSE Fin Wiz At Persistent, Pune",
+     }, {
+         imageUrl: "8jLHQ3VBSOI",
+         videoUrl: "8jLHQ3VBSOI",
+         episodeno: "Episode 32",
+         searchName: "NSE Fin Wiz At Persistent, Pune",
+     }, {
+         imageUrl: "yVU6XYRA4Co",
+         videoUrl: "yVU6XYRA4Co",
+         episodeno: "Episode 33",
+         searchName: "Unseasonal Rains: Big Dampener",
+     }, {
+         imageUrl: "LCUqI0u7NVQ",
+         videoUrl: "LCUqI0u7NVQ",
+         episodeno: "Episode 34",
+         searchName: "NSE Fin Wiz Season 2: Genpact Part 3",
+     }, {
+         imageUrl: "7oMXSfQEfQo",
+         videoUrl: "7oMXSfQEfQo",
+         episodeno: "Episode 35",
+         searchName: "NSE Fin Wiz Season 2: Genpact",
+     }, {
+         imageUrl: "8jjD3Ggx3qo",
+         videoUrl: "8jjD3Ggx3qo",
+         episodeno: "Episode 36",
+         searchName: "NSE Fin Wiz: Genpact"
+     }];
 
      $scope.more2 = false;
      $scope.view2 = true;
