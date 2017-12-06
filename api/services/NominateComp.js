@@ -1,7 +1,13 @@
 var schema = new Schema({
  companyName:String,
- contactNumber:Number
-});
+ contactNumber:Number,
+ designation:String,
+ contactPerson:Number,
+ email: {
+    type: String,
+    validate: validators.isEmail(),
+    unique: true
+},});
 
 schema.plugin(deepPopulate, {});
 schema.plugin(uniqueValidator);

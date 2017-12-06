@@ -1,0 +1,66 @@
+{
+    "title": "Create Articles",
+    "name": "Articles",
+    "jsonPage": "viewArticle",
+    "desciption": "",
+    "pageType": "create",
+    "urlFields": ["Article"],
+    "fields": [{
+        "name": "Title",
+        "type": "text",
+        "tableRef": "title",
+        "placeholder": "Enter title",
+        "id": "title",
+        "validation": ["", "trim", ""],
+        "url": ""
+    },{
+        "name": "Article Discription",
+        "type": "wysiwyg",
+        "tableRef": "discription",
+        "placeholder": "Enter discription",
+        "id": "discription",
+        "validation": ["", "trim", ""],
+        "url": ""
+    },
+    {
+        "name": "Article Image",
+        "type": "image",
+        "tableRef": "articleImage",
+        "option": "single",
+        "size": "1768 x 1146px",
+        "placeholder": "Enter articleImage",
+        "id": "articleImage",
+        "validation": ["", "trim", ""],
+        "url": ""
+    },{
+        "name": "Order",
+        "type": "text",
+        "tableRef": "order",
+        "placeholder": "Enter Order",
+        "id": "order",
+        "validation": ["", "trim", ""],
+        "url": ""
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitArticles",
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewArticle"
+            }
+        }
+    }, {
+        "name": "cancel",
+        "sideMenuRedirect": true,
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewArticle"
+            }
+        }
+    }],
+    "apiCall": {
+        "url": "Articles/save"
+    }
+}

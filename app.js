@@ -27,8 +27,8 @@ global["database"] = "finwiz";
 
 mongoose.Promise = global.Promise;
 
-global.mongourl = "mongodb://localhost:27017/"+database;
-mongoose.connect(mongourl, {
+// global.mongourl = "mongodb://localhost:27017/"+ database;
+mongoose.connect('mongodb://localhost:27017/' + database, {
     useMongoClient: true
 }, function (err, db) {
     global.gfs = Grid(mongoose.connections[0].db, mongoose);

@@ -1,0 +1,72 @@
+{
+    "title": "Edit Article",
+    "name": "Article",
+    "jsonPage": "viewArticle",
+    "desciption": "",
+    "pageType": "edit",
+    "urlFields": ["_id"],
+    "fields": [{
+        "name": "Title",
+        "type": "text",
+        "tableRef": "title",
+        "placeholder": "Enter Title",
+        "id": "title",
+        "validation": ["", "trim", ""],
+        "url": ""
+    }, {
+        "name": "Article Image",
+        "type": "image",
+        "tableRef": "articleImage",
+        "option": "single",
+        "size": "1622 x 517px",
+        "placeholder": "Enter Article Image",
+        "id": "articleImage",
+        "validation": ["", "trim", ""],
+        "url": ""
+    },{
+        "name": "Order",
+        "type": "text",
+        "tableRef": "order",
+        "placeholder": "Enter Order",
+        "id": "Order",
+        "validation": ["", "trim", ""],
+        "url": ""
+    },
+    {
+        "name": "Discription",
+        "type": "wysiwyg",
+        "tableRef": "discription",
+        "placeholder": "Enter discription",
+        "id": "discription",
+        "validation": ["", "trim", ""],
+        "url": ""
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitArticle",
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewArticle"
+            }
+        }
+    }, {
+        "name": "cancel",
+        "sideMenuRedirect": true,
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewArticle"
+            }
+        }
+    }],
+    "apiCall": {
+        "url": "Articles/save",
+        "params": "_id"
+    },
+    "preApi": {
+        "url": "Articles/getOne",
+        "params": "_id"
+    }
+
+}
