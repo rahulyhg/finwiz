@@ -859,14 +859,23 @@ p {
     position: absolute;
     background:$color-secondary;
     height: 753px;
+    width:5px;
+    right:50px;
     .scroll_thumb{
         background: $color-primary;
         border-radius:100%;
         position: relative;
         top:0;
+        width: 25px;
+        right: 200%;
+        height: 25px;
+
+        
     }
 }
-
+.test-bottom::-webkit-scrollbar{
+display: none;
+}
 
 .style-1::-webkit-scrollbar-track
 {
