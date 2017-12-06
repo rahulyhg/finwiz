@@ -43,13 +43,30 @@ myApp.directive('img', function ($compile, $parse) {
             replace: false,
             link: function (scope, element, attr) {
                 var $element = $(element);
+                
                 var lastScrollTop = 0;
-                $($element).scroll(function (event) {
-                   console.log("this is custom scroll",$(this).scrollTop())
-                   console.log($(this).height())
-                   var scroll_thumb=($(this).scrollTop()/1000*$(this).height())
-                   $('.scroll_thumb').css("top",scroll_thumb)
 
+              
+                $($element).scroll(function (event) {
+
+
+            
+
+
+
+                   console.log("this is custom scroll",$(this).scrollTop() )
+
+                //    console.log($(this).height())
+                //    var scroll_thumb=($(this).scrollTop()/100*$(this).height())
+
+                var percent1=$(this).scrollTop()/($(this)[0].scrollHeight-$(this).height())*100;
+
+                // var percent1=$(this).scrollTop()/(2275)*100;
+                
+                   var scroll_thumb=(percent1/100*$(this).height())
+                
+                   $('.scroll_thumb').css("top",scroll_thumb)
+                   console.log( scroll_thumb,"SCROLL THUMB",$(this)[0].scrollHeight)
 
                 });
             }
