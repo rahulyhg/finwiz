@@ -1,0 +1,53 @@
+{
+    "title": "NewsLetter",
+    "description": "List of NewsLetter",
+    "pageType": "view",
+    "sendIdWithCreate": true,
+    "urlFields": ["_id"],
+    "fields": [{
+        "name": "Title",
+        "isSort": "",
+        "tableRef": "title"
+    }, {
+        "name": "Editions",
+        "isSort": "",
+        "tableRef": "editions"
+    }, {
+        "name": "Order",
+        "isSort": "",
+        "tableRef": "order"
+    }],
+    "action": [{
+        "name": "edit",
+        "icon": "fa-pencil",
+        "buttonClass": "btn-primary",
+        "type": "page",
+        "action": "editNewsLetter",
+        "fieldsToSend": {
+            "_id": "_id"
+        }
+    }, {
+        "name": "delete",
+        "icon": "fa-trash",
+        "buttonClass": "btn-danger",
+        "type": "apiCallConfirm",
+        "title": "Delete NewsLetter",
+        "content": "Are you sure you want to delete NewsLetter?",
+        "api": "NewsLetter/delete",
+        "fieldsToSend": {
+            "name": "_id",
+            "value": "_id"
+        }
+    }],
+    "button": [{
+        "name": "Create",
+        "icon": "plus",
+        "class": "btn-success",
+        "type": "page",
+        "action": "createNewsLetter"
+    }],
+    "apiCall": {
+        "url": "NewsLetter/search",
+        "params": "_id"
+    }
+}

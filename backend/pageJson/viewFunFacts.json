@@ -1,0 +1,49 @@
+{
+    "title": "FunFacts",
+    "description": "List of Fun Facts",
+    "pageType": "view",
+    "sendIdWithCreate": true,
+    "urlFields": ["_id"],
+    "fields": [{
+        "name": "Text",
+        "isSort": "",
+        "tableRef": "factText"
+    },{
+        "name": "Order",
+        "isSort": "",
+        "tableRef": "order"
+    }],
+    "action": [{
+        "name": "edit",
+        "icon": "fa-pencil",
+        "buttonClass": "btn-primary",
+        "type": "page",
+        "action": "editFunFacts",
+        "fieldsToSend": {
+            "_id": "_id"
+        }
+    }, {
+        "name": "delete",
+        "icon": "fa-trash",
+        "buttonClass": "btn-danger",
+        "type": "apiCallConfirm",
+        "title": "Delete FunFacts",
+        "content": "Are you sure you want to delete Fun Facts?",
+        "api": "FunFacts/delete",
+        "fieldsToSend": {
+            "name": "_id",
+            "value": "_id"
+        }
+    }],
+    "button": [{
+        "name": "Create",
+        "icon": "plus",
+        "class": "btn-success",
+        "type": "page",
+        "action": "createFunFacts"
+    }],
+    "apiCall": {
+        "url": "FunFacts/search",
+        "params": "_id"
+    }
+}

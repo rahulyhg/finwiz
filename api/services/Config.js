@@ -322,7 +322,7 @@ var models = {
         });
     },
     generateExcel: function (name, found, res) {
-        // name = _.kebabCase(name);
+        name = _.kebabCase(name);
         var excelData = [];
         _.each(found, function (singleData) {
             var singleExcel = {};
@@ -335,7 +335,7 @@ var models = {
         });
         var xls = json2xls(excelData);
         var folder = "./.tmp/";
-        var path = name + "-" + moment().format("MMM-DD-YYYY-hh-mm-ss-a") + ".xlsx";
+        var path = name + "-" + moment().format("MMM-DD-YYYY-hh-mm-ss-amoment") + ".xlsx";
         var finalPath = folder + path;
         fs.writeFile(finalPath, xls, 'binary', function (err) {
             if (err) {
@@ -345,9 +345,16 @@ var models = {
                     if (err) {
                         res.callback(err, null);
                     } else {
-                        res.set('Content-Type', "application/octet-stream");
-                        res.set('Content-Disposition', "attachment;filename=" + path);
-                        res.send(excel);
+                        // console.log("excel-------", excel);
+                        // console.log("res", res);
+                        // res.set('Content-Type', "application/octet-stream");
+                        // res.set('Content-Disposition', "attachment;filename=" + path);
+                        // res.send(excel);
+                        res({
+                            excel: excel,
+                            path: path,
+                            finalPath: finalPath
+                        })
                         fs.unlink(finalPath);
                     }
                 });
@@ -365,6 +372,7 @@ var models = {
             return undefined;
         }
     },
+
     downloadFromUrl: function (url, callback) {
         var dest = "./.tmp/" + moment().valueOf() + "-" + _.last(url.split("/"));
         var file = fs.createWriteStream(dest);
@@ -378,6 +386,7 @@ var models = {
             callback(err);
         });
     },
+
     sendEmail: function (fromEmail, toEmail, subject, html, attachments, callback) {
 
         Password.findOneByName("sendgrid", function (err, data) {

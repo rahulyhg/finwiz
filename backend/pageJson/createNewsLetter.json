@@ -1,0 +1,75 @@
+{
+    "title": "Create NewsLetter",
+    "name": "NewsLetter",
+    "jsonPage": "viewNewsLetter",
+    "desciption": "",
+    "pageType": "create",
+    "urlFields": ["NewsLetter"],
+    "fields": [{
+        "name": "Title",
+        "type": "text",
+        "tableRef": "title",
+        "placeholder": "Enter title",
+        "id": "title",
+        "validation": ["", "trim", ""],
+        "url": ""
+    },{
+        "name": "NewsLetter Discription",
+        "type": "wysiwyg",
+        "tableRef": "discription",
+        "placeholder": "Enter discription",
+        "id": "discription",
+        "validation": ["", "trim", ""],
+        "url": ""
+    },
+    {
+        "name": "NewsLetter Image",
+        "type": "image",
+        "tableRef": "image",
+        "option": "single",
+        "size": "1768 x 1146px",
+        "placeholder": "Enter NewsLetterImage",
+        "id": "NewsLetterImage",
+        "validation": ["", "trim", ""],
+        "url": ""
+    },{
+        "name": "Order",
+        "type": "text",
+        "tableRef": "order",
+        "placeholder": "Enter Order",
+        "id": "order",
+        "validation": ["", "trim", ""],
+        "url": ""
+    },
+    {
+        "name": "Editions",
+        "type": "text",
+        "tableRef": "editions",
+        "placeholder": "Enter editions",
+        "id": "editions",
+        "validation": ["", "trim", ""],
+        "url": ""
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitNewsLetter",
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewNewsLetter"
+            }
+        }
+    }, {
+        "name": "cancel",
+        "sideMenuRedirect": true,
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewNewsLetter"
+            }
+        }
+    }],
+    "apiCall": {
+        "url": "NewsLetter/save"
+    }
+}

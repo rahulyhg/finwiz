@@ -1,0 +1,45 @@
+{
+    "title": "Subscribers Email",
+    "description": "List of Subscribed Emails",
+    "pageType": "view",
+    "sendIdWithCreate": true,
+    "urlFields": ["_id"],
+    "fields": [ {
+        "name": "Email",
+        "isSort": "",
+        "tableRef": "email"
+    }],
+    "action": [{
+        "name": "edit",
+        "icon": "fa-pencil",
+        "buttonClass": "btn-primary",
+        "type": "page",
+        "action": "editSubscribersEmail",
+        "fieldsToSend": {
+            "_id": "_id"
+        }
+    }, {
+        "name": "delete",
+        "icon": "fa-trash",
+        "buttonClass": "btn-danger",
+        "type": "apiCallConfirm",
+        "title": "Delete SubscribersEmail",
+        "content": "Are you sure you want to delete Fun Facts?",
+        "api": "SubscribersEmail/delete",
+        "fieldsToSend": {
+            "name": "_id",
+            "value": "_id"
+        }
+    }],
+    "button": [{
+        "name": "Create",
+        "icon": "plus",
+        "class": "btn-success",
+        "type": "page",
+        "action": "createSubscribersEmail"
+    }],
+    "apiCall": {
+        "url": "SubscribersEmail/search",
+        "params": "_id"
+    }
+}

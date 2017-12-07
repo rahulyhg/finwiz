@@ -1,0 +1,71 @@
+{
+    "title": "Create Nominate Companies",
+    "name": "NominateComp",
+    "jsonPage": "viewNominateComp",
+    "desciption": "",
+    "pageType": "create",
+    "urlFields": ["NominateComp"],
+    "fields": [{
+        "name": "Company Name",
+        "type": "text",
+        "tableRef": "companyName",
+        "placeholder": "Enter companyName",
+        "id": "companyName",
+        "validation": ["", "trim", ""],
+        "url": ""
+    },{
+        "name": "Contact Number",
+        "type": "text",
+        "tableRef": "contactNumber",
+        "placeholder": "Enter contact Number",
+        "id": "companyName",
+        "validation": ["", "trim", ""],
+        "url": ""
+    },{
+        "name": "Designation",
+        "type": "text",
+        "tableRef": "designation",
+        "placeholder": "Enter designation",
+        "id": "designation",
+        "validation": ["", "trim", ""],
+        "url": ""
+    },{
+        "name": "Contact Person",
+        "type": "text",
+        "tableRef": "contactPerson",
+        "placeholder": "Enter contactPerson",
+        "id": "contactPerson",
+        "validation": ["", "trim", ""],
+        "url": ""
+    },{
+        "name": "Email",
+        "type": "text",
+        "tableRef": "email",
+        "placeholder": "Enter Email",
+        "id": "email",
+        "validation": ["", "trim", "unique"],
+        "url": ""
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitNominateComp",
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewNominateComp"
+            }
+        }
+    }, {
+        "name": "cancel",
+        "sideMenuRedirect": true,
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewNominateComp"
+            }
+        }
+    }],
+    "apiCall": {
+        "url": "NominateComp/save"
+    }
+}
