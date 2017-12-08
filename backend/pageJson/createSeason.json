@@ -1,34 +1,34 @@
 {
-    "title": "Edit FunFacts",
-    "name": "FunFacts",
-    "jsonPage": "viewFunFacts",
+    "title": "Create Season",
+    "name": "Season",
+    "jsonPage": "viewSeason",
     "desciption": "",
-    "pageType": "edit",
-    "urlFields": ["_id"],
-    "fields": [ {
-        "name": "Text",
-        "type": "wysiwyg",
-        "tableRef": "factText",
-        "placeholder": "Enter factText",
-        "id": "factText",
+    "pageType": "create",
+    "urlFields": ["Season"],
+    "fields": [{
+        "name": "Season Name",
+        "type": "text",
+        "tableRef": "name",
+        "placeholder": "Enter name",
+        "id": "name",
         "validation": ["", "trim", ""],
         "url": ""
-    }, {
+    },{
         "name": "Order",
         "type": "text",
         "tableRef": "order",
         "placeholder": "Enter Order",
-        "id": "Order",
+        "id": "order",
         "validation": ["", "trim", ""],
         "url": ""
     }],
     "action": [{
         "name": "submit",
-        "action": "submitFunFacts",
+        "action": "submitSeason",
         "stateName": {
             "page": "page",
             "json": {
-                "id": "viewFunFacts"
+                "id": "viewSeason"
             }
         }
     }, {
@@ -37,17 +37,11 @@
         "stateName": {
             "page": "page",
             "json": {
-                "id": "viewFunFacts"
+                "id": "viewSeason"
             }
         }
     }],
     "apiCall": {
-        "url": "FunFacts/save",
-        "params": "_id"
-    },
-    "preApi": {
-        "url": "FunFacts/getOne",
-        "params": "_id"
+        "url": "Season/save"
     }
-
 }

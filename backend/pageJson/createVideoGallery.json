@@ -1,0 +1,57 @@
+{
+    "title": "Create Video Gallery",
+    "name": "VideoGallery",
+    "jsonPage": "viewVideoGallery",
+    "desciption": "",
+    "pageType": "create",
+    "urlFields": ["VideoGallery"],
+    "fields": [{
+        "name": "Keyword",
+        "type": "text",
+        "tableRef": "keyword",
+        "placeholder": "Enter keyword",
+        "id": "keyword",
+        "validation": ["", "trim", ""],
+        "url": ""
+    },{
+        "name": "Url",
+        "type": "text",
+        "tableRef": "url",
+        "placeholder": "Enter url",
+        "id": "url",
+        "validation": ["", "trim", ""],
+        "url": ""
+    },{
+        "name": "Image",
+        "type": "image",
+        "tableRef": "image",
+        "option": "single",
+        "size": "1768 x 1146px",
+        "placeholder": "Enter image",
+        "id": "image",
+        "validation": ["", "trim", ""],
+        "url": ""
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitVideoGallery",
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewVideoGallery"
+            }
+        }
+    }, {
+        "name": "cancel",
+        "sideMenuRedirect": true,
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewVideoGallery"
+            }
+        }
+    }],
+    "apiCall": {
+        "url": "VideoGallery/save"
+    }
+}

@@ -34,6 +34,16 @@ myApp.factory('NavigationService', function ($http) {
         name: "Nominate Company",
         classis: "active",
         sref: "#!/page/viewNominateComp//",
+    },
+    {
+        name: "Season",
+        classis: "active",
+        sref: "#!/page/viewSeason//",
+    },
+    {
+        name: "Video Gallery",
+        classis: "active",
+        sref: "#!/page/viewVideoGallery//",
     }];
 
     return {

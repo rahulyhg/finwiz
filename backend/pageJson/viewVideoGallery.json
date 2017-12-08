@@ -1,29 +1,29 @@
 {
-    "title": "Article",
-    "description": "List of Article",
+    "title": "Video Gallery",
+    "description": "List of Fun Facts",
     "pageType": "view",
     "sendIdWithCreate": true,
     "urlFields": ["_id"],
     "fields": [{
-        "name": "Title",
+        "name": "Url",
         "isSort": "",
-        "tableRef": "title"
-    }, {
-        "name": "Article Image",
+        "tableRef": "url"
+    },{
+        "name": "Keyword",
+        "isSort": "",
+        "tableRef": "keyword"
+    },{
+        "name": "Image",
         "type": "image",
         "isSort": "",
-        "tableRef": "articleImage"
-    },{
-        "name": "Order",
-        "isSort": "",
-        "tableRef": "order"
+        "tableRef": "image"
     }],
     "action": [{
         "name": "edit",
         "icon": "fa-pencil",
         "buttonClass": "btn-primary",
         "type": "page",
-        "action": "editArticle",
+        "action": "editVideoGallery",
         "fieldsToSend": {
             "_id": "_id"
         }
@@ -32,9 +32,9 @@
         "icon": "fa-trash",
         "buttonClass": "btn-danger",
         "type": "apiCallConfirm",
-        "title": "Delete Article",
-        "content": "Are you sure you want to delete Article?",
-        "api": "Articles/delete",
+        "title": "Delete VideoGallery",
+        "content": "Are you sure you want to delete Fun Facts?",
+        "api": "VideoGallery/delete",
         "fieldsToSend": {
             "name": "_id",
             "value": "_id"
@@ -45,10 +45,10 @@
         "icon": "plus",
         "class": "btn-success",
         "type": "page",
-        "action": "createArticle"
+        "action": "createVideoGallery"
     }],
     "apiCall": {
-        "url": "Articles/search",
+        "url": "VideoGallery/search",
         "params": "_id"
     }
 }

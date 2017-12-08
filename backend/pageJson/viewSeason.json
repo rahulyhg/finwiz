@@ -1,18 +1,13 @@
 {
-    "title": "Article",
-    "description": "List of Article",
+    "title": "Season",
+    "description": "List of Season",
     "pageType": "view",
     "sendIdWithCreate": true,
     "urlFields": ["_id"],
     "fields": [{
-        "name": "Title",
+        "name": "Season name",
         "isSort": "",
-        "tableRef": "title"
-    }, {
-        "name": "Article Image",
-        "type": "image",
-        "isSort": "",
-        "tableRef": "articleImage"
+        "tableRef": "name"
     },{
         "name": "Order",
         "isSort": "",
@@ -23,7 +18,7 @@
         "icon": "fa-pencil",
         "buttonClass": "btn-primary",
         "type": "page",
-        "action": "editArticle",
+        "action": "editSeason",
         "fieldsToSend": {
             "_id": "_id"
         }
@@ -32,9 +27,9 @@
         "icon": "fa-trash",
         "buttonClass": "btn-danger",
         "type": "apiCallConfirm",
-        "title": "Delete Article",
-        "content": "Are you sure you want to delete Article?",
-        "api": "Articles/delete",
+        "title": "Delete Season",
+        "content": "Are you sure you want to delete Fun Facts?",
+        "api": "Season/delete",
         "fieldsToSend": {
             "name": "_id",
             "value": "_id"
@@ -45,10 +40,10 @@
         "icon": "plus",
         "class": "btn-success",
         "type": "page",
-        "action": "createArticle"
+        "action": "createSeason"
     }],
     "apiCall": {
-        "url": "Articles/search",
+        "url": "Season/search",
         "params": "_id"
     }
 }

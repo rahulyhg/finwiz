@@ -1,22 +1,17 @@
 var schema = new Schema({
-  episodes:[{
-    title:String,
-    url:String,
-    order:String,
-    description:String
-  }],
-  photos:[{
-      title:String,
-      image:String,
-      order:String,
-      description:String
-  }]
+    image:[String],
+    keyword:String,
+    season: {
+        type: Schema.Types.ObjectId,
+        ref: 'Season',
+        index: true
+    }
 });
 
 schema.plugin(deepPopulate, {});
 schema.plugin(uniqueValidator);
 schema.plugin(timestamps);
-module.exports = mongoose.model('Gallery', schema);
+module.exports = mongoose.model('ImageGallery', schema);
 
 var exports = _.cloneDeep(require("sails-wohlig-service")(schema));
 var model = {};
