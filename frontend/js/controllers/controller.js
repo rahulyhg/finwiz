@@ -140,6 +140,15 @@ myApp.controller('HomeCtrl', function ($scope, $uibModal, TemplateService, Navig
             });
 
         }
+        $scope.openQuizModel = function () {
+            var modalInstance = $uibModal.open({
+                animation: true,
+                ariaLabelledBy: 'modal-title',
+                ariaDescribedBy: 'modal-body',
+                templateUrl: 'views/model/quizlogin.html',
+                // size: 'sm',
+            });
+        }
 
 
         $scope.goToAnchor = function (anchor, id) {

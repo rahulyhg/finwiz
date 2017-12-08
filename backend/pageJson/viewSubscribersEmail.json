@@ -1,29 +1,20 @@
 {
-    "title": "Article",
-    "description": "List of Article",
+    "title": "Subscribers Email",
+    "description": "List of Subscribed Emails",
     "pageType": "view",
     "sendIdWithCreate": true,
     "urlFields": ["_id"],
-    "fields": [{
-        "name": "Title",
+    "fields": [ {
+        "name": "Email",
         "isSort": "",
-        "tableRef": "title"
-    }, {
-        "name": "Article Image",
-        "type": "image",
-        "isSort": "",
-        "tableRef": "articleImage"
-    },{
-        "name": "Order",
-        "isSort": "",
-        "tableRef": "order"
+        "tableRef": "email"
     }],
     "action": [{
         "name": "edit",
         "icon": "fa-pencil",
         "buttonClass": "btn-primary",
         "type": "page",
-        "action": "editArticle",
+        "action": "editSubscribersEmail",
         "fieldsToSend": {
             "_id": "_id"
         }
@@ -32,9 +23,9 @@
         "icon": "fa-trash",
         "buttonClass": "btn-danger",
         "type": "apiCallConfirm",
-        "title": "Delete Article",
-        "content": "Are you sure you want to delete Article?",
-        "api": "Articles/delete",
+        "title": "Delete SubscribersEmail",
+        "content": "Are you sure you want to delete Fun Facts?",
+        "api": "SubscribersEmail/delete",
         "fieldsToSend": {
             "name": "_id",
             "value": "_id"
@@ -45,10 +36,10 @@
         "icon": "plus",
         "class": "btn-success",
         "type": "page",
-        "action": "createArticle"
+        "action": "createSubscribersEmail"
     }],
     "apiCall": {
-        "url": "Articles/search",
+        "url": "SubscribersEmail/search",
         "params": "_id"
     }
 }

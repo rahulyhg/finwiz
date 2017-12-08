@@ -41,7 +41,7 @@
         position: absolute;
         top: 0;
         left: 0;
-        width: 80%;
+        width: 100%;
         border-bottom: 4px solid #135381;
     }
 }
@@ -50,6 +50,7 @@
     position: absolute;
     top: -18px;
     right: 112px;
+    z-index: 5;
     .season-name {
         font-size: 22px;
         letter-spacing: 2px;

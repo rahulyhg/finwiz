@@ -1,0 +1,53 @@
+{
+    "title": "Edit Season",
+    "name": "Season",
+    "jsonPage": "viewSeason",
+    "desciption": "",
+    "pageType": "edit",
+    "urlFields": ["_id"],
+    "fields": [ {
+        "name": "Season name",
+        "type": "text",
+        "tableRef": "name",
+        "placeholder": "Enter name",
+        "id": "name",
+        "validation": ["", "trim", ""],
+        "url": ""
+    }, {
+        "name": "Order",
+        "type": "text",
+        "tableRef": "order",
+        "placeholder": "Enter Order",
+        "id": "Order",
+        "validation": ["", "trim", ""],
+        "url": ""
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitSeason",
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewSeason"
+            }
+        }
+    }, {
+        "name": "cancel",
+        "sideMenuRedirect": true,
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewSeason"
+            }
+        }
+    }],
+    "apiCall": {
+        "url": "Season/save",
+        "params": "_id"
+    },
+    "preApi": {
+        "url": "Season/getOne",
+        "params": "_id"
+    }
+
+}

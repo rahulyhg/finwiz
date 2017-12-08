@@ -1,0 +1,47 @@
+{
+    "title": "Create Season",
+    "name": "Season",
+    "jsonPage": "viewSeason",
+    "desciption": "",
+    "pageType": "create",
+    "urlFields": ["Season"],
+    "fields": [{
+        "name": "Season Name",
+        "type": "text",
+        "tableRef": "name",
+        "placeholder": "Enter name",
+        "id": "name",
+        "validation": ["", "trim", ""],
+        "url": ""
+    },{
+        "name": "Order",
+        "type": "text",
+        "tableRef": "order",
+        "placeholder": "Enter Order",
+        "id": "order",
+        "validation": ["", "trim", ""],
+        "url": ""
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitSeason",
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewSeason"
+            }
+        }
+    }, {
+        "name": "cancel",
+        "sideMenuRedirect": true,
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewSeason"
+            }
+        }
+    }],
+    "apiCall": {
+        "url": "Season/save"
+    }
+}

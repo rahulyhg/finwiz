@@ -1,7 +1,7 @@
 {
-    "title": "Edit Article",
-    "name": "Article",
-    "jsonPage": "viewArticle",
+    "title": "Edit NewsLetter",
+    "name": "NewsLetter",
+    "jsonPage": "viewNewsLetter",
     "desciption": "",
     "pageType": "edit",
     "urlFields": ["_id"],
@@ -14,13 +14,13 @@
         "validation": ["", "trim", ""],
         "url": ""
     }, {
-        "name": "Article Image",
+        "name": "NewsLetter Image",
         "type": "image",
-        "tableRef": "articleImage",
+        "tableRef": "image",
         "option": "single",
         "size": "1622 x 517px",
-        "placeholder": "Enter Article Image",
-        "id": "articleImage",
+        "placeholder": "Enter NewsLetter Image",
+        "id": "NewsLetterImage",
         "validation": ["", "trim", ""],
         "url": ""
     },{
@@ -40,14 +40,22 @@
         "id": "discription",
         "validation": ["", "trim", ""],
         "url": ""
+    },{
+        "name": "Editions",
+        "type": "text",
+        "tableRef": "editions",
+        "placeholder": "Enter editions",
+        "id": "editions",
+        "validation": ["", "trim", ""],
+        "url": ""
     }],
     "action": [{
         "name": "submit",
-        "action": "submitArticle",
+        "action": "submitNewsLetter",
         "stateName": {
             "page": "page",
             "json": {
-                "id": "viewArticle"
+                "id": "viewNewsLetter"
             }
         }
     }, {
@@ -56,16 +64,16 @@
         "stateName": {
             "page": "page",
             "json": {
-                "id": "viewArticle"
+                "id": "viewNewsLetter"
             }
         }
     }],
     "apiCall": {
-        "url": "Articles/save",
+        "url": "NewsLetter/save",
         "params": "_id"
     },
     "preApi": {
-        "url": "Articles/getOne",
+        "url": "NewsLetter/getOne",
         "params": "_id"
     }
 

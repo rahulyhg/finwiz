@@ -1,6 +1,89 @@
  @media (max-width: $screen-sm-max) {
      // Tablet
+     //navbar
+     .homepage-nav {
+         .navbar-nav>li>a {
+             font-size: 16px;
+         }
+         .social_nav img {
+             width: 25px;
+         }
+     }
+     .cust-nav {
+         .navbar-brand img {
+             width: 100px;
+             margin: 5px 0px;
+         }
+         .navbar-nav li>a {
+             font-size: 12px;
+             padding: 15px 8px;
+         }
+         .social_nav img {
+             width: 20px;
+             margin: 15px 6px;
+         }
+     } //
      .s1 img {
          width: 85%;
+     }
+     .s5 p {
+         font-size: 12px;
+     }
+     .s6 {
+         .block2 .nomination_form .field input {
+             width: 50%;
+         }
+     }
+     p {
+         font-size: 14px;
+     }
+     .s4 .block1 {
+         margin-left: 0px;
+     }
+     .head {
+         img {
+             width: 110px;
+             top: -40px;
+         }
+         .tit {
+             font-size: 19px;
+             height: 35px;
+             padding-left: 100px;
+             margin-right: 5px;
+         }
+     } //inside pages
+     .newsletter {
+         .cnt .newsletter_block .block {
+             height: 140px;
+         }
+         .cnt .newsletter_block .block img {
+             height: 140px;
+         }
+         .cnt .newsletter_block .block .txt {
+             -webkit-line-clamp: 4;
+         }
+     }
+     .article {
+         .article_list ul li .txt {
+             font-size: 14px;
+         }
+         .article_list ul li img {
+             width: 100%;
+         }
+         .heading {
+             font-size: 17px;
+         }
+     }
+     .view-btn {
+         right: 8%;
+         bottom: -16px;
+     }
+     .vlogs {
+         .cnt .inside_cont .block{
+            min-height: 250px;
+         }
+         .cnt .inside_cont{
+             padding:20px;
+         }
      }
  }

@@ -1,18 +1,13 @@
 {
-    "title": "Article",
-    "description": "List of Article",
+    "title": "FunFacts",
+    "description": "List of Fun Facts",
     "pageType": "view",
     "sendIdWithCreate": true,
     "urlFields": ["_id"],
     "fields": [{
-        "name": "Title",
+        "name": "Text",
         "isSort": "",
-        "tableRef": "title"
-    }, {
-        "name": "Article Image",
-        "type": "image",
-        "isSort": "",
-        "tableRef": "articleImage"
+        "tableRef": "factText"
     },{
         "name": "Order",
         "isSort": "",
@@ -23,7 +18,7 @@
         "icon": "fa-pencil",
         "buttonClass": "btn-primary",
         "type": "page",
-        "action": "editArticle",
+        "action": "editFunFacts",
         "fieldsToSend": {
             "_id": "_id"
         }
@@ -32,9 +27,9 @@
         "icon": "fa-trash",
         "buttonClass": "btn-danger",
         "type": "apiCallConfirm",
-        "title": "Delete Article",
-        "content": "Are you sure you want to delete Article?",
-        "api": "Articles/delete",
+        "title": "Delete FunFacts",
+        "content": "Are you sure you want to delete Fun Facts?",
+        "api": "FunFacts/delete",
         "fieldsToSend": {
             "name": "_id",
             "value": "_id"
@@ -45,10 +40,10 @@
         "icon": "plus",
         "class": "btn-success",
         "type": "page",
-        "action": "createArticle"
+        "action": "createFunFacts"
     }],
     "apiCall": {
-        "url": "Articles/search",
+        "url": "FunFacts/search",
         "params": "_id"
     }
 }

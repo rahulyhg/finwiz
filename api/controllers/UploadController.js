@@ -8,34 +8,30 @@
 module.exports = {
     index: function (req, res) {
         var fileNames = [];
-        async.waterfall([
-            // Upload File
-            function (callback) {
-                req.file("file").upload({
-                    adapter: require('skipper-gclouds'),
-                    keyFilename: gCloudKey,
-                    bucket: storageBucket,
-                    public: true
-                }, callback);
-            },
-            // Save to Uploads
-            function (data, callback) {
-                var uploadedFiles = [];
-                _.each(data, function (n) {
-                    uploadedFiles.push(Upload.convertUploadObj(n));
-                });
-                async.concatLimit(uploadedFiles, 10, function (n, callback) {
-                    Upload.saveData(n, function (err, data) {
-                        if (err || _.isEmpty(data)) {
+        req.file("file").upload({
+            maxBytes: 10485760 // 10 MB Storage 1 MB = 10^6
+        }, function (err, uploadedFile) {
+            //console.log(err);
+            //console.log(uploadedFile);
+            if (err) {
+                res.callback(err);
+            } else if (uploadedFile && uploadedFile.length > 0) {
+                async.concat(uploadedFile, function (n, callback) {
+                    Config.uploadFile(n.fd, function (err, value) {
+                        if (err) {
                             callback(err);
                         } else {
-                            callback(err, data._id);
+                            callback(null, value.name);
                         }
                     });
-                }, callback);
+                }, res.callback);
+            } else {
+                res.callback(null, {
+                    value: false,
+                    data: "No files selected"
+                });
             }
-        ], res.callback);
-
+        });
     },
     modifyImage: function (filename, width, height, style, callback) {
         var readstream = gfs.createReadStream({
@@ -150,13 +146,26 @@ module.exports = {
         //error handling, e.g. file does not exist
     },
     readFile: function (req, res) {
-        Upload.findFile(req.query, function (err, data) {
-            if (err || _.isEmpty(data)) {
-                res.callback(err);
-            } else {
-                res.redirect("https://storage.googleapis.com/" + storageBucket + "/" + data.storageName);
+        if (req.query.file) {
+            var width;
+            var height;
+            if (req.query.width) {
+                width = parseInt(req.query.width);
+                if (_.isNaN(width)) {
+                    width = undefined;
+                }
             }
-        });
+            if (req.query.height) {
+                height = parseInt(req.query.height);
+                if (_.isNaN(height)) {
+                    height = undefined;
+                }
+            }
+            Config.readUploaded(req.query.file, width, height, req.query.style, res);
+        } else {
+            res.callback("No Such File Found");
+        }
+
     },
     wallpaper: function (req, res) {
         // Config.readUploaded(req.query.file, req.query.width, req.query.height, req.query.style, res);

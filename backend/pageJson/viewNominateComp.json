@@ -1,0 +1,64 @@
+{
+    "title": "Nominate Company",
+    "description": "List of Nominate Company",
+    "pageType": "view",
+    "sendIdWithCreate": true,
+    "urlFields": ["_id"],
+    "fields": [{
+        "name": "Company Name",
+        "isSort": "",
+        "tableRef": "companyName"
+    }, {
+        "name": "Contact Number",
+        "isSort": "",
+        "tableRef": "contactNumber"
+    },{
+        "name": "Contact Person",
+        "isSort": "",
+        "tableRef": "contactPerson"
+    },{
+        "name": "Email",
+        "isSort": "",
+        "tableRef": "email"
+    }],
+    "action": [{
+        "name": "edit",
+        "icon": "fa-pencil",
+        "buttonClass": "btn-primary",
+        "type": "page",
+        "action": "editNominateComp",
+        "fieldsToSend": {
+            "_id": "_id"
+        }
+    }, {
+        "name": "delete",
+        "icon": "fa-trash",
+        "buttonClass": "btn-danger",
+        "type": "apiCallConfirm",
+        "title": "Delete NominateComp",
+        "content": "Are you sure you want to delete NominateComp?",
+        "api": "NominateComp/delete",
+        "fieldsToSend": {
+            "name": "_id",
+            "value": "_id"
+        }
+    }],
+    "button": [{
+        "name": "Excel Export",
+        "icon": "print",
+        "class": "btn-danger",
+        "type": "redirect",
+        "action": "NominateComp/generateExcel",
+        "linkType": "admin"
+    },{
+        "name": "Create",
+        "icon": "plus",
+        "class": "btn-success",
+        "type": "page",
+        "action": "createNominateComp"
+    }],
+    "apiCall": {
+        "url": "NominateComp/search",
+        "params": "_id"
+    }
+}

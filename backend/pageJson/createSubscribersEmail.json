@@ -1,0 +1,39 @@
+{
+    "title": "Create SubscribersEmail",
+    "name": "SubscribersEmail",
+    "jsonPage": "viewSubscribersEmail",
+    "desciption": "",
+    "pageType": "create",
+    "urlFields": ["SubscribersEmail"],
+    "fields": [{
+        "name": "Email",
+        "type": "text",
+        "tableRef": "email",
+        "placeholder": "Enter Email",
+        "id": "email",
+        "validation": ["", "trim", "unique"],
+        "url": ""
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitSubscribersEmail",
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewSubscribersEmail"
+            }
+        }
+    }, {
+        "name": "cancel",
+        "sideMenuRedirect": true,
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewSubscribersEmail"
+            }
+        }
+    }],
+    "apiCall": {
+        "url": "SubscribersEmail/save"
+    }
+}

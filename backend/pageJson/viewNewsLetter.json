@@ -1,6 +1,6 @@
 {
-    "title": "Article",
-    "description": "List of Article",
+    "title": "NewsLetter",
+    "description": "List of NewsLetter",
     "pageType": "view",
     "sendIdWithCreate": true,
     "urlFields": ["_id"],
@@ -9,11 +9,10 @@
         "isSort": "",
         "tableRef": "title"
     }, {
-        "name": "Article Image",
-        "type": "image",
+        "name": "Editions",
         "isSort": "",
-        "tableRef": "articleImage"
-    },{
+        "tableRef": "editions"
+    }, {
         "name": "Order",
         "isSort": "",
         "tableRef": "order"
@@ -23,7 +22,7 @@
         "icon": "fa-pencil",
         "buttonClass": "btn-primary",
         "type": "page",
-        "action": "editArticle",
+        "action": "editNewsLetter",
         "fieldsToSend": {
             "_id": "_id"
         }
@@ -32,9 +31,9 @@
         "icon": "fa-trash",
         "buttonClass": "btn-danger",
         "type": "apiCallConfirm",
-        "title": "Delete Article",
-        "content": "Are you sure you want to delete Article?",
-        "api": "Articles/delete",
+        "title": "Delete NewsLetter",
+        "content": "Are you sure you want to delete NewsLetter?",
+        "api": "NewsLetter/delete",
         "fieldsToSend": {
             "name": "_id",
             "value": "_id"
@@ -45,10 +44,10 @@
         "icon": "plus",
         "class": "btn-success",
         "type": "page",
-        "action": "createArticle"
+        "action": "createNewsLetter"
     }],
     "apiCall": {
-        "url": "Articles/search",
+        "url": "NewsLetter/search",
         "params": "_id"
     }
 }
