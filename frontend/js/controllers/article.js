@@ -255,7 +255,6 @@ myApp.controller('ArticleCtrl', function ($scope, $timeout, TemplateService, Nav
         } else {
             $scope.current = 0
         }
-
         $(".article .article_list ul li").css('transform', 'translateY(' + 100 * $scope.current + '%)');
         console.log($scope.current)
 
@@ -267,7 +266,6 @@ myApp.controller('ArticleCtrl', function ($scope, $timeout, TemplateService, Nav
         } else {
             $scope.current = $scope.toshow - $scope.length;
         }
-
 
 
         $(".article .article_list ul li").css('transform', 'translateY(' + 100 * $scope.current + '%)');

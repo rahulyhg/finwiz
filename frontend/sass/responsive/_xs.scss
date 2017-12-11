@@ -1,9 +1,21 @@
  @media (max-width: $screen-xs-max) {
      // Mobile
-     .homepage-nav .navbar-brand {
-         display: block;
-         img {
-             width: 130px;
+     .homepage-nav {
+         height: auto;
+         .navbar-nav {
+             margin: 0px;
+         }
+         .navbar-brand {
+             display: block;
+             img {
+                 width: 130px;
+             }
+         }
+         .left-nav-img .img2 {
+             height: auto;
+         }
+         .left-nav-img img {
+             height: auto;
          }
      }
      .cust-nav {
@@ -19,21 +31,90 @@
      .border-bottom {
          border: none;
      }
-     .s3 .block1 {
-         border-right: none;
+     .cust-btn{
+        padding: 5px 15px;
+        font-size:10px;
+     }
+
+     //home page
+     .h3{
+        font-size:20px;
+    }
+    p{
+        font-size:12px;
+    }
+     .s1 {
          text-align: center;
+         padding: 0px;
+         img {
+             margin-right: 8%;
+         }
+         p{
+            font-size:12px;
+        }
+        
+        
      }
-     .s4 .block1 {
-         margin: 0px;
+     .s3 {
+         margin:0px;
+        .block1 {
+            border-right: none;
+            text-align: center;
+            padding-bottom: 0px;
+           
+        }
+
      }
-     .s5 .newsletter {
-         border-right: 0px;
-         text-align: center;
+     .s4 {
+         .container-fluid{
+             padding:0px;
+         }
+        .block1 {
+            margin: 0px;
+            .title{
+                padding-top:20px;
+                padding-left:0px;
+                text-align:center;
+            }
+          .tabset {
+            padding-bottom: 40px;
+            .tab{
+                margin: 15px 0px;
+                padding:5px;
+              }
+          }
+        }
      }
-     .s5 .quiz {
-         text-align: center;
-         padding-top: 20px;
+
+
+     .s5 {
+        .container-fluid{
+            padding:0px;
+        }
+        .newsletter {
+            border-right: 0px;
+            text-align: center;
+        }
+        .quiz {
+            text-align: center;
+            padding-left:0px;
+          
+        }
+        .icon {
+            width: 55px;
+        }
+         .nextpage{
+             position: unset;
+             width:60%;
+         }
+         .left{
+            padding-right: 10px;
+            padding-left: 10px;
+         }
+      
      }
+
+
      .s6 .block1 {
          border-right: 0px;
          padding: 0px;

@@ -10,8 +10,8 @@ module.exports = [
 
   //Angular Libs
   'bower_components/angular/angular.js',
-  'bower_components/angular-sanitize/angular-sanitize.js',
-  'bower_components/angular-animate/angular-animate.min.js',
+  // 'bower_components/angular-sanitize/angular-sanitize.js',
+  // 'bower_components/angular-animate/angular-animate.min.js',
   'bower_components/angular-bootstrap/ui-bootstrap.min.js',
   'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
   'bower_components/angular-ui-router/release/angular-ui-router.min.js',
@@ -24,7 +24,7 @@ module.exports = [
   "bower_components/angular-toastr/dist/angular-toastr.js",
   "bower_components/angular-toastr/dist/angular-toastr.tpls.js",
   "bower_components/angular-promise-buttons/dist/angular-promise-buttons.js",
-  "bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js",
+ 
   
 
   //App.js
@@ -56,4 +56,5 @@ module.exports = [
   'frontend/js/controllers/testimonial.js',
   'frontend/js/controllers/header-controller.js',
   'frontend/js/controllers/language-controller.js',
+  'frontend/js/controllers/vlogs.js',
 ];

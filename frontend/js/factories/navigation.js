@@ -27,7 +27,7 @@ myApp.factory('NavigationService', function ($http) {
         {
             name: "VLOGS",
             classis: "active",
-            anchor: "grid",
+            anchor: "vlogs",
             subnav: []
         },
         {

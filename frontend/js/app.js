@@ -5,8 +5,8 @@ var myApp = angular.module('myApp', [
     'angulartics',
     'angulartics.google.analytics',
     'ui.bootstrap',
-    'ngAnimate',
-    'ngSanitize',
+    // 'ngAnimate',
+    // 'ngSanitize',
     'angular-flexslider',
     'ui.swiper',
     'angularPromiseButtons',
@@ -60,6 +60,11 @@ myApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $locat
             url: "/testimonial",
             templateUrl: tempateURL,
             controller: 'TestimonialCtrl'
+        })
+        .state('vlogs', {
+            url: "/vlogs",
+            templateUrl: tempateURL,
+            controller: 'VlogsCtrl'
         });
     $urlRouterProvider.otherwise("/");
     $locationProvider.html5Mode(isproduction);

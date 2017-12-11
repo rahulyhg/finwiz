@@ -1,0 +1,24 @@
+<div class="vlogs">
+    <div class="container-fluid">
+        <div class="head">
+            <div class="tit">
+                <span>VLOGS</span>
+            </div>
+            <img src="img/article.png" class="img-responsive">
+        </div>
+
+        <div class="cnt">
+            <div class="inside_cont">
+                <div ng-repeat="x in vlog" class="col-md-4 col-sm-4 col-xs-4 block">
+                    <div class="video_container">
+                        <a ng-href="https://www.youtube.com/embed/fdsf{{x.url}}?autoplay=1" fancybox data-fancybox="vlogs" rel="vlogs">
+                            <img ng-src="http://img.youtube.com/vi/{{x.url}}/hqdefault.jpg" class="img-responsive  video">
+                            <img src="img/youtube-small.png" class="img-responsive  play_icon">
+                        </a>
+                    </div>
+                    <div class="title">{{x.title}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
