@@ -14,16 +14,16 @@
         "validation": ["", "trim", ""],
         "url": ""
     },{
-        "name": "NewsLetter Discription",
+        "name": "News Letter Discription",
         "type": "wysiwyg",
-        "tableRef": "discription",
-        "placeholder": "Enter discription",
-        "id": "discription",
+        "tableRef": "description",
+        "placeholder": "Enter description",
+        "id": "description",
         "validation": ["", "trim", ""],
         "url": ""
     },
     {
-        "name": "NewsLetter Image",
+        "name": "News Letter Image",
         "type": "image",
         "tableRef": "image",
         "option": "single",
@@ -42,13 +42,17 @@
         "url": ""
     },
     {
-        "name": "Editions",
-        "type": "text",
+        "name": "Edition",
+        "type": "tags",
         "tableRef": "editions",
         "placeholder": "Enter editions",
         "id": "editions",
         "validation": ["", "trim", ""],
-        "url": ""
+        "url": "",
+        "dropDownField": "",
+        "dropDownType": "single",
+        "onView": true,
+        "dropDown": ["Edition1", "Edition2","Edition3"]
     }],
     "action": [{
         "name": "submit",

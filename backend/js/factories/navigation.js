@@ -9,46 +9,45 @@ myApp.factory('NavigationService', function ($http) {
     var navigation = [{
         name: "Users",
         classis: "active",
-        sref: "#!/page/viewUser//",
-        icon: "phone"
+        sref: "#!/page/viewUser//"
     },
     {
         name: "Article",
         classis: "active",
-        sref: "#!/page/viewArticle//",
+        sref: "#!/page/viewArticle//"
     },{
         name: "Fun Facts",
         classis: "active",
-        sref: "#!/page/viewFunFacts//",
+        sref: "#!/page/viewFunFacts//"
     },
     {
         name: "News Letter",
         classis: "active",
-        sref: "#!/page/viewNewsLetter//",
+        sref: "#!/page/viewNewsLetter//"
     }, {
         name: "Subscribed Emails",
         classis: "active",
-        sref: "#!/page/viewSubscribersEmail//",
+        sref: "#!/page/viewSubscribersEmail//"
     },
     {
         name: "Nominate Company",
         classis: "active",
-        sref: "#!/page/viewNominateComp//",
+        sref: "#!/page/viewNominateComp//"
     },
     {
         name: "Season",
         classis: "active",
-        sref: "#!/page/viewSeason//",
+        sref: "#!/page/viewSeason//"
     },
     {
         name: "Video Gallery",
         classis: "active",
-        sref: "#!/page/viewVideoGallery//",
+        sref: "#!/page/viewVideoGallery//"
     },
     {
         name: "Image Gallery",
         classis: "active",
-        sref: "#!/page/viewImageGallery//",
+        sref: "#!/page/viewImageGallery//"
     }];
 
     return {

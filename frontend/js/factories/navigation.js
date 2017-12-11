@@ -57,5 +57,21 @@ myApp.factory('NavigationService', function ($http) {
                 callback(data, i);
             });
         },
+        
+        apiCallWithData: function (url, formData, callback) {
+            $http.post(adminurl + url, formData).then(function (data) {
+                data = data.data;
+                callback(data);
+
+            });
+        },
+
+        apiCallWithoutData: function (url, callback) {
+            $http.post(adminurl + url).then(function (data) {
+                data = data.data;
+                callback(data);
+
+            });
+        },
     };
 });

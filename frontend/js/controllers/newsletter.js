@@ -4,7 +4,7 @@ myApp.controller('NewsLetterCtrl', function ($scope, TemplateService, Navigation
     $scope.navigation = NavigationService.getNavigation();
 
     $scope.tabs = [{
-            name: "Edition 1",
+            name: "Edition1",
             content: [{
                     heading: "heading 1",
                     img: "img/article1.png",
@@ -23,7 +23,7 @@ myApp.controller('NewsLetterCtrl', function ($scope, TemplateService, Navigation
             ]
         },
         {
-            name: "Edition 2",
+            name: "Edition2",
             content: [{
                 heading: "heading 1",
                 img: "img/article1.png",
@@ -31,7 +31,7 @@ myApp.controller('NewsLetterCtrl', function ($scope, TemplateService, Navigation
             }]
         },
         {
-            name: "Edition 3",
+            name: "Edition3",
             content: [{
                 heading: "heading 1",
                 img: "img/article1.png",
@@ -41,26 +41,26 @@ myApp.controller('NewsLetterCtrl', function ($scope, TemplateService, Navigation
     ];
     $scope.show_seemore = function (index) {
 
-        
+
         var classSelect = ".txtheight" + index;
         // solution 1 (checking text height with max height it can contain )
         // return ($(classSelect).height() > 115)
 
         //solution 2 ( checking  height after changing attribute)
         // console.log(classSelect);
-        var clone=$(classSelect).clone();
-        var beforeheight=$(classSelect).height();
+        var clone = $(classSelect).clone();
+        var beforeheight = $(classSelect).height();
 
 
         // console.log("before height",beforeheight)
-       $(classSelect).css('-webkit-line-clamp',"unset");
+        $(classSelect).css('-webkit-line-clamp', "unset");
 
 
-       var afterheight=$(classSelect).height();
-    //    console.log("after height",afterheight);
-       $(classSelect).replaceWith(clone);
+        var afterheight = $(classSelect).height();
+        //    console.log("after height",afterheight);
+        $(classSelect).replaceWith(clone);
 
-       return beforeheight<afterheight;
+        return beforeheight < afterheight;
 
     }
 
@@ -70,5 +70,24 @@ myApp.controller('NewsLetterCtrl', function ($scope, TemplateService, Navigation
         // console.log($scope.selectedNewsLetter);
     }
 
+    $scope.getNewsData = function (formdata) {
+        var sendData={}
+        sendData.edition=formdata
+        NavigationService.apiCall("NewsLetter/findDataBySeason",sendData, function (data) {
+            if (data.value === true) {
+                $scope.newsData = data.data;
+                console.log("$scope.newsData", $scope.newsData);
+            }
+        });
+    }
+
+    var sendData={}
+    sendData.edition='Edition1'
+    NavigationService.apiCall("NewsLetter/findDataBySeason",sendData, function (data) {
+        if (data.value === true) {
+            $scope.newsData = data.data;
+            console.log(" $scope.newsData", $scope.newsData);
+        }
+    });
 
 })

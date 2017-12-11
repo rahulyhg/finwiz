@@ -73,8 +73,10 @@ myApp.controller('HomeCtrl', function ($scope, $uibModal, TemplateService, Navig
         $scope.saveCompData = function (formdata) {
             NavigationService.apiCall("NominateComp/save", formdata, function (data) {
                 if (data.value === true) {
-                    toastr.sucess("Data Submitted Sucessfully");
+                    toastr.success("Data Submitted Successfully");
                     $state.reload();
+                }else{
+                    toastr.error("Data Submitted Successfully");                     
                 }
             });
         }
@@ -82,8 +84,10 @@ myApp.controller('HomeCtrl', function ($scope, $uibModal, TemplateService, Navig
         $scope.saveEmails = function (formdata) {
             NavigationService.apiCall("SubscribersEmail/save", formdata, function (data) {
                 if (data.value === true) {
-                    toastr.sucess("Data Submitted Sucessfully");
+                    toastr.success("Data Submitted Successfully");
                     $state.reload();
+                }else{
+                    toastr.error("Data Submitted Successfully"); 
                 }
             });
         }

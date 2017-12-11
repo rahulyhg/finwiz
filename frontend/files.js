@@ -10,7 +10,7 @@ module.exports = [
 
   //Angular Libs
   'bower_components/angular/angular.js',
-  // 'bower_components/angular-sanitize/angular-sanitize.js',
+  'bower_components/angular-sanitize/angular-sanitize.js',
   // 'bower_components/angular-animate/angular-animate.min.js',
   'bower_components/angular-bootstrap/ui-bootstrap.min.js',
   'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',

@@ -279,4 +279,12 @@ myApp.controller('ArticleCtrl', function ($scope, $timeout, TemplateService, Nav
         $scope.selectedContent = x;
     }
 
+    NavigationService.apiCallWithoutData("Articles/getAllArticlesData", function (data) {
+        if (data.value === true) {
+            $scope.articleData = data.data[0];
+            console.log("$scope.articleData", $scope.articleData);
+        }
+    });
+
+
 })

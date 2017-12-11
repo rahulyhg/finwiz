@@ -14,5 +14,29 @@ schema.plugin(timestamps);
 module.exports = mongoose.model('ImageGallery', schema);
 
 var exports = _.cloneDeep(require("sails-wohlig-service")(schema));
-var model = {};
+var model = {
+    findImagesForHomePage:function(data,callback){
+        ImageGallery.find({
+        }).sort({
+            createdAt: -1
+        }).limit(6).exec(function(err,data){
+            if(err||_.isEmpty(data)){
+                callback(err,"Nodata")
+            }else{
+                callback(null,data)
+            }
+        })
+    },
+
+    findAllImages:function(data,callback){
+        ImageGallery.find({
+        }).exec(function(err,data){
+            if(err||_.isEmpty(data)){
+                callback(err,"Nodata")
+            }else{
+                callback(null,data)
+            }
+        })
+    }
+};
 module.exports = _.assign(module.exports, exports, model);

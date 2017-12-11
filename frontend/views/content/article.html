@@ -10,10 +10,10 @@
                 <article>
                     <div class="heading">
                         <!-- WHY MUTUAL FUNDS IS BENIFICIAL TO YOUNG INVESTORS? -->
-                        {{selectedContent.heading}}
+                        {{articleData.title}}
                     </div>
                     <div class="inside_content">
-                        <img src="{{selectedContent.img}}" class="img-responsive pull-left">
+                        <img ng-src="{{articleData.articleImage | serverimage}}" class="img-responsive pull-left">
                         <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pellentesque ex id ligula porttitor,
                             sed fringilla mauris pharetra. Vestibulum venenatis neque eu cursus dapibus. Nam hendrerit enim
                             eget augue commodo, sit amet molestie urna venenatis. </p>
@@ -23,14 +23,14 @@
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pellentesque ex id ligula porttitor,
                             sed fringilla mauris pharetra. Vestibulum venenatis neque eu cursus dapibus. Nam hendrerit enim
                             eget augue commodo, sit amet molestie urna venenatis. </p> -->
-                        <p>{{selectedContent.content.txt}}</p>
-                        <div ng-repeat="x in selectedContent.content.subheading">
+                        <p ng-bind-html="articleData.discription"></p>
+                        <!-- <div ng-repeat="x in selectedContent.content.subheading">
                             <div class="subheading">
                                 <p><b>{{x.heading}}</b></p>
                                 <p>{{x.content}}</p>
                             </div>
 
-                        </div>
+                        </div> -->
 
                     </div>
                 </article>
