@@ -331,11 +331,12 @@ myApp.controller('DashboardCtrl', function ($scope, TemplateService, NavigationS
         $scope.template = TemplateService;
         $scope.data = {};
         console.log("detail controller");
-        console.log($scope.json);
+        console.log($scope.json.json.preApi);
 
         //  START FOR EDIT
         if ($scope.json.json.preApi) {
             var obj = {};
+            console.log($scope.json);
             obj[$scope.json.json.preApi.params] = $scope.json.keyword._id;
             NavigationService.apiCall($scope.json.json.preApi.url, obj, function (data) {
                 $scope.data = data.data;
