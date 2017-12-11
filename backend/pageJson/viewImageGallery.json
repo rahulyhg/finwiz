@@ -1,0 +1,45 @@
+{
+    "title": "Image Gallery",
+    "description": "List of Image Gallery",
+    "pageType": "view",
+    "sendIdWithCreate": true,
+    "urlFields": ["_id"],
+    "fields": [{
+        "name": "Keyword",
+        "isSort": "",
+        "tableRef": "keyword"
+    }],
+    "action": [{
+        "name": "edit",
+        "icon": "fa-pencil",
+        "buttonClass": "btn-primary",
+        "type": "page",
+        "action": "editImageGallery",
+        "fieldsToSend": {
+            "_id": "_id"
+        }
+    }, {
+        "name": "delete",
+        "icon": "fa-trash",
+        "buttonClass": "btn-danger",
+        "type": "apiCallConfirm",
+        "title": "Delete ImageGallery",
+        "content": "Are you sure you want to delete Fun Facts?",
+        "api": "ImageGallery/delete",
+        "fieldsToSend": {
+            "name": "_id",
+            "value": "_id"
+        }
+    }],
+    "button": [{
+        "name": "Create",
+        "icon": "plus",
+        "class": "btn-success",
+        "type": "page",
+        "action": "createImageGallery"
+    }],
+    "apiCall": {
+        "url": "ImageGallery/search",
+        "params": "_id"
+    }
+}

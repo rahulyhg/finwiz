@@ -171,8 +171,8 @@
             <div class="h3 title"><span class="border-line">SUBSCRIBE</span> FOR UPDATES</div>
             <div class="subscribe_field">
                 <form name="subscribe">
-                    <input class="input_field" type="email" placeholder="Enter Your Email ID">
-                    <button class="btn btn-primary cust-btn">SUBSCRIBE</button>
+                    <input class="input_field" type="email" placeholder="Enter Your Email ID" ng-model="emailData.email">
+                    <button class="btn btn-primary cust-btn" ng-click="saveEmails(emailData)">SUBSCRIBE</button>
                 </form>
             </div>
             <div class="social text-center">
@@ -203,12 +203,12 @@
             <div class=" h3 title"><span class="border-line">NOMINATE</span> YOUR COMPANY</div>
             <div class="nomination_form">
                 <form name="nomination">
-                    <div class="field"> <span>Name of Company</span> <input type="text"></div>
-                    <div class="field"> <span>Contact Person</span><input type="text"></div>
-                    <div class="field"> <span>Designation</span><input type="text"></div>
-                    <div class="field"> <span>Contact No</span><input type="number"></div>
-                    <div class="field"> <span>Email ID</span><input type="email"></div>
-                    <div class="pull-right"> <button class="btn btn-primary cust-btn">SUBMIT</button></div>
+                    <div class="field"> <span>Name of Company</span> <input type="text" ng-model="formData.companyName"></div>
+                    <div class="field"> <span>Contact Person</span><input type="text" ng-model="formData.contactPerson"></div>
+                    <div class="field"> <span>Designation</span><input type="text" ng-model="formData.designation"></div>
+                    <div class="field"> <span>Contact No</span><input type="number" ng-model="formData.contactNumber"></div>
+                    <div class="field"> <span>Email ID</span><input type="email" ng-model="formData.email"></div>
+                    <div class="pull-right"> <button class="btn btn-primary cust-btn" ng-click="saveCompData(formData)">SUBMIT</button></div>
                 </form>
             </div>
 

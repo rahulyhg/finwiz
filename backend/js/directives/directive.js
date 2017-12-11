@@ -122,7 +122,7 @@ myApp.directive('uploadImage', function ($http, $filter, $timeout) {
                             if (!$scope.model) {
                                 $scope.clearOld();
                             }
-                            $scope.model.push(data[0]);
+                            $scope.model.push(data.data[0]);
                         }
                     } else {
                         if (_.endsWith(data.data[0], ".pdf")) {

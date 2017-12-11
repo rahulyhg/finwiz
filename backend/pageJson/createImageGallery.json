@@ -1,0 +1,49 @@
+{
+    "title": "Create Image Gallery",
+    "name": "ImageGallery",
+    "jsonPage": "viewImageGallery",
+    "desciption": "",
+    "pageType": "create",
+    "urlFields": ["ImageGallery"],
+    "fields": [{
+        "name": "Keyword",
+        "type": "text",
+        "tableRef": "keyword",
+        "placeholder": "Enter keyword",
+        "id": "keyword",
+        "validation": ["", "trim", ""],
+        "url": ""
+    },{
+        "name": "Image",
+        "type": "image",
+        "tableRef": "image",
+        "option": "multiple",
+        "size": "1768 x 1146px",
+        "placeholder": "Enter image",
+        "id": "image",
+        "validation": ["", "trim", ""],
+        "url": ""
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitImageGallery",
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewImageGallery"
+            }
+        }
+    }, {
+        "name": "cancel",
+        "sideMenuRedirect": true,
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewImageGallery"
+            }
+        }
+    }],
+    "apiCall": {
+        "url": "ImageGallery/save"
+    }
+}

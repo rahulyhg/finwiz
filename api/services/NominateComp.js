@@ -2,7 +2,7 @@ var schema = new Schema({
     companyName: String,
     contactNumber: Number,
     designation: String,
-    contactPerson: Number,
+    contactPerson: String,
     email: {
         type: String,
         validate: validators.isEmail(),

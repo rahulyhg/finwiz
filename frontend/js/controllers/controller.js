@@ -1,4 +1,4 @@
-myApp.controller('HomeCtrl', function ($scope, $uibModal, TemplateService, NavigationService, $timeout, $location, $document, $state) {
+myApp.controller('HomeCtrl', function ($scope, $uibModal, TemplateService, NavigationService, $timeout, $location, $document, $state,toastr) {
         $scope.template = TemplateService.getHTML("content/home.html");
         $scope.homepage = true;
         TemplateService.title = "Home"; //This is the Title of the Website
@@ -67,6 +67,24 @@ myApp.controller('HomeCtrl', function ($scope, $uibModal, TemplateService, Navig
                 ariaDescribedBy: 'modal-body',
                 templateUrl: 'views/model/quizlogin.html',
                 // size: 'sm',
+            });
+        }
+
+        $scope.saveCompData = function (formdata) {
+            NavigationService.apiCall("NominateComp/save", formdata, function (data) {
+                if (data.value === true) {
+                    toastr.sucess("Data Submitted Sucessfully");
+                    $state.reload();
+                }
+            });
+        }
+
+        $scope.saveEmails = function (formdata) {
+            NavigationService.apiCall("SubscribersEmail/save", formdata, function (data) {
+                if (data.value === true) {
+                    toastr.sucess("Data Submitted Sucessfully");
+                    $state.reload();
+                }
             });
         }
     })

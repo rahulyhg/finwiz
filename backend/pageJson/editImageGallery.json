@@ -1,0 +1,66 @@
+{
+    "title": "Edit FunFacts",
+    "name": "FunFacts",
+    "jsonPage": "viewFunFacts",
+    "desciption": "",
+    "pageType": "edit",
+    "urlFields": ["_id"],
+    "fields": [{
+        "name": "Keyword",
+        "type": "text",
+        "tableRef": "keyword",
+        "placeholder": "Enter keyword",
+        "id": "keyword",
+        "validation": ["","trim", ""],
+        "url": ""
+    },{
+        "name": "Image",
+        "type": "image",
+        "tableRef": "image",
+        "option": "single",
+        "size": "1622 x 517px",
+        "placeholder": "Enter Image",
+        "id": "image",
+        "validation": ["", "trim", ""],
+        "url": ""
+    },{
+        "name": "season",
+        "type": "tags",
+        "tableRef": "season",
+        "dropDownType": "single",
+        "dropDownField": "name",
+        "searchApi": "searchCall",
+        "placeholder": "Enter name",
+        "id": "season",
+        "validation": ["", "trim", ""],
+        "url": "Season/search"
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitFunFacts",
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewFunFacts"
+            }
+        }
+    }, {
+        "name": "cancel",
+        "sideMenuRedirect": true,
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewFunFacts"
+            }
+        }
+    }],
+    "apiCall": {
+        "url": "FunFacts/save",
+        "params": "_id"
+    },
+    "preApi": {
+        "url": "FunFacts/getOne",
+        "params": "_id"
+    }
+
+}
