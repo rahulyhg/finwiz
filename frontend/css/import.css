@@ -10745,6 +10745,15 @@ p {
   height: 500px;
   padding-top: 100px; }
 
+.socialmedia_share {
+  text-align: right; }
+  .socialmedia_share .blc {
+    display: inline-block;
+    font-size: 20px;
+    vertical-align: middle; }
+    .socialmedia_share .blc a {
+      color: #135281; }
+
 #fancybox-loading,
 .fancybox-close,
 .fancybox-next span,

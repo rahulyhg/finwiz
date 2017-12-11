@@ -301,9 +301,7 @@ p {
         margin-right: 25px;
         font-size: 25px;
         font-weight: 100;
-        height: 38px;
-        
-        // background: rgba(16, 82, 130, 1);
+        height: 38px; // background: rgba(16, 82, 130, 1);
         // background: -moz-linear-gradient(left, rgba(16, 82, 130, 1) 0%, rgba(16, 82, 130, 1) 49%, rgba(244, 183, 78, 1) 100%);
         // background: -webkit-gradient(left top, right top, color-stop(0%, rgba(16, 82, 130, 1)), color-stop(49%, rgba(16, 82, 130, 1)), color-stop(100%, rgba(244, 183, 78, 1)));
         // background: -webkit-linear-gradient(left, rgba(16, 82, 130, 1) 0%, rgba(16, 82, 130, 1) 49%, rgba(244, 183, 78, 1) 100%);
@@ -953,4 +951,16 @@ p {
     text-align: center;
     height: 500px;
     padding-top: 100px;
+}
+
+.socialmedia_share {
+    text-align: right;
+    .blc {
+        display: inline-block;
+        font-size: 20px;
+        vertical-align: middle;
+        a {
+            color: $color-primary
+        }
+    }
 }
