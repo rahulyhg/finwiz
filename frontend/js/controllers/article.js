@@ -1,4 +1,4 @@
-myApp.controller('ArticleCtrl', function ($scope, $timeout, TemplateService, NavigationService, $timeout, toastr, $http) {
+myApp.controller('ArticleCtrl', function ($scope, $timeout, $state, TemplateService, NavigationService, $timeout, toastr, $http) {
     $scope.template = TemplateService.getHTML("content/article.html");
     TemplateService.title = "Article"; // This is the Title of the Website
     $scope.navigation = NavigationService.getNavigation();
@@ -30,7 +30,7 @@ myApp.controller('ArticleCtrl', function ($scope, $timeout, TemplateService, Nav
             ]
         }
     }
-
+    $scope.shareUrl = "http://www.wohlig.co.in/nse_finwiz/%23!/article"
     // json structure for articlelist
     // $scope.selectedContent = 
     //    {
@@ -266,8 +266,6 @@ myApp.controller('ArticleCtrl', function ($scope, $timeout, TemplateService, Nav
         } else {
             $scope.current = $scope.toshow - $scope.length;
         }
-
-
         $(".article .article_list ul li").css('transform', 'translateY(' + 100 * $scope.current + '%)');
         console.log($scope.current)
     }
@@ -277,6 +275,7 @@ myApp.controller('ArticleCtrl', function ($scope, $timeout, TemplateService, Nav
     $scope.selectArticle = function (x) {
         console.log("inside article select")
         $scope.selectedContent = x;
+
     }
 
     NavigationService.apiCallWithoutData("Articles/getAllArticlesData", function (data) {
