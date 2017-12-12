@@ -7,48 +7,59 @@ var uploadurl = imgurl;
 
 myApp.factory('NavigationService', function ($http) {
     var navigation = [{
-        name: "Users",
-        classis: "active",
-        sref: "#!/page/viewUser//"
-    },
-    {
-        name: "Article",
-        classis: "active",
-        sref: "#!/page/viewArticle//"
-    },{
-        name: "Fun Facts",
-        classis: "active",
-        sref: "#!/page/viewFunFacts//"
-    },
-    {
-        name: "News Letter",
-        classis: "active",
-        sref: "#!/page/viewNewsLetter//"
-    }, {
-        name: "Subscribed Emails",
-        classis: "active",
-        sref: "#!/page/viewSubscribersEmail//"
-    },
-    {
-        name: "Nominate Company",
-        classis: "active",
-        sref: "#!/page/viewNominateComp//"
-    },
-    {
-        name: "Season",
-        classis: "active",
-        sref: "#!/page/viewSeason//"
-    },
-    {
-        name: "Video Gallery",
-        classis: "active",
-        sref: "#!/page/viewVideoGallery//"
-    },
-    {
-        name: "Image Gallery",
-        classis: "active",
-        sref: "#!/page/viewImageGallery//"
-    }];
+            name: "Users",
+            classis: "active",
+            sref: "#!/page/viewUser//"
+        },
+        {
+            name: "Article",
+            classis: "active",
+            sref: "#!/page/viewArticle//"
+        }, {
+            name: "Fun Facts",
+            classis: "active",
+            sref: "#!/page/viewFunFacts//"
+        },
+        {
+            name: "News Letter",
+            classis: "active",
+            sref: "#!/page/viewNewsLetter//"
+        }, {
+            name: "Subscribed Emails",
+            classis: "active",
+            sref: "#!/page/viewSubscribersEmail//"
+        },
+        {
+            name: "Nominate Company",
+            classis: "active",
+            sref: "#!/page/viewNominateComp//"
+        },
+        {
+            name: "Season",
+            classis: "active",
+            sref: "#!/page/viewSeason//"
+        },
+        {
+            name: "Video Gallery",
+            classis: "active",
+            sref: "#!/page/viewVideoGallery//"
+        },
+        {
+            name: "Image Gallery",
+            classis: "active",
+            sref: "#!/page/viewImageGallery//"
+        },
+        {
+            name: "Testimonials",
+            classis: "active",
+            sref: "#!/page/viewTestimonials//"
+        }, 
+        {
+            name: "Quick Bytes",
+            classis: "active",
+            sref: "#!/page/viewQuickBytes//"
+        }
+    ];
 
     return {
         getnav: function () {

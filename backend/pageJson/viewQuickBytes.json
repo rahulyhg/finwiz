@@ -1,0 +1,53 @@
+{
+    "title": "QuickBytes",
+    "description": "List of QuickBytess",
+    "pageType": "view",
+    "sendIdWithCreate": true,
+    "urlFields": ["_id"],
+    "fields": [{
+        "name": "Name",
+        "isSort": "",
+        "tableRef": "name"
+    },{
+        "name": "Designation",
+        "isSort": "",
+        "tableRef": "designation"
+    },{
+        "name": "Order",
+        "isSort": "",
+        "tableRef": "order"
+    }],
+    "action": [{
+        "name": "edit",
+        "icon": "fa-pencil",
+        "buttonClass": "btn-primary",
+        "type": "page",
+        "action": "editQuickBytes",
+        "fieldsToSend": {
+            "_id": "_id"
+        }
+    }, {
+        "name": "delete",
+        "icon": "fa-trash",
+        "buttonClass": "btn-danger",
+        "type": "apiCallConfirm",
+        "title": "Delete QuickBytes",
+        "content": "Are you sure you want to delete Fun Facts?",
+        "api": "QuickBytes/delete",
+        "fieldsToSend": {
+            "name": "_id",
+            "value": "_id"
+        }
+    }],
+    "button": [{
+        "name": "Create",
+        "icon": "plus",
+        "class": "btn-success",
+        "type": "page",
+        "action": "createQuickBytes"
+    }],
+    "apiCall": {
+        "url": "QuickBytes/search",
+        "params": "_id"
+    }
+}

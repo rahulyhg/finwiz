@@ -1,0 +1,69 @@
+{
+    "title": "Edit Testimonials",
+    "name": "Testimonials",
+    "jsonPage": "viewTestimonials",
+    "desciption": "",
+    "pageType": "edit",
+    "urlFields": ["_id"],
+    "fields": [{
+        "name": "Name",
+        "type": "text",
+        "tableRef": "name",
+        "placeholder": "Enter name",
+        "id": "name",
+        "validation": ["", "trim", ""],
+        "url": ""
+    },{
+        "name": "Designation",
+        "type": "text",
+        "tableRef": "designation",
+        "placeholder": "Enter designation",
+        "id": "designation",
+        "validation": ["", "trim", ""],
+        "url": ""
+    },{
+        "name": "Description",
+        "type": "wysiwyg",
+        "tableRef": "description",
+        "placeholder": "Enter description",
+        "id": "description",
+        "validation": ["", "trim", ""],
+        "url": ""
+    }, {
+        "name": "Order",
+        "type": "text",
+        "tableRef": "order",
+        "placeholder": "Enter Order",
+        "id": "Order",
+        "validation": ["", "trim", ""],
+        "url": ""
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitTestimonials",
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewTestimonials"
+            }
+        }
+    }, {
+        "name": "cancel",
+        "sideMenuRedirect": true,
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewTestimonials"
+            }
+        }
+    }],
+    "apiCall": {
+        "url": "Testimonials/save",
+        "params": "_id"
+    },
+    "preApi": {
+        "url": "Testimonials/getOne",
+        "params": "_id"
+    }
+
+}
