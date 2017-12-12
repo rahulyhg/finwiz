@@ -1,10 +1,14 @@
 {
     "title": "Video Gallery",
-    "description": "List of Fun Facts",
+    "description": "List of Video Gallery",
     "pageType": "view",
     "sendIdWithCreate": true,
     "urlFields": ["_id"],
     "fields": [{
+        "name": "Name",
+        "isSort": "",
+        "tableRef": "name"
+    },{
         "name": "Url",
         "isSort": "",
         "tableRef": "url"

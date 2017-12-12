@@ -10,6 +10,7 @@ module.exports = mongoose.model('FunFacts', schema);
 
 var exports = _.cloneDeep(require("sails-wohlig-service")(schema));
 var model = {
+   
     findAllFacts:function(data,callback){
         FunFacts.find({
         }).sort({

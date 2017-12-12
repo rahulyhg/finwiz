@@ -5,7 +5,15 @@
     "desciption": "",
     "pageType": "edit",
     "urlFields": ["_id"],
-    "fields": [ {
+    "fields": [{
+        "name": "Name",
+        "type": "text",
+        "tableRef": "name",
+        "placeholder": "Enter name",
+        "id": "name",
+        "validation": ["","trim", ""],
+        "url": ""
+    },{
         "name": "Keyword",
         "type": "text",
         "tableRef": "keyword",
