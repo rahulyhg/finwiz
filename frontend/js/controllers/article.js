@@ -275,13 +275,21 @@ myApp.controller('ArticleCtrl', function ($scope, $timeout, $state, TemplateServ
     $scope.selectArticle = function (x) {
         console.log("inside article select")
         $scope.selectedContent = x;
+      
+    }
+
+    $scope.selectArticles=function(x){
+        $scope.articleData=x;
 
     }
 
     NavigationService.apiCallWithoutData("Articles/getAllArticlesData", function (data) {
         if (data.value === true) {
+            $scope.articlelists=data.data;
+            $scope.length=$scope.articlelists.lenght
             $scope.articleData = data.data[0];
             console.log("$scope.articleData", $scope.articleData);
+            console.log(data.data)
         }
     });
 

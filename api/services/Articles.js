@@ -16,7 +16,7 @@ var model = {
     getAllArticlesData: function (data, callback) {
         Articles.find({}).sort({
             order: 1
-        }).limit(1).exec(function (err, data) {
+        }).exec(function (err, data) {
             if (err || _.isEmpty(data)) {
                 callback(err, [])
             } else {
