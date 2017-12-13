@@ -15,7 +15,7 @@ myApp.factory('NavigationService', function ($http) {
         {
             name: "QUICK BITES",
             classis: "active",
-            anchor: "grid",
+            anchor: "quickbites",
             subnav: []
         },
         {

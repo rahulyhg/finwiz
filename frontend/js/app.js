@@ -65,7 +65,13 @@ myApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $locat
             url: "/vlogs",
             templateUrl: tempateURL,
             controller: 'VlogsCtrl'
-        });
+        })
+        .state('quickbites', {
+            url: "/quickbites",
+            templateUrl: tempateURL,
+            controller: 'QuickBitesCtrl'
+        })
+        ;
     $urlRouterProvider.otherwise("/");
     $locationProvider.html5Mode(isproduction);
 });
