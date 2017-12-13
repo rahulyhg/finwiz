@@ -37,7 +37,9 @@ var model = {
     },
 
     findAllVideos: function (data, callback) {
-        VideoGallery.find({}).deepPopulate("season").exec(function (err, data) {
+        VideoGallery.find({}).sort({
+            createdAt: -1
+        }).deepPopulate("season").exec(function (err, data) {
             if (err || _.isEmpty(data)) {
                 callback(err, "Nodata")
             } else {
