@@ -17,11 +17,13 @@
     
             <div class="test-common" ng-repeat="s in testData track by $index">
                 <div class="test-inner">
-                    <p>
+                    <p ng-bind-html="s.description">
                         <span>
                             <img src="img/quotes.png" class="img-responsive">
-                        </span>{{s.description}}</p>
+                        </span>
+                </p>
                 </div>
+                
                 <div class="text-right test-name">
                     <h4>{{s.name}} </h4>
                     <h5>{{s.designation}} </h5>
