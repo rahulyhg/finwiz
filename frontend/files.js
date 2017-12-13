@@ -57,4 +57,5 @@ module.exports = [
   'frontend/js/controllers/header-controller.js',
   'frontend/js/controllers/language-controller.js',
   'frontend/js/controllers/vlogs.js',
+  'frontend/js/controllers/quickbites.js',
 ];
