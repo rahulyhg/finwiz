@@ -1,8 +1,8 @@
 var schema = new Schema({
-title:String,
-articleImage:String,
-discription:String,
-order:Number
+    title: String,
+    articleImage: String,
+    discription: String,
+    order: Number
 });
 
 schema.plugin(deepPopulate, {});
@@ -13,27 +13,26 @@ module.exports = mongoose.model('Articles', schema);
 var exports = _.cloneDeep(require("sails-wohlig-service")(schema));
 var model = {
 
-    getAllArticlesData:function(data,callback){
+    getAllArticlesData: function (data, callback) {
         Articles.find({}).sort({
             order: 1
-        }).limit(1).exec(function(err,data){
-            if(err||_.isEmpty(data)){
-                callback(err,[])
-            }else{
-                callback(null,data)
+        }).limit(1).exec(function (err, data) {
+            if (err || _.isEmpty(data)) {
+                callback(err, [])
+            } else {
+                callback(null, data)
             }
         })
     },
 
-    findTop5Articles:function(data,callback){
-        Articles.find({
-        }).sort({
+    findTop5Articles: function (data, callback) {
+        Articles.find({}).sort({
             createdAt: -1
-        }).limit(5).exec(function(err,data){
-            if(err||_.isEmpty(data)){
-                callback(err,"Nodata")
-            }else{
-                callback(null,data)
+        }).limit(5).exec(function (err, data) {
+            if (err || _.isEmpty(data)) {
+                callback(err, "Nodata")
+            } else {
+                callback(null, data)
             }
         })
     },

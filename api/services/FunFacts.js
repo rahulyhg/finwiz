@@ -1,6 +1,6 @@
 var schema = new Schema({
-   factText:String,
-   order:Number
+    factText: String,
+    order: Number
 });
 
 schema.plugin(deepPopulate, {});
@@ -10,16 +10,15 @@ module.exports = mongoose.model('FunFacts', schema);
 
 var exports = _.cloneDeep(require("sails-wohlig-service")(schema));
 var model = {
-   
-    findAllFacts:function(data,callback){
-        FunFacts.find({
-        }).sort({
+
+    findAllFacts: function (data, callback) {
+        FunFacts.find({}).sort({
             order: 1
-        }).exec(function(err,data){
-            if(err||_.isEmpty(data)){
-                callback(err,"Nodata")
-            }else{
-                callback(null,data)
+        }).exec(function (err, data) {
+            if (err || _.isEmpty(data)) {
+                callback(err, "Nodata")
+            } else {
+                callback(null, data)
             }
         })
     },
