@@ -10334,6 +10334,8 @@ p {
         .s3 .marquee-animation div span i {
           color: white;
           padding-right: 30px; }
+        .s3 .marquee-animation div span p {
+          display: inline-block; }
 
 .s4 {
   margin: 20px 0px; }
