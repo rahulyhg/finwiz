@@ -132,15 +132,15 @@
     border-radius: 30px;
     padding: 50px 30px;
     text-align: justify;
+    position: relative;
     p {
         font-size: 18px;
-        position: relative;
-        span {
-            position: absolute;
-            top: -20px;
-            left: -20px;
-                width: 18px;
-        }
+    }
+    .quotes {
+        position: absolute;
+        top: 30px;
+        left: 15px;
+        width: 18px;
     }
 }
 
@@ -148,8 +148,8 @@
     margin-bottom: 60px;
     height: 735px;
     overflow-y: scroll;
-    
 }
+
 .test-name {
     margin-right: 50px;
     h4 {
@@ -157,8 +157,8 @@
         color: #105382;
         margin-bottom: 0px;
     }
-    h5{
-         font-size: 20px;
+    h5 {
+        font-size: 20px;
         color: #105382;
         margin-top: 0px;
     }
@@ -167,11 +167,13 @@
 .head-test {
     margin-bottom: 80px;
 }
-.test-title{
-font-style: italic;
-font-weight: 600;
+
+.test-title {
+    font-style: italic;
+    font-weight: 600;
 }
-.view-btn{
+
+.view-btn {
     position: absolute;
     right: 14%;
     bottom: -22px;
