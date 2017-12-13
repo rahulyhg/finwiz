@@ -24,6 +24,16 @@
         "validation": ["", "trim", ""],
         "url": ""
     },{
+        "name": "Article Small Image",
+        "type": "image",
+        "tableRef": "articleSmallImage",
+        "option": "single",
+        "size": "1622 x 517px",
+        "placeholder": "Enter articleSmallImage",
+        "id": "articleSmallImage",
+        "validation": ["", "trim", ""],
+        "url": ""
+    },{
         "name": "Order",
         "type": "text",
         "tableRef": "order",
