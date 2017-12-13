@@ -288,11 +288,6 @@ myApp.controller('ArticleCtrl', function ($scope, $timeout, $state, TemplateServ
             $scope.articlelists=data.data;
             $scope.length=$scope.articlelists.lenght
             $scope.articleData = data.data[0];
-<<<<<<< HEAD
-            console.log("$scope.articleData", $scope.articleData);
-            console.log(data.data)
-=======
->>>>>>> 13a468194e899867495929e018694acea4a95833
         }
     });
 
