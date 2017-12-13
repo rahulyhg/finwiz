@@ -16,7 +16,7 @@ var model = {
     getAllTestimonials: function (data, callback) {
         Testimonials.find({}).sort({
             order: 1
-        }).limit(1).exec(function (err, data) {
+        }).exec(function (err, data) {
             if (err || _.isEmpty(data)) {
                 callback(err, [])
             } else {

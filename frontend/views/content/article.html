@@ -1,3 +1,5 @@
+<!-- integrated one -->
+<!-- 
 <div class="article">
     <div class="container-fluid">
         <div class="head">
@@ -32,30 +34,14 @@
                 </div>
                 <article>
                     <div class="heading">
-                        <!-- WHY MUTUAL FUNDS IS BENIFICIAL TO YOUNG INVESTORS? -->
+                       
                         {{articleData.title}}
                     </div>
                     <div class="inside_content">
                         <img ng-src="{{articleData.articleImage | serverimage}}" class="img-responsive pull-left">
-                        <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pellentesque ex id ligula porttitor,
-                            sed fringilla mauris pharetra. Vestibulum venenatis neque eu cursus dapibus. Nam hendrerit enim
-                            eget augue commodo, sit amet molestie urna venenatis. </p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pellentesque ex id ligula porttitor,
-                            sed fringilla mauris pharetra. Vestibulum venenatis neque eu cursus dapibus. Nam hendrerit enim
-                            eget augue commodo, sit amet molestie urna venenatis. </p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pellentesque ex id ligula porttitor,
-                            sed fringilla mauris pharetra. Vestibulum venenatis neque eu cursus dapibus. Nam hendrerit enim
-                            eget augue commodo, sit amet molestie urna venenatis. </p> -->
+                      
                         <p ng-bind-html="articleData.discription"></p>
-                        <!-- <div ng-repeat="x in selectedContent.content.subheading">
-                            <div class="subheading">
-                                <p>
-                                    <b>{{x.heading}}</b>
-                                </p>
-                                <p>{{x.content}}</p>
-                            </div>
-
-                        </div>!-->
+                       
                         <div class="socialmedia_share">
 
                             Share On :
@@ -97,6 +83,56 @@
                     <div class="down-arrow cursor_pointer" ng-click="articlemovedown()">
                         <i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+
+<!-- static one -->
+
+<div class="article">
+    <div class="container-fluid">
+        <div class="head">
+            <div class="tit"><span>ARTICLES</span></div>
+            <img src="img/article.png" class="img-responsive">
+        </div>
+
+        <div class="cnt">
+            <div class="col-md-8 col-sm-8 col-xs-9 col1">
+                <article>
+                    <div class="heading">
+               
+                        {{selectedContent.heading}}
+                    </div>
+                    <div class="inside_content">
+                        <img src="{{selectedContent.img}}" class="img-responsive pull-left">
+                  
+                        <p>{{selectedContent.content.txt}}</p>
+                        <div ng-repeat="x in selectedContent.content.subheading">
+                            <div class="subheading">
+                                <p><b>{{x.heading}}</b></p>
+                                <p>{{x.content}}</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </article>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-3 col2 padding_0">
+                <div class="article_list" article-list>
+                    <div class="up-arrow cursor_pointer" ng-click="articlemoveup()"><i class="fa fa-arrow-circle-o-up" aria-hidden="true"></i></div>
+                    <ul>
+                        <li ng-repeat="x in articlelist" class="list cursor_pointer" ng-click="selectArticle(x)">
+                            <div class="col-md-3 col-sm-3 col-xs-3 padding_0 "><img ng-src="{{x.img}}" class="img-responsive"></div>
+                            <div class="col-md-9 col-sm-9 col-xs-12 padding_0 txt">{{x.heading}} </div>
+
+                        </li>
+                    </ul>
+                    <div class="down-arrow cursor_pointer" ng-click="articlemovedown()"><i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i></div>
                 </div>
             </div>
         </div>
