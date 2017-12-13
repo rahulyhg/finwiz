@@ -10332,8 +10332,7 @@ p {
         padding-left: 20px;
         font-size: 16px; }
         .s3 .marquee-animation div span i {
-          color: white;
-          padding-right: 30px; }
+          color: white; }
         .s3 .marquee-animation div span p {
           display: inline-block; }
 
@@ -10415,9 +10414,13 @@ p {
         width: 95%;
         height: 40px;
         -webkit-text-fill-color: rgba(25, 1, 1, 0.24);
-        font-size: 18px; }
+        font-size: 18px;
+        padding: 0 20px; }
         .s6 .block1 .subscribe_field input[type=email]:focus {
           -webkit-text-fill-color: black; }
+      .s6 .block1 .subscribe_field span {
+        padding: 0 5px;
+        color: red; }
       .s6 .block1 .subscribe_field .cust-btn {
         position: absolute;
         right: 6%;
@@ -10927,7 +10930,7 @@ p {
     color: #105382;
     margin-bottom: 0px; }
   .test-name h5 {
-    font-size: 20px;
+    font-size: 16px;
     color: #105382;
     margin-top: 0px; }
 

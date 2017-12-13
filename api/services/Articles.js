@@ -1,6 +1,7 @@
 var schema = new Schema({
     title: String,
     articleImage: String,
+    articleSmallImage: String,    
     discription: String,
     order: Number
 });
