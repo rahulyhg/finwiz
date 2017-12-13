@@ -50,8 +50,10 @@ myApp.controller('HomeCtrl', function ($scope, $uibModal, TemplateService, Navig
         //     "The image of Mahatma Gandhi on the currency notes is not hand-drawn. It is a copy of a photo which was taken in 1947. In the original photo, Gandhiji is smiling at a person nearby. The photo was cropped to be used on Indian rupee notes."
         // ]
     NavigationService.apiCallWithoutData("FunFacts/findAllFacts",function(data){
-        console.log("sssssssss",data);
+        // console.log("sssssssss",data);
+        if (data.value === true) {
         $scope.funfact=data.data;
+    }
     })
         $scope.openAbtModel = function () {
             var modalInstance = $uibModal.open({
