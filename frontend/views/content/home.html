@@ -99,7 +99,7 @@
                 <span><i class="fa fa-circle" aria-hidden="true"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec turpis quis odio interdum commodo. Vestibulum
                 non sem nec orci vestibulum</span> -->
                 <span ng-repeat="x in funfact">
-                    <i class="fa fa-circle" aria-hidden="true"></i>{{x}}
+                    <i class="fa fa-circle" aria-hidden="true" ></i><span ng-bind-html="x.factText"> </span>
                 </span>
             </div>
         </div>

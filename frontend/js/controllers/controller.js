@@ -42,14 +42,17 @@ myApp.controller('HomeCtrl', function ($scope, $uibModal, TemplateService, Navig
             }
         ]
 
-        $scope.funfact = ["Rats ate $10 billion of Pablo Escobar’s loose change",
-            "Bill Gates told his Harvard University professors that he would be a millionaire by age 30. He became a billionaire at age 31",
-            "10 percent of the Russian government's income comes from the sale of vodka",
-            "Until the nineteenth century, solid blocks of tea were used as money in Siberia",
-            "All the platinum ever mined would fit into an average-sized living-room!",
-            "The image of Mahatma Gandhi on the currency notes is not hand-drawn. It is a copy of a photo which was taken in 1947. In the original photo, Gandhiji is smiling at a person nearby. The photo was cropped to be used on Indian rupee notes."
-        ]
-
+        // $scope.funfact = ["Rats ate $10 billion of Pablo Escobar’s loose change",
+        //     "Bill Gates told his Harvard University professors that he would be a millionaire by age 30. He became a billionaire at age 31",
+        //     "10 percent of the Russian government's income comes from the sale of vodka",
+        //     "Until the nineteenth century, solid blocks of tea were used as money in Siberia",
+        //     "All the platinum ever mined would fit into an average-sized living-room!",
+        //     "The image of Mahatma Gandhi on the currency notes is not hand-drawn. It is a copy of a photo which was taken in 1947. In the original photo, Gandhiji is smiling at a person nearby. The photo was cropped to be used on Indian rupee notes."
+        // ]
+    NavigationService.apiCallWithoutData("FunFacts/findAllFacts",function(data){
+        console.log("sssssssss",data);
+        $scope.funfact=data.data;
+    })
         $scope.openAbtModel = function () {
             var modalInstance = $uibModal.open({
                 animation: true,
