@@ -90,7 +90,7 @@ myApp.controller('HomeCtrl', function ($scope, $uibModal, TemplateService, Navig
                     toastr.success("Data Submitted Successfully");
                     $state.reload();
                 }else{
-                    toastr.error("Data Submitted Successfully"); 
+                    toastr.error("Data not Submitted"); 
                 }
             });
         }

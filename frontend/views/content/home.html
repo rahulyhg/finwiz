@@ -99,7 +99,8 @@
                 <span><i class="fa fa-circle" aria-hidden="true"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec turpis quis odio interdum commodo. Vestibulum
                 non sem nec orci vestibulum</span> -->
                 <span ng-repeat="x in funfact">
-                    <i class="fa fa-circle" aria-hidden="true" ></i><span ng-bind-html="x.factText"> </span>
+                    <i class="fa fa-circle" aria-hidden="true" ></i>
+                    <p ng-bind-html="x.factText"> </p>
                 </span>
             </div>
         </div>
@@ -172,9 +173,11 @@
             <div class="h3 title"><span class="border-line">SUBSCRIBE</span> FOR UPDATES</div>
             <div class="subscribe_field">
                 <form name="subscribe">
-                    <input class="input_field" type="email" placeholder="Enter Your Email ID" ng-model="emailData.email">
+                    <input type="email"  pattern=""  class="input_field"  name="email" placeholder="Enter Your Email ID" ng-model="emailData.email">
+                    <span ng-show="subscribe.email.$touched && subscribe.email.$invalid">Please enter a valid email</span>
                     <button class="btn btn-primary cust-btn" ng-click="saveEmails(emailData)">SUBSCRIBE</button>
                 </form>
+               
             </div>
             <div class="social text-center">
                 <a href="#" target="_blank">  
