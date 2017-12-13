@@ -36,14 +36,42 @@ var model = {
     },
 
     findAllImages:function(data,callback){
-        ImageGallery.find({
-        }).deepPopulate("season").exec(function(err,data){
-            if(err||_.isEmpty(data)){
-                callback(err,"Nodata")
-            }else{
-                callback(null,data)
+        ImageGallery.aggregate([
+            // Stage 1
+            {
+                $lookup: {
+                     "from": "seasons",
+                     "localField": "season",
+                     "foreignField": "_id",
+                     "as": "season"
+                }
+            },
+    
+            // Stage 2
+            {
+                $unwind: {
+                    path : "$season",
+                    preserveNullAndEmptyArrays : true // optional
+                }
+            },
+    
+            // Stage 3
+            {
+                $group: {
+                _id:"$season.name",
+                data:{$push:{name:"$name",
+                url:"$url",
+                image:"$image",
+                keyword:"$keyword"}}
+                }
             }
-        })
+        ], function (err, found) {
+            if (err||_.isEmpty(found)) {
+                callback(err, "noData");
+            } else {
+                callback(null, found);
+            }
+        });
     },
 
     searchImage: function (data, callback) {

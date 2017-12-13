@@ -10905,15 +10905,15 @@ p {
   background: white;
   border-radius: 30px;
   padding: 50px 30px;
-  text-align: justify; }
+  text-align: justify;
+  position: relative; }
   .test-inner p {
-    font-size: 18px;
-    position: relative; }
-    .test-inner p span {
-      position: absolute;
-      top: -20px;
-      left: -20px;
-      width: 18px; }
+    font-size: 18px; }
+  .test-inner .quotes {
+    position: absolute;
+    top: 30px;
+    left: 15px;
+    width: 18px; }
 
 .test-bottom {
   margin-bottom: 60px;

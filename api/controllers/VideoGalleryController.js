@@ -13,9 +13,9 @@ var controller = {
         }
 
     },
-    findDataBySeason: function (req, res) {
+    findAllVideos: function (req, res) {
         if (req.body) {
-            VideoGallery.findDataBySeason(req.body, res.callback);
+            VideoGallery.findAllVideos(req.body, res.callback);
         } else {
             res.json({
                 value: false,
