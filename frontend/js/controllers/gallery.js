@@ -531,4 +531,32 @@
          $scope.view1 = true;
      }
      //end of season1
+     $scope.more = [];
+     $scope.view = [];
+
+     function reset() {
+         for (var i = 0; i < $scope.seasonList.length; i++) {
+             $scope.more[i]=false;
+             $scope.view[i] =true;
+         }
+     }
+    
+     $scope.viewMore = function (index) {
+         console.log(index)
+         $scope.more[index] = true;
+         $scope.view[index] = false;
+     }
+     $scope.viewLess = function (index) {
+         $scope.more[index] = false;
+         $scope.view[index] = true;
+     }
+     NavigationService.apiCallWithoutData('ImageGallery/findAllImages',function(data){
+         if(data.value){
+             console.log(data.data);
+             $scope.seasonList=data.data;
+             reset();
+         }
+
+     })
+
  })

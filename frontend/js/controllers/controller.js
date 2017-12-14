@@ -1,4 +1,4 @@
-myApp.controller('HomeCtrl', function ($scope, $uibModal, TemplateService, NavigationService, $timeout, $location, $document, $state,toastr) {
+myApp.controller('HomeCtrl', function ($scope, $uibModal, TemplateService, NavigationService, $timeout, $location, $document, $state, toastr) {
         $scope.template = TemplateService.getHTML("content/home.html");
         $scope.homepage = true;
         TemplateService.title = "Home"; //This is the Title of the Website
@@ -55,17 +55,17 @@ myApp.controller('HomeCtrl', function ($scope, $uibModal, TemplateService, Navig
         NavigationService.apiCallWithoutData("Articles/getAllArticlesData", function (data) {
             if (data.value === true) {
                 $scope.articleData = data.data[0];
-                $scope.stateData=_.kebabCase($scope.articleData.title);
-                console.log("$scope.stateData",$scope.stateData);
+                $scope.stateData = _.kebabCase($scope.articleData.title);
             }
         });
 
         ////
-
-    NavigationService.apiCallWithoutData("FunFacts/findAllFacts",function(data){
-        // console.log("sssssssss",data);
-        $scope.funfact=data.data;
-    })
+        
+        NavigationService.apiCallWithoutData("FunFacts/findAllFacts", function (data) {
+            if (data.value === true) {
+                $scope.funfact = data.data;
+            }
+        })
         $scope.openAbtModel = function () {
             var modalInstance = $uibModal.open({
                 animation: true,
@@ -91,8 +91,8 @@ myApp.controller('HomeCtrl', function ($scope, $uibModal, TemplateService, Navig
                 if (data.value === true) {
                     toastr.success("Data Submitted Successfully");
                     $state.reload();
-                }else{
-                    toastr.error("Data Submitted Successfully");                     
+                } else {
+                    toastr.error("Data Submitted Successfully");
                 }
             });
         }
@@ -102,8 +102,8 @@ myApp.controller('HomeCtrl', function ($scope, $uibModal, TemplateService, Navig
                 if (data.value === true) {
                     toastr.success("Data Submitted Successfully");
                     $state.reload();
-                }else{
-                    toastr.error("Data not Submitted"); 
+                } else {
+                    toastr.error("Data not Submitted");
                 }
             });
         }

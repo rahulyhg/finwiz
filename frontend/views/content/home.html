@@ -173,7 +173,7 @@
             <div class="h3 title"><span class="border-line">SUBSCRIBE</span> FOR UPDATES</div>
             <div class="subscribe_field">
                 <form name="subscribe">
-                    <input type="email"  pattern=""  class="input_field"  name="email" placeholder="Enter Your Email ID" ng-model="emailData.email">
+                    <input type="email"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" class="input_field"  name="email" placeholder="Enter Your Email ID" ng-model="emailData.email">
                     <span ng-show="subscribe.email.$touched && subscribe.email.$invalid">Please enter a valid email</span>
                     <button class="btn btn-primary cust-btn" ng-click="saveEmails(emailData)">SUBSCRIBE</button>
                 </form>
@@ -211,7 +211,9 @@
                     <div class="field"> <span>Contact Person</span><input type="text" ng-model="formData.contactPerson"></div>
                     <div class="field"> <span>Designation</span><input type="text" ng-model="formData.designation"></div>
                     <div class="field"> <span>Contact No</span><input type="number" ng-model="formData.contactNumber"></div>
-                    <div class="field"> <span>Email ID</span><input type="email" ng-model="formData.email"></div>
+                    <div class="field"> <span>Email ID</span><input type="email" name="email" ng-model="formData.email">
+                      <div class="span-err" ng-show="nomination.email.$touched && nomination.email.$invalid">Please enter a valid email</div>
+                    </div>
                     <div class="pull-right"> <button class="btn btn-primary cust-btn" ng-click="saveCompData(formData)">SUBMIT</button></div>
                 </form>
             </div>
