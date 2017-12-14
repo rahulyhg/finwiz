@@ -387,6 +387,8 @@ p {
     }
     .txt {
         margin: 0px 20px;
+        height: 60px;
+        overflow: hidden;
     }
 }
 
@@ -495,6 +497,10 @@ p {
         right: 25px;
         width: 5%;
         bottom: 0;
+    }
+    .cs{
+font-size: 2em;
+font-style: italic;
     }
 }
 

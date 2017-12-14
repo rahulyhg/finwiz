@@ -19,7 +19,7 @@ myApp.controller('HomeCtrl', function ($scope, $uibModal, TemplateService, Navig
             console.log("This is a button Click");
         };
         $scope.photo = ['img/gallery/1.jpg', 'img/gallery/2.jpg', 'img/gallery/3.jpg', 'img/gallery/4.jpg', 'img/gallery/5.jpg', 'img/gallery/6.jpg']
-       
+
 
         // $scope.funfact = ["Rats ate $10 billion of Pablo Escobar’s loose change",
         //     "Bill Gates told his Harvard University professors that he would be a millionaire by age 30. He became a billionaire at age 31",
@@ -40,7 +40,7 @@ myApp.controller('HomeCtrl', function ($scope, $uibModal, TemplateService, Navig
         });
 
         ////
-        
+
         NavigationService.apiCallWithoutData("FunFacts/findAllFacts", function (data) {
             if (data.value === true) {
                 $scope.funfact = data.data;
@@ -102,7 +102,7 @@ myApp.controller('HomeCtrl', function ($scope, $uibModal, TemplateService, Navig
         NavigationService.apiCallWithoutData("VideoGallery/findVideoForHomePage", function (data) {
             if (data.value) {
                 // $scope.articleData = data.data[0];
-                $scope.videos=data.data;
+                $scope.videos = data.data;
                 // console.log(data.data)
             } else {
                 console.log("error in getting home page videos ");
@@ -117,7 +117,7 @@ myApp.controller('HomeCtrl', function ($scope, $uibModal, TemplateService, Navig
         //for photos
         // NavigationService.apiCallWithoutData("ImageGallery/findImagesForHomePage", function (data) {
         //     if (data.value) {
-           
+
         //         console.log(data.data,"top 6")
         //     } else {
         //         console.log("error in getting home page photos ");
@@ -125,13 +125,26 @@ myApp.controller('HomeCtrl', function ($scope, $uibModal, TemplateService, Navig
         // })
         NavigationService.apiCallWithoutData("ImageGallery/findAllImages", function (data) {
             if (data.value) {
-           
-                console.log(data.data[data.data.length-1],"all img")
-                $scope.photos=data.data[data.data.length-1].data[0].image;
-                $scope.photos.length=6;
+
+                console.log(data.data[data.data.length - 1], "all img")
+                $scope.photos = data.data[data.data.length - 1].data[0].image;
+                $scope.photos.length = 6;
             } else {
                 console.log("error in getting home page photos ");
             }
+        })
+
+
+        // quick bites 
+
+        NavigationService.apiCallWithoutData("QuickBytes/getAllQuickBytes", function (data) {
+            $scope.quickData = data.data[0];
+            console.log(data.data, "quick bites")
+        })
+
+        // for testimonial
+        NavigationService.apiCallWithoutData("Testimonials/getAllTestimonials",function(data){
+            $scope.testimonialData=data.data[0];
         })
     })
     .controller('NavbarCtrl', function ($scope, TemplateService, NavigationService, $timeout, $location, $state, toastr, $http) {

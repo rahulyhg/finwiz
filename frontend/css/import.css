@@ -10307,7 +10307,9 @@ p {
       .s2 .block:hover .no_hover {
         display: none; }
   .s2 .txt {
-    margin: 0px 20px; }
+    margin: 0px 20px;
+    height: 60px;
+    overflow: hidden; }
 
 .s3 {
   background: #f9ba4c;
@@ -10391,6 +10393,9 @@ p {
     right: 25px;
     width: 5%;
     bottom: 0; }
+  .s5 .cs {
+    font-size: 2em;
+    font-style: italic; }
 
 .s6 {
   background: #f7f7f7;
@@ -10912,7 +10917,8 @@ p {
   text-align: justify;
   position: relative; }
   .test-inner p {
-    font-size: 18px; }
+    font-size: 18px;
+    word-wrap: break-word; }
   .test-inner .quotes {
     position: absolute;
     top: 30px;

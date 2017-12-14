@@ -1,229 +1,265 @@
 <div class="home">
-   <section id="about" class="about s1">
-    <div class="container-fluid">
-        <div class="col-md-6 col-sm-6 col-xs-12">
-            <img class="about_pic" src="img/about-pic.png">
+    <section id="about" class="about s1">
+        <div class="container-fluid">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <img class="about_pic" src="img/about-pic.png">
 
-        </div>
-        <div class="col-md-6 col-sm-6 col-xs-12">
-            <div class="h3 "><span class="border-line">ABOUT</span> US</div>
-            <p>NSE FINWIZ Conceptualised by the National Stock Exchange (NSE) in association with CNBC-TV18, 'NSE Fin
-                Wiz' is part of the NSE LIFE. The purpose of NSE LIFE is to improve levels if financial literacy and education
-                to enable, empower and enrich young Indians. 'NSE Fin Wiz' in its fourth season, is a 27-episode series that
-                will be aired on CNBC-TV18 In our continued endeavour to educate investors and help them make informed investments,
-                'NSE Fin Wiz' is an Investor Education show that will travel pan-India to various corporates across sectors
-                in an initiative to educate the younger generation of first-time working professionals in those corporates
-                and inform them about the merits of investing and other issues pertaining to trading and savings. This will
-                be held through various ground events like seminars and panel discussions in different cities, keeping in
-                mind the curiosity of the newbie investor and to satiate his / her appetite to double their money by taking
-                very informed and mature investing decisions. Through 'NSE Fin Wiz', the aim is to provide awareness to the
-                young professionals in Companies to make the right investing decisions with advice from credible financial
-                specialists who will teach them about the current market conditions and how best to approach the field of
-                investing. Our endeavour is to provide forums for direct interaction with retail investors, industry experts,
-                academicians, practitioners and representatives of regulatory bodies for investment education and advice.</p>
-            <div class="text-center">
-                <div class="btn btn-primary cust-btn" ng-click="openAbtModel()">Know More</div>
             </div>
-        </div>
-</section>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="h3 ">
+                    <span class="border-line">ABOUT</span> US</div>
+                <p>NSE FINWIZ Conceptualised by the National Stock Exchange (NSE) in association with CNBC-TV18, 'NSE Fin Wiz'
+                    is part of the NSE LIFE. The purpose of NSE LIFE is to improve levels if financial literacy and education
+                    to enable, empower and enrich young Indians. 'NSE Fin Wiz' in its fourth season, is a 27-episode series
+                    that will be aired on CNBC-TV18 In our continued endeavour to educate investors and help them make informed
+                    investments, 'NSE Fin Wiz' is an Investor Education show that will travel pan-India to various corporates
+                    across sectors in an initiative to educate the younger generation of first-time working professionals
+                    in those corporates and inform them about the merits of investing and other issues pertaining to trading
+                    and savings. This will be held through various ground events like seminars and panel discussions in different
+                    cities, keeping in mind the curiosity of the newbie investor and to satiate his / her appetite to double
+                    their money by taking very informed and mature investing decisions. Through 'NSE Fin Wiz', the aim is
+                    to provide awareness to the young professionals in Companies to make the right investing decisions with
+                    advice from credible financial specialists who will teach them about the current market conditions and
+                    how best to approach the field of investing. Our endeavour is to provide forums for direct interaction
+                    with retail investors, industry experts, academicians, practitioners and representatives of regulatory
+                    bodies for investment education and advice.</p>
+                <div class="text-center">
+                    <div class="btn btn-primary cust-btn" ng-click="openAbtModel()">Know More</div>
+                </div>
+            </div>
+    </section>
 
-<section class="s2">
-    <div class="container">
-        <div class="row border-bottom">
-            <div class="col-md-6 col-sm-6 articles block border-right text-center">
-                <div class="title h3">ARTICLES</div>
-                <div class="tit_img">
-                    <img class="img-responsive no_hover" src="img/icon/article.png">
-                    <img class="img-responsive on_hover" src="img/icon/article_yellow.png">
+    <section class="s2">
+        <div class="container">
+            <div class="row border-bottom">
+                <div class="col-md-6 col-sm-6 articles block border-right text-center">
+                    <div class="title h3">ARTICLES</div>
+                    <div class="tit_img">
+                        <img class="img-responsive no_hover" src="img/icon/article.png">
+                        <img class="img-responsive on_hover" src="img/icon/article_yellow.png">
+                    </div>
+                    <div class="txt">
+                        <p>{{articleData.title}}
+                        </p>
+                    </div>
+                    <div class="btn btn-primary cust-btn" ui-sref="article({title:stateData})">KNOW MORE</div>
                 </div>
-                <div class="txt">
-                    <p>{{articleData.title}}
-                    </p>
+                <div class="col-md-6 col-sm-6 quick_bites block text-center">
+                    <div class="title h3">QUICK BITES</div>
+                    <div class="tit_img">
+                        <img class="img-responsive no_hover" src="img/icon/quick-bites.png">
+                        <img class="img-responsive on_hover" src="img/icon/quick-bites-yellow.png">
+                    </div>
+                    <div class="txt">
+                        <p ng-bind-html=quickData.description>
+                        </p>
+                    </div>
+                    <div class="btn btn-primary cust-btn" ui-sref="quickbites">KNOW MORE</div>
                 </div>
-                <div class="btn btn-primary cust-btn" ui-sref="article({title:stateData})">KNOW MORE</div>
             </div>
-            <div class="col-md-6 col-sm-6 quick_bites block text-center">
-                <div class="title h3">QUICK BITES</div>
-                <div class="tit_img">
-                    <img class="img-responsive no_hover" src="img/icon/quick-bites.png">
-                    <img class="img-responsive on_hover" src="img/icon/quick-bites-yellow.png">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 testimonials block border-right text-center">
+                    <div class="title h3">TESTIMONIALS</div>
+                    <div class="tit_img">
+                        <img class="img-responsive no_hover" src="img/icon/testimonials.png">
+                        <img class="img-responsive on_hover" src="img/icon/testimonials_yellow.png">
+                    </div>
+                    <div class="txt">
+                        <p ng-bind-html="testimonialData.description">
+                        </p>
+                    </div>
+                    <div class="btn btn-primary cust-btn" ui-sref="testimonial">KNOW MORE</div>
                 </div>
-                <div class="txt">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec turpis quis odio interdum commodo.
-                    </p>
+                <div class="col-md-6 col-sm-6 vlogs block  block-border1 text-center">
+                    <div class="title h3">VLOGS</div>
+                    <div class="tit_img">
+                        <img class="img-responsive no_hover" src="img/icon/vlogs.png">
+                        <img class="img-responsive on_hover" src="img/icon/vlogs_yellow.png">
+                    </div>
+                    <div class="txt">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec turpis quis odio interdum commodo.
+                        </p>
+                    </div>
+                    <div class="btn btn-primary cust-btn" ui-sref="vlogs">KNOW MORE</div>
                 </div>
-                <div class="btn btn-primary cust-btn"  ui-sref="quickbites">KNOW MORE</div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-6 col-sm-6 testimonials block border-right text-center">
-                <div class="title h3">TESTIMONIALS</div>
-                <div class="tit_img">
-                    <img class="img-responsive no_hover" src="img/icon/testimonials.png">
-                    <img class="img-responsive on_hover" src="img/icon/testimonials_yellow.png">
-                </div>
-                <div class="txt">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec turpis quis odio interdum commodo.
-                    </p>
-                </div>
-                <div class="btn btn-primary cust-btn" ui-sref="testimonial">KNOW MORE</div>
-            </div>
-            <div class="col-md-6 col-sm-6 vlogs block  block-border1 text-center">
-                <div class="title h3">VLOGS</div>
-                <div class="tit_img">
-                    <img class="img-responsive no_hover" src="img/icon/vlogs.png">
-                    <img class="img-responsive on_hover" src="img/icon/vlogs_yellow.png">
-                </div>
-                <div class="txt">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec turpis quis odio interdum commodo.
-                    </p>
-                </div>
-                <div class="btn btn-primary cust-btn" ui-sref="vlogs">KNOW MORE</div>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
 
-<section id="" class="s3 fun_facts bg-second">
-    <div class="container-fluid">
+    <section id="" class="s3 fun_facts bg-second">
+        <div class="container-fluid">
 
-        <div class="col-md-2 col-sm-3 block1">
-            <div class="h3">FUN FACTS</div>
-        </div>
-        <div class="col-md-10 col-sm-9 block2 marquee-animation">
-            <div class="pull-left">
-                <!-- <span ><i class="fa fa-circle" aria-hidden="true"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec turpis quis odio interdum commodo. Vestibulum
+            <div class="col-md-2 col-sm-3 block1">
+                <div class="h3">FUN FACTS</div>
+            </div>
+            <div class="col-md-10 col-sm-9 block2 marquee-animation">
+                <div class="pull-left">
+                    <!-- <span ><i class="fa fa-circle" aria-hidden="true"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec turpis quis odio interdum commodo. Vestibulum
                 non sem nec orci vestibulum</span>
                 <span><i class="fa fa-circle" aria-hidden="true"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec turpis quis odio interdum commodo. Vestibulum
                 non sem nec orci vestibulum</span>
                 <span><i class="fa fa-circle" aria-hidden="true"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec turpis quis odio interdum commodo. Vestibulum
                 non sem nec orci vestibulum</span> -->
-                <span ng-repeat="x in funfact track by $index">
-                    <i class="fa fa-circle" aria-hidden="true" ></i>
-                    <p ng-bind-html="x.factText"> </p>
-                </span>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="gallery" class=" s4 gallery" ng-init="tab='episodes'">
-    <div class="container-fluid">
-        <div class="col-md-6 col-sm-6 col-xs-12">
-            <div class="bg-first block1">
-                <div class="h3 title "> GALLERY</div>
-                <div class="tabset">
-                    <div class="cursor_pointer tab {{tab=='episodes'}}" ng-click="tab='episodes'">EPISODES</div>
-                    <div class="cursor_pointer tab {{tab=='photos'}}" ng-click="tab='photos'">PHOTOS</div>
+                    <span ng-repeat="x in funfact track by $index">
+                        <i class="fa fa-circle" aria-hidden="true"></i>
+                        <p ng-bind-html="x.factText"> </p>
+                    </span>
                 </div>
             </div>
         </div>
-        <div class="col-md-6 col-sm-6 col-xs-12">
-            <div class="block2">
-                <div class="episodes" ng-show="tab=='episodes'">
-                    <div class="col-md-4 col-sm-4 col-xs-6 pic" ng-repeat="x in videos">
-                        <img ng-src="http://img.youtube.com/vi/{{convertUrltoID(x.url)}}/hqdefault.jpg" class="img-responsive img-full">
-                        <div class="video-icon">
-                            <a class="fancybox.iframe" ng-href="https://www.youtube.com/embed/{{convertUrltoID(x.url)}}?autoplay=1" fancybox>
-                                <img src="img/youtube-small.png" class="img-responsive">
+    </section>
+
+    <section id="gallery" class=" s4 gallery" ng-init="tab='episodes'">
+        <div class="container-fluid">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="bg-first block1">
+                    <div class="h3 title "> GALLERY</div>
+                    <div class="tabset">
+                        <div class="cursor_pointer tab {{tab=='episodes'}}" ng-click="tab='episodes'">EPISODES</div>
+                        <div class="cursor_pointer tab {{tab=='photos'}}" ng-click="tab='photos'">PHOTOS</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="block2">
+                    <div class="episodes" ng-show="tab=='episodes'">
+                        <div class="col-md-4 col-sm-4 col-xs-6 pic" ng-repeat="x in videos">
+                            <img ng-src="http://img.youtube.com/vi/{{convertUrltoID(x.url)}}/hqdefault.jpg" class="img-responsive img-full">
+                            <div class="video-icon">
+                                <a class="fancybox.iframe" ng-href="https://www.youtube.com/embed/{{convertUrltoID(x.url)}}?autoplay=1" fancybox>
+                                    <img src="img/youtube-small.png" class="img-responsive">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-12 text-center">
+                            <div class="btn btn-primary cust-btn" ui-sref="episode">VIEW MORE</div>
+                        </div>
+
+                    </div>
+                    <div class="photos" ng-show="tab=='photos'">
+                        <div class="col-md-4 col-sm-4 col-xs-6 pic" ng-repeat="x in photos">
+                            <a fancybox href="{{x | serverimage }}" data-fancybox="group" rel="photo">
+                                <img src="{{x | serverimage}}" class="img-responsive">
                             </a>
                         </div>
-                    </div>
-                    <div class="col-md-12 text-center">
-                        <div class="btn btn-primary cust-btn" ui-sref="episode">VIEW MORE</div>
-                    </div>
-
-                </div>
-                <div class="photos" ng-show="tab=='photos'">
-                    <div class="col-md-4 col-sm-4 col-xs-6 pic" ng-repeat="x in photos">
-                        <a fancybox href="{{x | serverimage }}" data-fancybox="group" rel="photo"><img src="{{x | serverimage}}" class="img-responsive"></a>
-                    </div>
-                    <div class="col-md-12 text-center">
-                        <div class="btn btn-primary cust-btn" ui-sref="photo">VIEW MORE</div>
+                        <div class="col-md-12 text-center">
+                            <div class="btn btn-primary cust-btn" ui-sref="photo">VIEW MORE</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section class="s5 news_quiz">
-    <div class="container-fluid">
-        <div class="col-md-6 col-sm-6 col-xs-6 padding-0 newsletter  ">
-            <div class="h3">NEWSLETTER</div>
-            <div class="col-md-2 col-sm-2 padding-0 right"><img class="img-responsive icon" src="img/icon/news.png"></div>
-            <div class="col-md-10 col-sm-10 padding-0 left">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec turpis quis odio interdum commodo. Vestibulum
-                    non sem nec orci vestibulum</p>
+    <section class="s5 news_quiz">
+        <div class="container-fluid">
+            <div class="col-md-6 col-sm-6 col-xs-6 padding-0 newsletter  ">
+                <div class="h3">NEWSLETTER</div>
+                <div class="col-md-2 col-sm-2 padding-0 right">
+                    <img class="img-responsive icon" src="img/icon/news.png">
+                </div>
+                <div class="col-md-10 col-sm-10 padding-0 left">
+                    <p class="cs">Coming Soon</p>
+                </div>
+                <div class="pull-right">
+                    <a ui-sref="newsletter">
+                        <img src="img/icon/nextpage.png" class="img-responsive nextpage ">
+                    </a>
+                </div>
             </div>
-            <div class="pull-right"><a ui-sref="newsletter"><img src="img/icon/nextpage.png" class="img-responsive nextpage "></a></div>
+            <div class="col-md-6 col-sm-6 col-xs-6 padding-0 quiz">
+                <div class="h3">QUIZ</div>
+                <div class="col-md-2 col-sm-2 padding-0 right">
+                    <img class="img-responsive icon" src="img/icon/quiz.png">
+                </div>
+                <div class="col-md-10 col-sm-10 padding-0 left">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec turpis quis odio interdum commodo.
+                        Vestibulum non sem nec orci vestibulum</p>
+                </div>
+                <div class="pull-right">
+                    <a href="" ng-click="openQuizModel()">
+                        <img src="img/icon/nextpage.png" class="img-responsive nextpage">
+                    </a>
+                </div>
+            </div>
         </div>
-        <div class="col-md-6 col-sm-6 col-xs-6 padding-0 quiz">
-            <div class="h3">QUIZ</div>
-            <div class="col-md-2 col-sm-2 padding-0 right"><img class="img-responsive icon" src="img/icon/quiz.png"></div>
-            <div class="col-md-10 col-sm-10 padding-0 left">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec turpis quis odio interdum commodo. Vestibulum
-                    non sem nec orci vestibulum</p>
-            </div>
-            <div class="pull-right"><a href="" ng-click="openQuizModel()"><img src="img/icon/nextpage.png" class="img-responsive nextpage"></a></div>
-        </div>
-    </div>
-</section>
+    </section>
 
-<section id="subscribe_nominate" class="s6 subscribe_nominate">
-    <div class="container-fluid">
-        <div class="col-md-6 col-sm-6 block1">
-            <div class="h3 title"><span class="border-line">SUBSCRIBE</span> FOR UPDATES</div>
-            <div class="subscribe_field">
-                <form name="subscribe">
-                    <input type="email"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" class="input_field"  name="email" placeholder="Enter Your Email ID" ng-model="emailData.email">
-                    <span ng-show="subscribe.email.$touched && subscribe.email.$invalid">Please enter a valid email</span>
-                    <button class="btn btn-primary cust-btn" ng-click="saveEmails(emailData)">SUBSCRIBE</button>
-                </form>
-               
-            </div>
-            <div class="social text-center">
-                <a href="#" target="_blank">  
-                    <img src="img/icon/facebook.png">
-                </a>
-                <a href="#" target="_blank">
-                    <img src="img/icon/twitter.png">
-                </a>
-                <a href="#" target="_blank">
-                    <img src="img/icon/instagram.png">
-                </a>
-            </div>
-            <div class="contact text-center">
-                <div class="h4">CONTACT</div>
-                <div> NSE - Corporate Office</div>
-                <div> National Stock Exchange of India Ltd.,Exchange Plaza,</div>
-                <div> C-1, Block G, Bandra Kurla Complex,</div>
-                <div>Bandra (E) Mumbai – 400 051 </div>
-                <div>Tel No: (022) 26598100 - 8114 </div>
-                <div>Fax No: (022) 26598120</div>
-                <div>Visit us – <a href="www.nseindia.com">www.nseindia.com</a></div>
+    <section id="subscribe_nominate" class="s6 subscribe_nominate">
+        <div class="container-fluid">
+            <div class="col-md-6 col-sm-6 block1">
+                <div class="h3 title">
+                    <span class="border-line">SUBSCRIBE</span> FOR UPDATES</div>
+                <div class="subscribe_field">
+                    <form name="subscribe">
+                        <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" class="input_field" name="email" placeholder="Enter Your Email ID"
+                            ng-model="emailData.email">
+                        <span ng-show="subscribe.email.$touched && subscribe.email.$invalid">Please enter a valid email</span>
+                        <button class="btn btn-primary cust-btn" ng-click="saveEmails(emailData)">SUBSCRIBE</button>
+                    </form>
 
-            </div>
-
-        </div>
-        <div class="col-md-6 col-sm-6 block2">
-            <div class=" h3 title"><span class="border-line">NOMINATE</span> YOUR COMPANY</div>
-            <div class="nomination_form">
-                <form name="nomination">
-                    <div class="field"> <span>Name of Company</span> <input type="text" ng-model="formData.companyName"></div>
-                    <div class="field"> <span>Contact Person</span><input type="text" ng-model="formData.contactPerson"></div>
-                    <div class="field"> <span>Designation</span><input type="text" ng-model="formData.designation"></div>
-                    <div class="field"> <span>Contact No</span><input type="number" ng-model="formData.contactNumber"></div>
-                    <div class="field"> <span>Email ID</span><input type="email" name="email" ng-model="formData.email">
-                      <div class="span-err" ng-show="nomination.email.$touched && nomination.email.$invalid">Please enter a valid email</div>
+                </div>
+                <div class="social text-center">
+                    <a href="#" target="_blank">
+                        <img src="img/icon/facebook.png">
+                    </a>
+                    <a href="#" target="_blank">
+                        <img src="img/icon/twitter.png">
+                    </a>
+                    <a href="#" target="_blank">
+                        <img src="img/icon/instagram.png">
+                    </a>
+                </div>
+                <div class="contact text-center">
+                    <div class="h4">CONTACT</div>
+                    <div> NSE - Corporate Office</div>
+                    <div> National Stock Exchange of India Ltd.,Exchange Plaza,</div>
+                    <div> C-1, Block G, Bandra Kurla Complex,</div>
+                    <div>Bandra (E) Mumbai – 400 051 </div>
+                    <div>Tel No: (022) 26598100 - 8114 </div>
+                    <div>Fax No: (022) 26598120</div>
+                    <div>Visit us –
+                        <a href="www.nseindia.com">www.nseindia.com</a>
                     </div>
-                    <div class="pull-right"> <button class="btn btn-primary cust-btn" ng-click="saveCompData(formData)">SUBMIT</button></div>
-                </form>
+
+                </div>
+
             </div>
+            <div class="col-md-6 col-sm-6 block2">
+                <div class=" h3 title">
+                    <span class="border-line">NOMINATE</span> YOUR COMPANY</div>
+                <div class="nomination_form">
+                    <form name="nomination">
+                        <div class="field">
+                            <span>Name of Company</span>
+                            <input type="text" ng-model="formData.companyName">
+                        </div>
+                        <div class="field">
+                            <span>Contact Person</span>
+                            <input type="text" ng-model="formData.contactPerson">
+                        </div>
+                        <div class="field">
+                            <span>Designation</span>
+                            <input type="text" ng-model="formData.designation">
+                        </div>
+                        <div class="field">
+                            <span>Contact No</span>
+                            <input type="number" ng-model="formData.contactNumber">
+                        </div>
+                        <div class="field">
+                            <span>Email ID</span>
+                            <input type="email" name="email" ng-model="formData.email">
+                            <div class="span-err" ng-show="nomination.email.$touched && nomination.email.$invalid">Please enter a valid email</div>
+                        </div>
+                        <div class="pull-right">
+                            <button class="btn btn-primary cust-btn" ng-click="saveCompData(formData)">SUBMIT</button>
+                        </div>
+                    </form>
+                </div>
 
 
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-</div>
+    </div>
