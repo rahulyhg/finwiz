@@ -28,8 +28,20 @@ myApp.controller('HomeCtrl', function ($scope, $uibModal, TemplateService, Navig
         //     "All the platinum ever mined would fit into an average-sized living-room!",
         //     "The image of Mahatma Gandhi on the currency notes is not hand-drawn. It is a copy of a photo which was taken in 1947. In the original photo, Gandhiji is smiling at a person nearby. The photo was cropped to be used on Indian rupee notes."
         // ]
+
+
+        //for article
+
+        NavigationService.apiCallWithoutData("Articles/getAllArticlesData", function (data) {
+            if (data.value === true) {
+                $scope.articleData = data.data[0];
+                $scope.stateData = _.kebabCase($scope.articleData.title);
+            }
+        });
+
+        ////
+        
         NavigationService.apiCallWithoutData("FunFacts/findAllFacts", function (data) {
-            // console.log("sssssssss",data);
             if (data.value === true) {
                 $scope.funfact = data.data;
             }

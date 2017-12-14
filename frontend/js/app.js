@@ -42,7 +42,7 @@ myApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $locat
             controller: 'NewsLetterCtrl'
         })
         .state('article', {
-            url: "/article",
+            url: "/article/:title",
             templateUrl: tempateURL,
             controller: 'ArticleCtrl'
         })

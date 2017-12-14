@@ -38,6 +38,7 @@
     "jshint": "^2.9.5",
     "json2csv": "^3.11.5",
     "json2xls": "^0.1.2",
+    "kebab-case": "^1.0.0",
     "lackey-mongoose-ref-validator": "^0.0.3",
     "lodash": "^4.17.4",
     "md5": "^2.2.1",
