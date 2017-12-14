@@ -10362,11 +10362,6 @@ p {
     margin-top: 25PX; }
     .s4 .block2 .pic {
       padding-bottom: 10px; }
-    .s4 .block2 img {
-      width: 200px;
-      height: 100px;
-      -o-object-fit: cover;
-         object-fit: cover; }
 
 .s5 {
   background: #135281;
@@ -10852,7 +10847,8 @@ p {
     padding: 5px;
     background: #105382;
     color: #f9ba4d;
-    border: none; }
+    border: none;
+    text-transform: capitalize; }
 
 .head-gallery {
   margin-bottom: 100px; }
