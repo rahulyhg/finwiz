@@ -1,7 +1,8 @@
+var kebabCase = require('kebab-case');
 var schema = new Schema({
     title: String,
     articleImage: String,
-    articleSmallImage: String,    
+    articleSmallImage: String,
     discription: String,
     order: Number
 });
@@ -37,5 +38,22 @@ var model = {
             }
         })
     },
+
+    findDataByArticleTitle: function (data, callback) {
+        Articles.aggregate([{
+            $match: {
+                "title": {
+                    $regex: data.title,
+                    $options: "i"
+                }
+            }
+        }], function (err, found) {
+            if (err || _.isEmpty(found)) {
+                callback(err, "noData");
+            } else {
+                callback(null, found);
+            }
+        });
+    }
 };
 module.exports = _.assign(module.exports, exports, model);

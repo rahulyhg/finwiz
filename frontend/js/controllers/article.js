@@ -1,7 +1,9 @@
-myApp.controller('ArticleCtrl', function ($scope, $timeout, $state, TemplateService, NavigationService, $timeout, toastr, $http) {
+myApp.controller('ArticleCtrl', function ($scope, $timeout, $state, TemplateService,$stateParams, NavigationService, $timeout, toastr, $http) {
     $scope.template = TemplateService.getHTML("content/article.html");
     TemplateService.title = "Article"; // This is the Title of the Website
     $scope.navigation = NavigationService.getNavigation();
+
+   
 
     $scope.selectedContent = {
         heading: "5 things to remember while over splurging",
@@ -273,23 +275,29 @@ myApp.controller('ArticleCtrl', function ($scope, $timeout, $state, TemplateServ
 
     // select article
     $scope.selectArticle = function (x) {
-        console.log("inside article select")
         $scope.selectedContent = x;
       
     }
 
     $scope.selectArticles=function(x){
-        $scope.articleData=x;
-
+        $scope.stateData=_.kebabCase(x.title);
+        $state.go("article", {
+            title:$scope.stateData
+        })
     }
 
     NavigationService.apiCallWithoutData("Articles/getAllArticlesData", function (data) {
         if (data.value === true) {
             $scope.articlelists=data.data;
-            $scope.length=$scope.articlelists.lenght
-            $scope.articleData = data.data[0];
+            $scope.length=$scope.articlelists.length;
         }
     });
 
-
+    var sendData={};
+    sendData.title=$stateParams.title;
+    NavigationService.apiCallWithData("Articles/findDataByArticleTitle",sendData, function (data) {
+        if (data.value === true) {
+            $scope.articleData = data.data[0];
+        }
+    });
 })

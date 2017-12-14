@@ -95,7 +95,6 @@ var model = {
             },
 
         ], function (err, found) {
-            console.log("**** in global search***", found)
             if (err||_.isEmpty(found)) {
                 callback(err, "noData");
             } else {
