@@ -19,28 +19,7 @@ myApp.controller('HomeCtrl', function ($scope, $uibModal, TemplateService, Navig
             console.log("This is a button Click");
         };
         $scope.photo = ['img/gallery/1.jpg', 'img/gallery/2.jpg', 'img/gallery/3.jpg', 'img/gallery/4.jpg', 'img/gallery/5.jpg', 'img/gallery/6.jpg']
-        $scope.episode = [{
-                img: "img/episode/1.png",
-                url: "https://www.youtube.com/watch?v=zCvPGkCCTsA"
-            }, {
-                img: "img/episode/1.png",
-                url: "https://www.youtube.com/watch?v=zCvPGkCCTsA"
-            }, {
-                img: "img/episode/1.png",
-                url: "https://www.youtube.com/watch?v=zCvPGkCCTsA"
-            }, {
-                img: "img/episode/1.png",
-                url: "https://www.youtube.com/watch?v=zCvPGkCCTsA"
-            },
-            {
-                img: "img/episode/1.png",
-                url: "https://www.youtube.com/watch?v=zCvPGkCCTsA"
-            },
-            {
-                img: "img/episode/1.png",
-                url: "https://www.youtube.com/watch?v=zCvPGkCCTsA"
-            }
-        ]
+       
 
         // $scope.funfact = ["Rats ate $10 billion of Pablo Escobar’s loose change",
         //     "Bill Gates told his Harvard University professors that he would be a millionaire by age 30. He became a billionaire at age 31",
@@ -49,6 +28,7 @@ myApp.controller('HomeCtrl', function ($scope, $uibModal, TemplateService, Navig
         //     "All the platinum ever mined would fit into an average-sized living-room!",
         //     "The image of Mahatma Gandhi on the currency notes is not hand-drawn. It is a copy of a photo which was taken in 1947. In the original photo, Gandhiji is smiling at a person nearby. The photo was cropped to be used on Indian rupee notes."
         // ]
+
 
         //for article
 
@@ -107,6 +87,52 @@ myApp.controller('HomeCtrl', function ($scope, $uibModal, TemplateService, Navig
                 }
             });
         }
+
+        NavigationService.apiCallWithoutData("Articles/getAllArticlesData", function (data) {
+            if (data.value) {
+                $scope.articleData = data.data[0];
+                // console.log(data.data)
+            } else {
+                console.log("error in getting article heading");
+            }
+        })
+
+
+        // for videos
+        NavigationService.apiCallWithoutData("VideoGallery/findVideoForHomePage", function (data) {
+            if (data.value) {
+                // $scope.articleData = data.data[0];
+                $scope.videos=data.data;
+                // console.log(data.data)
+            } else {
+                console.log("error in getting home page videos ");
+            }
+        })
+
+        $scope.convertUrltoID = function (url) {
+            return url.match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/)[1];
+        }
+
+
+        //for photos
+        // NavigationService.apiCallWithoutData("ImageGallery/findImagesForHomePage", function (data) {
+        //     if (data.value) {
+           
+        //         console.log(data.data,"top 6")
+        //     } else {
+        //         console.log("error in getting home page photos ");
+        //     }
+        // })
+        NavigationService.apiCallWithoutData("ImageGallery/findAllImages", function (data) {
+            if (data.value) {
+           
+                console.log(data.data[data.data.length-1],"all img")
+                $scope.photos=data.data[data.data.length-1].data[0].image;
+                $scope.photos.length=6;
+            } else {
+                console.log("error in getting home page photos ");
+            }
+        })
     })
     .controller('NavbarCtrl', function ($scope, TemplateService, NavigationService, $timeout, $location, $state, toastr, $http) {
         // $scope.template = TemplateService.getHTML("content/grid.html");
