@@ -9,6 +9,7 @@ myApp.controller('HomeCtrl', function ($scope, $uibModal, TemplateService, Navig
             'http://flexslider.woothemes.com/images/kitchen_adventurer_donut.jpg',
             'http://flexslider.woothemes.com/images/kitchen_adventurer_caramel.jpg'
         ];
+         $scope.emailData={};
         var abc = _.times(100, function (n) {
             return n;
         });
@@ -44,7 +45,7 @@ myApp.controller('HomeCtrl', function ($scope, $uibModal, TemplateService, Navig
         NavigationService.apiCallWithoutData("FunFacts/findAllFacts", function (data) {
             if (data.value === true) {
                 $scope.funfact = data.data;
-            }
+            }saveCompData
         })
         $scope.openAbtModel = function () {
             var modalInstance = $uibModal.open({
@@ -78,12 +79,31 @@ myApp.controller('HomeCtrl', function ($scope, $uibModal, TemplateService, Navig
         }
 
         $scope.saveEmails = function (formdata) {
+            // console.log("aaaaaa",data);
+                   
+                    $scope.emailData.email="";
             NavigationService.apiCall("SubscribersEmail/save", formdata, function (data) {
                 if (data.value === true) {
-                    toastr.success("Data Submitted Successfully");
-                    $state.reload();
+                       $uibModal.open({
+                        animation: true,
+                        templateUrl: "frontend/views/model/thanks.html",
+                        scope: $scope,
+                        backdrop: false
+               
+                    });
+                    
+                    // toastr.success("Data Submitted Successfully");
+                //    $state.reload();
+    
                 } else {
-                    toastr.error("Data not Submitted");
+                     $uibModal.open({
+                        animation: true,
+                        templateUrl: "frontend/views/model/allreadyregister.html",
+                        scope: $scope,
+                        backdrop: false
+                    });
+                        
+                     
                 }
             });
         }
@@ -125,10 +145,10 @@ myApp.controller('HomeCtrl', function ($scope, $uibModal, TemplateService, Navig
         // })
         NavigationService.apiCallWithoutData("ImageGallery/findAllImages", function (data) {
             if (data.value) {
-
-                console.log(data.data[data.data.length - 1], "all img")
-                $scope.photos = data.data[data.data.length - 1].data[0].image;
-                $scope.photos.length = 6;
+           
+                // console.log(data.data[data.data.length-1],"all img")
+                $scope.photos=data.data[data.data.length-1].data[0].image;
+                $scope.photos.length=6;
             } else {
                 console.log("error in getting home page photos ");
             }

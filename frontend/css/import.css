@@ -10418,6 +10418,9 @@ p {
         padding: 0 20px; }
         .s6 .block1 .subscribe_field input[type=email]:focus {
           -webkit-text-fill-color: black; }
+        .s6 .block1 .subscribe_field input[type=email]:hover, .s6 .block1 .subscribe_field input[type=email]:active, .s6 .block1 .subscribe_field input[type=email]:focus {
+          outline: none;
+          border: 2px sold #ccc; }
       .s6 .block1 .subscribe_field span {
         padding: 0 5px;
         color: red; }
