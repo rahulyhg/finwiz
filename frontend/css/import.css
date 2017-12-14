@@ -10576,7 +10576,8 @@ p {
   .article .inside_content {
     background: #f9f9f9;
     padding: 10px;
-    padding-right: 20px; }
+    padding-right: 20px;
+    min-height: 60vh; }
     .article .inside_content img {
       padding: 0px 15px 0px 0px;
       width: 40%; }

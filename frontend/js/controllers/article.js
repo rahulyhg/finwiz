@@ -1,38 +1,15 @@
-myApp.controller('ArticleCtrl', function ($scope, $timeout, $state, TemplateService,$stateParams, NavigationService, $timeout, toastr, $http) {
+myApp.controller('ArticleCtrl', function ($scope, $timeout, $state, $location, TemplateService, $stateParams, NavigationService, $timeout, toastr, $http) {
     $scope.template = TemplateService.getHTML("content/article.html");
     TemplateService.title = "Article"; // This is the Title of the Website
     $scope.navigation = NavigationService.getNavigation();
 
-   
 
-    $scope.selectedContent = {
-        heading: "5 things to remember while over splurging",
-        img: "img/article1.png",
-        content: {
-            txt: "Why did I even buy this?” – If you keep asking yourself this question often, then you are over splurging. We often get into shopping mode whenever we are bored. It starts with window shopping and then before you realize, you either come home with those rich looking matte paper shopping bags, or you get messages from your bank about the amount debited on those online shopping sites.To curb the splurging, we need to consciously be strict about our spending behavior and remember the below mentioned five points.",
-            subheading: [{
-                    heading: "Jot down your shopping list",
-                    content: "Most of the time, we end up going to the store not knowing what we need and randomly pick up things that are not required. To avoid this mistake, write down your monthly shopping list two days before your salary gets credited. Strike off the items that aren’t of importance for that month or mark it optional. Since you have already prioritized your shopping needs, you end up sticking to the list and avoid gazing around the store and overspending or buying unnecessary things.",
-                },
-                {
-                    heading: "Stick to the plan",
-                    content: "When there is a function to attend, we would want to look our best. Nothing wrong in that, but to avoid over splurging, it is better to decide and finalize on what we are looking for and then get into action mode. Decide what type of attire you want, how much you can afford to spend for that, is it practical to buy something so expensive and keep it lying in a corner of your closet after that one time. This will help you zero down on the right product. Choose the right shop, decide your budget, finalize the style and then get to the shopping mode. Look around in other shops and choose the one that is best suited and thrifty."
-                },
-                {
-                    heading: "Say NO to last minute shopping",
-                    content: "Ensure that your shopping plans are always made well in advance. Prioritize the events you would be taking part in. Decide if you need shopping for the same, set aside a budget and start saving for the same at least 2 months before the event. When you know you have a cousin’s engagement in the next 3 months, start saving for it and aim to shop for it a month before the event. Last minute shopping will cost you a bomb. There is always a sale going on – make use of it. But remember to buy what’s necessary and stay away from overspending. Your mantra should be - Needs should be addressed and wants should be suppressed!"
-                }, {
-                    heading: "Save first and spend later",
-                    content: "I know it is easier said than done, but when you get your paycheck, put aside a certain percentage of it in a savings mode of your choice. This has to be the norm, not an option. The savings need not be something extravagant, it could be 5% of your earnings or 50%; it totally depends on you. The idea is to save a percentage of your earnings and then spend with whatever you are left with."
-                },
-                {
-                    heading: "Prepare the monthly budget",
-                    content: "Always have your monthly budget regularly prepared so you can allocate a reasonable budget for everything. If you want to dedicate 10% of your earnings for groceries, then ensure you don’t go overboard and stock only what is necessary. Same applies to eating out and weekend entertainment expenses. This way, you are aware of your cash limits and will not have the urge to spend lavishly. Self-control is extremely important. Ensure you don’t go overboard and stick to your budget. The bottom line is splurging is fine when it happens once in a while, but when it becomes a routine; it is necessary to control yourself to avoid getting into financial trouble."
-                }
-            ]
-        }
-    }
-    $scope.shareUrl = "http://www.wohlig.co.in/nse_finwiz/%23!/article"
+    var sendData = {};
+    sendData.title = $stateParams.title;
+    // console.log( $location.url(),  $stateParams)
+    console.log("$location.path();", $location.absUrl())
+  
+    $scope.shareUrl = $location.absUrl();
     // json structure for articlelist
     // $scope.selectedContent = 
     //    {
@@ -246,7 +223,7 @@ myApp.controller('ArticleCtrl', function ($scope, $timeout, $state, TemplateServ
             }
         }
     ];
-    $scope.length = $scope.articlelist.length;
+    // $scope.length = $scope.articlelist.length;
     $scope.current = 0;
     $scope.toshow = 4;
 
@@ -276,28 +253,32 @@ myApp.controller('ArticleCtrl', function ($scope, $timeout, $state, TemplateServ
     // select article
     $scope.selectArticle = function (x) {
         $scope.selectedContent = x;
-      
+
     }
 
-    $scope.selectArticles=function(x){
-        $scope.stateData=_.kebabCase(x.title);
+    $scope.selectArticles = function (x) {
+        // $scope.stateData=_.kebabCase(x.title);
+        $scope.stateData = x.title;
+
         $state.go("article", {
-            title:$scope.stateData
+            title: $scope.stateData
         })
     }
 
     NavigationService.apiCallWithoutData("Articles/getAllArticlesData", function (data) {
         if (data.value === true) {
-            $scope.articlelists=data.data;
-            $scope.length=$scope.articlelists.length;
+            $scope.articlelists = data.data;
+            $scope.length = $scope.articlelists.length;
         }
     });
 
-    var sendData={};
-    sendData.title=$stateParams.title;
-    NavigationService.apiCallWithData("Articles/findDataByArticleTitle",sendData, function (data) {
+    console.log(sendData.title, "p1arams")
+    NavigationService.apiCallWithData("Articles/findDataByArticleTitle", sendData, function (data) {
         if (data.value === true) {
             $scope.articleData = data.data[0];
+            console.log(data.data)
+        } else {
+            console.log("error in find article by title")
         }
     });
 })

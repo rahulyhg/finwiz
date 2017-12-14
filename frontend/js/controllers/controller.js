@@ -31,14 +31,7 @@ myApp.controller('HomeCtrl', function ($scope, $uibModal, TemplateService, Navig
         // ]
 
 
-        //for article
-
-        NavigationService.apiCallWithoutData("Articles/getAllArticlesData", function (data) {
-            if (data.value === true) {
-                $scope.articleData = data.data[0];
-                $scope.stateData = _.kebabCase($scope.articleData.title);
-            }
-        });
+      
 
         ////
 
@@ -102,15 +95,15 @@ myApp.controller('HomeCtrl', function ($scope, $uibModal, TemplateService, Navig
             });
         }
 
-        NavigationService.apiCallWithoutData("Articles/getAllArticlesData", function (data) {
-            if (data.value) {
-                $scope.articleData = data.data[0];
-                // console.log(data.data)
-            } else {
-                console.log("error in getting article heading");
-            }
-        })
 
+          //for article
+
+          NavigationService.apiCallWithoutData("Articles/getAllArticlesData", function (data) {
+            if (data.value === true) {
+                $scope.articleData = data.data[0];
+                $scope.stateData = $scope.articleData.title;
+            }
+        });
 
         // for videos
         NavigationService.apiCallWithoutData("VideoGallery/findVideoForHomePage", function (data) {
