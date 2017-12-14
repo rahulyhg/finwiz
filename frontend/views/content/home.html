@@ -37,7 +37,7 @@
                     <img class="img-responsive on_hover" src="img/icon/article_yellow.png">
                 </div>
                 <div class="txt">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec turpis quis odio interdum commodo.
+                    <p>{{articleData.title}}
                     </p>
                 </div>
                 <div class="btn btn-primary cust-btn" ui-sref="article">KNOW MORE</div>
@@ -84,7 +84,7 @@
     </div>
 </section>
 
-<section id="" class=" s3 fun_facts bg-second">
+<section id="" class="s3 fun_facts bg-second">
     <div class="container-fluid">
 
         <div class="col-md-2 col-sm-3 block1">
@@ -98,7 +98,7 @@
                 non sem nec orci vestibulum</span>
                 <span><i class="fa fa-circle" aria-hidden="true"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec turpis quis odio interdum commodo. Vestibulum
                 non sem nec orci vestibulum</span> -->
-                <span ng-repeat="x in funfact">
+                <span ng-repeat="x in funfact track by $index">
                     <i class="fa fa-circle" aria-hidden="true" ></i>
                     <p ng-bind-html="x.factText"> </p>
                 </span>
@@ -121,10 +121,13 @@
         <div class="col-md-6 col-sm-6 col-xs-12">
             <div class="block2">
                 <div class="episodes" ng-show="tab=='episodes'">
-                    <div class="col-md-4 col-sm-4 col-xs-6 pic" ng-repeat="x in episode">
-                        <a fancybox data-fancybox="episode" href="{{x.url}}" rel="episode">
-                            <img src="{{x.img}}" class="img-responsive">
-                        </a>
+                    <div class="col-md-4 col-sm-4 col-xs-6 pic" ng-repeat="x in videos">
+                        <img ng-src="http://img.youtube.com/vi/{{convertUrltoID(x.url)}}/hqdefault.jpg" class="img-responsive img-full">
+                        <div class="video-icon">
+                            <a class="fancybox.iframe" ng-href="https://www.youtube.com/embed/{{convertUrltoID(x.url)}}?autoplay=1" fancybox>
+                                <img src="img/youtube-small.png" class="img-responsive">
+                            </a>
+                        </div>
                     </div>
                     <div class="col-md-12 text-center">
                         <div class="btn btn-primary cust-btn" ui-sref="episode">VIEW MORE</div>
@@ -132,8 +135,8 @@
 
                 </div>
                 <div class="photos" ng-show="tab=='photos'">
-                    <div class="col-md-4 col-sm-4 col-xs-6 pic" ng-repeat="x in photo">
-                        <a fancybox href="{{x}}" data-fancybox="group" rel="photo"><img src="{{x}}" class="img-responsive"></a>
+                    <div class="col-md-4 col-sm-4 col-xs-6 pic" ng-repeat="x in photos">
+                        <a fancybox href="{{x | serverimage }}" data-fancybox="group" rel="photo"><img src="{{x | serverimage}}" class="img-responsive"></a>
                     </div>
                     <div class="col-md-12 text-center">
                         <div class="btn btn-primary cust-btn" ui-sref="photo">VIEW MORE</div>
