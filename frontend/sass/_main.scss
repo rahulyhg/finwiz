@@ -522,6 +522,10 @@ p {
                 &:focus {
                     -webkit-text-fill-color: black;
                 }
+                &:hover,&:active,&:focus{
+                    outline: none;
+                    border:2px sold #ccc;
+                }
             }
             span {
                 padding: 0 5px;
