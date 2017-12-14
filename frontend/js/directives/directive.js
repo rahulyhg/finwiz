@@ -55,7 +55,7 @@ myApp.directive('img', function ($compile, $parse) {
                         } else {
                             $element.removeClass('artical_float');
                         }
-                        if ((top + $('.article_list').height() + 60) > $('footer').offset().top) {
+                        if ( ((top + $('.article_list').height() + 60) > $('footer').offset().top)  ) {
                             // console.log("in the bottom")
                             $element.addClass('touched_bottom');
                             // $element.css("bottom",0);

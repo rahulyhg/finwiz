@@ -286,7 +286,7 @@ myApp.controller('ArticleCtrl', function ($scope, $timeout, $state, TemplateServ
     NavigationService.apiCallWithoutData("Articles/getAllArticlesData", function (data) {
         if (data.value === true) {
             $scope.articlelists=data.data;
-            $scope.length=$scope.articlelists.lenght
+            $scope.length=$scope.articlelists.length
             $scope.articleData = data.data[0];
         }
     });

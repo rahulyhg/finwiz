@@ -170,19 +170,9 @@
          searchName: "NSE FinWiz at Pepsico India - Expert Tip",
      }];
 
-     $scope.more4 = false;
-     $scope.view4 = true;
 
-     $scope.viewMore4 = function () {
-         $scope.more4 = true;
-         $scope.view4 = false;
-     }
-     $scope.viewLess4 = function () {
-             $scope.more4 = false;
-             $scope.view4 = true;
-         }
-         //end of season4
-         //for season3
+     //end of season4
+     //for season3
      $scope.season3 = [{
              imageUrl: "97KSfy9OYZw",
              videoUrl: "97KSfy9OYZw",
@@ -302,19 +292,9 @@
 
      ];
 
-     $scope.more3 = false;
-     $scope.view3 = true;
 
-     $scope.viewMore3 = function () {
-         $scope.more3 = true;
-         $scope.view3 = false;
-     }
-     $scope.viewLess3 = function () {
-             $scope.more3 = false;
-             $scope.view3 = true;
-         }
-         //end of season3
-         //for season2
+     //end of season3
+     //for season2
      $scope.season2 = [{
          imageUrl: "b_2A1pmTbCo",
          videoUrl: "b_2A1pmTbCo",
@@ -497,18 +477,8 @@
          searchName: "NSE Fin Wiz: Genpact"
      }];
 
-     $scope.more2 = false;
-     $scope.view2 = true;
 
-     $scope.viewMore2 = function () {
-         $scope.more2 = true;
-         $scope.view2 = false;
-     }
-     $scope.viewLess2 = function () {
-             $scope.more2 = false;
-             $scope.view2 = true;
-         }
-         //end of season2
+     //end of season2
 
      //for season1
      $scope.season1 = [{
@@ -928,17 +898,36 @@
          searchName: "Online Invesments",
      }, ];
 
-     $scope.more1 = false;
-     $scope.view1 = true;
+     $scope.more = [];
+     $scope.view = [];
 
-     $scope.viewMore1 = function () {
-         $scope.more1 = true;
-         $scope.view1 = false;
-     }
-     $scope.viewLess1 = function () {
-             $scope.more1 = false;
-             $scope.view1 = true;
+     function reset() {
+         for (var i = 0; i < $scope.seasonList.length; i++) {
+             $scope.more[i]=false;
+             $scope.view[i] =true;
          }
-         //end of season1
-
+     }
+    
+     $scope.viewMore = function (index) {
+         console.log(index)
+         $scope.more[index] = true;
+         $scope.view[index] = false;
+     }
+     $scope.viewLess = function (index) {
+         $scope.more[index] = false;
+         $scope.view[index] = true;
+     }
+     //end of season1
+     $scope.convertUrltoID = function (url) {
+         return url.match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/)[1];
+     }
+     NavigationService.apiCallWithoutData('VideoGallery/findAllVideos', function (data) {
+         if (data.value) {
+             $scope.seasonList = data.data;
+             reset();
+             console.log(data.data)
+         } else {
+             console.log("error in  findallvideos")
+         }
+     })
  })
