@@ -10109,7 +10109,7 @@ header {
 
 .nav-up {
   -webkit-transform: translateY(-100%);
-          transform: translateY(-100%); }
+  transform: translateY(-100%); }
 
 .homepage-nav {
   background-color: #135281;
@@ -10308,8 +10308,17 @@ p {
         display: none; }
   .s2 .txt {
     margin: 0px 20px;
-    height: 60px;
-    overflow: hidden; }
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* height: 60px; */
+    min-height: 45px;
+    overflow: hidden;
+    text-transform: capitalize;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical; }
+    .s2 .txt p {
+      margin: 0px; }
 
 .s3 {
   background: #f9ba4c;
@@ -10895,7 +10904,7 @@ p {
 
 .video-icon {
   position: absolute;
-  top: 40%;
+  top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%); }

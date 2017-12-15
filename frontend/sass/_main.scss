@@ -130,7 +130,7 @@ header {
 }
 
 .nav-up {
-    transform: translateY(-100%);
+    @include transform(translateY(-100%));
 }
 
 // navbar design
@@ -387,8 +387,19 @@ p {
     }
     .txt {
         margin: 0px 20px;
-        height: 60px;
+        // height: 60px;
         overflow: hidden;
+        text-overflow: ellipsis;
+        /* height: 60px; */
+        min-height: 45px;
+        overflow: hidden;
+        text-transform: capitalize;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;   
+        p{
+            margin:0px;
+        }
     }
 }
 
@@ -458,7 +469,6 @@ p {
         .pic {
             padding-bottom: 10px;
         }
-     
     }
 }
 
@@ -498,9 +508,9 @@ p {
         width: 5%;
         bottom: 0;
     }
-    .cs{
-font-size: 2em;
-font-style: italic;
+    .cs {
+        font-size: 2em;
+        font-style: italic;
     }
 }
 
@@ -528,9 +538,11 @@ font-style: italic;
                 &:focus {
                     -webkit-text-fill-color: black;
                 }
-                &:hover,&:active,&:focus{
+                &:hover,
+                &:active,
+                &:focus {
                     outline: none;
-                    border:2px sold #ccc;
+                    border: 2px sold #ccc;
                 }
             }
             span {
@@ -978,7 +990,8 @@ font-style: italic;
         }
     }
 }
-.span-err{
+
+.span-err {
     text-align: center;
     margin-top: 7px;
     color: red;
