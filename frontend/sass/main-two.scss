@@ -71,7 +71,7 @@
 }
 
 .min-height-season {
-    height: 290px;
+    height: 340px;
     overflow: hidden;
 }
 
@@ -143,13 +143,28 @@
         top: 30px;
         left: 15px;
         width: 18px;
+        font-size: 20px;
+       
+    }
+    .quotes1 {
+       
     }
 }
-
+// .end_quote:after{
+//     font-family: FontAwesome;
+//     content: "\f10e";
+//     font-size : 20px;
+//     // float:right;
+// }
+// .end_quote{
+//     *{
+//         display: inline;
+//     }
+// }
 .test-bottom {
     margin-bottom: 60px;
-    height: 735px;
-    overflow-y: scroll;
+    // height: 735px;
+    // overflow-y: scroll;
 }
 
 .test-name {
@@ -196,4 +211,9 @@
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;   
+}
+
+.episode-bottom{
+    height:180px;
+    overflow: hidden
 }
