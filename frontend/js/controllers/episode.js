@@ -923,7 +923,7 @@
      }
      NavigationService.apiCallWithoutData('VideoGallery/findAllVideos', function (data) {
          if (data.value) {
-             $scope.seasonList = data.data;
+             $scope.seasonList =_.reverse(data.data);
              reset();
              console.log(data.data)
          } else {
