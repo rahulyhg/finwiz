@@ -37,6 +37,55 @@ var model = {
                 });
             }
         })
-    }
+    },
+
+    saveCompData: function (data, callback) {
+        async.waterfall([
+            function (callback) {
+                NominateComp.saveData(data, function (err, data1) {
+                    if (err) {
+                        console.log(err);
+                        callback(err, null);
+                    } else {
+                        if (_.isEmpty(data1)) {
+                            callback(err, null);
+                        } else {
+                            callback(null, data1);
+                        }
+                    }
+                });
+            },
+            function (saveData, callback) {
+                var emailData = {};
+                emailData.from = "Nsefinwiz@gmail.com";
+                emailData.companyName = saveData.companyName;
+                emailData.contactPerson = saveData.contactPerson;
+                emailData.designation =saveData.designation;
+                emailData.contactNumber = saveData.contactNumber;
+                emailData.emailData = saveData.email;
+                emailData.email = "Nsefinwiz@gmail.com";                
+                emailData.filename = "nomination.ejs";
+                emailData.subject = "Nominate Comp";
+                Config.email(emailData, function (err, emailRespo) {
+                    if (err) {
+                        console.log(err);
+                        callback(err);
+                    } else if (emailRespo) {
+                        callback(null, saveData);
+                    } else {
+                        callback(null, saveDatass);
+                    }
+                });  
+            }
+        ],
+        function (err, found) {
+            if (err) {
+                // console.log(err);
+                callback(err, null);
+            } else {
+                callback(null, found);
+            }
+        });
+    },
 };
 module.exports = _.assign(module.exports, exports, model);

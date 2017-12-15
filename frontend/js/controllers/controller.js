@@ -61,7 +61,7 @@ myApp.controller('HomeCtrl', function ($scope, $uibModal, TemplateService, Navig
         }
 
         $scope.saveCompData = function (formdata) {
-            NavigationService.apiCall("NominateComp/save", formdata, function (data) {
+            NavigationService.apiCall("NominateComp/saveCompData", formdata, function (data) {
                 if (data.value === true) {
                     toastr.success("Data Submitted Successfully");
                     $state.reload();
@@ -73,7 +73,7 @@ myApp.controller('HomeCtrl', function ($scope, $uibModal, TemplateService, Navig
 
         $scope.saveEmails = function (formdata) {
             // console.log("aaaaaa",data);
-            NavigationService.apiCall("SubscribersEmail/save", formdata, function (data) {
+            NavigationService.apiCall("SubscribersEmail/saveEmailData", formdata, function (data) {
                 if (data.value === true) {
                     $uibModal.open({
                         animation: true,
