@@ -553,10 +553,20 @@
      NavigationService.apiCallWithoutData('ImageGallery/findAllImages',function(data){
          if(data.value){
              console.log(data.data);
-             $scope.seasonList=data.data;
+             $scope.seasonList=_.reverse( _.sortBy(data.data, ['_id']) )  ;
+             console.log("---------------",$scope.seasonList);
+            //  $scope.seasonList=data.data;
              reset();
          }
 
      })
+    // NavigationService.apiCallWithoutData('Season/getAllData',function(data){
+    //          if(data.value){
+    //              console.log(data.data);
+    //              $scope.seasonList=data.data;
+    //              reset();
+    //          }
+    
+    //      })
 
  })
