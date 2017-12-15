@@ -11,7 +11,9 @@ module.exports = mongoose.model('Season', schema);
 var exports = _.cloneDeep(require("sails-wohlig-service")(schema));
 var model = {
     getAllData:function(data,callback){
-        Season.find({},function(err,data){
+        Season.find({}).sort({
+            order: 1
+        }).exec(function(err,data){
             if(_.isEmpty(data)||err){
                 callback(err,[])
             }else{
