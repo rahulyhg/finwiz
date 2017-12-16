@@ -1,0 +1,94 @@
+<style>
+    #imgblock {
+      overflow: hidden;
+      height: 138px;
+    }
+  
+    .mar-top {
+      margin-top: 20px;
+    }
+  
+    #imgblock::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      background-color: #F5F5F5;
+    }
+  
+    #imgblock::-webkit-scrollbar {
+      width: 12px;
+      background-color: #d9534f;
+    }
+  
+    #imgblock::-webkit-scrollbar-thumb {
+      background-color: #d9534f;
+    }
+  
+    .img-responsive {
+      width: 200px;
+    }
+  
+    img.uploadingImage {
+      max-width: 75px;
+      max-height: 75px;
+      margin: 10px 0px;
+    }
+  </style>
+  <div class="form-group">
+    <!-- <label for="exampleInputEmail1" style="margin:5px;">Image Upload</label> -->
+    <div class="img-box" ng-if="model && !isMultiple" ng-hide="noShow">
+      <img ng-src="{{model|uploadpath}}" class="img-responsive uploadingImage img-thumbnail" ng-if="type=='image'" />
+      <iframe src="{{model|uploadpath}}" style="width:400px; height:400px;" frameborder="0" ng-if="type=='pdf'"></iframe>
+    </div>
+    <div class="clearfix" ng-if="model && isMultiple" id="imgblock" ng-hide="noShow">
+       
+      <div class="img-box" ng-repeat="sImage in see track by $index" style="display:inline-block;">
+        <!-- <i class="fa fa-times" ng-click="removeImage($index)"></i> -->
+        <img alt="" ng-src="{{sImage|uploadpath}}" class="img-responsive uploadingImage img-thumbnail" style="width: 88px;
+      height: 88px;" />
+      </div>
+      <div class="right-side directive_pagination">
+        <!-- <ul ng-change="changePage(currentPage);" uib-pagination total-items="totalItems
+        " items-per-page="maxRow " ng-model="currentPage " max-size="template.pageMax "
+            class="pagination-sm
+        " boundary-links="true " force-ellipses="true ">
+        </ul> -->
+        <ul style="padding:0px;">
+          <li ng-click="changePagefirst()" style="display:inline-block;    display: inline-block; padding: 0 10px;color: black;background: #ccc;
+      ">First</li>
+          <li ng-disabled="pageNumber==1" ng-click="changePagePre()" style="display:inline-block; padding: 0 10px;color: black;background: #ccc;">Previous</li>
+          <li ng-repeat="i in getNumber(display_img) track by $index" ng-class="{'active': pageNumber == $index+1}" ng-click="changePage($index+1)" style="display:inline-block; padding: 0 10px;color: black;background: #ccc;margin-right:3px">{{$index+1}}</li>
+          <li ng-disabled="pageNumber==display_img" ng-click="changePageNext()" style="display:inline-block; padding: 0 10px;color: black;background: #ccc;">Next</li>
+          <li ng-click="changePagelast()" style="display:inline-block; padding: 0 10px;color: black;background: #ccc;">Last</li>
+        </ul>
+      </div>
+    </div>
+    <div class="btn-upload btn btn-primary btn-outline btn-small create-btn">
+      <input id="inputImage" ng-show="!isMultiple && type=='image'" type="file" accept="image/*,application/pdf" image="image"
+        title="Choose Files" class="btn-primary">
+      <input id="inputImage" ng-show="!isMultiple && type=='pdf'" type="file" accept="application/pdf" image="image" title="Choose Files"
+        class="btn-primary">
+      <input id="inputImage" ng-show="!isMultiple && type=='image|pdf'" type="file" accept="image/*,application/pdf" image="image"
+        title="Choose Files" class="btn-primary">
+      <input id="inputImage" ng-show="!isMultiple && type=='excel'" type="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
+        image="image" title="Choose Files" class="btn-primary">
+      <input id="inputImage" ng-show="!isMultiple" type="file" ng-if="type=='all'" image="image" title="Choose Files" class="btn-primary">
+      <input id="inputImage" ng-show="isMultiple" type="file" accept="image/*,application/pdf" image="image" title="Choose Multiple Files"
+        class="btn-primary" multiple>
+      <span>CHOOSE FILE</span>
+      <!-- <a class="btn btn-primary btn-outline btn-small create-btn" ng-if="!isMultiple">Choose File</a> -->
+      <!-- <a class="btn btn-primary btn-outline btn-small create-btn" ng-if="isMultiple">Choose Files</a> -->
+    </div>
+    <div class="clearfix"> </div>
+    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="{{fileprogressbar}}%"
+      aria-valuemin="0" aria-valuemax="100" ng-style="{'width':fileprogressbar+'%'}">
+      {{fileprogressbar}}%
+    </div>
+    <div class="clearfix"> </div>
+    <br ng-show="isMultiple">
+    <button ng-show="isMultiple" class="btn btn-danger btn-outline btn-small create-btn" ng-click="clearOld()">CLEAR FILES</button>
+    <span class="label label-success" ng-if="uploadStatus == 'uploaded'" ng-show="!isMultiple">Uploaded Successfully- {{image.file.name}}</span>
+    <span class="label label-success" ng-if="uploadStatus == 'uploaded'" ng-show="isMultiple">Uploaded Successfully</span>
+    <span class="label label-warning" ng-if="uploadStatus == 'uploading'" ng-show="!isMultiple">Uploading Image {{image.file.name}}</span>
+    <span class="label label-warning" ng-if="uploadStatus == 'uploading'" ng-show="isMultiple">Uploading Images</span><br>
+    <span class="label label-warning m110" ng-if="uploadStatus == 'uploading'" ng-show="isMultiple">Total Images {{image.length}}</span>
+  
+  </div>

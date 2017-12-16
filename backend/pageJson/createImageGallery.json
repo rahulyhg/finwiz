@@ -23,7 +23,7 @@
         "url": ""
     },{
         "name": "Image",
-        "type": "image",
+        "type": "myImage",
         "tableRef": "image",
         "option": "multiple",
         "size": "1768 x 1146px",
