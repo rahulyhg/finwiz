@@ -1186,7 +1186,19 @@ body {
     line-height: 120%;
 }
 
-
+.logo {
+    width: 160px;
+}
+.logo img {
+    width: 100%;
+}
+.menu-options {
+    margin-top: -30px;
+}
+.menu-action {
+    height: 12px;
+    left: 37px;
+}
 /* Start writing sass here */
 
 @import "fancybox-override";
