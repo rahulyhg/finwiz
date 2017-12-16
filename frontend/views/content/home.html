@@ -196,7 +196,7 @@
                         <input type="email" class="input_field" name="email" placeholder="Enter Your Email ID"
                             ng-model="emailData.email" required>
                         <span ng-show="subscribe.email.$touched && subscribe.email.$invalid">Please enter a valid email</span>
-                        <button class="btn btn-primary cust-btn" ng-click="saveEmails(emailData)" ng-disabled="subscribe.$invalid">SUBSCRIBE</button>
+                        <button class="btn btn-primary cust-btn" ng-click="saveEmails(emailData,subscribe)" ng-disabled="subscribe.$invalid">SUBSCRIBE</button>
                     </form>
 
                 </div>
@@ -254,7 +254,7 @@
                         </div>
 
                         <div class="pull-right">
-                            <button class="btn btn-primary cust-btn" ng-click="saveCompData(formData)" ng-disabled="nomination.$invalid">SUBMIT</button>
+                            <button class="btn btn-primary cust-btn" ng-click="saveCompData(formData,nomination)" ng-disabled="nomination.$invalid">SUBMIT</button>
                         </div>
                     </form>
                 </div>

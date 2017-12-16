@@ -3,6 +3,7 @@ myApp.controller('HomeCtrl', function ($scope, $uibModal, TemplateService, Navig
         $scope.homepage = true;
         TemplateService.title = "Home"; //This is the Title of the Website
         $scope.navigation = NavigationService.getNavigation();
+        
         $scope.mySlides = [
             'http://flexslider.woothemes.com/images/kitchen_adventurer_cheesecake_brownie.jpg',
             'http://flexslider.woothemes.com/images/kitchen_adventurer_lemon.jpg',
@@ -10,6 +11,7 @@ myApp.controller('HomeCtrl', function ($scope, $uibModal, TemplateService, Navig
             'http://flexslider.woothemes.com/images/kitchen_adventurer_caramel.jpg'
         ];
         $scope.emailData = {};
+        $scope.formData={};
         var abc = _.times(100, function (n) {
             return n;
         });
@@ -60,23 +62,29 @@ myApp.controller('HomeCtrl', function ($scope, $uibModal, TemplateService, Navig
             });
         }
 
-        $scope.saveCompData = function (formdata) {
+        $scope.saveCompData = function (formdata,nomination) {
             NavigationService.apiCall("NominateComp/saveCompData", formdata, function (data) {
                 if (data.value === true) {
                     // toastr.success("Data Submitted Successfully");
-                    // $scope.formData = "";
+                    $scope.formData = {};
+                    nomination.$setPristine();
+                    nomination.$setUntouched();
                     $uibModal.open({
                         animation: true,
                         templateUrl: "views/model/datasubmited.html",
                         scope: $scope,
                         backdrop: false
                     });
-                    $timeout(function () {
-                        $state.reload();
-                    }, 1500)
+                    // $timeout(function () {
+                    //     $state.reload();
+                    // }, 1500)
                     // $state.reload();
                 } else {
-                  
+                   
+                    // formdata = "";
+                    $scope.formData = {};
+                    subscribe.$setPristine();
+                    subscribe.$setUntouched();
                     toastr.error("Something Went Wrong");
 
                     // $timeout(function () {
@@ -86,7 +94,7 @@ myApp.controller('HomeCtrl', function ($scope, $uibModal, TemplateService, Navig
             });
         }
 
-        $scope.saveEmails = function (formdata) {
+        $scope.saveEmails = function (formdata,subscribe) {
             // console.log("aaaaaa",data);
             NavigationService.apiCall("SubscribersEmail/saveEmailData", formdata, function (data) {
                 console.log(data, "sdddddddddddddddd")
@@ -98,21 +106,22 @@ myApp.controller('HomeCtrl', function ($scope, $uibModal, TemplateService, Navig
                         backdrop: false
                     });
                     $scope.emailData.email = "";
-                    $timeout(function () {
-                        $state.reload();
-                    }, 1500)
+                    subscribe.$setPristine();
+                    subscribe.$setUntouched();
                     // toastr.success("Data Submitted Successfully");
                     //    $state.reload();
                 } else {
+                    // $scope.emailData.email = "";
+                    subscribe.$setPristine();
+                    subscribe.$setUntouched();
+                    // console.log(subscribe,"sssssssd")
                     $uibModal.open({
                         animation: true,
                         templateUrl: "views/model/allreadyregister.html",
                         scope: $scope,
                         backdrop: false
                     });
-                    $timeout(function () {
-                        $state.reload();
-                    }, 1500)
+                   
                 }
             });
         }
