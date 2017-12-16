@@ -73,9 +73,10 @@ myApp.controller('HomeCtrl', function ($scope, $uibModal, TemplateService, Navig
                     });
                     $timeout(function () {
                         $state.reload();
-                    }, 1000)
+                    }, 1500)
                     // $state.reload();
                 } else {
+                  
                     toastr.error("Something Went Wrong");
 
                     // $timeout(function () {
@@ -97,6 +98,9 @@ myApp.controller('HomeCtrl', function ($scope, $uibModal, TemplateService, Navig
                         backdrop: false
                     });
                     $scope.emailData.email = "";
+                    $timeout(function () {
+                        $state.reload();
+                    }, 1500)
                     // toastr.success("Data Submitted Successfully");
                     //    $state.reload();
                 } else {
@@ -106,6 +110,9 @@ myApp.controller('HomeCtrl', function ($scope, $uibModal, TemplateService, Navig
                         scope: $scope,
                         backdrop: false
                     });
+                    $timeout(function () {
+                        $state.reload();
+                    }, 1500)
                 }
             });
         }
