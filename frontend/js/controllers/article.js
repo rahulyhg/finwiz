@@ -8,7 +8,7 @@ myApp.controller('ArticleCtrl', function ($scope, $timeout, $state, $location, T
     sendData.title = $stateParams.title;
     // console.log( $location.url(),  $stateParams)
     console.log("$location.path();", $location.absUrl())
-  
+
     $scope.shareUrl = $location.absUrl();
     // json structure for articlelist
     // $scope.selectedContent = 
@@ -226,7 +226,11 @@ myApp.controller('ArticleCtrl', function ($scope, $timeout, $state, $location, T
     // $scope.length = $scope.articlelist.length;
     $scope.current = 0;
     $scope.toshow = 4;
-
+    // $timeout(function () {
+    //     var blockHeight = $(".article .article_list ul li").outerHeight();
+    //     $(".article .article_list ul").css("height", blockHeight * $scope.toshow)
+    //     $(".article .article_list ul li").css('transform', 'translateY(' + 100 * $scope.current + '%)');
+    // }, 100);
     $scope.articlemovedown = function () {
         if ($scope.current > ($scope.toshow - $scope.length)) {
             $scope.current = $scope.current - 1;
@@ -269,6 +273,7 @@ myApp.controller('ArticleCtrl', function ($scope, $timeout, $state, $location, T
         if (data.value === true) {
             $scope.articlelists = data.data;
             $scope.length = $scope.articlelists.length;
+            // $scope.current = -(Math.floor($scope.length/2));
         }
     });
 

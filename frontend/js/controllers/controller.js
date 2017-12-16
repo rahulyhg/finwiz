@@ -31,7 +31,7 @@ myApp.controller('HomeCtrl', function ($scope, $uibModal, TemplateService, Navig
         // ]
 
 
-      
+
 
         ////
 
@@ -63,10 +63,24 @@ myApp.controller('HomeCtrl', function ($scope, $uibModal, TemplateService, Navig
         $scope.saveCompData = function (formdata) {
             NavigationService.apiCall("NominateComp/saveCompData", formdata, function (data) {
                 if (data.value === true) {
-                    toastr.success("Data Submitted Successfully");
-                    $state.reload();
+                    // toastr.success("Data Submitted Successfully");
+                    // $scope.formData = "";
+                    $uibModal.open({
+                        animation: true,
+                        templateUrl: "views/model/datasubmited.html",
+                        scope: $scope,
+                        backdrop: false
+                    });
+                    $timeout(function () {
+                        $state.reload();
+                    }, 1000)
+                    // $state.reload();
                 } else {
-                    toastr.error("Data Submitted Successfully");
+                    toastr.error("Something Went Wrong");
+
+                    // $timeout(function () {
+                    //     $state.reload();
+                    // }, 1000)
                 }
             });
         }
@@ -74,20 +88,21 @@ myApp.controller('HomeCtrl', function ($scope, $uibModal, TemplateService, Navig
         $scope.saveEmails = function (formdata) {
             // console.log("aaaaaa",data);
             NavigationService.apiCall("SubscribersEmail/saveEmailData", formdata, function (data) {
+                console.log(data, "sdddddddddddddddd")
                 if (data.value === true) {
                     $uibModal.open({
                         animation: true,
-                        templateUrl: "frontend/views/model/thanks.html",
+                        templateUrl: "views/model/thanks.html",
                         scope: $scope,
                         backdrop: false
                     });
-                    $scope.emailData.email = "";                    
+                    $scope.emailData.email = "";
                     // toastr.success("Data Submitted Successfully");
                     //    $state.reload();
                 } else {
-                     $uibModal.open({
+                    $uibModal.open({
                         animation: true,
-                        templateUrl: "frontend/views/model/allreadyregister.html",
+                        templateUrl: "views/model/allreadyregister.html",
                         scope: $scope,
                         backdrop: false
                     });
@@ -96,9 +111,9 @@ myApp.controller('HomeCtrl', function ($scope, $uibModal, TemplateService, Navig
         }
 
 
-          //for article
+        //for article
 
-          NavigationService.apiCallWithoutData("Articles/getAllArticlesData", function (data) {
+        NavigationService.apiCallWithoutData("Articles/getAllArticlesData", function (data) {
             if (data.value === true) {
                 $scope.articleData = data.data[0];
                 $scope.stateData = $scope.articleData.title;

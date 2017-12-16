@@ -194,20 +194,20 @@
                 <div class="subscribe_field">
                     <form name="subscribe">
                         <input type="email" class="input_field" name="email" placeholder="Enter Your Email ID"
-                            ng-model="emailData.email">
+                            ng-model="emailData.email" required>
                         <span ng-show="subscribe.email.$touched && subscribe.email.$invalid">Please enter a valid email</span>
-                        <button class="btn btn-primary cust-btn" ng-click="saveEmails(emailData)">SUBSCRIBE</button>
+                        <button class="btn btn-primary cust-btn" ng-click="saveEmails(emailData)" ng-disabled="subscribe.$invalid">SUBSCRIBE</button>
                     </form>
 
                 </div>
                 <div class="social text-center">
-                    <a href="#" target="_blank">
+                    <a href="https://www.facebook.com/NSEFinWiz/" target="_blank">
                         <img src="img/icon/facebook.png">
                     </a>
-                    <a href="#" target="_blank">
+                    <a href="https://twitter.com/NSEFinWiz" target="_blank">
                         <img src="img/icon/twitter.png">
                     </a>
-                    <a href="#" target="_blank">
+                    <a href="https://www.instagram.com/nsefinwiz/" target="_blank">
                         <img src="img/icon/instagram.png">
                     </a>
                 </div>
@@ -233,27 +233,28 @@
                     <form name="nomination">
                         <div class="field">
                             <span>Name of Company</span>
-                            <input type="text" ng-model="formData.companyName">
+                            <input type="text" ng-model="formData.companyName" required>
                         </div>
                         <div class="field">
                             <span>Contact Person</span>
-                            <input type="text" ng-model="formData.contactPerson">
+                            <input type="text" ng-model="formData.contactPerson" required>
                         </div>
                         <div class="field">
                             <span>Designation</span>
-                            <input type="text" ng-model="formData.designation">
+                            <input type="text" ng-model="formData.designation" required>
                         </div>
                         <div class="field">
                             <span>Contact No</span>
-                            <input type="number" ng-model="formData.contactNumber">
+                            <input type="number" ng-model="formData.contactNumber" required>
                         </div>
                         <div class="field">
                             <span>Email ID</span>
-                            <input type="email" name="email" ng-model="formData.email">
+                            <input type="email" name="email" ng-model="formData.email" required>
                             <div class="span-err" ng-show="nomination.email.$touched && nomination.email.$invalid">Please enter a valid email</div>
                         </div>
+
                         <div class="pull-right">
-                            <button class="btn btn-primary cust-btn" ng-click="saveCompData(formData)">SUBMIT</button>
+                            <button class="btn btn-primary cust-btn" ng-click="saveCompData(formData)" ng-disabled="nomination.$invalid">SUBMIT</button>
                         </div>
                     </form>
                 </div>
