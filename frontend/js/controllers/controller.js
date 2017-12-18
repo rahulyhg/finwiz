@@ -83,8 +83,8 @@ myApp.controller('HomeCtrl', function ($scope, $uibModal, TemplateService, Navig
                    
                     // formdata = "";
                     $scope.formData = {};
-                    subscribe.$setPristine();
-                    subscribe.$setUntouched();
+                    nomination.$setPristine();
+                    nomination.$setUntouched();
                     toastr.error("Something Went Wrong");
 
                     // $timeout(function () {
