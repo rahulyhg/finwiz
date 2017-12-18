@@ -27,7 +27,7 @@ module.exports = {
 
   port: 86,
   realHost: "http://finwiz.wohlig.co.in",
-  emails: ["chintan@wohlig.com", "jagruti@wohlig.com", "tushar@wohlig.com", "chirag@wohlig.com", "harsh@wohlig.com","aditya.ghag@wohlig.com","mahesh.nadar@wohlig.com","snehal.thakare@wohlig.com","nsemktg@gmail.com"]
+  emails: ["chintan@wohlig.com", "jagruti@wohlig.com", "tushar@wohlig.com", "chirag@wohlig.com", "harsh@wohlig.com","aditya.ghag@wohlig.com","mahesh.nadar@wohlig.com","snehal.thakare@wohlig.com","nsemktg@gmail.com","finwiznse@gmail.com","rohan.khule@wohlig.com"]
 
   /***************************************************************************
    * Set the log level in production environment to "silent"                 *
