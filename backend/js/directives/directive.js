@@ -279,6 +279,7 @@ myApp.directive('uploadImageFiles', function ($http, $filter, $timeout) {
             $scope.removeImage = function (index) {
                 $scope.image = [];
                 $scope.model.splice(index, 1);
+                $scope.see = $scope.model.slice(0, 8);                
                 _.each($scope.model, function (n) {
                     $scope.image.push({
                         url: n
@@ -334,14 +335,14 @@ myApp.directive('uploadImageFiles', function ($http, $filter, $timeout) {
             $scope.imgGrp = function () {
                 $scope.length_img = $scope.model.length;
                 $scope.display_img = $scope.length_img;
-                $scope.display_img = $scope.display_img / 10;
+                $scope.display_img = $scope.display_img / 8;
                 $scope.display_img = Math.ceil($scope.display_img);
                 // console.log("qwerty-------", $scope.display_img);
                 $scope.getNumber = function (num) {
                     return new Array(num);
                 }
                 if ($scope.length_img > 0) {
-                    $scope.see = $scope.model.slice(0, 10);
+                    $scope.see = $scope.model.slice(0, 8);
                     $scope.pageNumber = 1;
                 }
             }
@@ -349,21 +350,21 @@ myApp.directive('uploadImageFiles', function ($http, $filter, $timeout) {
                 $scope.pageNumber = pageNo;
                 if (pageNo == 1) {
                     console.log("1st page", pageNo);
-                    $scope.see = $scope.model.slice(0, 10);
+                    $scope.see = $scope.model.slice(0, 8);
                 } else {
                     console.log("pageNo", pageNo);
-                    $scope.answer = (pageNo - 1) * 10;
-                    $scope.multiplication = (10 * pageNo);
+                    $scope.answer = (pageNo - 1) * 8;
+                    $scope.multiplication = (8 * pageNo);
                     $scope.see = $scope.model.slice($scope.answer, $scope.multiplication);
                 }
             }
             $scope.changePagefirst = function () {
-                $scope.see = $scope.model.slice(0, 10);
+                $scope.see = $scope.model.slice(0, 8);
                 $scope.pageNumber = 1;
             }
             $scope.changePagelast = function () {
-                $scope.answer = ($scope.display_img - 1) * 10;
-                $scope.multiplication = (10 * $scope.display_img);
+                $scope.answer = ($scope.display_img - 1) * 8;
+                $scope.multiplication = (8 * $scope.display_img);
                 $scope.see = $scope.model.slice($scope.answer, $scope.multiplication);
                 $scope.pageNumber = $scope.display_img;
             }
@@ -371,8 +372,8 @@ myApp.directive('uploadImageFiles', function ($http, $filter, $timeout) {
                 if ($scope.pageNumber == 1) {
                     $scope.pageNumber = $scope.display_img + 1;
                 }
-                $scope.answer = (($scope.pageNumber - 2) * 10);
-                $scope.multiplication = (10 * ($scope.pageNumber - 1));
+                $scope.answer = (($scope.pageNumber - 2) * 8);
+                $scope.multiplication = (8 * ($scope.pageNumber - 1));
                 $scope.see = $scope.model.slice($scope.answer, $scope.multiplication);
                 $scope.pageNumber = $scope.pageNumber - 1;
             }
@@ -380,8 +381,8 @@ myApp.directive('uploadImageFiles', function ($http, $filter, $timeout) {
                 if ($scope.pageNumber == $scope.display_img) {
                     $scope.pageNumber = 0;
                 }
-                $scope.answer = ($scope.pageNumber * 10);
-                $scope.multiplication = (10 * ($scope.pageNumber + 1));
+                $scope.answer = ($scope.pageNumber * 8);
+                $scope.multiplication = (8 * ($scope.pageNumber + 1));
                 $scope.see = $scope.model.slice($scope.answer, $scope.multiplication);
                 $scope.pageNumber = $scope.pageNumber + 1;
             }

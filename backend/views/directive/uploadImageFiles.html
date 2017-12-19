@@ -1,7 +1,7 @@
 <style>
     #imgblock {
       overflow: hidden;
-      height: 138px;
+      height: 130px;
     }
   
     .mar-top {
@@ -41,7 +41,7 @@
     <div class="clearfix" ng-if="model && isMultiple" id="imgblock" ng-hide="noShow">
        
       <div class="img-box" ng-repeat="sImage in see track by $index" style="display:inline-block;">
-        <!-- <i class="fa fa-times" ng-click="removeImage($index)"></i> -->
+        <i class="fa fa-times" ng-click="removeImage($index)"></i>
         <img alt="" ng-src="{{sImage|uploadpath}}" class="img-responsive uploadingImage img-thumbnail" style="width: 88px;
       height: 88px;" />
       </div>
