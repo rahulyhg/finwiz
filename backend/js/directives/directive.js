@@ -272,14 +272,16 @@ myApp.directive('uploadImageFiles', function ($http, $filter, $timeout) {
             if (attrs.inobj || attrs.inobj === "") {
                 $scope.inObject = true;
             }
+            
             $scope.clearOld = function () {
                 $scope.model = [];
                 $scope.uploadStatus = "removed";
             };
+            
             $scope.removeImage = function (index) {
                 $scope.image = [];
-                $scope.model.splice(index, 1);
-                $scope.see = $scope.model.slice(0, 8);                
+                $scope.model.splice(($scope.pageNumber-1)*8+index, 1);
+                $scope.see = $scope.model.slice(0, 8); 
                 _.each($scope.model, function (n) {
                     $scope.image.push({
                         url: n
