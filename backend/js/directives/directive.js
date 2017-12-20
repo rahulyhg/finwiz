@@ -262,6 +262,14 @@ myApp.directive('uploadImageFiles', function ($http, $filter, $timeout) {
                             url: n
                         });
                     });
+                    $scope.see = $scope.model.slice(0, 8);
+                    $scope.length_img = $scope.model.length;
+                    $scope.display_img = $scope.length_img;
+                    $scope.display_img = $scope.display_img / 8;
+                    $scope.display_img = Math.ceil($scope.display_img);
+                    $scope.getNumber = function (num) {
+                        return new Array(num);
+                    }
                 } else {
                     if (_.endsWith($scope.model, ".pdf")) {
                         $scope.type = "pdf";
@@ -282,6 +290,13 @@ myApp.directive('uploadImageFiles', function ($http, $filter, $timeout) {
                 $scope.image = [];
                 $scope.model.splice(($scope.pageNumber-1)*8+index, 1);
                 $scope.see = $scope.model.slice(0, 8); 
+                $scope.length_img = $scope.model.length;
+                $scope.display_img = $scope.length_img;
+                $scope.display_img = $scope.display_img / 8;
+                $scope.display_img = Math.ceil($scope.display_img);
+                $scope.getNumber = function (num) {
+                    return new Array(num);
+                }
                 _.each($scope.model, function (n) {
                     $scope.image.push({
                         url: n
@@ -300,7 +315,7 @@ myApp.directive('uploadImageFiles', function ($http, $filter, $timeout) {
                     },
                     transformRequest: angular.identity
                 }).then(function (data) {
-                    console.log("data---", data);
+                    // console.log("data---", data);
                     data = data.data;
                     $scope.uploadStatus = "uploaded";
                     if ($scope.isMultiple) {
@@ -325,8 +340,7 @@ myApp.directive('uploadImageFiles', function ($http, $filter, $timeout) {
                         var fileList = {};
                         fileList.file = data.data[0];
                         $scope.model = data.data[0];
-                        console.log($scope.model, 'model means blob')
-
+                        // console.log($scope.model, 'model means blob')
                     }
                     $timeout(function () {
                         $scope.callback();

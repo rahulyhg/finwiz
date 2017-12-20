@@ -42,6 +42,7 @@ var models = {
         });
         return arr;
     },
+    
     checkRestrictedDelete: function (Model, schema, data, callback) {
 
         var values = schema.tree;
@@ -70,6 +71,7 @@ var models = {
             }
         });
     },
+
     manageArrayObject: function (Model, id, data, key, action, callback) {
         Model.findOne({
             "_id": id
@@ -155,6 +157,7 @@ var models = {
 
 
     },
+
     readAttachment: function (filename, callback) {
         console.log("filename", filename);
         var readstream = gfs.createReadStream({
@@ -174,6 +177,7 @@ var models = {
             callback(null, buf);
         });
     },
+
     readUploaded: function (filename, width, height, style, res) {
         res.set({
             'Cache-Control': 'public, max-age=31557600',
@@ -305,6 +309,7 @@ var models = {
         });
         return dataObj;
     },
+
     importGS: function (filename, callback) {
         var readstream = gfs.createReadStream({
             filename: filename
@@ -324,6 +329,7 @@ var models = {
             callback(null, Config.import(buffer));
         });
     },
+
     generateExcel: function (name, found, res) {
         name = _.kebabCase(name);
         var excelData = [];

@@ -57,5 +57,24 @@ var model = {
             }
         });
     },
+
+    excelData: function (data, callback) {
+        SubscribersEmail.find({}).exec(function (err, data) {
+            if (err || _.isEmpty(data)) {
+                callback(err, [])
+            } else {
+                var i=1;
+                async.concatSeries(data, function (mainData, callback) {
+                    var obj = {};
+                    obj["Serial No"]=i++;
+                    obj["Email"] = mainData.email;                 
+                    callback(null, obj);
+                },
+                function (err, singleData) {
+                    callback(null, singleData);
+                });
+            }
+        })
+    },
 };
 module.exports = _.assign(module.exports, exports, model);

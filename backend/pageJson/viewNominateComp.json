@@ -50,12 +50,6 @@
         "type": "redirect",
         "action": "NominateComp/generateExcel",
         "linkType": "admin"
-    },{
-        "name": "Create",
-        "icon": "plus",
-        "class": "btn-success",
-        "type": "page",
-        "action": "createNominateComp"
     }],
     "apiCall": {
         "url": "NominateComp/search",
