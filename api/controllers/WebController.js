@@ -45,6 +45,30 @@ module.exports = {
             res.notFound();
         }
     },
+
+    articleData: function (req, res) {
+        if (req.params) {
+            var articleTitle = req.params[0];
+            Articles.findOne({
+                title: articleTitle
+            }, function(err, data) {
+                if (err) {
+                    res.callback(err, data);
+                } else if (_.isEmpty(data)) {
+                    res.callback(err, data);
+                } else {
+                    var articleData = data;
+                    res.metaView({
+                        title: articleData.title,
+                        description: articleData.discription,
+                        image: articleData.articleImage
+                    });
+                }
+            });
+        } else {
+            res.metaView();
+        }
+    },
     demo: function (req, res) {
         sails.renderView('email/welcome', {
             name: "Tushar",
@@ -53,6 +77,39 @@ module.exports = {
         }, function (err, view) {
             res.send(view);
         });
+    },
+
+    news: function (req, res) {
+        if (req.params && req.params[0]) {
+            var newsID = req.params[0].split("/");
+
+            News.findOne({
+                "_id": newsID
+            }).exec(function (err, news) {
+                console.log("    $$$$    this is news ");
+                console.log(news);
+                if (err) {
+                    res.callback(err, news);
+                } else if (_.isEmpty(news)) {
+                    res.callback(err, news);
+                } else {
+                    var text = htmlToText.fromString(news.text, {
+                        wordwrap: 500
+                    });
+                    console.log("    8888888text ****     ");
+                    console.log(text);
+                    res.metaView({
+                        title: news.title,
+                        keywords: news.keywords,
+                        description: text,
+                        image: news.image
+                    });
+                }
+            });
+
+        } else {
+            res.metaView();
+        }
     },
     orderReturn: function (req, res) {
         async.waterfall([

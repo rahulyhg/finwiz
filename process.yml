@@ -1,6 +1,6 @@
 apps:
   - script: "app.js"
-    name: "NodeFramework - 80"
+    name: "Finwiz - 86"
     watch: false
     args: "--prod"
     exec_mode: "cluster"
