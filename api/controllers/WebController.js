@@ -61,7 +61,7 @@ module.exports = {
                     var articleData = data;
                     res.metaView({
                         title: articleData.title,
-                        description: articleData.discription,
+                        description: 'this is an article',
                         image: articleData.articleImage
                     });
                 }
