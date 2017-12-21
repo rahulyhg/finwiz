@@ -48,33 +48,114 @@ module.exports = {
         }
     },
 
-    articleData: function (req, res) {
-        if (req.params) {
-            var articleTitle = req.params[0];
-            Articles.findOne({
-                title: articleTitle
-            }, function(err, data) {
-                console.log("data----------",data);
-                if (err) {
-                    res.callback(err, data);
-                } else if (_.isEmpty(data)) {
-                    res.callback(err, data);
-                } else {
-                    var articlesData = data;
-                    var text = htmlToText.fromString(articlesData.discription, {
-                        wordwrap: 500
-                    });
-                    res.metaView({
-                        title: articlesData.title,
-                        description:text,
-                        image:'http://finwiz.wohlig.co.in/frontend/img/article1.png'
-                    });
-                }
-            });
-        } else {
-            res.metaView();
-        }
-    },
+    // articleData: function (req, res) {
+    //     if (req.params) {
+    //         var articleTitle = req.params[0];
+    //         Articles.findOne({
+    //             title: articleTitle
+    //         }, function(err, data) {
+    //             if (err) {
+    //                 res.callback(err, data);
+    //             } else if (_.isEmpty(data)) {
+    //                 res.callback(err, data);
+    //             } else {
+    //                 var articlesData = data;
+    //                 var text = htmlToText.fromString(articlesData.discription, {
+    //                     wordwrap: 500
+    //                 });
+    //                 res.metaView({
+    //                     title: articlesData.title,
+    //                     description:text,
+    //                     image:'http://finwiz.wohlig.co.in/frontend/img/article1.png'
+    //                 });
+    //             }
+    //         });
+    //     } else {
+    //         res.metaView();
+    //     }
+    // },
+
+    // quickBitesData: function (req, res) {
+    //     if (req.params) {
+    //         var articleTitle = req.params[0];
+    //         QuickBytes.findOne({
+    //             title: articleTitle
+    //         }, function(err, data) {
+    //             if (err) {
+    //                 res.callback(err, data);
+    //             } else if (_.isEmpty(data)) {
+    //                 res.callback(err, data);
+    //             } else {
+    //                 var articlesData = data;
+    //                 var text = htmlToText.fromString(articlesData.discription, {
+    //                     wordwrap: 500
+    //                 });
+    //                 res.metaView({
+    //                     title: articlesData.title,
+    //                     description:text,
+    //                     image:'http://finwiz.wohlig.co.in/frontend/img/article1.png'
+    //                 });
+    //             }
+    //         });
+    //     } else {
+    //         res.metaView();
+    //     }
+    // },
+
+    // testimonialData: function (req, res) {
+    //     if (req.params) {
+    //         var articleTitle = req.params[0];
+    //         Articles.findOne({
+    //             title: articleTitle
+    //         }, function(err, data) {
+    //             if (err) {
+    //                 res.callback(err, data);
+    //             } else if (_.isEmpty(data)) {
+    //                 res.callback(err, data);
+    //             } else {
+    //                 var articlesData = data;
+    //                 var text = htmlToText.fromString(articlesData.discription, {
+    //                     wordwrap: 500
+    //                 });
+    //                 res.metaView({
+    //                     title: articlesData.title,
+    //                     description:text,
+    //                     image:'http://finwiz.wohlig.co.in/frontend/img/article1.png'
+    //                 });
+    //             }
+    //         });
+    //     } else {
+    //         res.metaView();
+    //     }
+    // },
+
+    // newsLetterData: function (req, res) {
+    //     if (req.params) {
+    //         var articleTitle = req.params[0];
+    //         Articles.findOne({
+    //             title: articleTitle
+    //         }, function(err, data) {
+    //             if (err) {
+    //                 res.callback(err, data);
+    //             } else if (_.isEmpty(data)) {
+    //                 res.callback(err, data);
+    //             } else {
+    //                 var articlesData = data;
+    //                 var text = htmlToText.fromString(articlesData.discription, {
+    //                     wordwrap: 500
+    //                 });
+    //                 res.metaView({
+    //                     title: articlesData.title,
+    //                     description:text,
+    //                     image:'http://finwiz.wohlig.co.in/frontend/img/article1.png'
+    //                 });
+    //             }
+    //         });
+    //     } else {
+    //         res.metaView();
+    //     }
+    // },
+
     demo: function (req, res) {
         sails.renderView('email/welcome', {
             name: "Tushar",

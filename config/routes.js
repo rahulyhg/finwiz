@@ -39,12 +39,33 @@ module.exports.routes = {
         skipRegex: /api|backend/i
     },
 
-    'GET /article/*': {
-        controller: "WebController",
-        action: "articleData",
-        skipAssets: true,
-        skipRegex: /api|backend/i
-    },
+    // 'GET /article/*': {
+    //     controller: "WebController",
+    //     action: "articleData",
+    //     skipAssets: true,
+    //     skipRegex: /api|backend/i
+    // },
+
+    // 'GET /quickbites/*': {
+    //     controller: "WebController",
+    //     action: "quickBitesData",
+    //     skipAssets: true,
+    //     skipRegex: /api|backend/i
+    // },
+
+    // 'GET /testimonial/*': {
+    //     controller: "WebController",
+    //     action: "testimonialData",
+    //     skipAssets: true,
+    //     skipRegex: /api|backend/i
+    // },
+
+    // 'GET /newsletter/*': {
+    //     controller: "WebController",
+    //     action: "newsLetterData",
+    //     skipAssets: true,
+    //     skipRegex: /api|backend/i
+    // },
 
     'GET /gitPull/:data': {
         controller: "WebController",
