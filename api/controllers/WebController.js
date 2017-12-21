@@ -52,6 +52,7 @@ module.exports = {
             Articles.findOne({
                 title: articleTitle
             }, function(err, data) {
+                console.log("data----------",data);
                 if (err) {
                     res.callback(err, data);
                 } else if (_.isEmpty(data)) {
