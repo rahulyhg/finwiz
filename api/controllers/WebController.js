@@ -58,11 +58,14 @@ module.exports = {
                 } else if (_.isEmpty(data)) {
                     res.callback(err, data);
                 } else {
-                    var articleData = data;
+                    var articlesData = data;
+                    var text = htmlToText.fromString(articlesData.discription, {
+                        wordwrap: 500
+                    });
                     res.metaView({
-                        title: articleData.title,
-                        description: 'this is an article',
-                        image: articleData.articleImage
+                        title: articlesData.title,
+                        description:text,
+                        image:'http://clickmania.in/frontend/img/article1.png'
                     });
                 }
             });
