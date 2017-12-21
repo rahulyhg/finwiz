@@ -32,6 +32,7 @@
     "grunt-sails-linker": "^1.0.4",
     "grunt-sass": "^2.0.0",
     "grunt-sync": "^0.6.2",
+    "html-to-text": "^3.3.0",
     "include-all": "^4.0.3",
     "install": "^0.10.1",
     "jimp": "^0.2.28",

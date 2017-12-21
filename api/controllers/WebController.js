@@ -1,3 +1,5 @@
+var htmlToText = require('html-to-text');
+
 module.exports = {
     index: function (req, res) {
         res.metaView();
