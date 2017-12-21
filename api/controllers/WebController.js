@@ -67,7 +67,7 @@ module.exports = {
                     res.metaView({
                         title: articlesData.title,
                         description:text,
-                        image:'http://clickmania.in/frontend/img/article1.png'
+                        image:'http://finwiz.wohlig.co.in/frontend/img/article1.png'
                     });
                 }
             });
