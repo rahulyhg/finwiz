@@ -53,7 +53,7 @@ myApp.factory('NavigationService', function ($http) {
             name: "Testimonials",
             classis: "active",
             sref: "#!/page/viewTestimonials//"
-        }, 
+        },
         {
             name: "Quick Bytes",
             classis: "active",
@@ -69,6 +69,7 @@ myApp.factory('NavigationService', function ($http) {
         parseAccessToken: function (data, callback) {
             if (data) {
                 $.jStorage.set("accessToken", data);
+                $.jStorage.setTTL("accessToken", 900000);
                 callback();
             }
         },
@@ -83,6 +84,7 @@ myApp.factory('NavigationService', function ($http) {
                 data = data.data;
                 if (data.value === true) {
                     $.jStorage.set("profile", data.data);
+
                     callback();
                 } else {
                     errorCallback(data.error);
