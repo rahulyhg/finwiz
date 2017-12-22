@@ -160,10 +160,10 @@
                 </div>
                 <div class="col-md-10 col-sm-10 padding-0 left">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec turpis quis odio interdum commodo.
-                            Vestibulum non sem nec orci vestibulum</p>
+                        Vestibulum non sem nec orci vestibulum</p>
                 </div>
                 <div class="pull-right">
-                    <a ui-sref="newsletter" >
+                    <a ui-sref="newsletter">
                         <img src="img/icon/nextpage.png" class="img-responsive nextpage ">
                     </a>
                 </div>
@@ -193,8 +193,7 @@
                     <span class="border-line">SUBSCRIBE</span> FOR UPDATES</div>
                 <div class="subscribe_field">
                     <form name="subscribe">
-                        <input type="email" class="input_field" name="email" placeholder="Enter Your Email ID"
-                            ng-model="emailData.email" required>
+                        <input type="email" class="input_field" name="email" placeholder="Enter Your Email ID" ng-model="emailData.email" required>
                         <span ng-show="subscribe.email.$touched && subscribe.email.$invalid">Please enter a valid email</span>
                         <button class="btn btn-primary cust-btn" ng-click="saveEmails(emailData,subscribe)" ng-disabled="subscribe.$invalid">SUBSCRIBE</button>
                     </form>
@@ -210,7 +209,7 @@
                     <a href="https://twitter.com/NSEFinWiz" target="_blank">
                         <img src="img/icon/twitter.png">
                     </a>
-                   
+
                 </div>
                 <div class="contact text-center">
                     <div class="h4">CONTACT</div>
@@ -253,11 +252,18 @@
                             <input type="email" name="email" ng-model="formData.email" required>
                             <div class="span-err" ng-show="nomination.email.$touched && nomination.email.$invalid">Please enter a valid email</div>
                         </div>
+                        <div class="field captch">
 
+                            <div class="captch-div" on-create="setWidgetId(5)" ng-model="formData.myRecaptchaResponse" vc-recaptcha key="captchaKey"
+                                required></div>
+                        </div>
+
+                        <!-- {{nomination}} -->
                         <div class="pull-right">
                             <button class="btn btn-primary cust-btn" ng-click="saveCompData(formData,nomination)" ng-disabled="nomination.$invalid">SUBMIT</button>
                         </div>
                     </form>
+
                 </div>
 
 

@@ -1031,3 +1031,11 @@ p {
         line-height: 2;
     }
 }
+
+.captch {
+    text-align: right;
+    .captch-div {
+      
+        display: inline-block;
+    }
+}
