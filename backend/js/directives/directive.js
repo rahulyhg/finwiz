@@ -26,7 +26,7 @@ myApp.directive('imageonload', function () {
     };
 });
 
-myApp.directive('uploadImage', function ($http, $filter, $timeout) {
+myApp.directive('uploadImage', function ($http, $filter, $timeout,toastr) {
     return {
         templateUrl: 'views/directive/uploadFile.html',
         scope: {
@@ -60,7 +60,11 @@ myApp.directive('uploadImage', function ($http, $filter, $timeout) {
                 console.log(newVal, oldVal);
                 isArr = _.isArray(newVal);
                 if (!isArr && newVal && newVal.file) {
-                    $scope.uploadNow(newVal);
+                    if (newVal.file.type == 'image/png' || newVal.file.type == 'image/jpeg') {
+                        $scope.uploadNow(newVal);
+                    } else {
+                        toastr.error("Check File Format");
+                    }
                 } else if (isArr && newVal.length > 0 && newVal[0].file) {
 
                     $timeout(function () {
@@ -99,7 +103,6 @@ myApp.directive('uploadImage', function ($http, $filter, $timeout) {
             };
             $scope.uploadNow = function (image) {
                 $scope.uploadStatus = "uploading";
-
                 var Template = this;
                 image.hide = true;
                 var formData = new FormData();
@@ -143,7 +146,7 @@ myApp.directive('uploadImage', function ($http, $filter, $timeout) {
     };
 });
 
-myApp.directive('uploadImageFiles', function ($http, $filter, $timeout) {
+myApp.directive('uploadImageFiles', function ($http, $filter, $timeout, toastr) {
     return {
         templateUrl: 'views/directive/uploadImageFiles.html',
         scope: {
@@ -177,7 +180,11 @@ myApp.directive('uploadImageFiles', function ($http, $filter, $timeout) {
                 console.log(newVal, oldVal);
                 isArr = _.isArray(newVal);
                 if (!isArr && newVal && newVal.file) {
-                    $scope.uploadNow(newVal);
+                    if (newVal.file.type == 'image/png' || newVal.file.type == 'image/jpeg') {
+                        $scope.uploadNow(newVal);
+                    } else {
+                        toastr.error("Check File Format");
+                    }
                 } else if (isArr && newVal.length > 0 && newVal[0].file) {
                     // console.log("new val", newVal);
                     $timeout(function () {
@@ -185,10 +192,9 @@ myApp.directive('uploadImageFiles', function ($http, $filter, $timeout) {
                         // console.log(newVal.length);
                         async.eachLimit(newVal, 3, function (image, callback) {
                             // Perform operation on file here.
-                            console.log('Processing file ' + image);
-                            if (image && image.file) {
+                            // console.log('Processing file ' + image);
+                            if (image && image.file && image.file.type == 'image/png' || image.file.type == 'image/jpeg') {
                                 $scope.uploadStatus = "uploading";
-
                                 var Template = this;
                                 image.hide = true;
                                 var formData = new FormData();
@@ -199,7 +205,6 @@ myApp.directive('uploadImageFiles', function ($http, $filter, $timeout) {
                                     },
                                     transformRequest: angular.identity
                                 }).then(function (data) {
-                                    // console.log("data---", data);
                                     data = data.data;
                                     $scope.uploadStatus = "uploaded";
                                     if ($scope.isMultiple) {
@@ -216,7 +221,7 @@ myApp.directive('uploadImageFiles', function ($http, $filter, $timeout) {
                                             fileList.file = data.data[0];
                                             $scope.model.push(data.data[0]);
                                             callback(null, "next");
-                                            $scope.imgGrp();                                            
+                                            $scope.imgGrp();
                                         }
                                     } else {
                                         if (_.endsWith(data.data[0], ".pdf")) {
@@ -232,7 +237,8 @@ myApp.directive('uploadImageFiles', function ($http, $filter, $timeout) {
                                     }
                                 });
                             } else {
-                                callback(null, "next");
+                                toastr.error("Check File Format");
+                                // callback(null, "next");
                             }
                         }, function (err) {
                             // if any of the file processing produced an error, err would equal that error
@@ -280,16 +286,16 @@ myApp.directive('uploadImageFiles', function ($http, $filter, $timeout) {
             if (attrs.inobj || attrs.inobj === "") {
                 $scope.inObject = true;
             }
-            
+
             $scope.clearOld = function () {
                 $scope.model = [];
                 $scope.uploadStatus = "removed";
             };
-            
+
             $scope.removeImage = function (index) {
                 $scope.image = [];
-                $scope.model.splice(($scope.pageNumber-1)*8+index, 1);
-                $scope.see = $scope.model.slice(0, 8); 
+                $scope.model.splice(($scope.pageNumber - 1) * 8 + index, 1);
+                $scope.see = $scope.model.slice(0, 8);
                 $scope.length_img = $scope.model.length;
                 $scope.display_img = $scope.length_img;
                 $scope.display_img = $scope.display_img / 8;
