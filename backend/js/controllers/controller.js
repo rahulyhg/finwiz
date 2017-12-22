@@ -1136,7 +1136,7 @@ myApp.controller('DashboardCtrl', function ($scope, TemplateService, NavigationS
             $(window).scrollTop(0);
         });
         NavigationService.profile(function () {
-            $state.go("dashboard");
+            // $state.go("dashboard");
         }, function () {
             $state.go("login");
         });
