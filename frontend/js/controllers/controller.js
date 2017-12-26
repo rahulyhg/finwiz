@@ -133,25 +133,34 @@ myApp.controller('HomeCtrl', function ($scope, $uibModal, TemplateService, Navig
         }
 
 
+        NavigationService.apiCallWithoutData("Recapcha/search", function (data) {
+            if (data.value === true) {
+                $scope.capchaKey=data.data.results[0].name;
+            }
+        });
+
+
         //for validating captch from server side
-        // $scope.callcaptchvalidation = function () {
-        //     console.log("captch response", $scope.formData.myRecaptchaResponse)
-        //     $http({
-        //         method: 'POST',
-        //         url: 'https://www.google.com/recaptcha/api/siteverify',
-        //         params: {
-        //             'secret': '6LcaCj4UAAAAADqpn0HO9TyV7gpHMTeYWNGiPXnM',
-        //             'response': $scope.formData.myRecaptchaResponse
-        //         },
-        //         headers: {
-        //             'Content-Type': 'application/x-www-form-urlencoded'
-        //         },
-        //     }).then(function (data) {
-        //         console.log("sucess", data)
-        //     }, function (data) {
-        //         console.log("error", data)
-        //     });
-        // }
+        
+        $scope.callcaptchvalidation = function (formdata, nomination) {
+            console.log("captch response", $scope.formData.myRecaptchaResponse)
+            $http({
+                method: 'POST',
+                url: 'https://www.google.com/recaptcha/api/siteverify',
+                params: {
+                    'secret': $scope.capchaKey,
+                    'response': $scope.formData.myRecaptchaResponse
+                },
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+            }).then(function (data) {
+                console.log("sucess", data)
+            }, function (data) {
+                $scope.saveCompData(formdata, nomination)
+                console.log("error", data)
+            });
+        }
 
         //for article
 
