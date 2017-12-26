@@ -65,9 +65,10 @@ var model = {
             } else {
                 var i=1;
                 async.concatSeries(data, function (mainData, callback) {
+                    var email = SubscribersEmail.replaceAll(mainData.email)
                     var obj = {};
                     obj["Serial No"]=i++;
-                    obj["Email"] = mainData.email;                 
+                    obj["Email"] =email;                 
                     callback(null, obj);
                 },
                 function (err, singleData) {
@@ -76,5 +77,9 @@ var model = {
             }
         })
     },
+
+    replaceAll: function (str) {
+        return str.replace(/([.@*+?^=!:${}()|\[\]\/\\])/g, " ");
+    }
 };
 module.exports = _.assign(module.exports, exports, model);
