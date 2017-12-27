@@ -155,9 +155,9 @@ myApp.controller('HomeCtrl', function ($scope, $uibModal, TemplateService, Navig
                     'Content-Type': 'application/x-www-form-urlencoded'
                 },
             }).then(function (data) {
+                $scope.saveCompData(formdata, nomination)                
                 console.log("sucess", data)
             }, function (data) {
-                $scope.saveCompData(formdata, nomination)
                 console.log("error", data)
             });
         }
