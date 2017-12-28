@@ -554,7 +554,7 @@ myApp.controller('DashboardCtrl', function ($scope, TemplateService, NavigationS
             } else {
                 NavigationService.parseAccessToken($stateParams.id, function () {
                     NavigationService.profile(function () {
-                        $state.go("/page/viewUser//");
+                        $state.go("dashboard");
                     }, function () {
                         $state.go("login");
                     });
