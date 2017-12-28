@@ -1130,16 +1130,23 @@ myApp.controller('DashboardCtrl', function ($scope, TemplateService, NavigationS
         };
     })
 
-    .controller('headerctrl', function ($scope, TemplateService, $uibModal,NavigationService, $state) {
+    .controller('headerctrl', function ($scope, TemplateService, $uibModal,NavigationService, $state,$timeout) {
         $scope.template = TemplateService;
         $scope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
             $(window).scrollTop(0);
         });
-        NavigationService.profile(function () {
-            // $state.go("dashboard");
-        }, function () {
-            $state.go("login");
-        });
+        $timeout(function() {
+            var stateName = $state.current.name;
+            if(!(stateName == "login" || stateName=="loginapp" )){
+                NavigationService.profile(function () {
+                    // $state.go("dashboard");
+                }, function () {
+                    $state.go("login");
+                });
+            }
+           
+        },100);
+       
 
     })
 
