@@ -554,7 +554,7 @@ myApp.controller('DashboardCtrl', function ($scope, TemplateService, NavigationS
             } else {
                 NavigationService.parseAccessToken($stateParams.id, function () {
                     NavigationService.profile(function () {
-                        $state.go("dashboard");
+                        // $state.go("dashboard");
                     }, function () {
                         $state.go("login");
                     });
@@ -1146,8 +1146,6 @@ myApp.controller('DashboardCtrl', function ($scope, TemplateService, NavigationS
             }
            
         },100);
-       
-
     })
 
     .controller('languageCtrl', function ($scope, TemplateService, $translate, $rootScope) {
