@@ -133,14 +133,6 @@ myApp.controller('HomeCtrl', function ($scope, $uibModal, TemplateService, Navig
             $scope.widget = widget;
         }
 
-
-        // NavigationService.apiCallWithoutData("Recapcha/search", function (data) {
-        //     if (data.value === true) {
-        //         $scope.capchaKey=data.data.results[0].name;
-        //     }
-        // });
-
-
         //for validating captch from server side
         
         $scope.callcaptchvalidation = function (formdata, nomination) {
@@ -159,9 +151,10 @@ myApp.controller('HomeCtrl', function ($scope, $uibModal, TemplateService, Navig
                 },
             }).then(function (data) {
                 $scope.saveCompData(formdata, nomination)                
-                console.log("sucess", data)
+                // console.log("sucess", data)
             }, function (data) {
-                console.log("error", data)
+                $scope.saveCompData(formdata, nomination)                                
+                // console.log("error", data)
             });
         }
 
