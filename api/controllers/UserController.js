@@ -22,6 +22,7 @@ var controller = {
             failureRedirect: '/'
         }, res.socialLogin)(req, res);
     },
+    
     profile: function (req, res) {
         if (req.body && req.body.accessToken) {
             User.profile(req.body, res.callback);
