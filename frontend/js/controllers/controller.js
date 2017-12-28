@@ -4,6 +4,7 @@ myApp.controller('HomeCtrl', function ($scope, $uibModal, TemplateService, Navig
         TemplateService.title = "Home"; //This is the Title of the Website
         $scope.navigation = NavigationService.getNavigation();
         $scope.captchaKey = "6LcaCj4UAAAAAFO9xmdPoPo8VSnZRIpt-OUkVdXd"; //public key got from google for captcha
+        $scope.captchaSecret="6LcaCj4UAAAAADqpn0HO9TyV7gpHMTeYWNGiPXnM";
         $scope.mySlides = [
             'http://flexslider.woothemes.com/images/kitchen_adventurer_cheesecake_brownie.jpg',
             'http://flexslider.woothemes.com/images/kitchen_adventurer_lemon.jpg',
@@ -133,22 +134,24 @@ myApp.controller('HomeCtrl', function ($scope, $uibModal, TemplateService, Navig
         }
 
 
-        NavigationService.apiCallWithoutData("Recapcha/search", function (data) {
-            if (data.value === true) {
-                $scope.capchaKey=data.data.results[0].name;
-            }
-        });
+        // NavigationService.apiCallWithoutData("Recapcha/search", function (data) {
+        //     if (data.value === true) {
+        //         $scope.capchaKey=data.data.results[0].name;
+        //     }
+        // });
 
 
         //for validating captch from server side
         
         $scope.callcaptchvalidation = function (formdata, nomination) {
             console.log("captch response", $scope.formData.myRecaptchaResponse)
+            console.log("captch dfdfsdfdf response", $scope.captchaSecret)
+            
             $http({
                 method: 'POST',
                 url: 'https://www.google.com/recaptcha/api/siteverify',
                 params: {
-                    'secret': $scope.capchaKey,
+                    'secret': $scope.captchaSecret,
                     'response': $scope.formData.myRecaptchaResponse
                 },
                 headers: {
