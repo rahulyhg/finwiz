@@ -136,8 +136,8 @@ myApp.controller('HomeCtrl', function ($scope, $uibModal, TemplateService, Navig
         //for validating captch from server side
         
         $scope.callcaptchvalidation = function (formdata, nomination) {
-            console.log("captch response", $scope.formData.myRecaptchaResponse)
-            console.log("captch dfdfsdfdf response", $scope.captchaSecret)
+            // console.log("captch response", $scope.formData.myRecaptchaResponse)
+            // console.log("captch dfdfsdfdf response", $scope.captchaSecret)
             
             $http({
                 method: 'POST',
