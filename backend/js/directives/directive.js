@@ -26,7 +26,7 @@ myApp.directive('imageonload', function () {
     };
 });
 
-myApp.directive('uploadImage', function ($http, $filter, $timeout,toastr) {
+myApp.directive('uploadImage', function ($http, $filter, $timeout, toastr) {
     return {
         templateUrl: 'views/directive/uploadFile.html',
         scope: {
@@ -60,7 +60,8 @@ myApp.directive('uploadImage', function ($http, $filter, $timeout,toastr) {
                 console.log(newVal, oldVal);
                 isArr = _.isArray(newVal);
                 if (!isArr && newVal && newVal.file) {
-                    if (newVal.file.type == 'image/png' || newVal.file.type == 'image/jpeg') {
+                    var numMatches = newVal.file.name.match(/([.])/g).length;
+                    if ((newVal.file.type == 'image/png' || newVal.file.type == 'image/jpeg') && numMatches == 1) {
                         $scope.uploadNow(newVal);
                     } else {
                         toastr.error("Check File Format");
@@ -180,7 +181,8 @@ myApp.directive('uploadImageFiles', function ($http, $filter, $timeout, toastr) 
                 console.log(newVal, oldVal);
                 isArr = _.isArray(newVal);
                 if (!isArr && newVal && newVal.file) {
-                    if (newVal.file.type == 'image/png' || newVal.file.type == 'image/jpeg') {
+                    var numMatches = newVal.file.name.match(/([.])/g).length;
+                    if ((newVal.file.type == 'image/png' || newVal.file.type == 'image/jpeg') && numMatches == 1) {
                         $scope.uploadNow(newVal);
                     } else {
                         toastr.error("Check File Format");
@@ -193,7 +195,8 @@ myApp.directive('uploadImageFiles', function ($http, $filter, $timeout, toastr) 
                         async.eachLimit(newVal, 3, function (image, callback) {
                             // Perform operation on file here.
                             // console.log('Processing file ' + image);
-                            if (image && image.file && image.file.type == 'image/png' || image.file.type == 'image/jpeg') {
+                            var numMatches = image.file.name.match(/([.])/g).length;
+                            if ((image && image.file && image.file.type == 'image/png' || image.file.type == 'image/jpeg') && numMatches == 1) {
                                 $scope.uploadStatus = "uploading";
                                 var Template = this;
                                 image.hide = true;
