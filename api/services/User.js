@@ -161,9 +161,11 @@ var model = {
         if (getGoogle) {
             str += " googleAccessToken googleRefreshToken";
         }
-        User.findOne({
+        User.findOneAndUpdate({
             accessToken: data.accessToken
-        }, str).exec(function (err, data) {
+        }, str, {
+            new: true
+        }).exec(function (err, data) {
             if (err) {
                 callback(err);
             } else if (data) {
