@@ -65,11 +65,21 @@ var schema = new Schema({
         }],
         index: true
     },
+
     accessLevel: {
         type: String,
         default: "User",
         enum: ['User', 'Admin']
-    }
+    },
+
+    isLogin: {
+        type: String,
+        default: "False",
+        enum: ['True', 'False']
+    },
+    
+    loginTime:Date
+
 });
 
 schema.plugin(deepPopulate, {
@@ -179,6 +189,22 @@ var model = {
      */
     getAllMedia: function (data, callback) {
 
+    },
+
+    checkAccessToken:function(data,callback){
+        User.find({
+            "accessToken": {
+                $elemMatch: {
+                    $in: [data.access]
+                }
+            }
+        }).exec(function (err, data) {
+            if (err||_.isEmpty(data)) {
+                callback(err,"noData");
+            } else {
+                callback(null, data);
+            }
+        });
     }
 };
 module.exports = _.assign(module.exports, exports, model);

@@ -52101,13 +52101,32 @@ myApp.controller('DashboardCtrl', function ($scope, TemplateService, NavigationS
             if ($stateParams.id === "AccessNotAvailable") {
                 toastr.error("You do not have access for the Backend.");
             } else {
-                NavigationService.parseAccessToken($stateParams.id, function () {
-                    NavigationService.profile(function () {
-                        $state.go("dashboard");
-                    }, function () {
-                        $state.go("login");
-                    });
-                });
+				var dataToSend={};
+				dataToSend.access=$stateParams.id;
+				NavigationService.apiCall("User/checkAccessToken", dataToSend, function (data) {
+					if (data.value === true) {
+					var islogin=data.data.isLogin;
+					if(islogin=='True'){
+						toastr.error("User already login");
+					}else{
+						NavigationService.parseAccessToken($stateParams.id, function () {
+							NavigationService.profile(function () {
+								$state.go("dashboard");
+							}, function () {
+								$state.go("login");
+							});
+						});
+					}
+					} else {
+						NavigationService.parseAccessToken($stateParams.id, function () {
+							NavigationService.profile(function () {
+								$state.go("dashboard");
+							}, function () {
+								$state.go("login");
+							});
+						});
+					}
+				});
             }
         } else {
             NavigationService.removeAccessToken();

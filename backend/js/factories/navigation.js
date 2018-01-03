@@ -75,10 +75,23 @@ myApp.factory('NavigationService', function ($http) {
         },
         removeAccessToken: function (data, callback) {
             $.jStorage.flush();
+            var data = {
+                isLogin:'False',
+            };
+            $http.post(adminurl + 'user/profile', data).then(function (data) {
+                data = data.data;
+                if (data.value === true) {
+                    callback();
+                }else {
+                    errorCallback(data.error);
+                }
+            });
         },
         profile: function (callback, errorCallback) {
             var data = {
-                accessToken: $.jStorage.get("accessToken")
+                accessToken: $.jStorage.get("accessToken"),
+                isLogin:'True',
+                loginTime:new Date()
             };
             $http.post(adminurl + 'user/profile', data).then(function (data) {
                 data = data.data;

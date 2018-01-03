@@ -99,7 +99,20 @@ var controller = {
     },
     sendmail: function (req, res) {
         Config.sendEmail("chintan@wohlig.com", "jagruti@wohlig.com", "first email from endgrid", "", "<html><body>dome content</body></html>");
-    }
+    },
+
+    checkAccessToken: function (req, res) {
+        if (req.body) {
+            User.checkAccessToken(req.body, res.callback);
+        } else {
+            res.json({
+                value: false,
+                data: {
+                    message: "Invalid Request"
+                }
+            });
+        }
+    },
 
 };
 module.exports = _.assign(module.exports, controller);
