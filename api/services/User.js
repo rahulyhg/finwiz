@@ -163,7 +163,7 @@ var model = {
         }
         User.findOneAndUpdate({
             accessToken: data.accessToken
-        }, str, {
+        }, data, {
             new: true
         }).exec(function (err, data) {
             if (err) {
