@@ -11,7 +11,7 @@ myApp.controller('DashboardCtrl', function ($scope, TemplateService, NavigationS
         if ($.jStorage.get("accessToken")) {
 
         } else {
-            // $state.go("login");
+            $state.go("login");
         }
     })
 
@@ -1135,16 +1135,16 @@ myApp.controller('DashboardCtrl', function ($scope, TemplateService, NavigationS
         $scope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
             $(window).scrollTop(0);
         });
-        // $timeout(function() {
-        //     var stateName = $state.current.name;
-        //     if(!(stateName == "login" || stateName=="loginapp" )){
-        //         NavigationService.profile(function () {
-        //             // $state.go("dashboard");
-        //         }, function () {
-        //             $state.go("login");
-        //         });
-        //     }
-        // },100);
+        $timeout(function() {
+            var stateName = $state.current.name;
+            if(!(stateName == "login" || stateName=="loginapp" )){
+                NavigationService.profile(function () {
+                    // $state.go("dashboard");
+                }, function () {
+                    $state.go("login");
+                });
+            }
+        },100);
     })
 
     .controller('languageCtrl', function ($scope, TemplateService, $translate, $rootScope) {
