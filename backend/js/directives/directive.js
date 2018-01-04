@@ -144,6 +144,8 @@ myApp.directive('uploadImage', function ($http, $filter, $timeout, toastr) {
                             $scope.callback();
                         }, 100);
                     } else {
+                        $scope.model=[];
+                        $scope.uploadStatus = "";
                         toastr.error("Check File Format");
                     }
                 });
@@ -369,6 +371,8 @@ myApp.directive('uploadImageFiles', function ($http, $filter, $timeout, toastr) 
                             $scope.callback();
                         }, 15000);
                     } else {
+                        $scope.model=[];
+                        $scope.uploadStatus = "";
                         toastr.error("Check File Format");
                     }
                 });
