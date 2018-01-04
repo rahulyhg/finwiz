@@ -11,7 +11,7 @@
         "tableRef": "name",
         "placeholder": "Enter name",
         "id": "name",
-        "validation": ["", "trim", ""],
+        "validation": ["required", "trim", ""],
         "url": ""
     },{
         "name": "Keyword",
@@ -29,7 +29,7 @@
         "size": "1768 x 1146px",
         "placeholder": "Enter image",
         "id": "image",
-        "validation": ["", "trim", ""],
+        "validation": ["required", "trim", ""],
         "url": ""
     }],
     "action": [{

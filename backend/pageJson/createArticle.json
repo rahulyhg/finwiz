@@ -11,7 +11,7 @@
         "tableRef": "title",
         "placeholder": "Enter title",
         "id": "title",
-        "validation": ["", "trim", ""],
+        "validation": ["required", "trim", ""],
         "url": ""
     },{
         "name": "Article Discription",
@@ -30,7 +30,7 @@
         "size": "1768 x 1146px",
         "placeholder": "Enter articleImage",
         "id": "articleImage",
-        "validation": ["", "trim", ""],
+        "validation": ["required", "trim", ""],
         "url": ""
     },{
         "name": "Article Small Image",
@@ -40,7 +40,7 @@
         "size": "392 X 265",
         "placeholder": "Enter articleSmallImage",
         "id": "articleSmallImage",
-        "validation": ["", "trim", ""],
+        "validation": ["required", "trim", ""],
         "url": ""
     },{
         "name": "Order",

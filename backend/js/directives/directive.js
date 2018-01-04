@@ -57,13 +57,17 @@ myApp.directive('uploadImage', function ($http, $filter, $timeout, toastr) {
             // }
 
             $scope.$watch("image", function (newVal, oldVal) {
-                console.log(newVal, oldVal);
+                // console.log("---------------",newVal, oldVal);
                 isArr = _.isArray(newVal);
                 if (!isArr && newVal && newVal.file) {
                     var numMatches = newVal.file.name.match(/([.])/g).length;
-                    if ((newVal.file.type == 'image/png' || newVal.file.type == 'image/jpeg') && numMatches == 1) {
+                    var text=newVal.file.name;
+                    var result = /[^.]*$/.exec(text)[0];
+                    if ((newVal.file.type == 'image/png' || newVal.file.type == 'image/jpeg' || result=='jpg' || result=='png') && numMatches == 1) {
                         $scope.uploadNow(newVal);
                     } else {
+                        $scope.model=[];
+                        $scope.uploadStatus="";
                         toastr.error("Check File Format");
                     }
                 } else if (isArr && newVal.length > 0 && newVal[0].file) {
@@ -178,13 +182,17 @@ myApp.directive('uploadImageFiles', function ($http, $filter, $timeout, toastr) 
             // }
 
             $scope.$watch("image", function (newVal, oldVal) {
-                console.log(newVal, oldVal);
+                // console.log(newVal, oldVal);
                 isArr = _.isArray(newVal);
                 if (!isArr && newVal && newVal.file) {
                     var numMatches = newVal.file.name.match(/([.])/g).length;
-                    if ((newVal.file.type == 'image/png' || newVal.file.type == 'image/jpeg') && numMatches == 1) {
+                    var text=newVal.file.name;
+                    var result = /[^.]*$/.exec(text)[0];
+                    if ((newVal.file.type == 'image/png' || newVal.file.type == 'image/jpeg' || result=='jpg' || result=='png') && numMatches == 1) {
                         $scope.uploadNow(newVal);
                     } else {
+                        $scope.model=[];
+                        $scope.uploadStatus="";
                         toastr.error("Check File Format");
                     }
                 } else if (isArr && newVal.length > 0 && newVal[0].file) {
@@ -196,7 +204,9 @@ myApp.directive('uploadImageFiles', function ($http, $filter, $timeout, toastr) 
                             // Perform operation on file here.
                             // console.log('Processing file ' + image);
                             var numMatches = image.file.name.match(/([.])/g).length;
-                            if ((image && image.file && image.file.type == 'image/png' || image.file.type == 'image/jpeg') && numMatches == 1) {
+                            var text=image.file.name;
+                            var result = /[^.]*$/.exec(text)[0];
+                            if ((image.file.type == 'image/png' || image.file.type == 'image/jpeg' || result=='jpg' || result=='png') && numMatches == 1) {
                                 $scope.uploadStatus = "uploading";
                                 var Template = this;
                                 image.hide = true;
@@ -240,6 +250,8 @@ myApp.directive('uploadImageFiles', function ($http, $filter, $timeout, toastr) 
                                     }
                                 });
                             } else {
+                                $scope.model=[];
+                                $scope.uploadStatus="";
                                 toastr.error("Check File Format");
                                 // callback(null, "next");
                             }
