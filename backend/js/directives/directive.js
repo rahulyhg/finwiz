@@ -118,7 +118,7 @@ myApp.directive('uploadImage', function ($http, $filter, $timeout, toastr) {
                     transformRequest: angular.identity
                 }).then(function (data) {
                     data = data.data;
-                    if (data.value == true) {
+                    if (data.value == true && data.data == "Invalid File") {
                         $scope.uploadStatus = "uploaded";
                         if ($scope.isMultiple) {
                             if ($scope.inObject) {
@@ -339,38 +339,38 @@ myApp.directive('uploadImageFiles', function ($http, $filter, $timeout, toastr) 
                 }).then(function (data) {
                     // console.log("data---", data);
                     data = data.data;
-                    if (data.value == true) {
-                    $scope.uploadStatus = "uploaded";
-                    if ($scope.isMultiple) {
-                        if ($scope.inObject) {
-                            $scope.model.push({
-                                "image": data.data[0]
-                            });
+                    if (data.value == true && data.data == "Invalid File") {
+                        $scope.uploadStatus = "uploaded";
+                        if ($scope.isMultiple) {
+                            if ($scope.inObject) {
+                                $scope.model.push({
+                                    "image": data.data[0]
+                                });
+                            } else {
+                                if (!$scope.model) {
+                                    $scope.clearOld();
+                                }
+                                var fileList = {};
+                                fileList.file = data.data[0];
+                                $scope.model.push(data.data[0]);
+                            }
                         } else {
-                            if (!$scope.model) {
-                                $scope.clearOld();
+                            if (_.endsWith(data.data[0], ".pdf")) {
+                                $scope.type = "pdf";
+                            } else {
+                                $scope.type = "image";
                             }
                             var fileList = {};
                             fileList.file = data.data[0];
-                            $scope.model.push(data.data[0]);
+                            $scope.model = data.data[0];
+                            // console.log($scope.model, 'model means blob')
                         }
+                        $timeout(function () {
+                            $scope.callback();
+                        }, 15000);
                     } else {
-                        if (_.endsWith(data.data[0], ".pdf")) {
-                            $scope.type = "pdf";
-                        } else {
-                            $scope.type = "image";
-                        }
-                        var fileList = {};
-                        fileList.file = data.data[0];
-                        $scope.model = data.data[0];
-                        // console.log($scope.model, 'model means blob')
+                        toastr.error("Check File Format");
                     }
-                    $timeout(function () {
-                        $scope.callback();
-                    }, 15000);
-                }else{
-                    toastr.error("Check File Format");                    
-                }
                 });
             };
 
