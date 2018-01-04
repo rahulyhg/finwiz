@@ -8,27 +8,39 @@
 module.exports = {
     index: function (req, res) {
         var fileNames = [];
+        // console.log(" req.file------------------", req.params)        
         req.file("file").upload({
             maxBytes: 10485760 // 10 MB Storage 1 MB = 10^6
         }, function (err, uploadedFile) {
             //console.log(err);
-            //console.log(uploadedFile);
-            if (err) {
-                res.callback(err);
-            } else if (uploadedFile && uploadedFile.length > 0) {
-                async.concat(uploadedFile, function (n, callback) {
-                    Config.uploadFile(n.fd, function (err, value) {
-                        if (err) {
-                            callback(err);
-                        } else {
-                            callback(null, value.name);
-                        }
+            var numMatches =  uploadedFile[0].filename.match(/([.])/g).length;
+            var text =  uploadedFile[0].filename;
+            var result = /[^.]*$/.exec(text)[0];
+            if (( uploadedFile[0].type == 'image/png' ||  uploadedFile[0].type == 'image/jpeg' || result == 'jpg' || result == 'png') && numMatches == 1) {
+                if (err) {
+                    res.callback(err);
+                } else if (uploadedFile && uploadedFile.length > 0) {
+                    async.concat(uploadedFile, function (n, callback) {
+                        Config.uploadFile(n.fd, function (err, value) {
+                            if (err) {
+                                res.callback(null, {
+                                    data: "Invalid File"
+                                });
+                            } else {
+                                callback(null, value.name);
+                            }
+                        });
+                    }, res.callback);
+                } else {
+                    res.callback(null, {
+                        value: false,
+                        data: "No files selected"
                     });
-                }, res.callback);
+                }
             } else {
                 res.callback(null, {
                     value: false,
-                    data: "No files selected"
+                    data: "Incorrect File Format"
                 });
             }
         });
