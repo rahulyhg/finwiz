@@ -89,7 +89,7 @@ myApp.filter('serverimage', function () {
             }
 
         } else {
-            return "img/logo.png";
+            // return "img/logo.png";
         }
     };
 });
@@ -105,7 +105,7 @@ myApp.filter('downloadImage', function () {
         if (input) {
             return adminurl + "download/" + input;
         } else {
-            return "img/logo.png";
+            // return "img/logo.png";
         }
     };
 });
