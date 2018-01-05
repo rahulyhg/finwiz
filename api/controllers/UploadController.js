@@ -13,19 +13,17 @@ module.exports = {
             maxBytes: 10485760 // 10 MB Storage 1 MB = 10^6
         }, function (err, uploadedFile) {
             //console.log(err);
-            var numMatches =  uploadedFile[0].filename.match(/([.])/g).length;
-            var text =  uploadedFile[0].filename;
+            var numMatches = uploadedFile[0].filename.match(/([.])/g).length;
+            var text = uploadedFile[0].filename;
             var result = /[^.]*$/.exec(text)[0];
-            if (( uploadedFile[0].type == 'image/png' ||  uploadedFile[0].type == 'image/jpeg' || result == 'jpg' || result == 'png') && numMatches == 1) {
+            if ((uploadedFile[0].type == 'image/png' || uploadedFile[0].type == 'image/jpeg' || result == 'jpg' || result == 'png') && numMatches == 1) {
                 if (err) {
                     res.callback(err);
                 } else if (uploadedFile && uploadedFile.length > 0) {
                     async.concat(uploadedFile, function (n, callback) {
                         Config.uploadFile(n.fd, function (err, value) {
                             if (err) {
-                                res.callback(null, {
-                                    data: "Invalid File"
-                                });
+                                callback(err)
                             } else {
                                 callback(null, value.name);
                             }
