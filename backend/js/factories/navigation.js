@@ -74,14 +74,15 @@ myApp.factory('NavigationService', function ($http) {
             }
         },
         removeAccessToken: function (data, callback) {
-            $.jStorage.flush();
             var data = {
+                accessToken: $.jStorage.get("accessToken"),                
                 isLogin:'False',
             };
             $http.post(adminurl + 'user/profile', data).then(function (data) {
                 data = data.data;
                 if (data.value === true) {
                     callback();
+                    $.jStorage.flush();                    
                 }else {
                     errorCallback(data.error);
                 }

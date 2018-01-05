@@ -548,16 +548,51 @@ myApp.controller('DashboardCtrl', function ($scope, TemplateService, NavigationS
         TemplateService.title = $scope.menutitle;
         $scope.template = TemplateService;
         $scope.currentHost = window.location.origin;
+        // if ($stateParams.id) {
+        //     if ($stateParams.id === "AccessNotAvailable") {
+        //         toastr.error("You do not have access for the Backend.");
+        //     } else {
+        //         NavigationService.parseAccessToken($stateParams.id, function () {
+        //             NavigationService.profile(function () {
+        //                 $state.go("dashboard");
+        //             }, function () {
+        //                 $state.go("login");
+        //             });
+        //         });
+        //     }
+        // } else {
+        //     NavigationService.removeAccessToken();
+        // }
+
         if ($stateParams.id) {
             if ($stateParams.id === "AccessNotAvailable") {
                 toastr.error("You do not have access for the Backend.");
             } else {
-                NavigationService.parseAccessToken($stateParams.id, function () {
-                    NavigationService.profile(function () {
-                        $state.go("dashboard");
-                    }, function () {
-                        $state.go("login");
-                    });
+                var dataToSend = {};
+                dataToSend.access = $stateParams.id;
+                NavigationService.apiCall("User/checkAccessToken", dataToSend, function (data) {
+                    if (data.value === true) {
+                        var islogin = data.data.isLogin;
+                        if (islogin == 'True') {
+                            toastr.error("User already login");
+                        } else {
+                            NavigationService.parseAccessToken($stateParams.id, function () {
+                                NavigationService.profile(function () {
+                                    $state.go("dashboard");
+                                }, function () {
+                                    $state.go("login");
+                                });
+                            });
+                        }
+                    } else {
+                        NavigationService.parseAccessToken($stateParams.id, function () {
+                            NavigationService.profile(function () {
+                                $state.go("dashboard");
+                            }, function () {
+                                $state.go("login");
+                            });
+                        });
+                    }
                 });
             }
         } else {
@@ -1130,11 +1165,12 @@ myApp.controller('DashboardCtrl', function ($scope, TemplateService, NavigationS
         };
     })
 
-    .controller('headerctrl', function ($scope, TemplateService, $uibModal,NavigationService, $state,$timeout) {
+    .controller('headerctrl', function ($scope, TemplateService, $uibModal, NavigationService, $state, $timeout) {
         $scope.template = TemplateService;
         $scope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
             $(window).scrollTop(0);
         });
+
         $timeout(function() {
             var stateName = $state.current.name;
             if(!(stateName == "login" || stateName=="loginapp" )){
@@ -1145,6 +1181,16 @@ myApp.controller('DashboardCtrl', function ($scope, TemplateService, NavigationS
                 });
             }
         },100);
+
+
+        $scope.logout = function () {
+            NavigationService.removeAccessToken(function () {
+                $state.go("login");
+            }, function () {
+                $state.go("login");
+            });
+        };
+
     })
 
     .controller('languageCtrl', function ($scope, TemplateService, $translate, $rootScope) {
