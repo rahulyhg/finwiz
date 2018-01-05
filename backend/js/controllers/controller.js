@@ -571,6 +571,7 @@ myApp.controller('DashboardCtrl', function ($scope, TemplateService, NavigationS
                 var dataToSend = {};
                 dataToSend.access = $stateParams.id;
                 NavigationService.apiCall("User/checkAccessToken", dataToSend, function (data) {
+                    console.log("data-----",data);
                     if (data.value === true) {
                         var islogin = data.data.isLogin;
                         console.log("islogin",islogin);
