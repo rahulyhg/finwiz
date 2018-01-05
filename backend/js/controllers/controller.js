@@ -573,9 +573,12 @@ myApp.controller('DashboardCtrl', function ($scope, TemplateService, NavigationS
                 NavigationService.apiCall("User/checkAccessToken", dataToSend, function (data) {
                     if (data.value === true) {
                         var islogin = data.data.isLogin;
+                        console.log("islogin",islogin);
                         if (islogin == 'True') {
                             toastr.error("User already login");
+                            $state.go("login");
                         } else {
+                            console.log("islogin------1");                            
                             NavigationService.parseAccessToken($stateParams.id, function () {
                                 NavigationService.profile(function () {
                                     $state.go("dashboard");
