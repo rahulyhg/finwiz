@@ -118,7 +118,7 @@ myApp.directive('uploadImage', function ($http, $filter, $timeout, toastr) {
                     transformRequest: angular.identity
                 }).then(function (data) {
                     data = data.data;
-                    if (data.value == true && data.data == "Invalid File") {
+                    if (data.value == true) {
                         $scope.uploadStatus = "uploaded";
                         if ($scope.isMultiple) {
                             if ($scope.inObject) {
@@ -138,13 +138,13 @@ myApp.directive('uploadImage', function ($http, $filter, $timeout, toastr) {
                                 $scope.type = "image";
                             }
                             $scope.model = data.data[0];
-                            console.log($scope.model, 'model means blob')
+                            // console.log($scope.model, 'model means blob')
                         }
                         $timeout(function () {
                             $scope.callback();
                         }, 100);
                     } else {
-                        $scope.model=[];
+                        $scope.model = [];
                         $scope.uploadStatus = "";
                         toastr.error("Check File Format");
                     }
@@ -371,7 +371,7 @@ myApp.directive('uploadImageFiles', function ($http, $filter, $timeout, toastr) 
                             $scope.callback();
                         }, 15000);
                     } else {
-                        $scope.model=[];
+                        $scope.model = [];
                         $scope.uploadStatus = "";
                         toastr.error("Check File Format");
                     }

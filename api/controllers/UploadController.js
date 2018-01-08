@@ -36,10 +36,11 @@ module.exports = {
                     });
                 }
             } else {
-                res.callback(null, {
-                    value: false,
-                    data: "Incorrect File Format"
-                });
+                res.callback("noData",null);
+                // res.callback(null, {
+                //     value: false,
+                //     data: "Incorrect File Format"
+                // });
             }
         });
     },

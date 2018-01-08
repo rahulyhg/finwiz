@@ -42,7 +42,7 @@ var models = {
         });
         return arr;
     },
-    
+
     checkRestrictedDelete: function (Model, schema, data, callback) {
 
         var values = schema.tree;
@@ -115,20 +115,22 @@ var models = {
         if (extension == "jpeg") {
             extension = "jpg";
         }
-        var newFilename = id + "." + extension;
+        // console.log("extension", extension);
+        if (extension == "png" || extension == "jpg") {
+            var newFilename = id + "." + extension;
 
-        var writestream = gfs.createWriteStream({
-            filename: newFilename
-        });
-        writestream.on('finish', function () {
-            callback(null, {
-                name: newFilename
+            var writestream = gfs.createWriteStream({
+                filename: newFilename
             });
-            fs.unlink(filename);
-        });
-
-        var imageStream = fs.createReadStream(filename);
-
+            writestream.on('finish', function () {
+                callback(null, {
+                    name: newFilename
+                });
+                fs.unlink(filename);
+            });
+        }
+       
+        // var imageStream = fs.createReadStream(filename);        
         if (extension == "png" || extension == "jpg" || extension == "gif") {
             Jimp.read(filename, function (err, image) {
                 if (err) {
@@ -152,10 +154,9 @@ var models = {
 
             });
         } else {
-            imageStream.pipe(writestream);
+            // imageStream.pipe(writestream);
+            callback("noData",null);
         }
-
-
     },
 
     readAttachment: function (filename, callback) {
