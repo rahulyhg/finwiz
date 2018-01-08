@@ -341,7 +341,7 @@ myApp.directive('uploadImageFiles', function ($http, $filter, $timeout, toastr) 
                 }).then(function (data) {
                     // console.log("data---", data);
                     data = data.data;
-                    if (data.value == true && data.data == "Invalid File") {
+                    if (data.value == true) {
                         $scope.uploadStatus = "uploaded";
                         if ($scope.isMultiple) {
                             if ($scope.inObject) {
