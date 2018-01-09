@@ -11149,7 +11149,7 @@ p {
   .s5 .icon {
     width: 55px; }
   .s5 .nextpage {
-    position: unset;
+    position: inherit;
     width: 40%; }
   .s5 .left {
     padding-right: 10px;
