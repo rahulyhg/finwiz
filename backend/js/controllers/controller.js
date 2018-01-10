@@ -583,7 +583,7 @@ myApp.controller('DashboardCtrl', function ($scope, TemplateService, NavigationS
                             NavigationService.parseAccessToken($stateParams.id, function () {
                                 NavigationService.profile(function () {
                                     // $state.go("dashboard");
-                                    $state.go(page, {
+                                    $state.go('page', {
                                         page: 'viewUser',
                                         keyword: $scope.search.keyword
                                     });
@@ -596,7 +596,7 @@ myApp.controller('DashboardCtrl', function ($scope, TemplateService, NavigationS
                         NavigationService.parseAccessToken($stateParams.id, function () {
                             NavigationService.profile(function () {
                                 // $state.go("dashboard");
-                                $state.go(page, {
+                                $state.go('page', {
                                     page: 'viewUser',
                                     keyword: $scope.search.keyword
                                 });
