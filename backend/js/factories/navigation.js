@@ -69,7 +69,7 @@ myApp.factory('NavigationService', function ($http) {
         parseAccessToken: function (data, callback) {
             if (data) {
                 $.jStorage.set("accessToken", data);
-                $.jStorage.setTTL("accessToken", 900000);
+                // $.jStorage.setTTL("accessToken", 900000);
                 callback();
             }
         },
