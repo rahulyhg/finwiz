@@ -583,6 +583,7 @@ myApp.controller('DashboardCtrl', function ($scope, TemplateService, NavigationS
                             NavigationService.parseAccessToken($stateParams.id, function () {
                                 NavigationService.profile(function () {
                                     // $state.go("dashboard");
+                                    $state.go('page', {'page':'viewUser'});
                                 }, function () {
                                     $state.go("login");
                                 });
@@ -592,6 +593,7 @@ myApp.controller('DashboardCtrl', function ($scope, TemplateService, NavigationS
                         NavigationService.parseAccessToken($stateParams.id, function () {
                             NavigationService.profile(function () {
                                 // $state.go("dashboard");
+                                $state.go('page', {'page':'viewUser'});
                             }, function () {
                                 $state.go("login");
                             });
