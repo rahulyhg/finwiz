@@ -584,8 +584,7 @@ myApp.controller('DashboardCtrl', function ($scope, TemplateService, NavigationS
                                 NavigationService.profile(function () {
                                     // $state.go("dashboard");
                                     $state.go('page', {
-                                        page: 'viewUser',
-                                        keyword: $scope.search.keyword
+                                        page: 'viewUser'
                                     });
                                 }, function () {
                                     $state.go("login");
@@ -597,8 +596,7 @@ myApp.controller('DashboardCtrl', function ($scope, TemplateService, NavigationS
                             NavigationService.profile(function () {
                                 // $state.go("dashboard");
                                 $state.go('page', {
-                                    page: 'viewUser',
-                                    keyword: $scope.search.keyword
+                                    page: 'viewUser'
                                 });
                             }, function () {
                                 $state.go("login");
