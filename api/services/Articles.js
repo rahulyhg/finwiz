@@ -40,20 +40,27 @@ var model = {
     },
 
     findDataByArticleTitle: function (data, callback) {
+        console.log("Data",data)
         Articles.aggregate([{
-            $match: {
-                "title": {
-                    $regex: data.title,
-                    $options: "i"
+                $match: {
+                    "title": {
+                        $regex: data.title,
+                        $options: "i"
+                    }
                 }
-            }
-        }], function (err, found) {
-            if (err || _.isEmpty(found)) {
-                callback(err, "noData");
-            } else {
-                callback(null, found);
-            }
-        });
+            }]).cursor({
+                batchSize: 1000
+            })
+            .exec(function (err, found) {
+                if (err || _.isEmpty(found)) {
+                    console.log("errData",err)
+                    callback(err, "noData");
+                } else {
+                    console.log("foundData",found)
+
+                    callback(null, found);
+                }
+            });
     }
 };
 module.exports = _.assign(module.exports, exports, model);
