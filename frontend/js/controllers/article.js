@@ -7,7 +7,7 @@ myApp.controller('ArticleCtrl', function ($scope, $state, $location, TemplateSer
     var sendData = {};
     sendData.title = $stateParams.title;
     // console.log( $location.url(),  $stateParams)
-    console.log("$location.path();", $location.absUrl())
+    // console.log("$location.path();", $location.absUrl())
 
     $scope.shareUrl = $location.absUrl();
     // json structure for articlelist
@@ -239,7 +239,7 @@ myApp.controller('ArticleCtrl', function ($scope, $state, $location, TemplateSer
             $scope.current = 0
         }
         $(".article .article_list ul li").css('transform', 'translateY(' + 100 * $scope.current + '%)');
-        console.log($scope.current)
+        // console.log($scope.current)
 
 
     }
@@ -250,7 +250,7 @@ myApp.controller('ArticleCtrl', function ($scope, $state, $location, TemplateSer
             $scope.current = $scope.toshow - $scope.length;
         }
         $(".article .article_list ul li").css('transform', 'translateY(' + 100 * $scope.current + '%)');
-        console.log($scope.current)
+        // console.log($scope.current)
     }
 
 
@@ -274,20 +274,21 @@ myApp.controller('ArticleCtrl', function ($scope, $state, $location, TemplateSer
             $scope.articlelists = data.data;
             $scope.length = $scope.articlelists.length;
             if(sendData={}){
-    console.log('coming from home page ??')
+    // console.log('coming from home page ??')
     $scope.articleData=$scope.articlelists[0];
-    console.log($scope.articlelists,$scope.articlelists[0],"check all article data")
+    // console.log($scope.articlelists,$scope.articlelists[0],"check all article data")
 }
             // $scope.current = -(Math.floor($scope.length/2));
         }
     });
 
-    console.log(sendData.title, "p1arams")
+    // console.log(sendData.title, "p1arams")
     NavigationService.apiCallWithData("Articles/findDataByArticleTitle", sendData, function (data) {
+        console.log("data--------",data)
         if (data.value === true) {
             $scope.articleData = data.data[0];
-            console.log($scope.articleData ,"updating article daTA FROM finddatebyarticletitle api")
-            console.log(data.data)
+            // console.log($scope.articleData ,"updating article daTA FROM finddatebyarticletitle api")
+            // console.log(data.data)
         } else {
             console.log("error in find article by title")
         }

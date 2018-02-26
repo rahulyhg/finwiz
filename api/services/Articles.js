@@ -40,22 +40,18 @@ var model = {
     },
 
     findDataByArticleTitle: function (data, callback) {
-        console.log("Data",data)
-        Articles.aggregate([{
-                $match: {
-                    "title": {
-                        $regex: data.title,
-                        $options: "i"
-                    }
+        // console.log("Data",data)
+        Articles.find({
+                title: {
+                    $regex: data.title,
+                    $options: "i"
                 }
-            }])
-            .exec(function (err, found) {
+            }).exec(function (err, found) {
                 if (err || _.isEmpty(found)) {
-                    console.log("errData",err)
+                    // console.log("errData", err)
                     callback(err, "noData");
                 } else {
-                    console.log("foundData",found)
-
+                    // console.log("foundData", found)
                     callback(null, found);
                 }
             });

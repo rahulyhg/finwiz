@@ -208,7 +208,7 @@ myApp.controller('HomeCtrl', function ($scope, $uibModal, TemplateService, Navig
 
         NavigationService.apiCallWithoutData("QuickBytes/getAllQuickBytes", function (data) {
             $scope.quickData = data.data[0];
-            console.log(data.data, "quick bites")
+            // console.log(data.data, "quick bites")
         })
 
         // for testimonial
