@@ -48,9 +48,7 @@ var model = {
                         $options: "i"
                     }
                 }
-            }]).cursor({
-                batchSize: 1000
-            })
+            }])
             .exec(function (err, found) {
                 if (err || _.isEmpty(found)) {
                     console.log("errData",err)
