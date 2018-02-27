@@ -273,18 +273,18 @@ myApp.controller('ArticleCtrl', function ($scope, $state, $location, TemplateSer
         if (data.value === true) {
             $scope.articlelists = data.data;
             $scope.length = $scope.articlelists.length;
-            if(sendData={}){
-    // console.log('coming from home page ??')
-    $scope.articleData=$scope.articlelists[0];
-    // console.log($scope.articlelists,$scope.articlelists[0],"check all article data")
-}
+            //             if(sendData={}){
+            //     // console.log('coming from home page ??')
+            //     $scope.articleData=$scope.articlelists[0];
+            //     // console.log($scope.articlelists,$scope.articlelists[0],"check all article data")
+            // }
             // $scope.current = -(Math.floor($scope.length/2));
         }
     });
 
     // console.log(sendData.title, "p1arams")
     NavigationService.apiCallWithData("Articles/findDataByArticleTitle", sendData, function (data) {
-        console.log("data--------",data)
+        console.log("data--------", data)
         if (data.value === true) {
             $scope.articleData = data.data[0];
             // console.log($scope.articleData ,"updating article daTA FROM finddatebyarticletitle api")
@@ -295,35 +295,35 @@ myApp.controller('ArticleCtrl', function ($scope, $state, $location, TemplateSer
     });
 
     //meta tags
-       //
-     if( $stateParams.title=="Difference between RuPay, Visa and MasterCard"){
-            TemplateService.title = "Difference between RuPay, Visa and MasterCard";
-            TemplateService.description = "The emergence of RuPay as a competition to Visa and MasterCard and the differnce between the three service providers.";
-            TemplateService.keywords = "Payment gateways, Visa, MasterCard, RuPay, payment processing network, money transactions, difference between RuPay, Visa and MasterCard, domestic payment system, foreign gateways, card transactions, RuPay Global Cards, joining fee, quarterly fee, economy, banks of India, electronic payments     ";
-        }
-         if( $stateParams.title=="How To Choose The Best Child Plan?"){
-            TemplateService.title = "How To Choose The Best Child Plan?";
-            TemplateService.description = "Things to consider when choosing the best plan for your child";
-            TemplateService.keywords = "secure and planned future, financial decisions, start planning early, good insurance plan, child’s future, choose the best child plan, choosing a good plan, identifying the goals, premium option, policy term, annual investment, waiver on premium,  inflation, endowment, premiums waived off, Unit-linked child plans, equity-linked policies, endowment plans, equity-based plan, volatile capital market, mutual funds or fixed deposits, good child insurance plan, choose a plan for your child ";
-        }
-         if( $stateParams.title=="Eight Steps To Ensure The Safety Of Your ATM/Debit/Credit Card Usage"){
-            TemplateService.title = "Eight Steps To Ensure The Safety Of Your ATM/Debit/Credit Card Usage";
-            TemplateService.description = "Various easy steps to keep your card transactions safe. ";
-            TemplateService.keywords = "financial transactions, electronically swiping your card, safety tips to use your card, the safety of your ATM, Debit and credit cards, Change the default pin,  misuse your card,  Scratch out the CVV number, fraud transactions, SMS notification, card transactions, Activate SMS alerts, online card transactions, anti-virus software, ATM transactions, transaction is complete, keypad-jamming frauds, safety of your digital payments";
-        }
-        if( $stateParams.title=="5 Benefits Of Investing In Auto Mode At The Start Of Each Month"){
-            TemplateService.title = "5 Benefits Of Investing In Auto Mode At The Start Of Each Month";
-            TemplateService.description = "Why sign up for auto mode payments for your monthly bills";
-            TemplateService.keywords = "Bills,  bill payments on auto mode, late fees, automatically be debitted, benefits of investing in auto payments, save your time, No late fines, paid on time, simple to use, bill payment, proof of all payments, reward points , cash-back offers,  benefits of making payments in auto mode, SMS alerts";
-        }
-          if( $stateParams.title=="5 Things To Know Before You Submit Investment Proof For Tax Savings"){
-            TemplateService.title = "5 Things To Know Before You Submit Investment Proof For Tax Savings";
-            TemplateService.description = "Things to consider when you submit investment proof to save tax";
-            TemplateService.keywords = "Income Tax proceedings, submit your tax files, submit investment proofs for tax savings, investment proof, proof of your investment, tax department, tax deductible personal investments, tax returns, save tax, declare investments, additional income, submit the proof of TDS";
-        }
-          if( $stateParams.title=="How To Check GST Number Online"){
-            TemplateService.title = "How To Check GST Number Online";
-            TemplateService.description = "Steps to check  your GST application status ";
-            TemplateService.keywords = "Goods and Services Tax, GST Online Portal, GST Seva Kendra, Application Reference Number, GST Portal, Goods and Services Tax Identification Number, unique GSTIN, Registration Certificate, GST account, GST homepage ";
-        }
+    //
+    if ($stateParams.title == "Difference between RuPay, Visa and MasterCard") {
+        TemplateService.title = "Difference between RuPay, Visa and MasterCard";
+        TemplateService.description = "The emergence of RuPay as a competition to Visa and MasterCard and the differnce between the three service providers.";
+        TemplateService.keywords = "Payment gateways, Visa, MasterCard, RuPay, payment processing network, money transactions, difference between RuPay, Visa and MasterCard, domestic payment system, foreign gateways, card transactions, RuPay Global Cards, joining fee, quarterly fee, economy, banks of India, electronic payments     ";
+    }
+    if ($stateParams.title == "How To Choose The Best Child Plan?") {
+        TemplateService.title = "How To Choose The Best Child Plan?";
+        TemplateService.description = "Things to consider when choosing the best plan for your child";
+        TemplateService.keywords = "secure and planned future, financial decisions, start planning early, good insurance plan, child’s future, choose the best child plan, choosing a good plan, identifying the goals, premium option, policy term, annual investment, waiver on premium,  inflation, endowment, premiums waived off, Unit-linked child plans, equity-linked policies, endowment plans, equity-based plan, volatile capital market, mutual funds or fixed deposits, good child insurance plan, choose a plan for your child ";
+    }
+    if ($stateParams.title == "Eight Steps To Ensure The Safety Of Your ATM/Debit/Credit Card Usage") {
+        TemplateService.title = "Eight Steps To Ensure The Safety Of Your ATM/Debit/Credit Card Usage";
+        TemplateService.description = "Various easy steps to keep your card transactions safe. ";
+        TemplateService.keywords = "financial transactions, electronically swiping your card, safety tips to use your card, the safety of your ATM, Debit and credit cards, Change the default pin,  misuse your card,  Scratch out the CVV number, fraud transactions, SMS notification, card transactions, Activate SMS alerts, online card transactions, anti-virus software, ATM transactions, transaction is complete, keypad-jamming frauds, safety of your digital payments";
+    }
+    if ($stateParams.title == "5 Benefits Of Investing In Auto Mode At The Start Of Each Month") {
+        TemplateService.title = "5 Benefits Of Investing In Auto Mode At The Start Of Each Month";
+        TemplateService.description = "Why sign up for auto mode payments for your monthly bills";
+        TemplateService.keywords = "Bills,  bill payments on auto mode, late fees, automatically be debitted, benefits of investing in auto payments, save your time, No late fines, paid on time, simple to use, bill payment, proof of all payments, reward points , cash-back offers,  benefits of making payments in auto mode, SMS alerts";
+    }
+    if ($stateParams.title == "5 Things To Know Before You Submit Investment Proof For Tax Savings") {
+        TemplateService.title = "5 Things To Know Before You Submit Investment Proof For Tax Savings";
+        TemplateService.description = "Things to consider when you submit investment proof to save tax";
+        TemplateService.keywords = "Income Tax proceedings, submit your tax files, submit investment proofs for tax savings, investment proof, proof of your investment, tax department, tax deductible personal investments, tax returns, save tax, declare investments, additional income, submit the proof of TDS";
+    }
+    if ($stateParams.title == "How To Check GST Number Online") {
+        TemplateService.title = "How To Check GST Number Online";
+        TemplateService.description = "Steps to check  your GST application status ";
+        TemplateService.keywords = "Goods and Services Tax, GST Online Portal, GST Seva Kendra, Application Reference Number, GST Portal, Goods and Services Tax Identification Number, unique GSTIN, Registration Certificate, GST account, GST homepage ";
+    }
 })
