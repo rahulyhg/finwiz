@@ -284,7 +284,7 @@ myApp.controller('ArticleCtrl', function ($scope, $state, $location, TemplateSer
 
     // console.log(sendData.title, "p1arams")
     NavigationService.apiCallWithData("Articles/findDataByArticleTitle", sendData, function (data) {
-        console.log("data--------", data)
+        // console.log("data--------", data)
         if (data.value === true) {
             $scope.articleData = data.data[0];
             // console.log($scope.articleData ,"updating article daTA FROM finddatebyarticletitle api")
