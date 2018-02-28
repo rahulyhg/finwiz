@@ -3,32 +3,29 @@
         <div class="container-fluid">
             <div class="col-md-6 col-sm-6 col-xs-12">
                 <img class="about_pic" src="img/about-pic.png">
-
             </div>
             <div class="col-md-6 col-sm-6 col-xs-12">
                 <div class="h3 ">
                     <span class="border-line">ABOUT</span> US</div>
-                <p>NSE FINWIZ Conceptualised by the National Stock Exchange (NSE) in association with CNBC-TV18, 'NSE Fin Wiz'
-                    is part of the NSE LIFE. The purpose of NSE LIFE is to improve levels if financial literacy and education
-                    to enable, empower and enrich young Indians. 'NSE Fin Wiz' in its fourth season, is a 27-episode series
-                    that will be aired on CNBC-TV18 In our continued endeavour to educate investors and help them make informed
-                    investments, 'NSE Fin Wiz' is an Investor Education show that will travel pan-India to various corporates
-                    across sectors in an initiative to educate the younger generation of first-time working professionals
-                    in those corporates and inform them about the merits of investing and other issues pertaining to trading
-                    and savings. This will be held through various ground events like seminars and panel discussions in different
-                    cities, keeping in mind the curiosity of the newbie investor and to satiate his / her appetite to double
-                    their money by taking very informed and mature investing decisions. Through 'NSE Fin Wiz', the aim is
-                    to provide awareness to the young professionals in Companies to make the right investing decisions with
-                    advice from credible financial specialists who will teach them about the current market conditions and
-                    how best to approach the field of investing. Our endeavour is to provide forums for direct interaction
-                    with retail investors, industry experts, academicians, practitioners and representatives of regulatory
-                    bodies for investment education and advice.</p>
+                <p>About Nse Finwiz Conceptualised By The National Stock Exchange (Nse), 'nse Finwiz' Aims To Improve Levels
+                    Of Financial Literacy And Education To Enable, Empower And Enrich Young Indians. 'nse Finwiz' In Its
+                    Fifth Season, Is A 25-episode Series That Will Be Aired On Cnbc-tv18 In Our Continued Endeavour To Educate
+                    Investors And Help Them Make Informed Investments, 'nse Finwiz' Is An Investor Education Show That Will
+                    Travel Pan-india To Various Corporates Across Sectors In An Initiative To Educate The Younger Generation
+                    Of First-time Working Professionals In Those Corporates And Inform Them About The Merits Of Investing
+                    And Other Issues Pertaining To Trading And Savings. This Will Be Held Through Various Ground Events Like
+                    Seminars And Panel Discussions In Different Cities, Keeping In Mind The Curiosity Of The Newbie Investor
+                    And To Satiate His / Her Appetite To Double Their Money By Taking Very Informed And Mature Investing
+                    Decisions. Through 'nse Finwiz', The Aim Is To Provide Awareness To The Young Professionals In Companies
+                    To Make The Right Investing Decisions With Advice From Credible Financial Specialists Who Will Teach
+                    Them About The Current Market Conditions And How Best To Approach The Field Of Investing. Our Endeavour
+                    Is To Provide Forums For Direct Interaction With Retail Investors, Industry Experts, Academicians, Practitioners
+                    And Representatives Of Regulatory Bodies For Investment Education And Advice.</p>
                 <div class="text-center">
                     <div class="btn btn-primary cust-btn" ng-click="openAbtModel()">Know More</div>
                 </div>
             </div>
     </section>
-
     <section class="s2">
         <div class="container">
             <div class="row border-bottom">
@@ -85,10 +82,8 @@
             </div>
         </div>
     </section>
-
     <section id="" class="s3 fun_facts bg-second">
         <div class="container-fluid">
-
             <div class="col-md-2 col-sm-3 block1">
                 <div class="h3">FUN FACTS</div>
             </div>
@@ -108,7 +103,6 @@
             </div>
         </div>
     </section>
-
     <section id="gallery" class=" s4 gallery" ng-init="tab='episodes'">
         <div class="container-fluid">
             <div class="col-md-6 col-sm-6 col-xs-12">
@@ -124,7 +118,7 @@
                 <div class="block2">
                     <div class="episodes" ng-show="tab=='episodes'">
                         <div class="col-md-4 col-sm-4 col-xs-6 pic" ng-repeat="x in videos track by $index">
-                            <img ng-src="http://img.youtube.com/vi/{{convertUrltoID(x.url)}}/hqdefault.jpg" class="img-responsive img-full">
+                            <img ng-src="https://img.youtube.com/vi/{{convertUrltoID(x.url)}}/hqdefault.jpg" class="img-responsive img-full">
                             <div class="video-icon">
                                 <a class="fancybox.iframe" ng-href="https://www.youtube.com/embed/{{convertUrltoID(x.url)}}?autoplay=1" fancybox>
                                     <img src="img/youtube-small.png" class="img-responsive">
@@ -134,7 +128,6 @@
                         <div class="col-md-12 text-center">
                             <div class="btn btn-primary cust-btn" ui-sref="episode">VIEW MORE</div>
                         </div>
-
                     </div>
                     <div class="photos" ng-show="tab=='photos'">
                         <div class="col-md-4 col-sm-4 col-xs-6 pic" ng-repeat="x in photos track by $index">
@@ -150,10 +143,9 @@
             </div>
         </div>
     </section>
-
     <section class="s5 news_quiz">
         <div class="container-fluid">
-            <div class="col-md-6 col-sm-6 col-xs-6 padding-0 newsletter  ">
+            <!--<div class="col-md-6 col-sm-6 col-xs-6 padding-0 newsletter  ">
                 <div class="h3">NEWSLETTER</div>
                 <div class="col-md-2 col-sm-2 padding-0 right">
                     <img class="img-responsive icon" src="img/icon/news.png">
@@ -167,8 +159,8 @@
                         <img src="img/icon/nextpage.png" class="img-responsive nextpage ">
                     </a>
                 </div>
-            </div>
-            <div class="col-md-6 col-sm-6 col-xs-6 padding-0 quiz">
+            </div>-->
+            <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3  col-xs-6 col-xs-offset-3  padding-0 quiz">
                 <div class="h3">QUIZ</div>
                 <div class="col-md-2 col-sm-2 padding-0 right">
                     <img class="img-responsive icon" src="img/icon/quiz.png">
@@ -185,7 +177,6 @@
             </div>
         </div>
     </section>
-
     <section id="subscribe_nominate" class="s6 subscribe_nominate">
         <div class="container-fluid">
             <div class="col-md-6 col-sm-6 block1">
@@ -197,19 +188,17 @@
                         <span ng-show="subscribe.email.$touched && subscribe.email.$invalid">Please enter a valid email</span>
                         <button class="btn btn-primary cust-btn" ng-click="saveEmails(emailData,subscribe)" ng-disabled="subscribe.$invalid">SUBSCRIBE</button>
                     </form>
-
                 </div>
                 <div class="social text-center">
                     <a href="https://www.facebook.com/NSEFinWiz/" target="_blank">
                         <img src="img/icon/facebook.png">
                     </a>
-                    <a href="https://www.instagram.com/nsefinwiz/" target="_blank">
+                    <!--<a href="https://www.instagram.com/nsefinwiz/" target="_blank">
                         <img src="img/icon/instagram.png">
-                    </a>
+                    </a>-->
                     <a href="https://twitter.com/NSEFinWiz" target="_blank">
                         <img src="img/icon/twitter.png">
                     </a>
-
                 </div>
                 <div class="contact text-center">
                     <div class="h4">CONTACT</div>
@@ -222,9 +211,7 @@
                     <div>Visit us –
                         <a href="https://www.nseindia.com/" target="_blank">www.nseindia.com</a>
                     </div>
-
                 </div>
-
             </div>
             <div class="col-md-6 col-sm-6 block2">
                 <div class=" h3 title">
@@ -253,22 +240,16 @@
                             <div class="span-err" ng-show="nomination.email.$touched && nomination.email.$invalid">Please enter a valid email</div>
                         </div>
                         <div class="field captch">
-
                             <div class="captch-div" on-create="setWidgetId(5)" ng-model="formData.myRecaptchaResponse" vc-recaptcha key="captchaKey"
                                 required></div>
                         </div>
-
                         <!-- {{nomination}} -->
                         <div class="pull-right">
                             <button class="btn btn-primary cust-btn" ng-click="callcaptchvalidation(formData,nomination)" ng-disabled="nomination.$invalid">SUBMIT</button>
                         </div>
                     </form>
-
                 </div>
-
-
             </div>
         </div>
     </section>
-
     </div>
