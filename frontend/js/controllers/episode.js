@@ -924,8 +924,9 @@
      NavigationService.apiCallWithoutData('VideoGallery/findAllVideos', function (data) {
          if (data.value) {
             console.log(data.data)
-            //  $scope.seasonList =_.reverse( _.sortBy(data.data, ['_id']) );
-             $scope.seasonList =data.data;
+             $scope.seasonList =_.reverse( _.sortBy(data.data, ['_id']) );
+              
+            //  $scope.seasonList =data.data;
             //  $scope.seasonList =_.reverse(data.data);
             
             // console.log( _.reverse( _.sortBy(data.data, ['_id']) ))
