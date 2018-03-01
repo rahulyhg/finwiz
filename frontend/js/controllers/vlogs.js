@@ -4,39 +4,15 @@ myApp.controller('VlogsCtrl', function ($scope, TemplateService, NavigationServi
     $scope.navigation = NavigationService.getNavigation();
 
     $scope.vlog = [{
-            title: "Why to invest in Mutual Funds",
-            url: "3IfIdT-MXxE"
+            title: "STAGES OF FINANCIAL LIFE",
+            url: "YU3mzAHOAMc"
         },
         {
-            title: "How to start investing",
-            url: "3IfIdT-MXxE"
+            title: "WHY YOU WILL NEVER GET RICH",
+            url: "ZF1m8a5znho"
         }, {
-            title: "Stages of your financial life",
-            url: "3IfIdT-MXxE"
-        },
-        {
-            title: "3 Reasons you will never get Rich",
-            url: "3IfIdT-MXxE"
-        },
-        {
-            title: "Personal Finance made easy",
-            url: "3IfIdT-MXxE"
-        },
-        {
-            title: "About NSE and its offerings",
-            url: "3IfIdT-MXxE"
-        },
-        {
-            title: "Things to keep in mind before investing in equities",
-            url: "3IfIdT-MXxE"
-        },
-        {
-            title: "History of Stock Trading (India)",
-            url: "3IfIdT-MXxE"
-        },
-        {
-            title:"The Priceline of Gold",
-            url:"3IfIdT-MXxE"
+            title: "SAVING Vs. INVESTMENT",
+            url: "9Iz0NwC0NkA"
         }
     ]
 })

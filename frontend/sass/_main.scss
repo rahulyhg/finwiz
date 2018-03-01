@@ -776,7 +776,7 @@ p {
             border-left: 2px solid $color-secondary;
             padding-left: 15px;
             padding-right: 0px;
-            height: 350px; // overflow: hidden;
+            height: 600px; // overflow: hidden;
             overflow-y: scroll;
             direction: rtl;
             &::-webkit-scrollbar-track {
@@ -968,6 +968,7 @@ p {
                     width: 20%;
                 }
                 .title {
+                        margin: 12px 0 0 0;
                     color: $color-primary;
                     font-weight: 100;
                     text-align: center;
