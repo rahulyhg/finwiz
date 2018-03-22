@@ -574,6 +574,9 @@ p {
         .contact {
             margin-top: 15px;
             margin-bottom: 15px;
+            a{
+                color:black;
+            }
         }
     }
     .block2 {
@@ -656,11 +659,11 @@ p {
 //model 
 .model {
     background: #f7f7f7;
-    color: $color-primary;
+    color: $color-brown;
     padding: 60px;
     hr {
         width: 30%;
-        border-top: 2px solid $color-secondary;
+        border-top: 2px solid $color-brown;
         margin: 5px auto;
     }
     .heading {
@@ -682,7 +685,7 @@ p {
         font-size: 40px;
         padding: 10px;
         padding-top: 0px;
-        color: $color-primary;
+        color: $color-brown;
     }
 }
 
@@ -853,13 +856,13 @@ p {
                 /* float: right; */
                 display: inline-block;
                 padding: 5px 25px;
-                background: $color-primary;
+                background: $color-brown;
                 margin: 0px 5px;
-                color: white;
+                color: $color-yellow;
             }
             .true {
-                background: $color-secondary;
-                color: $color-primary;
+                background: $color-yellow ;
+                color:$color-secondary;
             }
         }
         .newsletter_block {
@@ -871,11 +874,11 @@ p {
                 margin: 20px 0px;
                 .heading {
                     span {
-                        background: $color-primary;
+                        background: $color-brown;
                         width: 25%;
                         display: inline-block;
                         padding: 4px 10px;
-                        color: white;
+                        color: $color-yellow;
                         text-transform: capitalize;
                         font-weight: 100;
                     }
@@ -922,7 +925,7 @@ p {
     width: 5px;
     right: 50px;
     .scroll_thumb {
-        background: $color-primary;
+        background: $color-yellow;
         border-radius: 100%;
         position: relative;
         top: 0;
@@ -944,8 +947,8 @@ p {
     }
     .style-1::-webkit-scrollbar-thumb {
         border-radius: 10px;
-        -webkit-box-shadow: inset 0 0 6px $color-primary;
-        background-color: $color-primary;
+        -webkit-box-shadow: inset 0 0 6px $color-yellow;
+        background-color: $color-yellow;
     }
 }
 
@@ -998,7 +1001,7 @@ p {
     padding: 65px;
     font-size: 70px;
     font-weight: bold;
-    color: #245180;
+    color: $color-brown;
     text-align: center;
     height: 500px;
     padding-top: 100px;
