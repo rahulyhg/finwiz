@@ -10925,14 +10925,14 @@ p {
   margin-bottom: 50px; }
 
 .search-episode .form-control {
-  color: #f9ba4d;
-  border: 2px solid #8e2929;
+  color: #8e2929;
+  border: 2px solid #f58634;
   padding: 16px;
   border-right: none;
   background: transparent; }
 
 .search-episode .btn-search {
-  border: 2px solid #8e2929;
+  border: 2px solid #f58634;
   padding: 16px;
   border-left: none;
   background: transparent;

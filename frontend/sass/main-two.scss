@@ -81,8 +81,8 @@
 }
 
 .search-episode .form-control {
-    color: #f9ba4d;
-    border: 2px solid $color-brown;
+    color: $color-brown;
+    border: 2px solid $color-yellow;
     padding: 16px;
     border-right: none;
     // background: rgba(0, 0, 0, .59);
@@ -90,7 +90,7 @@
 }
 
 .search-episode .btn-search {
-    border: 2px solid $color-brown;
+    border: 2px solid $color-yellow;
     padding: 16px;
     border-left: none;
     background: transparent;
