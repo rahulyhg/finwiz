@@ -70,9 +70,7 @@ var model = {
                     }
                 }
             }
-        ]).cursor({
-            batchSize: 2500
-        }).exec(function (err, found) {
+        ]).exec(function (err, found) {
             console.log(err, found);
             if (err || _.isEmpty(found)) {
                 callback(err, "noData");
@@ -100,9 +98,7 @@ var model = {
                     }]
                 }
             }
-        ]).cursor({
-            batchSize: 2500
-        }).exec(function (err, found) {
+        ]).exec(function (err, found) {
             console.log(err, found);
             if (err || _.isEmpty(found)) {
                 callback(err, "noData");
