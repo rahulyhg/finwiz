@@ -72,6 +72,7 @@ var model = {
             batchSize: 2500,
             async: true
         }).exec(function (err, found) {
+            console.log(err, found);
             if (err || _.isEmpty(found)) {
                 callback(err, "noData");
             } else {
@@ -102,7 +103,7 @@ var model = {
             batchSize: 2500,
             async: true
         }).exec(function (err, found) {
-            console.log("**** in global search***", found);
+            console.log(err, found);
             if (err || _.isEmpty(found)) {
                 callback(err, "noData");
             } else {
