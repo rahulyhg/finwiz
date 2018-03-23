@@ -68,7 +68,9 @@ var model = {
                     }
                 }
             }
-        ]).exec(function (err, found) {
+        ], {
+            explain: true
+        }).exec(function (err, found) {
             console.log(err, found);
             if (err || _.isEmpty(found)) {
                 callback(err, "noData");
@@ -96,7 +98,9 @@ var model = {
                     }]
                 }
             }
-        ]).exec(function (err, found) {
+        ], {
+            explain: true
+        }).exec(function (err, found) {
             console.log(err, found);
             if (err || _.isEmpty(found)) {
                 callback(err, "noData");
