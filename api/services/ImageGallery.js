@@ -69,7 +69,7 @@ var model = {
                 }
             }
         ]);
-        aggregate.options.explain = true;
+        aggregate.options.explain = false;
         aggregate.exec(function (err, found) {
             console.log(err, found);
             if (err || _.isEmpty(found)) {
@@ -99,7 +99,7 @@ var model = {
                 }
             }
         ]);
-        aggregate.options.explain = true;
+        aggregate.options.explain = false;
         aggregate.exec(function (err, found) {
             console.log(err, found);
             if (err || _.isEmpty(found)) {
