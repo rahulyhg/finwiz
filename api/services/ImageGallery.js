@@ -69,8 +69,7 @@ var model = {
                 }
             }
         ]).cursor({
-            batchSize: 2500,
-            async: true
+            batchSize: 2500
         }).exec(function (err, found) {
             console.log(err, found);
             if (err || _.isEmpty(found)) {
@@ -100,8 +99,7 @@ var model = {
                 }
             }
         ]).cursor({
-            batchSize: 2500,
-            async: true
+            batchSize: 2500
         }).exec(function (err, found) {
             console.log(err, found);
             if (err || _.isEmpty(found)) {
