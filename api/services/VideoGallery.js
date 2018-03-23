@@ -37,7 +37,7 @@ var model = {
     },
 
     findAllVideos: function (data, callback) {
-        VideoGallery.aggregate([
+        var aggregate = VideoGallery.aggregate([
             // Stage 1
             {
                 $lookup: {
@@ -71,9 +71,9 @@ var model = {
                 }
             },
 
-        ], {
-            explain: true
-        }).exec(function (err, found) {
+        ]);
+        aggregate.options.explain = true;
+        aggregate.exec(function (err, found) {
             console.log(err, found);
             if (err || _.isEmpty(found)) {
                 callback(err, "noData");
@@ -84,7 +84,7 @@ var model = {
     },
 
     searchVideo: function (data, callback) {
-        VideoGallery.aggregate([
+        var aggregate = VideoGallery.aggregate([
             // Stage 1
             {
                 $match: {
@@ -101,9 +101,9 @@ var model = {
                     }]
                 }
             }
-        ], {
-            explain: true
-        }).exec(function (err, found) {
+        ]);
+        aggregate.options.explain = true;
+        aggregate.exec(function (err, found) {
             console.log(err, found);
             if (err || _.isEmpty(found)) {
                 callback(err, "noData");

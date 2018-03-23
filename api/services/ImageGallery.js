@@ -35,7 +35,7 @@ var model = {
     },
 
     findAllImages: function (data, callback) {
-        ImageGallery.aggregate([
+        var aggregate = ImageGallery.aggregate([
             // Stage 1
             {
                 $lookup: {
@@ -68,9 +68,9 @@ var model = {
                     }
                 }
             }
-        ], {
-            explain: true
-        }).exec(function (err, found) {
+        ]);
+        aggregate.options.explain = true;
+        aggregate.exec(function (err, found) {
             console.log(err, found);
             if (err || _.isEmpty(found)) {
                 callback(err, "noData");
@@ -81,7 +81,7 @@ var model = {
     },
 
     searchImage: function (data, callback) {
-        ImageGallery.aggregate([
+        var aggregate = ImageGallery.aggregate([
             // Stage 1
             {
                 $match: {
@@ -98,9 +98,9 @@ var model = {
                     }]
                 }
             }
-        ], {
-            explain: true
-        }).exec(function (err, found) {
+        ]);
+        aggregate.options.explain = true;
+        aggregate.exec(function (err, found) {
             console.log(err, found);
             if (err || _.isEmpty(found)) {
                 callback(err, "noData");
