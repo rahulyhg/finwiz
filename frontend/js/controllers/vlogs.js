@@ -7,7 +7,7 @@ myApp.controller('VlogsCtrl', function ($scope, TemplateService, NavigationServi
         title: "STAGES OF FINANCIAL LIFE",
         url: "YU3mzAHOAMc"
     }, {
-        title: "WHY YOU WILL NEVER GET RICH",
+        title: "WHY YOU WILL NEVER GET RICH ?",
         url: "ZF1m8a5znho"
     }, {
         title: "SAVING Vs. INVESTMENT",
@@ -21,14 +21,5 @@ myApp.controller('VlogsCtrl', function ($scope, TemplateService, NavigationServi
     }, {
         title: "Why Must You Invest In Mutual Funds",
         url: "rzUpPBHjUUg"
-    }, {
-        title: "3 Stages Of Financial Life",
-        url: "YU3mzAHOAMc"
-    }, {
-        title: "Why You Will Never Get Rich?",
-        url: "ZF1m8a5znho"
-    }, {
-        title: "Saving Vs Investment",
-        url: "9Iz0NwC0NkA"
     }]
 })
