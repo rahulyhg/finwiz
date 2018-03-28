@@ -1,7 +1,7 @@
 var schema = new Schema({
-    name:String,
-    image:[String],
-    keyword:String,
+    name: String,
+    image: [String],
+    keyword: String,
     season: {
         type: Schema.Types.ObjectId,
         ref: 'Season',
@@ -20,53 +20,59 @@ schema.plugin(uniqueValidator);
 schema.plugin(timestamps);
 module.exports = mongoose.model('ImageGallery', schema);
 
-var exports = _.cloneDeep(require("sails-wohlig-service")(schema,"season"));
+var exports = _.cloneDeep(require("sails-wohlig-service")(schema, "season"));
 var model = {
-    findImagesForHomePage:function(data,callback){
-        ImageGallery.find({
-        }).sort({
+    findImagesForHomePage: function (data, callback) {
+        ImageGallery.find({}).sort({
             createdAt: -1
-        }).deepPopulate("season").limit(6).exec(function(err,data){
-            if(err||_.isEmpty(data)){
-                callback(err,"Nodata")
-            }else{
-                callback(null,data)
+        }).deepPopulate("season").limit(6).exec(function (err, data) {
+            if (err || _.isEmpty(data)) {
+                callback(err, "Nodata");
+            } else {
+                callback(null, data);
             }
-        })
+        });
     },
 
-    findAllImages:function(data,callback){
-        ImageGallery.aggregate([
+    findAllImages: function (data, callback) {
+        var aggregate = ImageGallery.aggregate([
             // Stage 1
             {
                 $lookup: {
-                     "from": "seasons",
-                     "localField": "season",
-                     "foreignField": "_id",
-                     "as": "season"
+                    "from": "seasons",
+                    "localField": "season",
+                    "foreignField": "_id",
+                    "as": "season"
                 }
             },
-    
+
             // Stage 2
             {
                 $unwind: {
-                    path : "$season",
-                    preserveNullAndEmptyArrays : true // optional
+                    path: "$season",
+                    preserveNullAndEmptyArrays: true // optional
                 }
             },
-    
+
             // Stage 3
             {
                 $group: {
-                _id:"$season.name",
-                data:{$push:{name:"$name",
-                url:"$url",
-                image:"$image",
-                keyword:"$keyword"}}
+                    _id: "$season.name",
+                    data: {
+                        $push: {
+                            name: "$name",
+                            url: "$url",
+                            image: "$image",
+                            keyword: "$keyword"
+                        }
+                    }
                 }
             }
-        ], function (err, found) {
-            if (err||_.isEmpty(found)) {
+        ]);
+        aggregate.options.explain = false;
+        aggregate.exec(function (err, found) {
+            console.log(err, found);
+            if (err || _.isEmpty(found)) {
                 callback(err, "noData");
             } else {
                 callback(null, found);
@@ -75,7 +81,7 @@ var model = {
     },
 
     searchImage: function (data, callback) {
-        ImageGallery.aggregate([
+        var aggregate = ImageGallery.aggregate([
             // Stage 1
             {
                 $match: {
@@ -84,18 +90,19 @@ var model = {
                             $regex: data.keyword,
                             $options: "i"
                         }
-                    },{
+                    }, {
                         "name": {
                             $regex: data.keyword,
                             $options: "i"
                         }
                     }]
                 }
-            },
-
-        ], function (err, found) {
-            console.log("**** in global search***", found)
-            if (err||_.isEmpty(found)) {
+            }
+        ]);
+        aggregate.options.explain = false;
+        aggregate.exec(function (err, found) {
+            console.log(err, found);
+            if (err || _.isEmpty(found)) {
                 callback(err, "noData");
             } else {
                 callback(null, found);

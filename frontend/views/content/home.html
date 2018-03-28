@@ -22,7 +22,7 @@
                     Is To Provide Forums For Direct Interaction With Retail Investors, Industry Experts, Academicians, Practitioners
                     And Representatives Of Regulatory Bodies For Investment Education And Advice.</p>
                 <div class="text-center">
-                    <div class="btn btn-primary cust-btn" ng-click="openAbtModel()">Know More</div>
+                    <div class="btn cust-btn" ng-click="openAbtModel()">Know More</div>
                 </div>
             </div>
     </section>
@@ -39,7 +39,7 @@
                         <p>{{articleData.title}}
                         </p>
                     </div>
-                    <div class="btn btn-primary cust-btn" ui-sref="article({title:stateData})">KNOW MORE</div>
+                    <div class="btn cust-btn" ui-sref="article({title:stateData})">KNOW MORE</div>
                 </div>
                 <div class="col-md-6 col-sm-6 quick_bites block text-center">
                     <div class="title h3">QUICK BITES</div>
@@ -51,33 +51,33 @@
                         <p ng-bind-html=quickData.description>
                         </p>
                     </div>
-                    <div class="btn btn-primary cust-btn" ui-sref="quickbites">KNOW MORE</div>
+                    <div class="btn cust-btn" ui-sref="quickbites">KNOW MORE</div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6 col-sm-6 testimonials block border-right text-center">
                     <div class="title h3">TESTIMONIALS</div>
                     <div class="tit_img">
-                        <img class="img-responsive no_hover" src="img/icon/testimonials.png">
-                        <img class="img-responsive on_hover" src="img/icon/testimonials_yellow.png">
+                        <img class="img-responsive on_hover" src="img/icon/testimonials.png">
+                        <img class="img-responsive  no_hover" src="img/icon/testimonials_yellow.png">
                     </div>
                     <div class="txt">
                         <p ng-bind-html="testimonialData.description">
                         </p>
                     </div>
-                    <div class="btn btn-primary cust-btn" ui-sref="testimonial">KNOW MORE</div>
+                    <div class="btn cust-btn" ui-sref="testimonial">KNOW MORE</div>
                 </div>
                 <div class="col-md-6 col-sm-6 vlogs block  block-border1 text-center">
                     <div class="title h3">VLOGS</div>
                     <div class="tit_img">
-                        <img class="img-responsive no_hover" src="img/icon/vlogs.png">
-                        <img class="img-responsive on_hover" src="img/icon/vlogs_yellow.png">
+                        <img class="img-responsive on_hover " src="img/icon/vlogs.png">
+                        <img class="img-responsive no_hover" src="img/icon/vlogs_yellow.png">
                     </div>
                     <div class="txt">
                         <p>Our Vlogs section will help take you through and Strengthen your knowledge about personal finance  with the help of videos and image texts and be market ready.
                         </p>
                     </div>
-                    <div class="btn btn-primary cust-btn" ui-sref="vlogs">KNOW MORE</div>
+                    <div class="btn cust-btn" ui-sref="vlogs">KNOW MORE</div>
                 </div>
             </div>
         </div>
@@ -106,7 +106,7 @@
     <section id="gallery" class=" s4 gallery" ng-init="tab='episodes'">
         <div class="container-fluid">
             <div class="col-md-6 col-sm-6 col-xs-12">
-                <div class="bg-first block1">
+                <div class="bg-grey block1">
                     <div class="h3 title "> GALLERY</div>
                     <div class="tabset">
                         <div class="cursor_pointer tab {{tab=='episodes'}}" ng-click="tab='episodes'">EPISODES</div>
@@ -126,7 +126,7 @@
                             </div>
                         </div>
                         <div class="col-md-12 text-center">
-                            <div class="btn btn-primary cust-btn" ui-sref="episode">VIEW MORE</div>
+                            <div class="btn cust-btn" ui-sref="episode">VIEW MORE</div>
                         </div>
                     </div>
                     <div class="photos" ng-show="tab=='photos'">
@@ -136,7 +136,7 @@
                             </a>
                         </div>
                         <div class="col-md-12 text-center">
-                            <div class="btn btn-primary cust-btn" ui-sref="photo">VIEW MORE</div>
+                            <div class="btn cust-btn" ui-sref="photo">VIEW MORE</div>
                         </div>
                     </div>
                 </div>
@@ -185,7 +185,7 @@
                     <form name="subscribe">
                         <input type="email" class="input_field" name="email" placeholder="Enter Your Email ID" ng-model="emailData.email" required>
                         <span ng-show="subscribe.email.$touched && subscribe.email.$invalid">Please enter a valid email</span>
-                        <button class="btn btn-primary cust-btn" ng-click="saveEmails(emailData,subscribe)" ng-disabled="subscribe.$invalid">SUBSCRIBE</button>
+                        <button class="btn cust-btn" ng-click="saveEmails(emailData,subscribe)" ng-disabled="subscribe.$invalid">SUBSCRIBE</button>
                     </form>
                 </div>
                 <div class="social text-center">
@@ -244,7 +244,7 @@
                         </div>
                         <!-- {{nomination}} -->
                         <div class="pull-right">
-                            <button class="btn btn-primary cust-btn" ng-click="callcaptchvalidation(formData,nomination)" ng-disabled="nomination.$invalid">SUBMIT</button>
+                            <button class="btn  cust-btn" ng-click="callcaptchvalidation(formData,nomination)" ng-disabled="nomination.$invalid">SUBMIT</button>
                         </div>
                     </form>
                 </div>
