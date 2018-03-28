@@ -46,7 +46,7 @@ myApp.factory('NavigationService', function ($http) {
         apiCall: function (url, formData, callback) {
             $http.get('https://finwiz.wohlig.co.in/csrfToken').then(function (data) {
                 data = data.data;
-                console.log("------", data);
+                // console.log("------", data);
                 $http.defaults.headers.post['x-csrf-token'] = data._csrf;
                 $http.post(adminurl + url, formData).then(function (data) {
                     data = data.data;
@@ -58,7 +58,7 @@ myApp.factory('NavigationService', function ($http) {
         searchCall: function (url, formData, i, callback) {
             $http.get('https://finwiz.wohlig.co.in/csrfToken').then(function (data) {
                 data = data.data;
-                console.log("------", data);
+                // console.log("------", data);
                 $http.defaults.headers.post['x-csrf-token'] = data._csrf;
                 $http.post(adminurl + url, formData).then(function (data) {
                     data = data.data;
@@ -100,7 +100,7 @@ myApp.factory('NavigationService', function ($http) {
         apiCallWithoutData: function (url, callback) {
             $http.get('https://finwiz.wohlig.co.in/csrfToken').then(function (data) {
                 data = data.data;
-                console.log("------", data);
+                // console.log("------", data);
                 $http.defaults.headers.post['x-csrf-token'] = data._csrf;
                 $http.post(adminurl + url).then(function (data) {
                     data = data.data;
